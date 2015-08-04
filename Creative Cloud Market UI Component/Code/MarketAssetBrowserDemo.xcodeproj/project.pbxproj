@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		71132E0B19A7ADCC004CE143 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71132E0A19A7ADCC004CE143 /* MobileCoreServices.framework */; };
+		7175682C1987F4F8008360B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7175682B1987F4F8008360B8 /* Foundation.framework */; };
+		7175682E1987F4F8008360B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7175682D1987F4F8008360B8 /* CoreGraphics.framework */; };
+		717568301987F4F8008360B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7175682F1987F4F8008360B8 /* UIKit.framework */; };
+		717568361987F4F8008360B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 717568341987F4F8008360B8 /* InfoPlist.strings */; };
+		717568381987F4F8008360B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 717568371987F4F8008360B8 /* main.m */; };
+		7175683C1987F4F8008360B8 /* RKCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7175683B1987F4F8008360B8 /* RKCAppDelegate.m */; };
+		7175683E1987F4F8008360B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7175683D1987F4F8008360B8 /* Images.xcassets */; };
+		717568461987F4F8008360B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7175682B1987F4F8008360B8 /* Foundation.framework */; };
+		717568471987F4F8008360B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7175682F1987F4F8008360B8 /* UIKit.framework */; };
+		7175684F1987F4F8008360B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7175684D1987F4F8008360B8 /* InfoPlist.strings */; };
+		717568511987F4F8008360B8 /* MarketAssetBrowserDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 717568501987F4F8008360B8 /* MarketAssetBrowserDemoTests.m */; };
+		7175685C1987F5F5008360B8 /* RKCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7175685B1987F5F5008360B8 /* RKCViewController.m */; };
+		7175685F1987F610008360B8 /* RKCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7175685E1987F610008360B8 /* RKCView.m */; };
+		717568651987F865008360B8 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 717568641987F865008360B8 /* libc++.dylib */; };
+		D403DB1D1B61A5BD005BAD42 /* AdobeCreativeSDKAssetModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403DB181B61A5BD005BAD42 /* AdobeCreativeSDKAssetModel.framework */; };
+		D403DB1E1B61A5BD005BAD42 /* AdobeCreativeSDKAssetUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403DB191B61A5BD005BAD42 /* AdobeCreativeSDKAssetUX.framework */; };
+		D403DB1F1B61A5BD005BAD42 /* AdobeCreativeSDKCommonUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403DB1A1B61A5BD005BAD42 /* AdobeCreativeSDKCommonUX.framework */; };
+		D403DB201B61A5BD005BAD42 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403DB1B1B61A5BD005BAD42 /* AdobeCreativeSDKCore.framework */; };
+		D403DB211B61A5BD005BAD42 /* AdobeCreativeSDKMarketUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403DB1C1B61A5BD005BAD42 /* AdobeCreativeSDKMarketUX.framework */; };
+		D403DB231B61A5DB005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D403DB221B61A5DB005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle */; };
+		D403DB251B61A5E7005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D403DB241B61A5E7005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle */; };
+		D403DB271B61A604005BAD42 /* AdobeCreativeSDKCommonUXResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D403DB261B61A604005BAD42 /* AdobeCreativeSDKCommonUXResources.bundle */; };
+		D403DB291B61A615005BAD42 /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D403DB281B61A615005BAD42 /* AdobeCreativeSDKCoreResources.bundle */; };
+		D403DB2B1B61A626005BAD42 /* AdobeCreativeSDKMarketUXResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D403DB2A1B61A626005BAD42 /* AdobeCreativeSDKMarketUXResources.bundle */; };
+		D4511A331B5EF07200D23DCD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D4511A321B5EF07200D23DCD /* libz.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		717568481987F4F8008360B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 717568201987F4F8008360B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 717568271987F4F8008360B8;
+			remoteInfo = MarketAssetBrowserDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		71132E0A19A7ADCC004CE143 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		717568281987F4F8008360B8 /* MarketAssetBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketAssetBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7175682B1987F4F8008360B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7175682D1987F4F8008360B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7175682F1987F4F8008360B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		717568331987F4F8008360B8 /* MarketAssetBrowserDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MarketAssetBrowserDemo-Info.plist"; sourceTree = "<group>"; };
+		717568351987F4F8008360B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		717568371987F4F8008360B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		717568391987F4F8008360B8 /* MarketAssetBrowserDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarketAssetBrowserDemo-Prefix.pch"; sourceTree = "<group>"; };
+		7175683A1987F4F8008360B8 /* RKCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKCAppDelegate.h; sourceTree = "<group>"; };
+		7175683B1987F4F8008360B8 /* RKCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKCAppDelegate.m; sourceTree = "<group>"; };
+		7175683D1987F4F8008360B8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		717568431987F4F8008360B8 /* MarketAssetBrowserDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketAssetBrowserDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7175684C1987F4F8008360B8 /* MarketAssetBrowserDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MarketAssetBrowserDemoTests-Info.plist"; sourceTree = "<group>"; };
+		7175684E1987F4F8008360B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		717568501987F4F8008360B8 /* MarketAssetBrowserDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketAssetBrowserDemoTests.m; sourceTree = "<group>"; };
+		7175685A1987F5F5008360B8 /* RKCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCViewController.h; sourceTree = "<group>"; };
+		7175685B1987F5F5008360B8 /* RKCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCViewController.m; sourceTree = "<group>"; };
+		7175685D1987F610008360B8 /* RKCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCView.h; sourceTree = "<group>"; };
+		7175685E1987F610008360B8 /* RKCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCView.m; sourceTree = "<group>"; };
+		717568641987F865008360B8 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		D403DB181B61A5BD005BAD42 /* AdobeCreativeSDKAssetModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetModel.framework; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetModel.framework; sourceTree = "<group>"; };
+		D403DB191B61A5BD005BAD42 /* AdobeCreativeSDKAssetUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetUX.framework; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetUX.framework; sourceTree = "<group>"; };
+		D403DB1A1B61A5BD005BAD42 /* AdobeCreativeSDKCommonUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCommonUX.framework; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework; sourceTree = "<group>"; };
+		D403DB1B1B61A5BD005BAD42 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		D403DB1C1B61A5BD005BAD42 /* AdobeCreativeSDKMarketUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKMarketUX.framework; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKMarketUX.framework; sourceTree = "<group>"; };
+		D403DB221B61A5DB005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKAssetModelResources.bundle; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetModel.framework/Versions/A/Resources/AdobeCreativeSDKAssetModelResources.bundle; sourceTree = "<group>"; };
+		D403DB241B61A5E7005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKAssetUXResources.bundle; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetUX.framework/Versions/A/Resources/AdobeCreativeSDKAssetUXResources.bundle; sourceTree = "<group>"; };
+		D403DB261B61A604005BAD42 /* AdobeCreativeSDKCommonUXResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCommonUXResources.bundle; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework/Versions/A/Resources/AdobeCreativeSDKCommonUXResources.bundle; sourceTree = "<group>"; };
+		D403DB281B61A615005BAD42 /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
+		D403DB2A1B61A626005BAD42 /* AdobeCreativeSDKMarketUXResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKMarketUXResources.bundle; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKMarketUX.framework/Versions/A/Resources/AdobeCreativeSDKMarketUXResources.bundle; sourceTree = "<group>"; };
+		D4511A321B5EF07200D23DCD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		717568251987F4F8008360B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D403DB1D1B61A5BD005BAD42 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
+				D403DB1E1B61A5BD005BAD42 /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
+				D403DB1F1B61A5BD005BAD42 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
+				D403DB201B61A5BD005BAD42 /* AdobeCreativeSDKCore.framework in Frameworks */,
+				D403DB211B61A5BD005BAD42 /* AdobeCreativeSDKMarketUX.framework in Frameworks */,
+				D4511A331B5EF07200D23DCD /* libz.dylib in Frameworks */,
+				71132E0B19A7ADCC004CE143 /* MobileCoreServices.framework in Frameworks */,
+				717568651987F865008360B8 /* libc++.dylib in Frameworks */,
+				7175682E1987F4F8008360B8 /* CoreGraphics.framework in Frameworks */,
+				717568301987F4F8008360B8 /* UIKit.framework in Frameworks */,
+				7175682C1987F4F8008360B8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		717568401987F4F8008360B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				717568471987F4F8008360B8 /* UIKit.framework in Frameworks */,
+				717568461987F4F8008360B8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7175681F1987F4F8008360B8 = {
+			isa = PBXGroup;
+			children = (
+				D403DB2A1B61A626005BAD42 /* AdobeCreativeSDKMarketUXResources.bundle */,
+				D403DB281B61A615005BAD42 /* AdobeCreativeSDKCoreResources.bundle */,
+				D403DB261B61A604005BAD42 /* AdobeCreativeSDKCommonUXResources.bundle */,
+				D403DB241B61A5E7005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle */,
+				D403DB221B61A5DB005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle */,
+				717568311987F4F8008360B8 /* MarketAssetBrowserDemo */,
+				7175684A1987F4F8008360B8 /* MarketAssetBrowserDemoTests */,
+				7175682A1987F4F8008360B8 /* Frameworks */,
+				717568291987F4F8008360B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		717568291987F4F8008360B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				717568281987F4F8008360B8 /* MarketAssetBrowserDemo.app */,
+				717568431987F4F8008360B8 /* MarketAssetBrowserDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7175682A1987F4F8008360B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D403DB181B61A5BD005BAD42 /* AdobeCreativeSDKAssetModel.framework */,
+				D403DB191B61A5BD005BAD42 /* AdobeCreativeSDKAssetUX.framework */,
+				D403DB1A1B61A5BD005BAD42 /* AdobeCreativeSDKCommonUX.framework */,
+				D403DB1B1B61A5BD005BAD42 /* AdobeCreativeSDKCore.framework */,
+				D403DB1C1B61A5BD005BAD42 /* AdobeCreativeSDKMarketUX.framework */,
+				D4511A321B5EF07200D23DCD /* libz.dylib */,
+				71132E0A19A7ADCC004CE143 /* MobileCoreServices.framework */,
+				717568641987F865008360B8 /* libc++.dylib */,
+				7175682B1987F4F8008360B8 /* Foundation.framework */,
+				7175682D1987F4F8008360B8 /* CoreGraphics.framework */,
+				7175682F1987F4F8008360B8 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		717568311987F4F8008360B8 /* MarketAssetBrowserDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7175683A1987F4F8008360B8 /* RKCAppDelegate.h */,
+				7175683B1987F4F8008360B8 /* RKCAppDelegate.m */,
+				7175683D1987F4F8008360B8 /* Images.xcassets */,
+				717568321987F4F8008360B8 /* Supporting Files */,
+				7175685A1987F5F5008360B8 /* RKCViewController.h */,
+				7175685B1987F5F5008360B8 /* RKCViewController.m */,
+				7175685D1987F610008360B8 /* RKCView.h */,
+				7175685E1987F610008360B8 /* RKCView.m */,
+			);
+			path = MarketAssetBrowserDemo;
+			sourceTree = "<group>";
+		};
+		717568321987F4F8008360B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				717568331987F4F8008360B8 /* MarketAssetBrowserDemo-Info.plist */,
+				717568341987F4F8008360B8 /* InfoPlist.strings */,
+				717568371987F4F8008360B8 /* main.m */,
+				717568391987F4F8008360B8 /* MarketAssetBrowserDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7175684A1987F4F8008360B8 /* MarketAssetBrowserDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				717568501987F4F8008360B8 /* MarketAssetBrowserDemoTests.m */,
+				7175684B1987F4F8008360B8 /* Supporting Files */,
+			);
+			path = MarketAssetBrowserDemoTests;
+			sourceTree = "<group>";
+		};
+		7175684B1987F4F8008360B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7175684C1987F4F8008360B8 /* MarketAssetBrowserDemoTests-Info.plist */,
+				7175684D1987F4F8008360B8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		717568271987F4F8008360B8 /* MarketAssetBrowserDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 717568541987F4F8008360B8 /* Build configuration list for PBXNativeTarget "MarketAssetBrowserDemo" */;
+			buildPhases = (
+				717568241987F4F8008360B8 /* Sources */,
+				717568251987F4F8008360B8 /* Frameworks */,
+				717568261987F4F8008360B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarketAssetBrowserDemo;
+			productName = MarketAssetBrowserDemo;
+			productReference = 717568281987F4F8008360B8 /* MarketAssetBrowserDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		717568421987F4F8008360B8 /* MarketAssetBrowserDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 717568571987F4F8008360B8 /* Build configuration list for PBXNativeTarget "MarketAssetBrowserDemoTests" */;
+			buildPhases = (
+				7175683F1987F4F8008360B8 /* Sources */,
+				717568401987F4F8008360B8 /* Frameworks */,
+				717568411987F4F8008360B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				717568491987F4F8008360B8 /* PBXTargetDependency */,
+			);
+			name = MarketAssetBrowserDemoTests;
+			productName = MarketAssetBrowserDemoTests;
+			productReference = 717568431987F4F8008360B8 /* MarketAssetBrowserDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		717568201987F4F8008360B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RKC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Adobe;
+				TargetAttributes = {
+					717568421987F4F8008360B8 = {
+						TestTargetID = 717568271987F4F8008360B8;
+					};
+				};
+			};
+			buildConfigurationList = 717568231987F4F8008360B8 /* Build configuration list for PBXProject "MarketAssetBrowserDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7175681F1987F4F8008360B8;
+			productRefGroup = 717568291987F4F8008360B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				717568271987F4F8008360B8 /* MarketAssetBrowserDemo */,
+				717568421987F4F8008360B8 /* MarketAssetBrowserDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		717568261987F4F8008360B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D403DB2B1B61A626005BAD42 /* AdobeCreativeSDKMarketUXResources.bundle in Resources */,
+				D403DB291B61A615005BAD42 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
+				D403DB271B61A604005BAD42 /* AdobeCreativeSDKCommonUXResources.bundle in Resources */,
+				D403DB251B61A5E7005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle in Resources */,
+				D403DB231B61A5DB005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle in Resources */,
+				717568361987F4F8008360B8 /* InfoPlist.strings in Resources */,
+				7175683E1987F4F8008360B8 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		717568411987F4F8008360B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7175684F1987F4F8008360B8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		717568241987F4F8008360B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				717568381987F4F8008360B8 /* main.m in Sources */,
+				7175685C1987F5F5008360B8 /* RKCViewController.m in Sources */,
+				7175683C1987F4F8008360B8 /* RKCAppDelegate.m in Sources */,
+				7175685F1987F610008360B8 /* RKCView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7175683F1987F4F8008360B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				717568511987F4F8008360B8 /* MarketAssetBrowserDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		717568491987F4F8008360B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 717568271987F4F8008360B8 /* MarketAssetBrowserDemo */;
+			targetProxy = 717568481987F4F8008360B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		717568341987F4F8008360B8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				717568351987F4F8008360B8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7175684D1987F4F8008360B8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7175684E1987F4F8008360B8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		717568521987F4F8008360B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		717568531987F4F8008360B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		717568551987F4F8008360B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					../../AdobeCreativeSDKFrameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarketAssetBrowserDemo/MarketAssetBrowserDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					USE_CSDK_COMPONENTS,
+				);
+				INFOPLIST_FILE = "MarketAssetBrowserDemo/MarketAssetBrowserDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		717568561987F4F8008360B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					../../AdobeCreativeSDKFrameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarketAssetBrowserDemo/MarketAssetBrowserDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = USE_CSDK_COMPONENTS;
+				INFOPLIST_FILE = "MarketAssetBrowserDemo/MarketAssetBrowserDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		717568581987F4F8008360B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MarketAssetBrowserDemo.app/MarketAssetBrowserDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarketAssetBrowserDemo/MarketAssetBrowserDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MarketAssetBrowserDemoTests/MarketAssetBrowserDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		717568591987F4F8008360B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MarketAssetBrowserDemo.app/MarketAssetBrowserDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarketAssetBrowserDemo/MarketAssetBrowserDemo-Prefix.pch";
+				INFOPLIST_FILE = "MarketAssetBrowserDemoTests/MarketAssetBrowserDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		717568231987F4F8008360B8 /* Build configuration list for PBXProject "MarketAssetBrowserDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				717568521987F4F8008360B8 /* Debug */,
+				717568531987F4F8008360B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		717568541987F4F8008360B8 /* Build configuration list for PBXNativeTarget "MarketAssetBrowserDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				717568551987F4F8008360B8 /* Debug */,
+				717568561987F4F8008360B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		717568571987F4F8008360B8 /* Build configuration list for PBXNativeTarget "MarketAssetBrowserDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				717568581987F4F8008360B8 /* Debug */,
+				717568591987F4F8008360B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 717568201987F4F8008360B8 /* Project object */;
+}

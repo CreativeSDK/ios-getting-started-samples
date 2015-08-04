@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		71936246191AB50B008B30BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71936245191AB50B008B30BA /* Foundation.framework */; };
+		71936248191AB50B008B30BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71936247191AB50B008B30BA /* CoreGraphics.framework */; };
+		7193624A191AB50B008B30BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71936249191AB50B008B30BA /* UIKit.framework */; };
+		71936250191AB50B008B30BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7193624E191AB50B008B30BA /* InfoPlist.strings */; };
+		71936252191AB50B008B30BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71936251191AB50B008B30BA /* main.m */; };
+		71936256191AB50B008B30BA /* RKCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71936255191AB50B008B30BA /* RKCAppDelegate.m */; };
+		71936258191AB50B008B30BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71936257191AB50B008B30BA /* Images.xcassets */; };
+		71936260191AB50B008B30BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71936245191AB50B008B30BA /* Foundation.framework */; };
+		71936261191AB50B008B30BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71936249191AB50B008B30BA /* UIKit.framework */; };
+		71936269191AB50B008B30BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71936267191AB50B008B30BA /* InfoPlist.strings */; };
+		7193626B191AB50B008B30BA /* TestFilesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7193626A191AB50B008B30BA /* TestFilesTests.m */; };
+		7193627A191AD110008B30BA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71936279191AD110008B30BA /* CoreMotion.framework */; };
+		7193627C191AD11A008B30BA /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7193627B191AD11A008B30BA /* CoreBluetooth.framework */; };
+		71936280191AD142008B30BA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7193627F191AD142008B30BA /* MobileCoreServices.framework */; };
+		71936282191AD149008B30BA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71936281191AD149008B30BA /* Security.framework */; };
+		71936284191AD150008B30BA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71936283191AD150008B30BA /* SystemConfiguration.framework */; };
+		7193628B191ADBEF008B30BA /* RKCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7193628A191ADBEF008B30BA /* RKCViewController.m */; };
+		7193628E191ADC10008B30BA /* RKCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7193628D191ADC10008B30BA /* RKCView.m */; };
+		D403DAC41B616C46005BAD42 /* AdobeCreativeSDKAssetModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403DAC31B616C46005BAD42 /* AdobeCreativeSDKAssetModel.framework */; };
+		D403DAC61B616C46005BAD42 /* AdobeCreativeSDKAssetUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403DAC51B616C46005BAD42 /* AdobeCreativeSDKAssetUX.framework */; };
+		D403DAC81B616C59005BAD42 /* AdobeCreativeSDKCommonUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403DAC71B616C59005BAD42 /* AdobeCreativeSDKCommonUX.framework */; };
+		D403DACA1B616C67005BAD42 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D403DAC91B616C67005BAD42 /* AdobeCreativeSDKCore.framework */; };
+		D403DACC1B616C82005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D403DACB1B616C82005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle */; };
+		D403DACE1B616C90005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D403DACD1B616C90005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle */; };
+		D403DAD01B616CA7005BAD42 /* AdobeCreativeSDKColorComponentResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D403DACF1B616CA7005BAD42 /* AdobeCreativeSDKColorComponentResources.bundle */; };
+		D403DAD21B616CB8005BAD42 /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D403DAD11B616CB8005BAD42 /* AdobeCreativeSDKCoreResources.bundle */; };
+		D4511A101B5DB2C900D23DCD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D4511A0F1B5DB2C900D23DCD /* libz.dylib */; };
+		D4511A121B5DB2D400D23DCD /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D4511A111B5DB2D400D23DCD /* libc++.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71936262191AB50B008B30BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7193623A191AB50B008B30BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71936241191AB50B008B30BA;
+			remoteInfo = TestFiles;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		71936242191AB50B008B30BA /* TestFiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71936245191AB50B008B30BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		71936247191AB50B008B30BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		71936249191AB50B008B30BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7193624D191AB50B008B30BA /* TestFiles-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestFiles-Info.plist"; sourceTree = "<group>"; };
+		7193624F191AB50B008B30BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		71936251191AB50B008B30BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		71936253191AB50B008B30BA /* TestFiles-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestFiles-Prefix.pch"; sourceTree = "<group>"; };
+		71936254191AB50B008B30BA /* RKCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKCAppDelegate.h; sourceTree = "<group>"; };
+		71936255191AB50B008B30BA /* RKCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKCAppDelegate.m; sourceTree = "<group>"; };
+		71936257191AB50B008B30BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7193625D191AB50B008B30BA /* TestFilesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestFilesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71936266191AB50B008B30BA /* TestFilesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestFilesTests-Info.plist"; sourceTree = "<group>"; };
+		71936268191AB50B008B30BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7193626A191AB50B008B30BA /* TestFilesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestFilesTests.m; sourceTree = "<group>"; };
+		71936279191AD110008B30BA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		7193627B191AD11A008B30BA /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		7193627D191AD13B008B30BA /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		7193627F191AD142008B30BA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		71936281191AD149008B30BA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		71936283191AD150008B30BA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		71936289191ADBEF008B30BA /* RKCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCViewController.h; sourceTree = "<group>"; };
+		7193628A191ADBEF008B30BA /* RKCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCViewController.m; sourceTree = "<group>"; };
+		7193628C191ADC10008B30BA /* RKCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCView.h; sourceTree = "<group>"; };
+		7193628D191ADC10008B30BA /* RKCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCView.m; sourceTree = "<group>"; };
+		D403DAC11B616C46005BAD42 /* AdobeCreativeSDKFrameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AdobeCreativeSDKFrameworks; path = ../../../AdobeCreativeSDKFrameworks; sourceTree = "<group>"; };
+		D403DAC31B616C46005BAD42 /* AdobeCreativeSDKAssetModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetModel.framework; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetModel.framework; sourceTree = "<group>"; };
+		D403DAC51B616C46005BAD42 /* AdobeCreativeSDKAssetUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetUX.framework; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetUX.framework; sourceTree = "<group>"; };
+		D403DAC71B616C59005BAD42 /* AdobeCreativeSDKCommonUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCommonUX.framework; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework; sourceTree = "<group>"; };
+		D403DAC91B616C67005BAD42 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		D403DACB1B616C82005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKAssetModelResources.bundle; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetModel.framework/Versions/A/Resources/AdobeCreativeSDKAssetModelResources.bundle; sourceTree = "<group>"; };
+		D403DACD1B616C90005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKAssetUXResources.bundle; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetUX.framework/Versions/A/Resources/AdobeCreativeSDKAssetUXResources.bundle; sourceTree = "<group>"; };
+		D403DACF1B616CA7005BAD42 /* AdobeCreativeSDKColorComponentResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKColorComponentResources.bundle; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKColorComponent.framework/Versions/A/Resources/AdobeCreativeSDKColorComponentResources.bundle; sourceTree = "<group>"; };
+		D403DAD11B616CB8005BAD42 /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
+		D4511A0F1B5DB2C900D23DCD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D4511A111B5DB2D400D23DCD /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7193623F191AB50B008B30BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D403DACA1B616C67005BAD42 /* AdobeCreativeSDKCore.framework in Frameworks */,
+				D403DAC81B616C59005BAD42 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
+				D403DAC61B616C46005BAD42 /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
+				D403DAC41B616C46005BAD42 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
+				D4511A121B5DB2D400D23DCD /* libc++.dylib in Frameworks */,
+				D4511A101B5DB2C900D23DCD /* libz.dylib in Frameworks */,
+				71936284191AD150008B30BA /* SystemConfiguration.framework in Frameworks */,
+				71936282191AD149008B30BA /* Security.framework in Frameworks */,
+				71936280191AD142008B30BA /* MobileCoreServices.framework in Frameworks */,
+				7193627C191AD11A008B30BA /* CoreBluetooth.framework in Frameworks */,
+				7193627A191AD110008B30BA /* CoreMotion.framework in Frameworks */,
+				71936248191AB50B008B30BA /* CoreGraphics.framework in Frameworks */,
+				7193624A191AB50B008B30BA /* UIKit.framework in Frameworks */,
+				71936246191AB50B008B30BA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7193625A191AB50B008B30BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71936261191AB50B008B30BA /* UIKit.framework in Frameworks */,
+				71936260191AB50B008B30BA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		71936239191AB50B008B30BA = {
+			isa = PBXGroup;
+			children = (
+				D403DAD11B616CB8005BAD42 /* AdobeCreativeSDKCoreResources.bundle */,
+				D403DACF1B616CA7005BAD42 /* AdobeCreativeSDKColorComponentResources.bundle */,
+				D403DACD1B616C90005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle */,
+				D403DACB1B616C82005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle */,
+				7193624B191AB50B008B30BA /* TestFiles */,
+				71936264191AB50B008B30BA /* TestFilesTests */,
+				71936244191AB50B008B30BA /* Frameworks */,
+				71936243191AB50B008B30BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		71936243191AB50B008B30BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71936242191AB50B008B30BA /* TestFiles.app */,
+				7193625D191AB50B008B30BA /* TestFilesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71936244191AB50B008B30BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D403DAC91B616C67005BAD42 /* AdobeCreativeSDKCore.framework */,
+				D403DAC71B616C59005BAD42 /* AdobeCreativeSDKCommonUX.framework */,
+				D403DAC51B616C46005BAD42 /* AdobeCreativeSDKAssetUX.framework */,
+				D403DAC31B616C46005BAD42 /* AdobeCreativeSDKAssetModel.framework */,
+				D403DAC11B616C46005BAD42 /* AdobeCreativeSDKFrameworks */,
+				D4511A111B5DB2D400D23DCD /* libc++.dylib */,
+				D4511A0F1B5DB2C900D23DCD /* libz.dylib */,
+				71936283191AD150008B30BA /* SystemConfiguration.framework */,
+				71936281191AD149008B30BA /* Security.framework */,
+				7193627F191AD142008B30BA /* MobileCoreServices.framework */,
+				7193627D191AD13B008B30BA /* libstdc++.dylib */,
+				7193627B191AD11A008B30BA /* CoreBluetooth.framework */,
+				71936279191AD110008B30BA /* CoreMotion.framework */,
+				71936245191AB50B008B30BA /* Foundation.framework */,
+				71936247191AB50B008B30BA /* CoreGraphics.framework */,
+				71936249191AB50B008B30BA /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7193624B191AB50B008B30BA /* TestFiles */ = {
+			isa = PBXGroup;
+			children = (
+				71936254191AB50B008B30BA /* RKCAppDelegate.h */,
+				71936255191AB50B008B30BA /* RKCAppDelegate.m */,
+				71936289191ADBEF008B30BA /* RKCViewController.h */,
+				7193628A191ADBEF008B30BA /* RKCViewController.m */,
+				7193628C191ADC10008B30BA /* RKCView.h */,
+				7193628D191ADC10008B30BA /* RKCView.m */,
+				71936257191AB50B008B30BA /* Images.xcassets */,
+				7193624C191AB50B008B30BA /* Supporting Files */,
+			);
+			path = TestFiles;
+			sourceTree = "<group>";
+		};
+		7193624C191AB50B008B30BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7193624D191AB50B008B30BA /* TestFiles-Info.plist */,
+				7193624E191AB50B008B30BA /* InfoPlist.strings */,
+				71936251191AB50B008B30BA /* main.m */,
+				71936253191AB50B008B30BA /* TestFiles-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		71936264191AB50B008B30BA /* TestFilesTests */ = {
+			isa = PBXGroup;
+			children = (
+				7193626A191AB50B008B30BA /* TestFilesTests.m */,
+				71936265191AB50B008B30BA /* Supporting Files */,
+			);
+			path = TestFilesTests;
+			sourceTree = "<group>";
+		};
+		71936265191AB50B008B30BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				71936266191AB50B008B30BA /* TestFilesTests-Info.plist */,
+				71936267191AB50B008B30BA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		71936241191AB50B008B30BA /* TestFiles */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7193626E191AB50B008B30BA /* Build configuration list for PBXNativeTarget "TestFiles" */;
+			buildPhases = (
+				7193623E191AB50B008B30BA /* Sources */,
+				7193623F191AB50B008B30BA /* Frameworks */,
+				71936240191AB50B008B30BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestFiles;
+			productName = TestFiles;
+			productReference = 71936242191AB50B008B30BA /* TestFiles.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7193625C191AB50B008B30BA /* TestFilesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71936271191AB50B008B30BA /* Build configuration list for PBXNativeTarget "TestFilesTests" */;
+			buildPhases = (
+				71936259191AB50B008B30BA /* Sources */,
+				7193625A191AB50B008B30BA /* Frameworks */,
+				7193625B191AB50B008B30BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71936263191AB50B008B30BA /* PBXTargetDependency */,
+			);
+			name = TestFilesTests;
+			productName = TestFilesTests;
+			productReference = 7193625D191AB50B008B30BA /* TestFilesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7193623A191AB50B008B30BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RKC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Adobe;
+				TargetAttributes = {
+					7193625C191AB50B008B30BA = {
+						TestTargetID = 71936241191AB50B008B30BA;
+					};
+				};
+			};
+			buildConfigurationList = 7193623D191AB50B008B30BA /* Build configuration list for PBXProject "TestFiles" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 71936239191AB50B008B30BA;
+			productRefGroup = 71936243191AB50B008B30BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				71936241191AB50B008B30BA /* TestFiles */,
+				7193625C191AB50B008B30BA /* TestFilesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		71936240191AB50B008B30BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D403DAD21B616CB8005BAD42 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
+				D403DAD01B616CA7005BAD42 /* AdobeCreativeSDKColorComponentResources.bundle in Resources */,
+				D403DACE1B616C90005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle in Resources */,
+				D403DACC1B616C82005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle in Resources */,
+				71936250191AB50B008B30BA /* InfoPlist.strings in Resources */,
+				71936258191AB50B008B30BA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7193625B191AB50B008B30BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71936269191AB50B008B30BA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7193623E191AB50B008B30BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71936252191AB50B008B30BA /* main.m in Sources */,
+				7193628B191ADBEF008B30BA /* RKCViewController.m in Sources */,
+				71936256191AB50B008B30BA /* RKCAppDelegate.m in Sources */,
+				7193628E191ADC10008B30BA /* RKCView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71936259191AB50B008B30BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7193626B191AB50B008B30BA /* TestFilesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71936263191AB50B008B30BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71936241191AB50B008B30BA /* TestFiles */;
+			targetProxy = 71936262191AB50B008B30BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7193624E191AB50B008B30BA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7193624F191AB50B008B30BA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		71936267191AB50B008B30BA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71936268191AB50B008B30BA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7193626C191AB50B008B30BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7193626D191AB50B008B30BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7193626F191AB50B008B30BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					../../../AdobeCreativeSDKFrameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestFiles/TestFiles-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					USE_CSDK_COMPONENTS,
+				);
+				INFOPLIST_FILE = "TestFiles/TestFiles-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		71936270191AB50B008B30BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					../../../AdobeCreativeSDKFrameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestFiles/TestFiles-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = USE_CSDK_COMPONENTS;
+				INFOPLIST_FILE = "TestFiles/TestFiles-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		71936272191AB50B008B30BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TestFiles.app/TestFiles";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestFiles/TestFiles-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TestFilesTests/TestFilesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		71936273191AB50B008B30BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TestFiles.app/TestFiles";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestFiles/TestFiles-Prefix.pch";
+				INFOPLIST_FILE = "TestFilesTests/TestFilesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7193623D191AB50B008B30BA /* Build configuration list for PBXProject "TestFiles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7193626C191AB50B008B30BA /* Debug */,
+				7193626D191AB50B008B30BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7193626E191AB50B008B30BA /* Build configuration list for PBXNativeTarget "TestFiles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7193626F191AB50B008B30BA /* Debug */,
+				71936270191AB50B008B30BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71936271191AB50B008B30BA /* Build configuration list for PBXNativeTarget "TestFilesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71936272191AB50B008B30BA /* Debug */,
+				71936273191AB50B008B30BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7193623A191AB50B008B30BA /* Project object */;
+}
