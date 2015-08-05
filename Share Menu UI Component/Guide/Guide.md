@@ -1,13 +1,8 @@
 # Share Menu UI Component
 
-While the Creative SDK provides access to multiple features related to Creative Cloud products, sometimes a user needs to work on a file on his own machine. The Creative SDK provides a simple way for your mobile users to directly open assets on their desktop machines from the application itself. In this guide, we look at how this is done and how you can connect your mobile application to the full power of Creative Cloud on the desktop.
+While the Creative SDK provides access to multiple features related to Creative Cloud products, sometimes a user needs to use other features or services that are not available on their device. The Share Menu UI in Creative SDK provides a simple way for your mobile users to do some common tasks in their workflow, such as publishing a file to Behance for feedback, or opening it on their Creative Cloud conncected computer right from the mobile device. In this guide, we'll look at how this is done and how you can connect your mobile application to the full power of Creative Cloud seamlessly using the Share Menu UI.
 
-There are two ways to send data to a desktop application:
-
-+ Directly from your code, based on a user action, like a click on your own Share button.
-+ Using a Share menu UI control that ships with the SDK. The example in this guide uses this.
-
-You can specify which application to open with the shared data. Three applications support this feature: Photoshop, Illustrator, and InDesign.
+You can find more information about opening a file on a user's desktop directly from you app without using Share Menu UI in the <a href="/articles/sendtodesktop/index.html">Send To Desktop API</a> guide.
 
 ## Contents
 
@@ -53,6 +48,10 @@ Here is the file on the Behance site:
 This option copies an image to the Creative Cloud. No feedback is provided in the application, but you can provided your own feedback by listening for the event that occurs when the share is complete. (More on the events momentarily.) The image appears in the user's Creative Cloud **Recent** folder:
 
 <img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/sharemenu/copy_test.png" />
+
+### Send To Photoshop and Send To Illustrator
+
+As you would expect, "Send to Photoshop" and "Send to Illustrator" will send the asset to the user's Creative Cloud connected machine and open it in the corresponding application. 
 
 ### Share
 
