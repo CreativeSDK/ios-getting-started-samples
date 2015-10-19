@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "88C6D4A93BA93F2FBF44D3E1B3C1817F1C088850",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "88C6D4A93BA93F2FBF44D3E1B3C1817F1C088850" : 0,
+    "B0C49F86ADD1AB5C9DCE7984E672B5EE4E445B7D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EDB5DCAE-5A6B-460C-90A7-07A074343335",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "88C6D4A93BA93F2FBF44D3E1B3C1817F1C088850" : "CreativeSDKSampleApps\/",
+    "B0C49F86ADD1AB5C9DCE7984E672B5EE4E445B7D" : "CreativeSDKLabs\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MagicCropper",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MagicCropper\/MagicCropper.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.corp.adobe.com:CreativeSDK\/CreativeSDKSampleApps.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "88C6D4A93BA93F2FBF44D3E1B3C1817F1C088850"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.corp.adobe.com:CreativeSDK\/CreativeSDKLabs.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B0C49F86ADD1AB5C9DCE7984E672B5EE4E445B7D"
+    }
+  ]
+}
