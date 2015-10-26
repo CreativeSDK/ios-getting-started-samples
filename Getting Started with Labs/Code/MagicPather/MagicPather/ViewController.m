@@ -33,7 +33,7 @@
 #define CC_CLIENT_ID                  @"CHANGE_ME_CLIENT_ID"
 #define CC_CLIENT_SECRET              @"CHANGE_ME_CLIENT_SECRET"
 
-@interface ViewContropeller ()
+@interface ViewController ()
 
 @end
 
