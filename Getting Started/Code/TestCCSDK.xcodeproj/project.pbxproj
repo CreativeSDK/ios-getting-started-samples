@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ED899F61BDFF0AD004525DD /* AdobeCreativeSDKCommonUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ED899F51BDFF0AD004525DD /* AdobeCreativeSDKCommonUX.framework */; };
+		4ED899F81BDFF0B7004525DD /* AdobeCreativeSDKCommonUXResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4ED899F71BDFF0B7004525DD /* AdobeCreativeSDKCommonUXResources.bundle */; };
 		71859F4318EB43D0005E1285 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71859F4118EB43D0005E1285 /* InfoPlist.strings */; };
 		71859F4518EB43D0005E1285 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71859F4418EB43D0005E1285 /* main.m */; };
 		71859F4918EB43D0005E1285 /* RKCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71859F4818EB43D0005E1285 /* RKCAppDelegate.m */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4ED899F51BDFF0AD004525DD /* AdobeCreativeSDKCommonUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCommonUX.framework; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework; sourceTree = "<group>"; };
+		4ED899F71BDFF0B7004525DD /* AdobeCreativeSDKCommonUXResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCommonUXResources.bundle; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework/Versions/A/Resources/AdobeCreativeSDKCommonUXResources.bundle; sourceTree = "<group>"; };
 		71859F3518EB43D0005E1285 /* TestCCSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCCSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71859F3818EB43D0005E1285 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71859F3A18EB43D0005E1285 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,6 +84,7 @@
 				D403DAF51B618E22005BAD42 /* AdobeCreativeSDKCore.framework in Frameworks */,
 				D4511A291B5EB9EA00D23DCD /* libc++.dylib in Frameworks */,
 				D4511A271B5EB9DC00D23DCD /* libz.dylib in Frameworks */,
+				4ED899F61BDFF0AD004525DD /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
 				71859F7618EB58B9005E1285 /* SystemConfiguration.framework in Frameworks */,
 				71859F7218EB58A9005E1285 /* MobileCoreServices.framework in Frameworks */,
 			);
@@ -97,11 +102,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		71859F2C18EB43D0005E1285 = {
+		4ED899F31BDFF02D004525DD /* Creative SDK Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D403DAF31B618E22005BAD42 /* AdobeCreativeSDKCore.framework */,
+				4ED899F51BDFF0AD004525DD /* AdobeCreativeSDKCommonUX.framework */,
+				D403DAF21B618E22005BAD42 /* AdobeCreativeSDKAssetModel.framework */,
+			);
+			name = "Creative SDK Frameworks";
+			sourceTree = "<group>";
+		};
+		4ED899F41BDFF048004525DD /* Creative SDK Bundles */ = {
 			isa = PBXGroup;
 			children = (
 				D403DAF81B618E4F005BAD42 /* AdobeCreativeSDKCoreResources.bundle */,
+				4ED899F71BDFF0B7004525DD /* AdobeCreativeSDKCommonUXResources.bundle */,
 				D403DAF61B618E3E005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle */,
+			);
+			name = "Creative SDK Bundles";
+			sourceTree = "<group>";
+		};
+		71859F2C18EB43D0005E1285 = {
+			isa = PBXGroup;
+			children = (
 				71859F3E18EB43D0005E1285 /* TestCCSDK */,
 				71859F5718EB43D0005E1285 /* TestCCSDKTests */,
 				71859F3718EB43D0005E1285 /* Frameworks */,
@@ -121,19 +144,19 @@
 		71859F3718EB43D0005E1285 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D403DAF21B618E22005BAD42 /* AdobeCreativeSDKAssetModel.framework */,
-				D403DAF31B618E22005BAD42 /* AdobeCreativeSDKCore.framework */,
-				D4511A281B5EB9EA00D23DCD /* libc++.dylib */,
-				D4511A261B5EB9DC00D23DCD /* libz.dylib */,
+				4ED899F31BDFF02D004525DD /* Creative SDK Frameworks */,
+				4ED899F41BDFF048004525DD /* Creative SDK Bundles */,
 				71859F7518EB58B9005E1285 /* SystemConfiguration.framework */,
 				71859F7318EB58B2005E1285 /* Security.framework */,
 				71859F7118EB58A9005E1285 /* MobileCoreServices.framework */,
-				71859F6F18EB58A0005E1285 /* libstdc++.dylib */,
 				71859F6D18EB5894005E1285 /* CoreBluetooth.framework */,
 				71859F6B18EB588C005E1285 /* CoreMotion.framework */,
 				71859F3818EB43D0005E1285 /* Foundation.framework */,
 				71859F3A18EB43D0005E1285 /* CoreGraphics.framework */,
 				71859F3C18EB43D0005E1285 /* UIKit.framework */,
+				D4511A281B5EB9EA00D23DCD /* libc++.dylib */,
+				71859F6F18EB58A0005E1285 /* libstdc++.dylib */,
+				D4511A261B5EB9DC00D23DCD /* libz.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,6 +283,7 @@
 			files = (
 				D403DAF91B618E4F005BAD42 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
 				D403DAF71B618E3E005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle in Resources */,
+				4ED899F81BDFF0B7004525DD /* AdobeCreativeSDKCommonUXResources.bundle in Resources */,
 				71859F4318EB43D0005E1285 /* InfoPlist.strings in Resources */,
 				71859F4B18EB43D0005E1285 /* Images.xcassets in Resources */,
 			);
@@ -400,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -413,6 +438,7 @@
 					USE_CSDK_COMPONENTS,
 				);
 				INFOPLIST_FILE = "TestCCSDK/TestCCSDK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -433,6 +459,7 @@
 				GCC_PREFIX_HEADER = "TestCCSDK/TestCCSDK-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = USE_CSDK_COMPONENTS;
 				INFOPLIST_FILE = "TestCCSDK/TestCCSDK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
