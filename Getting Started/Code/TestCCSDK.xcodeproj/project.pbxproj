@@ -440,6 +440,7 @@
 				INFOPLIST_FILE = "TestCCSDK/TestCCSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.samples.TestCCSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -461,6 +462,7 @@
 				INFOPLIST_FILE = "TestCCSDK/TestCCSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.samples.TestCCSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
