@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "75AFDD048D01C2543DCC47F2E9EA20D45E6785EA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "75AFDD048D01C2543DCC47F2E9EA20D45E6785EA" : 0,
+    "690F7258AB881125C10F9D704C4CCC1872E93A78" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A5362F55-66D9-4547-9C0C-4737E7F0434D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "75AFDD048D01C2543DCC47F2E9EA20D45E6785EA" : "ios-getting-started-samples\/",
+    "690F7258AB881125C10F9D704C4CCC1872E93A78" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TestFiles",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Asset Browser UI Component\/Code\/AssetBrowser\/TestFiles.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.corp.adobe.com:Eco\/CreativeSDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "690F7258AB881125C10F9D704C4CCC1872E93A78"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CreativeSDK\/ios-getting-started-samples.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "75AFDD048D01C2543DCC47F2E9EA20D45E6785EA"
+    }
+  ]
+}

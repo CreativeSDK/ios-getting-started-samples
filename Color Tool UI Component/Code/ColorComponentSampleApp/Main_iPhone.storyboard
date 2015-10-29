@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geT-aU-vfM">
+                                <rect key="frame" x="91" y="39" width="139" height="30"/>
+                                <state key="normal" title="Launch Color Picker">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="launchColorPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aLU-6n-xdn"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebl-J4-tZZ">
+                                <rect key="frame" x="0.0" y="83" width="320" height="385"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntE-OB-RcZ">
+                                <rect key="frame" x="59" y="495" width="202" height="30"/>
+                                <state key="normal" title="Log in / out of Creative Cloud">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutOfCreativeCloud:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9ng-Mw-zGq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ebl-J4-tZZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="69V-vj-l53"/>
+                            <constraint firstItem="ebl-J4-tZZ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="63" id="A5o-9Z-b2b"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ntE-OB-RcZ" secondAttribute="bottom" constant="43" id="E7v-L4-6QV"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ebl-J4-tZZ" secondAttribute="bottom" constant="100" id="RSS-yW-vyi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ebl-J4-tZZ" secondAttribute="trailing" constant="-16" id="Vay-LM-mde"/>
+                            <constraint firstAttribute="centerX" secondItem="ntE-OB-RcZ" secondAttribute="centerX" constant="-0.5" id="X0O-hF-by9"/>
+                            <constraint firstAttribute="centerX" secondItem="geT-aU-vfM" secondAttribute="centerX" constant="-0.5" id="b7j-rK-EBh"/>
+                            <constraint firstItem="geT-aU-vfM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="19" id="hBJ-JA-3cI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorView" destination="ebl-J4-tZZ" id="hMK-Dg-rHj"/>
+                        <outlet property="launchColorPickerButton" destination="geT-aU-vfM" id="COU-3S-xKo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

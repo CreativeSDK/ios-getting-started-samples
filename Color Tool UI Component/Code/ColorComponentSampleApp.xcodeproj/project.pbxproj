@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E59B8781BC3FCA40039BEC6 /* AdobeCreativeSDKCommonUXResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E59B8771BC3FCA40039BEC6 /* AdobeCreativeSDKCommonUXResources.bundle */; };
+		D41785A41AB792B000244CE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D41785A31AB792B000244CE0 /* main.m */; };
+		D41785A71AB792B000244CE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D41785A61AB792B000244CE0 /* AppDelegate.m */; };
+		D41785AA1AB792B100244CE0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41785A91AB792B100244CE0 /* ViewController.m */; };
+		D41785AF1AB792B100244CE0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D41785AE1AB792B100244CE0 /* Images.xcassets */; };
+		D41785BE1AB792B100244CE0 /* ColorComponentSampleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D41785BD1AB792B100244CE0 /* ColorComponentSampleAppTests.m */; };
+		D41785C91AB792E100244CE0 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41785C71AB792E100244CE0 /* Main_iPhone.storyboard */; };
+		D41785CA1AB792E100244CE0 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41785C81AB792E100244CE0 /* Main_iPad.storyboard */; };
+		D41785DC1AB796B400244CE0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41785DB1AB796B400244CE0 /* UIKit.framework */; };
+		D41785DE1AB796C700244CE0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41785DD1AB796C700244CE0 /* SystemConfiguration.framework */; };
+		D41785E01AB796D100244CE0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41785DF1AB796D100244CE0 /* Security.framework */; };
+		D41785E21AB796DE00244CE0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41785E11AB796DE00244CE0 /* MobileCoreServices.framework */; };
+		D46FD8FD1BE0380E006A8F85 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D46FD8FC1BE0380E006A8F85 /* libc++.tbd */; };
+		D46FD8FF1BE03855006A8F85 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D46FD8FE1BE03855006A8F85 /* libsqlite3.0.tbd */; };
+		D46FD9011BE0385C006A8F85 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D46FD9001BE0385C006A8F85 /* libz.tbd */; };
+		D46FD9061BE038DF006A8F85 /* AdobeCreativeSDKAssetModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46FD9021BE038DF006A8F85 /* AdobeCreativeSDKAssetModel.framework */; };
+		D46FD9071BE038DF006A8F85 /* AdobeCreativeSDKColorComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46FD9031BE038DF006A8F85 /* AdobeCreativeSDKColorComponent.framework */; };
+		D46FD9081BE038DF006A8F85 /* AdobeCreativeSDKCommonUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46FD9041BE038DF006A8F85 /* AdobeCreativeSDKCommonUX.framework */; };
+		D46FD9091BE038DF006A8F85 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46FD9051BE038DF006A8F85 /* AdobeCreativeSDKCore.framework */; };
+		D46FD90B1BE03955006A8F85 /* AdobeCreativeSDKColorComponentResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D46FD90A1BE03955006A8F85 /* AdobeCreativeSDKColorComponentResources.bundle */; };
+		D46FD90D1BE0397C006A8F85 /* AdobeCreativeSDKAssetModelResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D46FD90C1BE0397C006A8F85 /* AdobeCreativeSDKAssetModelResources.bundle */; };
+		D46FD90F1BE0399D006A8F85 /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D46FD90E1BE0399D006A8F85 /* AdobeCreativeSDKCoreResources.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D41785B81AB792B100244CE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41785961AB792B000244CE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D417859D1AB792B000244CE0;
+			remoteInfo = ColorComponentSampleApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4E59B8771BC3FCA40039BEC6 /* AdobeCreativeSDKCommonUXResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCommonUXResources.bundle; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework/Versions/A/Resources/AdobeCreativeSDKCommonUXResources.bundle; sourceTree = "<group>"; };
+		D417859E1AB792B000244CE0 /* ColorComponentSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorComponentSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41785A21AB792B000244CE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D41785A31AB792B000244CE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D41785A51AB792B000244CE0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D41785A61AB792B000244CE0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D41785A81AB792B100244CE0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D41785A91AB792B100244CE0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D41785AE1AB792B100244CE0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D41785B11AB792B100244CE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D41785B71AB792B100244CE0 /* ColorComponentSampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorComponentSampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41785BC1AB792B100244CE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D41785BD1AB792B100244CE0 /* ColorComponentSampleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorComponentSampleAppTests.m; sourceTree = "<group>"; };
+		D41785C71AB792E100244CE0 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		D41785C81AB792E100244CE0 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		D41785DB1AB796B400244CE0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D41785DD1AB796C700244CE0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D41785DF1AB796D100244CE0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D41785E11AB796DE00244CE0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D41785E31AB797EF00244CE0 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D46FD8FC1BE0380E006A8F85 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D46FD8FE1BE03855006A8F85 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		D46FD9001BE0385C006A8F85 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D46FD9021BE038DF006A8F85 /* AdobeCreativeSDKAssetModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetModel.framework; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetModel.framework; sourceTree = "<group>"; };
+		D46FD9031BE038DF006A8F85 /* AdobeCreativeSDKColorComponent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKColorComponent.framework; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKColorComponent.framework; sourceTree = "<group>"; };
+		D46FD9041BE038DF006A8F85 /* AdobeCreativeSDKCommonUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCommonUX.framework; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework; sourceTree = "<group>"; };
+		D46FD9051BE038DF006A8F85 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		D46FD90A1BE03955006A8F85 /* AdobeCreativeSDKColorComponentResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKColorComponentResources.bundle; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKColorComponent.framework/Versions/A/Resources/AdobeCreativeSDKColorComponentResources.bundle; sourceTree = "<group>"; };
+		D46FD90C1BE0397C006A8F85 /* AdobeCreativeSDKAssetModelResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKAssetModelResources.bundle; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetModel.framework/Versions/A/Resources/AdobeCreativeSDKAssetModelResources.bundle; sourceTree = "<group>"; };
+		D46FD90E1BE0399D006A8F85 /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D417859B1AB792B000244CE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46FD9061BE038DF006A8F85 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
+				D46FD9071BE038DF006A8F85 /* AdobeCreativeSDKColorComponent.framework in Frameworks */,
+				D46FD9081BE038DF006A8F85 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
+				D46FD9091BE038DF006A8F85 /* AdobeCreativeSDKCore.framework in Frameworks */,
+				D46FD9011BE0385C006A8F85 /* libz.tbd in Frameworks */,
+				D46FD8FF1BE03855006A8F85 /* libsqlite3.0.tbd in Frameworks */,
+				D46FD8FD1BE0380E006A8F85 /* libc++.tbd in Frameworks */,
+				D41785E21AB796DE00244CE0 /* MobileCoreServices.framework in Frameworks */,
+				D41785E01AB796D100244CE0 /* Security.framework in Frameworks */,
+				D41785DE1AB796C700244CE0 /* SystemConfiguration.framework in Frameworks */,
+				D41785DC1AB796B400244CE0 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D41785B41AB792B100244CE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78114D0D1AE81C81002653F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D46FD9021BE038DF006A8F85 /* AdobeCreativeSDKAssetModel.framework */,
+				D46FD9031BE038DF006A8F85 /* AdobeCreativeSDKColorComponent.framework */,
+				D46FD9041BE038DF006A8F85 /* AdobeCreativeSDKCommonUX.framework */,
+				D46FD9051BE038DF006A8F85 /* AdobeCreativeSDKCore.framework */,
+				D46FD9001BE0385C006A8F85 /* libz.tbd */,
+				D46FD8FE1BE03855006A8F85 /* libsqlite3.0.tbd */,
+				D46FD8FC1BE0380E006A8F85 /* libc++.tbd */,
+				D41785DB1AB796B400244CE0 /* UIKit.framework */,
+				D41785DD1AB796C700244CE0 /* SystemConfiguration.framework */,
+				D41785DF1AB796D100244CE0 /* Security.framework */,
+				D41785E11AB796DE00244CE0 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78114D0E1AE81CAD002653F9 /* Resource Bundles */ = {
+			isa = PBXGroup;
+			children = (
+				D46FD90E1BE0399D006A8F85 /* AdobeCreativeSDKCoreResources.bundle */,
+				D46FD90C1BE0397C006A8F85 /* AdobeCreativeSDKAssetModelResources.bundle */,
+				D46FD90A1BE03955006A8F85 /* AdobeCreativeSDKColorComponentResources.bundle */,
+				4E59B8771BC3FCA40039BEC6 /* AdobeCreativeSDKCommonUXResources.bundle */,
+			);
+			name = "Resource Bundles";
+			sourceTree = "<group>";
+		};
+		D41785951AB792B000244CE0 = {
+			isa = PBXGroup;
+			children = (
+				D41785A01AB792B000244CE0 /* ColorComponentSampleApp */,
+				D41785BA1AB792B100244CE0 /* ColorComponentSampleAppTests */,
+				D417859F1AB792B000244CE0 /* Products */,
+				78114D0D1AE81C81002653F9 /* Frameworks */,
+				78114D0E1AE81CAD002653F9 /* Resource Bundles */,
+			);
+			sourceTree = "<group>";
+		};
+		D417859F1AB792B000244CE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D417859E1AB792B000244CE0 /* ColorComponentSampleApp.app */,
+				D41785B71AB792B100244CE0 /* ColorComponentSampleAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D41785A01AB792B000244CE0 /* ColorComponentSampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				D41785A51AB792B000244CE0 /* AppDelegate.h */,
+				D41785A61AB792B000244CE0 /* AppDelegate.m */,
+				D41785A81AB792B100244CE0 /* ViewController.h */,
+				D41785A91AB792B100244CE0 /* ViewController.m */,
+				D41785C71AB792E100244CE0 /* Main_iPhone.storyboard */,
+				D41785C81AB792E100244CE0 /* Main_iPad.storyboard */,
+				D41785AE1AB792B100244CE0 /* Images.xcassets */,
+				D41785B01AB792B100244CE0 /* LaunchScreen.xib */,
+				D41785A11AB792B000244CE0 /* Supporting Files */,
+			);
+			path = ColorComponentSampleApp;
+			sourceTree = "<group>";
+		};
+		D41785A11AB792B000244CE0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D41785A21AB792B000244CE0 /* Info.plist */,
+				D41785A31AB792B000244CE0 /* main.m */,
+				D41785E31AB797EF00244CE0 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D41785BA1AB792B100244CE0 /* ColorComponentSampleAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D41785BD1AB792B100244CE0 /* ColorComponentSampleAppTests.m */,
+				D41785BB1AB792B100244CE0 /* Supporting Files */,
+			);
+			path = ColorComponentSampleAppTests;
+			sourceTree = "<group>";
+		};
+		D41785BB1AB792B100244CE0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D41785BC1AB792B100244CE0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D417859D1AB792B000244CE0 /* ColorComponentSampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D41785C11AB792B100244CE0 /* Build configuration list for PBXNativeTarget "ColorComponentSampleApp" */;
+			buildPhases = (
+				D417859A1AB792B000244CE0 /* Sources */,
+				D417859B1AB792B000244CE0 /* Frameworks */,
+				D417859C1AB792B000244CE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColorComponentSampleApp;
+			productName = ColorComponentSampleApp;
+			productReference = D417859E1AB792B000244CE0 /* ColorComponentSampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D41785B61AB792B100244CE0 /* ColorComponentSampleAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D41785C41AB792B100244CE0 /* Build configuration list for PBXNativeTarget "ColorComponentSampleAppTests" */;
+			buildPhases = (
+				D41785B31AB792B100244CE0 /* Sources */,
+				D41785B41AB792B100244CE0 /* Frameworks */,
+				D41785B51AB792B100244CE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D41785B91AB792B100244CE0 /* PBXTargetDependency */,
+			);
+			name = ColorComponentSampleAppTests;
+			productName = ColorComponentSampleAppTests;
+			productReference = D41785B71AB792B100244CE0 /* ColorComponentSampleAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41785961AB792B000244CE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Adobe;
+				TargetAttributes = {
+					D417859D1AB792B000244CE0 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = T4GJ3ZDTDF;
+					};
+					D41785B61AB792B100244CE0 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = D417859D1AB792B000244CE0;
+					};
+				};
+			};
+			buildConfigurationList = D41785991AB792B000244CE0 /* Build configuration list for PBXProject "ColorComponentSampleApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D41785951AB792B000244CE0;
+			productRefGroup = D417859F1AB792B000244CE0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D417859D1AB792B000244CE0 /* ColorComponentSampleApp */,
+				D41785B61AB792B100244CE0 /* ColorComponentSampleAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D417859C1AB792B000244CE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46FD90F1BE0399D006A8F85 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
+				D46FD90D1BE0397C006A8F85 /* AdobeCreativeSDKAssetModelResources.bundle in Resources */,
+				D46FD90B1BE03955006A8F85 /* AdobeCreativeSDKColorComponentResources.bundle in Resources */,
+				4E59B8781BC3FCA40039BEC6 /* AdobeCreativeSDKCommonUXResources.bundle in Resources */,
+				D41785CA1AB792E100244CE0 /* Main_iPad.storyboard in Resources */,
+				D41785AF1AB792B100244CE0 /* Images.xcassets in Resources */,
+				D41785C91AB792E100244CE0 /* Main_iPhone.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D41785B51AB792B100244CE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D417859A1AB792B000244CE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D41785AA1AB792B100244CE0 /* ViewController.m in Sources */,
+				D41785A71AB792B000244CE0 /* AppDelegate.m in Sources */,
+				D41785A41AB792B000244CE0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D41785B31AB792B100244CE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D41785BE1AB792B100244CE0 /* ColorComponentSampleAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D41785B91AB792B100244CE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D417859D1AB792B000244CE0 /* ColorComponentSampleApp */;
+			targetProxy = D41785B81AB792B100244CE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D41785B01AB792B100244CE0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D41785B11AB792B100244CE0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D41785BF1AB792B100244CE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D41785C01AB792B100244CE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D41785C21AB792B100244CE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					../../AdobeCreativeSDKFrameworks,
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"USE_CSDK_COMPONENTS=1",
+				);
+				INFOPLIST_FILE = ColorComponentSampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D41785C31AB792B100244CE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					../../AdobeCreativeSDKFrameworks,
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = "USE_CSDK_COMPONENTS=1";
+				INFOPLIST_FILE = ColorComponentSampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D41785C51AB792B100244CE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ColorComponentSampleAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorComponentSampleApp.app/ColorComponentSampleApp";
+			};
+			name = Debug;
+		};
+		D41785C61AB792B100244CE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ColorComponentSampleAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorComponentSampleApp.app/ColorComponentSampleApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D41785991AB792B000244CE0 /* Build configuration list for PBXProject "ColorComponentSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D41785BF1AB792B100244CE0 /* Debug */,
+				D41785C01AB792B100244CE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D41785C11AB792B100244CE0 /* Build configuration list for PBXNativeTarget "ColorComponentSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D41785C21AB792B100244CE0 /* Debug */,
+				D41785C31AB792B100244CE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D41785C41AB792B100244CE0 /* Build configuration list for PBXNativeTarget "ColorComponentSampleAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D41785C51AB792B100244CE0 /* Debug */,
+				D41785C61AB792B100244CE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41785961AB792B000244CE0 /* Project object */;
+}

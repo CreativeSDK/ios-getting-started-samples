@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ED899891BDF8962004525DD /* AdobeCreativeSDKCommonUXResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4ED899881BDF8962004525DD /* AdobeCreativeSDKCommonUXResources.bundle */; };
 		71936246191AB50B008B30BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71936245191AB50B008B30BA /* Foundation.framework */; };
 		71936248191AB50B008B30BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71936247191AB50B008B30BA /* CoreGraphics.framework */; };
 		7193624A191AB50B008B30BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71936249191AB50B008B30BA /* UIKit.framework */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4ED899881BDF8962004525DD /* AdobeCreativeSDKCommonUXResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCommonUXResources.bundle; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework/Versions/A/Resources/AdobeCreativeSDKCommonUXResources.bundle; sourceTree = "<group>"; };
 		71936242191AB50B008B30BA /* TestFiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71936245191AB50B008B30BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71936247191AB50B008B30BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,7 +75,6 @@
 		7193628A191ADBEF008B30BA /* RKCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCViewController.m; sourceTree = "<group>"; };
 		7193628C191ADC10008B30BA /* RKCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCView.h; sourceTree = "<group>"; };
 		7193628D191ADC10008B30BA /* RKCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCView.m; sourceTree = "<group>"; };
-		D403DAC11B616C46005BAD42 /* AdobeCreativeSDKFrameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AdobeCreativeSDKFrameworks; path = ../../../AdobeCreativeSDKFrameworks; sourceTree = "<group>"; };
 		D403DAC31B616C46005BAD42 /* AdobeCreativeSDKAssetModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetModel.framework; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetModel.framework; sourceTree = "<group>"; };
 		D403DAC51B616C46005BAD42 /* AdobeCreativeSDKAssetUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetUX.framework; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetUX.framework; sourceTree = "<group>"; };
 		D403DAC71B616C59005BAD42 /* AdobeCreativeSDKCommonUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCommonUX.framework; path = ../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework; sourceTree = "<group>"; };
@@ -120,16 +121,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		71936239191AB50B008B30BA = {
+		4ED899831BDF80DE004525DD /* Creative SDK Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D403DAC91B616C67005BAD42 /* AdobeCreativeSDKCore.framework */,
+				D403DAC71B616C59005BAD42 /* AdobeCreativeSDKCommonUX.framework */,
+				D403DAC51B616C46005BAD42 /* AdobeCreativeSDKAssetUX.framework */,
+				D403DAC31B616C46005BAD42 /* AdobeCreativeSDKAssetModel.framework */,
+			);
+			name = "Creative SDK Frameworks";
+			sourceTree = "<group>";
+		};
+		4ED899841BDF80FA004525DD /* Creative SDK Bundles */ = {
 			isa = PBXGroup;
 			children = (
 				D403DAD11B616CB8005BAD42 /* AdobeCreativeSDKCoreResources.bundle */,
+				4ED899881BDF8962004525DD /* AdobeCreativeSDKCommonUXResources.bundle */,
 				D403DACF1B616CA7005BAD42 /* AdobeCreativeSDKColorComponentResources.bundle */,
 				D403DACD1B616C90005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle */,
 				D403DACB1B616C82005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle */,
+			);
+			name = "Creative SDK Bundles";
+			sourceTree = "<group>";
+		};
+		71936239191AB50B008B30BA = {
+			isa = PBXGroup;
+			children = (
 				7193624B191AB50B008B30BA /* TestFiles */,
 				71936264191AB50B008B30BA /* TestFilesTests */,
 				71936244191AB50B008B30BA /* Frameworks */,
+				7193627D191AD13B008B30BA /* libstdc++.dylib */,
+				D4511A111B5DB2D400D23DCD /* libc++.dylib */,
+				D4511A0F1B5DB2C900D23DCD /* libz.dylib */,
 				71936243191AB50B008B30BA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -146,17 +169,11 @@
 		71936244191AB50B008B30BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D403DAC91B616C67005BAD42 /* AdobeCreativeSDKCore.framework */,
-				D403DAC71B616C59005BAD42 /* AdobeCreativeSDKCommonUX.framework */,
-				D403DAC51B616C46005BAD42 /* AdobeCreativeSDKAssetUX.framework */,
-				D403DAC31B616C46005BAD42 /* AdobeCreativeSDKAssetModel.framework */,
-				D403DAC11B616C46005BAD42 /* AdobeCreativeSDKFrameworks */,
-				D4511A111B5DB2D400D23DCD /* libc++.dylib */,
-				D4511A0F1B5DB2C900D23DCD /* libz.dylib */,
+				4ED899831BDF80DE004525DD /* Creative SDK Frameworks */,
+				4ED899841BDF80FA004525DD /* Creative SDK Bundles */,
 				71936283191AD150008B30BA /* SystemConfiguration.framework */,
 				71936281191AD149008B30BA /* Security.framework */,
 				7193627F191AD142008B30BA /* MobileCoreServices.framework */,
-				7193627D191AD13B008B30BA /* libstdc++.dylib */,
 				7193627B191AD11A008B30BA /* CoreBluetooth.framework */,
 				71936279191AD110008B30BA /* CoreMotion.framework */,
 				71936245191AB50B008B30BA /* Foundation.framework */,
@@ -287,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D403DAD21B616CB8005BAD42 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
+				4ED899891BDF8962004525DD /* AdobeCreativeSDKCommonUXResources.bundle in Resources */,
 				D403DAD01B616CA7005BAD42 /* AdobeCreativeSDKColorComponentResources.bundle in Resources */,
 				D403DACE1B616C90005BAD42 /* AdobeCreativeSDKAssetUXResources.bundle in Resources */,
 				D403DACC1B616C82005BAD42 /* AdobeCreativeSDKAssetModelResources.bundle in Resources */,
@@ -387,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -419,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -430,6 +448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -443,7 +462,9 @@
 					USE_CSDK_COMPONENTS,
 				);
 				INFOPLIST_FILE = "TestFiles/TestFiles-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.samples.TestFiles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -463,7 +484,9 @@
 				GCC_PREFIX_HEADER = "TestFiles/TestFiles-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = USE_CSDK_COMPONENTS;
 				INFOPLIST_FILE = "TestFiles/TestFiles-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.samples.TestFiles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

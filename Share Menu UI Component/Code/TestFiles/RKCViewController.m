@@ -32,8 +32,8 @@
 #import <AdobeCreativeSDKAssetModel/AdobeSelectionAsset.h>
 #import <AdobeCreativeSDKAssetModel/AdobeSendToDesktopApplication.h>
 #import <AdobeCreativeSDKAssetUX/AdobeUXAssetBrowser.h>
-#import <AdobeCreativeSDKDevice/AdobeCreativeSDKDevice.h>
-#import <AdobeCreativeSDKDevice/AdobeDevicePenMenuViewController.h>
+//#import <AdobeCreativeSDKDevice/AdobeCreativeSDKDevice.h>
+//#import <AdobeCreativeSDKDevice/AdobeDevicePenMenuViewController.h>
 #import <AdobeCreativeSDKBehance/AdobePublishShareMenu.h>
 #import <AdobeCreativeSDKBehance/AdobePublishURLDelegate.h>
 
@@ -83,7 +83,7 @@
     
     self.view = tv;
     
-    // Please update the ClientId and Secret to the values provided by creativesdk.com or from Adobe
+#warning Please update the ClientId and Secret to the values provided by creativesdk.com or from Adobe
     static NSString* const CreativeSDKClientId = @"changeme";
     static NSString* const CreativeSDKClientSecret = @"changeme";
     
