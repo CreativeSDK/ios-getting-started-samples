@@ -81,12 +81,9 @@
     
     
 #warning Please update the ClientId and Secret to the values provided by creativesdk.com or from Adobe
-//    static NSString* const CreativeSDKClientId = @"changeme";
-//    static NSString* const CreativeSDKClientSecret = @"changeme";
-
-    static NSString* const CreativeSDKClientId = @"EcoDevRel3";
-    static NSString* const CreativeSDKClientSecret = @"dd912a7c-6a14-4373-bd95-00017a6be924";
-
+    static NSString* const CreativeSDKClientId = @"changeme";
+    static NSString* const CreativeSDKClientSecret = @"changeme";
+    
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:CreativeSDKClientId clientSecret:CreativeSDKClientSecret enableSignUp:true];
     
     //The authManager caches our login, so check on startup
