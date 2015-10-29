@@ -25,7 +25,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AdobeCreativeSDKDevice/AdobeCreativeSDKDevice.h>
+//#import <AdobeCreativeSDKDevice/AdobeCreativeSDKDevice.h>
 #import <AdobeCreativeSDKBehance/AdobePublishShareMenu.h>
 //#import <AdobeCreativeSDKBehance/AdobePublish.h>
 

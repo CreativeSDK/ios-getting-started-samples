@@ -28,8 +28,7 @@
 #import "RKCViewController.h"
 #import "RKCView.h"
 #import <AdobeCreativeSDKCore/AdobeCreativeSDKCore.h> // AdobeUXAuthManager.h
-#import <AdobeCreativeSDKAssetModel/AdobeCreativeSDKAssetModel.h> //AdobeMarketAsset.h>
-//#import <AdobeCreativeSDKAssetModel/AdobeMarketCategory.h>
+#import <AdobeCreativeSDKAssetModel/AdobeCreativeSDKAssetModel.h> //
 #import <AdobeCreativeSDKMarketUX/AdobeCreativeSDKMarketUX.h> //AdobeUXMarketAssetBrowser.h>
 
 @interface RKCViewController ()
@@ -135,10 +134,10 @@
                                                                        onSuccess:^(AdobeMarketAsset *itemSelection) {
                                                                            NSLog(@"ran success, %@", itemSelection);
                                                                            // Ok, let's create a text block of data about the selection for the demo
-                                                                           NSMutableString *desc = [[NSMutableString alloc] initWithFormat:@"Market Asset: %@\n", itemSelection.title ];
+                                                                           NSMutableString *desc = [[NSMutableString alloc] initWithFormat:@"Market Asset: %@\n", itemSelection.name ];
 
                                                                            [desc appendFormat:@"Created by: %@\n %@n", itemSelection.creator.firstName, itemSelection.creator.lastName];
-                                                                           [desc appendFormat:@"Featured on: %@\n", itemSelection.featured];
+                                                                           [desc appendFormat:@"Featured on: %@\n", itemSelection.dateFeatured];
                                                                            [desc appendFormat:@"Asset ID: %@\n", itemSelection.assetID];
                                                                            [desc appendFormat:@"Date Created: %@\n", itemSelection.dateCreated];
                                                                            [desc appendFormat:@"Date Published: %@\n", itemSelection.datePublished];
@@ -146,13 +145,13 @@
                                                                            [desc appendFormat:@"Tags: %@\n", itemSelection.tags];
 
                                                                            [((RKCView *)self.view).resultText setText:desc];
-
+                                                                           
                                                                            [itemSelection downloadRenditionWithDimension:AdobeMarketImageDimensionWidth
                                                                                                                     size:250
                                                                                                                     type:AdobeMarketAssetFileRenditionTypeJPEG
                                                                                                                 priority:NSOperationQueuePriorityHigh
                                                                                                            progressBlock:nil
-                                                                                                         completionBlock:^(NSData *imageData, BOOL fromCache)
+                                                                                                         successBlock:^(NSData *imageData, BOOL fromCache)
                                                                             {
 /*                                                                                [Logger log:@"Rendition complete"];
                                                                                 selectedFileImageView.image = [UIImage imageWithData:imageData];
