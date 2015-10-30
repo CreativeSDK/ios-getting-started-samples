@@ -41,7 +41,7 @@
     
     self.view = tv;
 
-    // Please update the ClientId and Secret to the values provided by creativesdk.com or from Adobe
+   #warning Please update the ClientId and Secret to the values provided by creativesdk.com or from Adobe
     static NSString* const CreativeSDKClientId = @"changeme";
     static NSString* const CreativeSDKClientSecret = @"changemetoo";
     

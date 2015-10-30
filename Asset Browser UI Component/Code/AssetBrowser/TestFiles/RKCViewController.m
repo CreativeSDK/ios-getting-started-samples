@@ -30,7 +30,6 @@
 #import "RKCView.h"
 
 #import <AdobeCreativeSDKCore/AdobeCreativeSDKCore.h>  // AdobeUXAuthManager.h
-#import <AdobeCreativeSDKCommonUX/AdobeCreativeSDKCommonUX.h>
 #import <AdobeCreativeSDKAssetModel/AdobeCreativeSDKAssetModel.h>  // AdobeAssetFile.h & AdobeSelectionAsset.h
 #import <AdobeCreativeSDKAssetUX/AdobeCreativeSDKAssetUX.h>  // AdobeUXAssetBrowser.h
 
@@ -81,7 +80,7 @@
     self.view = tv;
     
     
-// Please update the ClientId and Secret to the values provided by creativesdk.com or from Adobe
+#warning Please update the ClientId and Secret to the values provided by creativesdk.com or from Adobe
     static NSString* const CreativeSDKClientId = @"changeme";
     static NSString* const CreativeSDKClientSecret = @"changeme";
     
