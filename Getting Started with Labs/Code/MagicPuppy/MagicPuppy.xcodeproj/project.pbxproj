@@ -21,6 +21,7 @@
 		53A21A6C1B03DE2400AFAAE5 /* MagicPuppyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A21A6B1B03DE2400AFAAE5 /* MagicPuppyTests.m */; };
 		53A21A7C1B03E5C900AFAAE5 /* puppy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53A21A7B1B03E5C900AFAAE5 /* puppy.jpg */; };
 		53A21A801B03E63A00AFAAE5 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A21A7F1B03E63A00AFAAE5 /* libc++.dylib */; };
+		53C9F19B1BF162D3008A9B5E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C9F19A1BF162D3008A9B5E /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		53A21A6B1B03DE2400AFAAE5 /* MagicPuppyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicPuppyTests.m; sourceTree = "<group>"; };
 		53A21A7B1B03E5C900AFAAE5 /* puppy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppy.jpg; sourceTree = "<group>"; };
 		53A21A7F1B03E63A00AFAAE5 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		53C9F19A1BF162D3008A9B5E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C9F19B1BF162D3008A9B5E /* AssetsLibrary.framework in Frameworks */,
 				5310C68A1B594A9B001399DD /* AdobeCreativeSDKCore.framework in Frameworks */,
 				538D11F61B0517FF00B91DA6 /* AdobeCreativeSDKLabs.framework in Frameworks */,
 				53A21A801B03E63A00AFAAE5 /* libc++.dylib in Frameworks */,
@@ -81,6 +84,7 @@
 		538D11F21B05175E00B91DA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53C9F19A1BF162D3008A9B5E /* AssetsLibrary.framework */,
 				5310C6891B594A9B001399DD /* AdobeCreativeSDKCore.framework */,
 				538D11F41B0517FF00B91DA6 /* AdobeCreativeSDKLabs.framework */,
 				5310C68B1B594AC2001399DD /* AdobeCreativeSDKCoreResources.bundle */,
@@ -386,7 +390,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -410,7 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

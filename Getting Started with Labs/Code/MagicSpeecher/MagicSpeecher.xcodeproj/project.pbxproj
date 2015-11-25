@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		537E104C1B753237004037A4 /* audioFile1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 537E104B1B753237004037A4 /* audioFile1.wav */; };
 		537E104E1B753244004037A4 /* audioFile2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 537E104D1B753244004037A4 /* audioFile2.wav */; };
+		538C8C5B1BF28AA2003F0A92 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C8C5A1BF28AA2003F0A92 /* AdobeCreativeSDKCore.framework */; };
+		538C8C5D1BF28AA9003F0A92 /* AdobeCreativeSDKLabs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C8C5C1BF28AA9003F0A92 /* AdobeCreativeSDKLabs.framework */; };
+		538C8C5F1BF28AB5003F0A92 /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 538C8C5E1BF28AB5003F0A92 /* AdobeCreativeSDKCoreResources.bundle */; };
+		538C8C611BF28AC0003F0A92 /* AdobeCreativeSDKLabsResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 538C8C601BF28AC0003F0A92 /* AdobeCreativeSDKLabsResources.bundle */; };
 		53D530A51B74127F003ABCA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D530A41B74127F003ABCA7 /* main.m */; };
 		53D530A81B74127F003ABCA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D530A71B74127F003ABCA7 /* AppDelegate.m */; };
 		53D530AB1B74127F003ABCA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D530AA1B74127F003ABCA7 /* ViewController.m */; };
@@ -17,11 +21,6 @@
 		53D530B31B74127F003ABCA7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53D530B11B74127F003ABCA7 /* LaunchScreen.xib */; };
 		53D530BF1B74127F003ABCA7 /* MagicSpeecherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D530BE1B74127F003ABCA7 /* MagicSpeecherTests.m */; };
 		53D530C91B7412A5003ABCA7 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D530C81B7412A5003ABCA7 /* libc++.dylib */; };
-		53D530CB1B7412AF003ABCA7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D530CA1B7412AF003ABCA7 /* libz.dylib */; };
-		53D530CF1B7412FF003ABCA7 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D530CE1B7412FF003ABCA7 /* AdobeCreativeSDKCore.framework */; };
-		53D530D11B741306003ABCA7 /* AdobeCreativeSDKLabs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D530D01B741306003ABCA7 /* AdobeCreativeSDKLabs.framework */; };
-		53D530D31B74131C003ABCA7 /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53D530D21B74131C003ABCA7 /* AdobeCreativeSDKCoreResources.bundle */; };
-		53D530D51B74132A003ABCA7 /* AdobeCreativeSDKLabsResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53D530D41B74132A003ABCA7 /* AdobeCreativeSDKLabsResources.bundle */; };
 		53D530D81B741921003ABCA7 /* ViewController+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D530D71B741921003ABCA7 /* ViewController+Buttons.m */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +37,10 @@
 /* Begin PBXFileReference section */
 		537E104B1B753237004037A4 /* audioFile1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = audioFile1.wav; sourceTree = "<group>"; };
 		537E104D1B753244004037A4 /* audioFile2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = audioFile2.wav; sourceTree = "<group>"; };
+		538C8C5A1BF28AA2003F0A92 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		538C8C5C1BF28AA9003F0A92 /* AdobeCreativeSDKLabs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKLabs.framework; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKLabs.framework; sourceTree = "<group>"; };
+		538C8C5E1BF28AB5003F0A92 /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
+		538C8C601BF28AC0003F0A92 /* AdobeCreativeSDKLabsResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKLabsResources.bundle; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKLabs.framework/Versions/A/Resources/AdobeCreativeSDKLabsResources.bundle; sourceTree = "<group>"; };
 		53D5309F1B74127F003ABCA7 /* MagicSpeecher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicSpeecher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D530A31B74127F003ABCA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D530A41B74127F003ABCA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,11 +55,6 @@
 		53D530BD1B74127F003ABCA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D530BE1B74127F003ABCA7 /* MagicSpeecherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicSpeecherTests.m; sourceTree = "<group>"; };
 		53D530C81B7412A5003ABCA7 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		53D530CA1B7412AF003ABCA7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		53D530CE1B7412FF003ABCA7 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
-		53D530D01B741306003ABCA7 /* AdobeCreativeSDKLabs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKLabs.framework; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKLabs.framework; sourceTree = "<group>"; };
-		53D530D21B74131C003ABCA7 /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
-		53D530D41B74132A003ABCA7 /* AdobeCreativeSDKLabsResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKLabsResources.bundle; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKLabs.framework/Versions/A/Resources/AdobeCreativeSDKLabsResources.bundle; sourceTree = "<group>"; };
 		53D530D71B741921003ABCA7 /* ViewController+Buttons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+Buttons.m"; sourceTree = "<group>"; };
 		53D530D91B74192F003ABCA7 /* ViewController+Buttons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+Buttons.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,10 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53D530CF1B7412FF003ABCA7 /* AdobeCreativeSDKCore.framework in Frameworks */,
-				53D530D11B741306003ABCA7 /* AdobeCreativeSDKLabs.framework in Frameworks */,
+				538C8C5B1BF28AA2003F0A92 /* AdobeCreativeSDKCore.framework in Frameworks */,
+				538C8C5D1BF28AA9003F0A92 /* AdobeCreativeSDKLabs.framework in Frameworks */,
 				53D530C91B7412A5003ABCA7 /* libc++.dylib in Frameworks */,
-				53D530CB1B7412AF003ABCA7 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,11 +155,10 @@
 		53D530D61B741338003ABCA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				53D530CE1B7412FF003ABCA7 /* AdobeCreativeSDKCore.framework */,
-				53D530D01B741306003ABCA7 /* AdobeCreativeSDKLabs.framework */,
-				53D530D21B74131C003ABCA7 /* AdobeCreativeSDKCoreResources.bundle */,
-				53D530D41B74132A003ABCA7 /* AdobeCreativeSDKLabsResources.bundle */,
-				53D530CA1B7412AF003ABCA7 /* libz.dylib */,
+				538C8C5C1BF28AA9003F0A92 /* AdobeCreativeSDKLabs.framework */,
+				538C8C5A1BF28AA2003F0A92 /* AdobeCreativeSDKCore.framework */,
+				538C8C5E1BF28AB5003F0A92 /* AdobeCreativeSDKCoreResources.bundle */,
+				538C8C601BF28AC0003F0A92 /* AdobeCreativeSDKLabsResources.bundle */,
 				53D530C81B7412A5003ABCA7 /* libc++.dylib */,
 			);
 			name = Frameworks;
@@ -248,8 +244,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53D530D31B74131C003ABCA7 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
-				53D530D51B74132A003ABCA7 /* AdobeCreativeSDKLabsResources.bundle in Resources */,
+				538C8C5F1BF28AB5003F0A92 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
+				538C8C611BF28AC0003F0A92 /* AdobeCreativeSDKLabsResources.bundle in Resources */,
 				537E104C1B753237004037A4 /* audioFile1.wav in Resources */,
 				537E104E1B753244004037A4 /* audioFile2.wav in Resources */,
 				53D530AE1B74127F003ABCA7 /* Main.storyboard in Resources */,
@@ -401,7 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../AdobeCreativeSDKFrameworks,
@@ -420,7 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../AdobeCreativeSDKFrameworks,

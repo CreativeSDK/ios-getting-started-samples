@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3804C0EE1BF511EB00FFB432 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3804C0ED1BF511EB00FFB432 /* libc++.tbd */; };
+		3804C0F01BF5120B00FFB432 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3804C0EF1BF5120B00FFB432 /* AdobeCreativeSDKCore.framework */; };
+		3804C0F21BF5121500FFB432 /* AdobeCreativeSDKLabs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3804C0F11BF5121500FFB432 /* AdobeCreativeSDKLabs.framework */; };
+		3804C0F41BF5122A00FFB432 /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3804C0F31BF5122A00FFB432 /* AdobeCreativeSDKCoreResources.bundle */; };
+		3804C0F81BF5129600FFB432 /* AdobeCreativeSDKLabsResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3804C0F71BF5129600FFB432 /* AdobeCreativeSDKLabsResources.bundle */; };
+		381EDCAF1BBDD5FB0015A899 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381EDCAD1BBDD5FB0015A899 /* LaunchScreen.xib */; };
+		385837BC1BE998BB0099FC43 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385837BB1BE998BB0099FC43 /* GLKit.framework */; };
+		53975C211BBC4826005C9F22 /* ViewController+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 53975C201BBC4826005C9F22 /* ViewController+Buttons.m */; };
+		53975C231BBC49AD005C9F22 /* BrushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53975C221BBC49AD005C9F22 /* BrushView.m */; };
+		53E8DC151BBC3F95005FFCFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E8DC141BBC3F95005FFCFA /* main.m */; };
+		53E8DC181BBC3F95005FFCFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E8DC171BBC3F95005FFCFA /* AppDelegate.m */; };
+		53E8DC1B1BBC3F95005FFCFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E8DC1A1BBC3F95005FFCFA /* ViewController.m */; };
+		53E8DC1E1BBC3F95005FFCFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E8DC1C1BBC3F95005FFCFA /* Main.storyboard */; };
+		53E8DC201BBC3F95005FFCFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E8DC1F1BBC3F95005FFCFA /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3804C0ED1BF511EB00FFB432 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		3804C0EF1BF5120B00FFB432 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		3804C0F11BF5121500FFB432 /* AdobeCreativeSDKLabs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKLabs.framework; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKLabs.framework; sourceTree = "<group>"; };
+		3804C0F31BF5122A00FFB432 /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
+		3804C0F71BF5129600FFB432 /* AdobeCreativeSDKLabsResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKLabsResources.bundle; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKLabs.framework/Versions/A/Resources/AdobeCreativeSDKLabsResources.bundle; sourceTree = "<group>"; };
+		381EDCAE1BBDD5FB0015A899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		385837BB1BE998BB0099FC43 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		53975C1F1BBC47FE005C9F22 /* ViewController+Buttons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+Buttons.h"; sourceTree = "<group>"; };
+		53975C201BBC4826005C9F22 /* ViewController+Buttons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+Buttons.m"; sourceTree = "<group>"; };
+		53975C221BBC49AD005C9F22 /* BrushView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushView.m; sourceTree = "<group>"; };
+		53975C251BBC49D8005C9F22 /* BrushView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushView.h; sourceTree = "<group>"; };
+		53E8DC101BBC3F95005FFCFA /* MagicBrusher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicBrusher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53E8DC141BBC3F95005FFCFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		53E8DC161BBC3F95005FFCFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		53E8DC171BBC3F95005FFCFA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		53E8DC191BBC3F95005FFCFA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		53E8DC1A1BBC3F95005FFCFA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		53E8DC1D1BBC3F95005FFCFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		53E8DC1F1BBC3F95005FFCFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53E8DC241BBC3F95005FFCFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53E8DC0D1BBC3F95005FFCFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3804C0F01BF5120B00FFB432 /* AdobeCreativeSDKCore.framework in Frameworks */,
+				3804C0F21BF5121500FFB432 /* AdobeCreativeSDKLabs.framework in Frameworks */,
+				385837BC1BE998BB0099FC43 /* GLKit.framework in Frameworks */,
+				3804C0EE1BF511EB00FFB432 /* libc++.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53E8DC071BBC3F95005FFCFA = {
+			isa = PBXGroup;
+			children = (
+				53E8DC381BBC40DD005FFCFA /* Frameworks */,
+				53E8DC121BBC3F95005FFCFA /* MagicBrusher */,
+				53E8DC111BBC3F95005FFCFA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53E8DC111BBC3F95005FFCFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53E8DC101BBC3F95005FFCFA /* MagicBrusher.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53E8DC121BBC3F95005FFCFA /* MagicBrusher */ = {
+			isa = PBXGroup;
+			children = (
+				53E8DC161BBC3F95005FFCFA /* AppDelegate.h */,
+				53E8DC171BBC3F95005FFCFA /* AppDelegate.m */,
+				53E8DC191BBC3F95005FFCFA /* ViewController.h */,
+				53E8DC1A1BBC3F95005FFCFA /* ViewController.m */,
+				53975C1F1BBC47FE005C9F22 /* ViewController+Buttons.h */,
+				53975C201BBC4826005C9F22 /* ViewController+Buttons.m */,
+				53975C251BBC49D8005C9F22 /* BrushView.h */,
+				53975C221BBC49AD005C9F22 /* BrushView.m */,
+				53E8DC1C1BBC3F95005FFCFA /* Main.storyboard */,
+				381EDCAD1BBDD5FB0015A899 /* LaunchScreen.xib */,
+				53E8DC1F1BBC3F95005FFCFA /* Assets.xcassets */,
+				53E8DC241BBC3F95005FFCFA /* Info.plist */,
+				53E8DC131BBC3F95005FFCFA /* Supporting Files */,
+			);
+			path = MagicBrusher;
+			sourceTree = "<group>";
+		};
+		53E8DC131BBC3F95005FFCFA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				53E8DC141BBC3F95005FFCFA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		53E8DC381BBC40DD005FFCFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3804C0EF1BF5120B00FFB432 /* AdobeCreativeSDKCore.framework */,
+				3804C0F11BF5121500FFB432 /* AdobeCreativeSDKLabs.framework */,
+				3804C0F31BF5122A00FFB432 /* AdobeCreativeSDKCoreResources.bundle */,
+				3804C0F71BF5129600FFB432 /* AdobeCreativeSDKLabsResources.bundle */,
+				385837BB1BE998BB0099FC43 /* GLKit.framework */,
+				3804C0ED1BF511EB00FFB432 /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53E8DC0F1BBC3F95005FFCFA /* MagicBrusher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53E8DC271BBC3F95005FFCFA /* Build configuration list for PBXNativeTarget "MagicBrusher" */;
+			buildPhases = (
+				53E8DC0C1BBC3F95005FFCFA /* Sources */,
+				53E8DC0D1BBC3F95005FFCFA /* Frameworks */,
+				53E8DC0E1BBC3F95005FFCFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagicBrusher;
+			productName = MagicBrusher;
+			productReference = 53E8DC101BBC3F95005FFCFA /* MagicBrusher.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53E8DC081BBC3F95005FFCFA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Adobe Systems Incorporated";
+				TargetAttributes = {
+					53E8DC0F1BBC3F95005FFCFA = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 53E8DC0B1BBC3F95005FFCFA /* Build configuration list for PBXProject "MagicBrusher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53E8DC071BBC3F95005FFCFA;
+			productRefGroup = 53E8DC111BBC3F95005FFCFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53E8DC0F1BBC3F95005FFCFA /* MagicBrusher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53E8DC0E1BBC3F95005FFCFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3804C0F81BF5129600FFB432 /* AdobeCreativeSDKLabsResources.bundle in Resources */,
+				3804C0F41BF5122A00FFB432 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
+				53E8DC201BBC3F95005FFCFA /* Assets.xcassets in Resources */,
+				381EDCAF1BBDD5FB0015A899 /* LaunchScreen.xib in Resources */,
+				53E8DC1E1BBC3F95005FFCFA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53E8DC0C1BBC3F95005FFCFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53975C211BBC4826005C9F22 /* ViewController+Buttons.m in Sources */,
+				53E8DC1B1BBC3F95005FFCFA /* ViewController.m in Sources */,
+				53E8DC181BBC3F95005FFCFA /* AppDelegate.m in Sources */,
+				53E8DC151BBC3F95005FFCFA /* main.m in Sources */,
+				53975C231BBC49AD005C9F22 /* BrushView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		381EDCAD1BBDD5FB0015A899 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				381EDCAE1BBDD5FB0015A899 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		53E8DC1C1BBC3F95005FFCFA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53E8DC1D1BBC3F95005FFCFA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53E8DC251BBC3F95005FFCFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53E8DC261BBC3F95005FFCFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53E8DC281BBC3F95005FFCFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					../AdobeCreativeSDKFrameworks,
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = MagicBrusher/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.MagicBrusher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "./flann ./RealBrush/api/**";
+			};
+			name = Debug;
+		};
+		53E8DC291BBC3F95005FFCFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					../AdobeCreativeSDKFrameworks,
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = MagicBrusher/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.MagicBrusher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "./flann ./RealBrush/api/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53E8DC0B1BBC3F95005FFCFA /* Build configuration list for PBXProject "MagicBrusher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53E8DC251BBC3F95005FFCFA /* Debug */,
+				53E8DC261BBC3F95005FFCFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53E8DC271BBC3F95005FFCFA /* Build configuration list for PBXNativeTarget "MagicBrusher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53E8DC281BBC3F95005FFCFA /* Debug */,
+				53E8DC291BBC3F95005FFCFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53E8DC081BBC3F95005FFCFA /* Project object */;
+}
