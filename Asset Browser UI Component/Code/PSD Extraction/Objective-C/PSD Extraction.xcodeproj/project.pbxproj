@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7038AAA91C1A32BD005A984D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7038AAA81C1A32BD005A984D /* main.m */; };
+		7038AAAC1C1A32BD005A984D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7038AAAB1C1A32BD005A984D /* AppDelegate.m */; };
+		7038AAAF1C1A32BD005A984D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7038AAAE1C1A32BD005A984D /* ViewController.m */; };
+		7038AAB21C1A32BD005A984D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7038AAB01C1A32BD005A984D /* Main.storyboard */; };
+		7038AAB41C1A32BD005A984D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7038AAB31C1A32BD005A984D /* Assets.xcassets */; };
+		7038AAB71C1A32BD005A984D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7038AAB51C1A32BD005A984D /* LaunchScreen.storyboard */; };
+		7038AABF1C1A3302005A984D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7038AABE1C1A3302005A984D /* libc++.tbd */; };
+		7038AAC11C1A3306005A984D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7038AAC01C1A3306005A984D /* libz.tbd */; };
+		7038AAC31C1A330B005A984D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7038AAC21C1A330B005A984D /* SystemConfiguration.framework */; };
+		7038AAC51C1A330F005A984D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7038AAC41C1A330F005A984D /* MobileCoreServices.framework */; };
+		7038AACA1C1A331E005A984D /* AdobeCreativeSDKAssetModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7038AAC61C1A331E005A984D /* AdobeCreativeSDKAssetModel.framework */; };
+		7038AACB1C1A331E005A984D /* AdobeCreativeSDKAssetUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7038AAC71C1A331E005A984D /* AdobeCreativeSDKAssetUX.framework */; };
+		7038AACC1C1A331E005A984D /* AdobeCreativeSDKCommonUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7038AAC81C1A331E005A984D /* AdobeCreativeSDKCommonUX.framework */; };
+		7038AACD1C1A331E005A984D /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7038AAC91C1A331E005A984D /* AdobeCreativeSDKCore.framework */; };
+		7038AACF1C1A332E005A984D /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7038AACE1C1A332E005A984D /* AdobeCreativeSDKCoreResources.bundle */; };
+		7038AAD11C1A333E005A984D /* AdobeCreativeSDKCommonUXResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7038AAD01C1A333E005A984D /* AdobeCreativeSDKCommonUXResources.bundle */; };
+		7038AAD31C1A334C005A984D /* AdobeCreativeSDKAssetUXResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7038AAD21C1A334C005A984D /* AdobeCreativeSDKAssetUXResources.bundle */; };
+		7038AAD61C1A3877005A984D /* LayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7038AAD51C1A3877005A984D /* LayerTableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7038AAA41C1A32BD005A984D /* PSD Extraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PSD Extraction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7038AAA81C1A32BD005A984D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7038AAAA1C1A32BD005A984D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7038AAAB1C1A32BD005A984D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7038AAAD1C1A32BD005A984D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7038AAAE1C1A32BD005A984D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7038AAB11C1A32BD005A984D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7038AAB31C1A32BD005A984D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7038AAB61C1A32BD005A984D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7038AAB81C1A32BD005A984D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7038AABE1C1A3302005A984D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7038AAC01C1A3306005A984D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		7038AAC21C1A330B005A984D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7038AAC41C1A330F005A984D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7038AAC61C1A331E005A984D /* AdobeCreativeSDKAssetModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetModel.framework; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetModel.framework; sourceTree = "<group>"; };
+		7038AAC71C1A331E005A984D /* AdobeCreativeSDKAssetUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetUX.framework; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetUX.framework; sourceTree = "<group>"; };
+		7038AAC81C1A331E005A984D /* AdobeCreativeSDKCommonUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCommonUX.framework; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework; sourceTree = "<group>"; };
+		7038AAC91C1A331E005A984D /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		7038AACE1C1A332E005A984D /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
+		7038AAD01C1A333E005A984D /* AdobeCreativeSDKCommonUXResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCommonUXResources.bundle; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework/Versions/A/Resources/AdobeCreativeSDKCommonUXResources.bundle; sourceTree = "<group>"; };
+		7038AAD21C1A334C005A984D /* AdobeCreativeSDKAssetUXResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKAssetUXResources.bundle; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetUX.framework/Versions/A/Resources/AdobeCreativeSDKAssetUXResources.bundle; sourceTree = "<group>"; };
+		7038AAD41C1A3877005A984D /* LayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerTableViewCell.h; sourceTree = "<group>"; };
+		7038AAD51C1A3877005A984D /* LayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerTableViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7038AAA11C1A32BD005A984D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7038AACA1C1A331E005A984D /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
+				7038AACB1C1A331E005A984D /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
+				7038AACC1C1A331E005A984D /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
+				7038AACD1C1A331E005A984D /* AdobeCreativeSDKCore.framework in Frameworks */,
+				7038AAC51C1A330F005A984D /* MobileCoreServices.framework in Frameworks */,
+				7038AAC31C1A330B005A984D /* SystemConfiguration.framework in Frameworks */,
+				7038AAC11C1A3306005A984D /* libz.tbd in Frameworks */,
+				7038AABF1C1A3302005A984D /* libc++.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7038AA9B1C1A32BD005A984D = {
+			isa = PBXGroup;
+			children = (
+				7038AAA61C1A32BD005A984D /* PSD Extraction */,
+				7038AAA51C1A32BD005A984D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7038AAA51C1A32BD005A984D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7038AAA41C1A32BD005A984D /* PSD Extraction.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7038AAA61C1A32BD005A984D /* PSD Extraction */ = {
+			isa = PBXGroup;
+			children = (
+				7038AAAA1C1A32BD005A984D /* AppDelegate.h */,
+				7038AAAB1C1A32BD005A984D /* AppDelegate.m */,
+				7038AAD41C1A3877005A984D /* LayerTableViewCell.h */,
+				7038AAD51C1A3877005A984D /* LayerTableViewCell.m */,
+				7038AAAD1C1A32BD005A984D /* ViewController.h */,
+				7038AAAE1C1A32BD005A984D /* ViewController.m */,
+				7067C37D1C1BC2DC00CBAF00 /* Views */,
+				7038AAA71C1A32BD005A984D /* Supporting Files */,
+			);
+			path = "PSD Extraction";
+			sourceTree = "<group>";
+		};
+		7038AAA71C1A32BD005A984D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7067C37C1C1BC2B600CBAF00 /* Linked Resources */,
+				7067C37B1C1BC2AC00CBAF00 /* Linked Binaries */,
+				7038AAB31C1A32BD005A984D /* Assets.xcassets */,
+				7038AAB81C1A32BD005A984D /* Info.plist */,
+				7038AAA81C1A32BD005A984D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7067C37B1C1BC2AC00CBAF00 /* Linked Binaries */ = {
+			isa = PBXGroup;
+			children = (
+				7038AAC61C1A331E005A984D /* AdobeCreativeSDKAssetModel.framework */,
+				7038AAC71C1A331E005A984D /* AdobeCreativeSDKAssetUX.framework */,
+				7038AAC81C1A331E005A984D /* AdobeCreativeSDKCommonUX.framework */,
+				7038AAC91C1A331E005A984D /* AdobeCreativeSDKCore.framework */,
+				7038AAC41C1A330F005A984D /* MobileCoreServices.framework */,
+				7038AAC21C1A330B005A984D /* SystemConfiguration.framework */,
+				7038AAC01C1A3306005A984D /* libz.tbd */,
+				7038AABE1C1A3302005A984D /* libc++.tbd */,
+			);
+			name = "Linked Binaries";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		7067C37C1C1BC2B600CBAF00 /* Linked Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7038AAD21C1A334C005A984D /* AdobeCreativeSDKAssetUXResources.bundle */,
+				7038AAD01C1A333E005A984D /* AdobeCreativeSDKCommonUXResources.bundle */,
+				7038AACE1C1A332E005A984D /* AdobeCreativeSDKCoreResources.bundle */,
+			);
+			name = "Linked Resources";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		7067C37D1C1BC2DC00CBAF00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7038AAB01C1A32BD005A984D /* Main.storyboard */,
+				7038AAB51C1A32BD005A984D /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7038AAA31C1A32BD005A984D /* PSD Extraction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7038AABB1C1A32BD005A984D /* Build configuration list for PBXNativeTarget "PSD Extraction" */;
+			buildPhases = (
+				7038AAA01C1A32BD005A984D /* Sources */,
+				7038AAA11C1A32BD005A984D /* Frameworks */,
+				7038AAA21C1A32BD005A984D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PSD Extraction";
+			productName = "PSD Extraction";
+			productReference = 7038AAA41C1A32BD005A984D /* PSD Extraction.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7038AA9C1C1A32BD005A984D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Adobe;
+				TargetAttributes = {
+					7038AAA31C1A32BD005A984D = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 7038AA9F1C1A32BD005A984D /* Build configuration list for PBXProject "PSD Extraction" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7038AA9B1C1A32BD005A984D;
+			productRefGroup = 7038AAA51C1A32BD005A984D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7038AAA31C1A32BD005A984D /* PSD Extraction */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7038AAA21C1A32BD005A984D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7038AAD31C1A334C005A984D /* AdobeCreativeSDKAssetUXResources.bundle in Resources */,
+				7038AAD11C1A333E005A984D /* AdobeCreativeSDKCommonUXResources.bundle in Resources */,
+				7038AACF1C1A332E005A984D /* AdobeCreativeSDKCoreResources.bundle in Resources */,
+				7038AAB71C1A32BD005A984D /* LaunchScreen.storyboard in Resources */,
+				7038AAB41C1A32BD005A984D /* Assets.xcassets in Resources */,
+				7038AAB21C1A32BD005A984D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7038AAA01C1A32BD005A984D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7038AAAF1C1A32BD005A984D /* ViewController.m in Sources */,
+				7038AAAC1C1A32BD005A984D /* AppDelegate.m in Sources */,
+				7038AAA91C1A32BD005A984D /* main.m in Sources */,
+				7038AAD61C1A3877005A984D /* LayerTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7038AAB01C1A32BD005A984D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7038AAB11C1A32BD005A984D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7038AAB51C1A32BD005A984D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7038AAB61C1A32BD005A984D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7038AAB91C1A32BD005A984D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7038AABA1C1A32BD005A984D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7038AABC1C1A32BD005A984D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = ../../../../AdobeCreativeSDKFrameworks;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					USE_CSDK_COMPONENTS,
+				);
+				INFOPLIST_FILE = "PSD Extraction/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.PSD-Extraction";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7038AABD1C1A32BD005A984D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = ../../../../AdobeCreativeSDKFrameworks;
+				GCC_PREPROCESSOR_DEFINITIONS = USE_CSDK_COMPONENTS;
+				INFOPLIST_FILE = "PSD Extraction/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.PSD-Extraction";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7038AA9F1C1A32BD005A984D /* Build configuration list for PBXProject "PSD Extraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7038AAB91C1A32BD005A984D /* Debug */,
+				7038AABA1C1A32BD005A984D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7038AABB1C1A32BD005A984D /* Build configuration list for PBXNativeTarget "PSD Extraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7038AABC1C1A32BD005A984D /* Debug */,
+				7038AABD1C1A32BD005A984D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7038AA9C1C1A32BD005A984D /* Project object */;
+}
