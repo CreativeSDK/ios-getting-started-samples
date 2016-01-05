@@ -62,17 +62,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		70DCB8A91C2A117000205FBE = {
+		704BA1671C3B2F9600775DA8 /* Linked Binaries */ = {
 			isa = PBXGroup;
 			children = (
 				70DCB8F11C2A1A1400205FBE /* AdobeCreativeSDKCommonUX.framework */,
-				70DCB8D81C2A129800205FBE /* AdobeCreativeSDKCoreResources.bundle */,
 				70DCB8D61C2A128300205FBE /* AdobeCreativeSDKAssetModel.framework */,
 				70DCB8D41C2A127000205FBE /* AdobeCreativeSDKCore.framework */,
 				70DCB8D21C2A126400205FBE /* MobileCoreServices.framework */,
 				70DCB8D01C2A126000205FBE /* SystemConfiguration.framework */,
 				70DCB8CE1C2A125B00205FBE /* libz.tbd */,
 				70DCB8CC1C2A125300205FBE /* libc++.tbd */,
+			);
+			name = "Linked Binaries";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		704BA1681C3B2F9F00775DA8 /* Linked Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70DCB8D81C2A129800205FBE /* AdobeCreativeSDKCoreResources.bundle */,
+			);
+			name = "Linked Resources";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		70DCB8A91C2A117000205FBE = {
+			isa = PBXGroup;
+			children = (
 				70DCB8B41C2A117000205FBE /* File Upload */,
 				70DCB8B31C2A117000205FBE /* Products */,
 			);
@@ -93,10 +109,6 @@
 				70DCB8B91C2A117000205FBE /* AppDelegate.m */,
 				70DCB8BB1C2A117000205FBE /* ViewController.h */,
 				70DCB8BC1C2A117000205FBE /* ViewController.m */,
-				70DCB8BE1C2A117000205FBE /* Main.storyboard */,
-				70DCB8C11C2A117000205FBE /* Assets.xcassets */,
-				70DCB8C31C2A117000205FBE /* LaunchScreen.storyboard */,
-				70DCB8C61C2A117000205FBE /* Info.plist */,
 				70DCB8B51C2A117000205FBE /* Supporting Files */,
 			);
 			path = "File Upload";
@@ -105,6 +117,12 @@
 		70DCB8B51C2A117000205FBE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				704BA1671C3B2F9600775DA8 /* Linked Binaries */,
+				704BA1681C3B2F9F00775DA8 /* Linked Resources */,
+				70DCB8C11C2A117000205FBE /* Assets.xcassets */,
+				70DCB8BE1C2A117000205FBE /* Main.storyboard */,
+				70DCB8C31C2A117000205FBE /* LaunchScreen.storyboard */,
+				70DCB8C61C2A117000205FBE /* Info.plist */,
 				70DCB8B61C2A117000205FBE /* main.m */,
 			);
 			name = "Supporting Files";

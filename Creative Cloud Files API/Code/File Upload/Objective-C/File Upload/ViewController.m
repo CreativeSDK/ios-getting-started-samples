@@ -142,6 +142,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
+    // Dismiss the image picker controller.
     [self dismissViewControllerAnimated:YES completion:nil];
 
     // Get the type of the selected asset.
@@ -154,7 +155,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
     if (CFStringCompare((CFStringRef)mediaType, kUTTypeImage, 0) != kCFCompareEqualTo)
     {
         NSString *message = @"The file you've selected isn't an image file (is it a video "
-            "perhaps?) For purposes of this demo, please select an image file.";
+            "perhaps?) For the purposes of this demo, please select an image file.";
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Image"
                                                                                  message:message

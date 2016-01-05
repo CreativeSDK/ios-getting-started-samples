@@ -40,6 +40,9 @@
                             </label>
                             <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JPx-bw-uOH">
                                 <rect key="frame" x="215" y="199" width="170" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="6bM-OP-gYZ"/>
+                                </constraints>
                             </progressView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uYX-hr-LkR">
                                 <rect key="frame" x="20" y="209" width="560" height="371"/>
@@ -61,6 +64,11 @@
                             <constraint firstItem="JRJ-UX-9Jh" firstAttribute="top" secondItem="eeS-wp-Z4c" secondAttribute="bottom" constant="8" id="uDz-YO-Q6u"/>
                             <constraint firstItem="JPx-bw-uOH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wrh-8x-2qJ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="f4u-Ia-6OL"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="frL-pT-tjH"/>
                     <connections>

@@ -24,8 +24,8 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    // Note: #warning Please update the ClientId and Secret to the values provided by 
-    // creativesdk.com or from Adobe
+    // Note: Please update the ClientId and Secret to the values provided by  creativesdk.com or 
+    // from Adobe
     private let kCreativeSDKClientId = "Change me"
     private let kCreativeSDKClientSecret = "Change me"
     
