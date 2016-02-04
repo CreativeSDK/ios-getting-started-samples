@@ -18,7 +18,6 @@
 		7035257D1C127ED0005071BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7035257C1C127ED0005071BD /* SystemConfiguration.framework */; };
 		7035257F1C127ED5005071BD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7035257E1C127ED5005071BD /* libc++.tbd */; };
 		703525811C127EDA005071BD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 703525801C127EDA005071BD /* libz.tbd */; };
-		703AB4871C17B021006C70D9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7035259A1C1285E9005071BD /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				703AB4871C17B021006C70D9 /* CoreData.framework in Frameworks */,
 				703525781C127EB4005071BD /* AdobeCreativeSDKCore.framework in Frameworks */,
 				7035257B1C127EC8005071BD /* MobileCoreServices.framework in Frameworks */,
 				7035257D1C127ED0005071BD /* SystemConfiguration.framework in Frameworks */,
