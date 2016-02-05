@@ -31,7 +31,7 @@ To integrate the Creative Cloud with your own file picker (instead of using the 
 
 The `AdobeUXAssetBrowser` class provides a simple UI for browsing files and selecting them for download. You can easily restrict the types of files displayed; for example, you may want to display only image files. Once the user selects a file, use the `AdobeAssetFile` class to transfer the data from the cloud to the device.
 
-In our application (found in the TestFiles folder in the ZIP archive referenced above), we add a simple file browser, for the user to select a file. If the user selects a JPG or PNG file, we display that image directly within the application.
+In our application (found in the TestFiles folder in the ZIP archive referenced above), we add a simple Asset Browser, for the user to select a file. If the user selects a JPG or PNG file, we display that image directly within the application.
 
 ### UI
 
@@ -62,7 +62,7 @@ The main view controller of the application sets up the "Select a File" button a
     - (IBAction)showAssetBrowserButtonTouchUpInside
     {
         // Create a datasource filter object that excludes the Libraries and Photos datasources. For
-        // the purposes of this demo, we'll onl y deal with non-complex datasources like the Files
+        // the purposes of this demo, we'll only deal with non-complex datasources like the Files
         // datasource.
         AdobeAssetDataSourceFilter *dataSourceFilter =
             [[AdobeAssetDataSourceFilter alloc] initWithDataSources:@[AdobeAssetDataSourceLibrary, AdobeAssetDataSourcePhotos]
@@ -72,135 +72,140 @@ The main view controller of the application sets up the "Select a File" button a
         AdobeUXAssetBrowserConfiguration *assetBrowserConfiguration = [AdobeUXAssetBrowserConfiguration new];
         assetBrowserConfiguration.dataSourceFilter = dataSourceFilter;
     
-        [[AdobeUXAssetBrowser sharedBrowser] popupFileBrowserWithParent:self
-                                                          configuration:assetBrowserConfiguration
-                                                              onSuccess:^(AdobeSelectionAssetArray *itemSelections)
-        {
-            if (itemSelections.count == 0)
-            {
-                // Nothing selected so there is nothing to do.
-                return;
-            }
-        
-            // Get the first asset-selection object.
-            AdobeSelectionAsset *assetSelection = itemSelections.firstObject;
-        
-            // Grab the generic AdobeAsset object from the selection object.
-            AdobeAsset *selectedAsset = assetSelection.selectedItem;
-        
-            self.nameLabel.text = selectedAsset.name;
-        
-            // We should have a static instance of the date formatter here to avoid a performance hit,
-            // but we'll go ahead and create one every time to the purposes of this demo.
-            NSDateFormatter *dateFormatter = [NSDateFormatter new];
-            dateFormatter.dateStyle = NSDateFormatterMediumStyle;
-            dateFormatter.timeStyle = NSDateFormatterMediumStyle;
-            dateFormatter.locale = [NSLocale currentLocale];
-        
-            self.modificationDateLabel.text = [dateFormatter stringFromDate:selectedAsset.modificationDate];
-        
-            // Make sure it's an AdobeAssetFile object.
-            if (!IsAdobeAssetFile(selectedAsset))
-            {
-                return;
-            }
-        
-            AdobeAssetFile *selectedAssetFile = (AdobeAssetFile *)selectedAsset;
-        
-            // Nicely format the file size
-            if (selectedAssetFile.fileSize > 0)
-            {
-                self.sizeLabel.text = [NSByteCountFormatter stringFromByteCount:selectedAssetFile.fileSize
-                                                                     countStyle:NSByteCountFormatterCountStyleFile];
-            }
-        
-            // Download a thumbnail for common image formats
-            if ([selectedAssetFile.type isEqualToString:kAdobeMimeTypeJPEG] ||
-                [selectedAssetFile.type isEqualToString:kAdobeMimeTypePNG] ||
-                [selectedAssetFile.type isEqualToString:kAdobeMimeTypeGIF] ||
-                [selectedAssetFile.type isEqualToString:kAdobeMimeTypeBMP])
-            {
-                [self.loadingActivityIndicator startAnimating];
-            
-                // Round the width and the height up to avoid any half-pixel values.
-                CGSize thumbnailSize = CGSizeMake(ceilf(self.thumbnailImageView.frame.size.width),
-                                                  ceilf(self.thumbnailImageView.frame.size.height));
-            
-                [selectedAssetFile getRenditionWithType:AdobeAssetFileRenditionTypePNG
-                                               withSize:thumbnailSize
-                                           withPriority:NSOperationQueuePriorityNormal
-                                             onProgress:nil
-                                           onCompletion:^(NSData *data, BOOL fromCache)
-                {
-                    UIImage *rendition = [UIImage imageWithData:data];
-                
-                    self.thumbnailImageView.image = rendition;
-                
-                    [self.loadingActivityIndicator stopAnimating];
-                
-                    NSLog(@"Successfully downloaded a thumbnail.");
-                
-                } onCancellation:^{
-                
-                    NSLog(@"The rendition request was cancelled.");
-                
-                    [self.loadingActivityIndicator stopAnimating];
-                
-                } onError:^(NSError *error) {
-                
-                    NSLog(@"There was a problem downloading the file rendition: %@", error);
-                
-                    [self.loadingActivityIndicator stopAnimating];
-                }];
-            }
-            else
-            {
-                NSString *message = @"The selected file type isn't a common image format so no "
-                    "thumbnail will be fetched from the server.\n\nTry selecting a JPEG, PNG or BMP file.";
-            
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Demo Project"
-                                                                                         message:message
-                                                                                  preferredStyle:UIAlertControllerStyleAlert];
-            
-                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                                   style:UIAlertActionStyleDefault
-                                                                 handler:NULL];
-            
-                [alertController addAction:okAction];
-            
-                [self presentViewController:alertController animated:YES completion:nil];
-            }
-        
-        } onError:^(NSError *error) {
-        
-            NSLog(@"An error occured: %@", error);
-        }];
+        // Create an instance of the Asset Browser view controller
+        AdobeUXAssetBrowserViewController *assetBrowserViewController =
+            [AdobeUXAssetBrowserViewController assetBrowserViewControllerWithConfiguration:assetBrowserConfiguration
+                                                                                  delegate:self];
+    
+        // Present the Asset Browser view controller
+        [self presentViewController:assetBrowserViewController animated:YES completion:nil];
     }
 
-To start, the method uses the `sharedBrowser` property of the `AdobeUXAssetBrowser` class. This shared instance is how you interact with the browser; it can be used across your application. As mentioned above, you can start the file browser with filtering options, and for this demo we've excluded the Library and Photos datasources. The `itemSelection` argument to the `onSuccess` callback block is an array (specifically an `AdobeSelectionAssetArray`) of items selected by the user from the file browser. By default, the user can select only one option, so our code in the callback could be simpler.)
+To start, create a new instance of the `AdobeUXAssetBrowserViewController` class with the appropriate configuration and delegate objects. As mentioned above, you can configure the Asset Browser with filtering options, and for this demo we've excluded the Library and Photos datasources.
 
-For the selected file, we can get metadata and display it to the user. While you may not do this often, it can be helpful; for example, you could use file size to determine whether to download the file. In our application, we get file size and file and modification date. To get these properties, we have to cast the `AdobeAsset` object as an `AdobeAssetFile`.
+The `AdobeUXAssetBrowserViewControllerDelegate` protocol has three callback methods that could be implemented in order to know which assets were selected, whether there was an error or whether the user closed the Asset Browser view controller without selecting an Asset. Let's have a look at the body of the callback method for when the user has successfully selected one or more assets:
 
-Next, we check the type of the selected file. If the file type is common image format (i.e. image/jpeg, image/png, image/gif or image/bmp), we use the `AdobeAssetFile` `getRenditionWithType` method to grab a thumbnail of the file from the cloud. There are progress, cancellation, error, and completion callbacks, as well.
+    [self dismissViewControllerAnimated:YES completion:nil];
+        
+        if (itemSelections.count == 0)
+        {
+            // Nothing selected so there is nothing to do.
+            return;
+        }
+        
+        // Get the first asset-selection object.
+        AdobeSelectionAsset *assetSelection = itemSelections.firstObject;
+        
+        // Grab the generic AdobeAsset object from the selection object.
+        AdobeAsset *selectedAsset = assetSelection.selectedItem;
+        
+        self.nameLabel.text = selectedAsset.name;
+        
+        // We should have a static instance of the date formatter here to avoid a performance hit,
+        // but we'll go ahead and create one every time to the purposes of this demo.
+        NSDateFormatter *dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+        dateFormatter.timeStyle = NSDateFormatterMediumStyle;
+        dateFormatter.locale = [NSLocale currentLocale];
+        
+        self.modificationDateLabel.text = [dateFormatter stringFromDate:selectedAsset.modificationDate];
+        
+        // Make sure it's an AdobeAssetFile object.
+        if (!IsAdobeAssetFile(selectedAsset))
+        {
+            return;
+        }
+        
+        AdobeAssetFile *selectedAssetFile = (AdobeAssetFile *)selectedAsset;
+        
+        // Nicely format the file size
+        if (selectedAssetFile.fileSize > 0)
+        {
+            self.sizeLabel.text = [NSByteCountFormatter stringFromByteCount:selectedAssetFile.fileSize
+                                                                 countStyle:NSByteCountFormatterCountStyleFile];
+        }
+        
+        // Download a thumbnail for common image formats
+        if ([selectedAssetFile.type isEqualToString:kAdobeMimeTypeJPEG] ||
+            [selectedAssetFile.type isEqualToString:kAdobeMimeTypePNG] ||
+            [selectedAssetFile.type isEqualToString:kAdobeMimeTypeGIF] ||
+            [selectedAssetFile.type isEqualToString:kAdobeMimeTypeBMP])
+        {
+            [self.loadingActivityIndicator startAnimating];
+            
+            // Round the width and the height up to avoid any half-pixel values.
+            CGSize thumbnailSize = CGSizeMake(ceilf(self.thumbnailImageView.frame.size.width),
+                                              ceilf(self.thumbnailImageView.frame.size.height));
+                                              
+            [selectedAssetFile downloadRenditionWithType:AdobeAssetFileRenditionTypePNG
+                                              dimensions:thumbnailSize
+                                         requestPriority:NSOperationQueuePriorityNormal
+                                           progressBlock:nil
+                                            successBlock:^(NSData *data, BOOL fromCache)
+            {
+                UIImage *rendition = [UIImage imageWithData:data];
+                
+                self.thumbnailImageView.image = rendition;
+                
+                [self.loadingActivityIndicator stopAnimating];
+                
+                NSLog(@"Successfully downloaded a thumbnail.");
+                
+            } cancellationBlock:^{
+                
+                NSLog(@"The rendition request was cancelled.");
+                
+                [self.loadingActivityIndicator stopAnimating];
+                
+            } errorBlock:^(NSError *error) {
+                
+                NSLog(@"There was a problem downloading the file rendition: %@", error);
+                
+                [self.loadingActivityIndicator stopAnimating];
+            }];
+        }
+        else
+        {
+            NSString *message = @"The selected file type isn't a common image format so no "
+            "thumbnail will be fetched from the server.\n\nTry selecting a JPEG, PNG or BMP file.";
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Demo Project"
+                                                                                     message:message
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+                                                                              
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:NULL];
+                                                             
+            [alertController addAction:okAction];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
 
-When the thumbnail has been downloaded, it is easy to create a `UIImage` and set it as the image for the `UIImageView` that is present in the app's storyboard.
+The `itemSelections` argument to this callback method is an array (specifically an `AdobeSelectionAssetArray`) of items selected by the user from the Asset Browser. By default, the user can select only one option, so our code in the callback could be simpler.)
+
+For the selected file, we can get metadata and display it to the user. While you may not do this often, it can be helpful; for example, you could use the `fileSize` property to determine whether to download the file. In our application, we use the file size and modification date. To get these properties, we have to cast the `AdobeAsset` object to `AdobeAssetFile`.
+
+Next, we check the type of the selected file. If the file type is a common image format (i.e. image/jpeg, image/png, image/gif or image/bmp), we use the `AdobeAssetFile` `downloadRenditionWithType:dimensions:requestPriority:progressBlock:successBlock:cancellationBlock:errorBlock:]` method to grab a thumbnail of the file from the cloud. There are progress, cancellation, error, and completion callbacks, as well, so we control the thumbnail download process.
+
+When the thumbnail has been downloaded, it is easy to create an `UIImage` and set it as the image for the `UIImageView` that is present in the app's storyboard.
 
 <a name="psd_extraction"></a>
 ## PSD Extraction
 
 In addition to simple file browsing, the Asset Browser provides a powerful tool for extracting and working with individual layers within a PSD file. You can find the complete `PSD Extraction` project for this guide in <a href="https://github.com/CreativeSDK/ios-getting-started-samples" target="_blank">GitHub</a>.
 
-In the previous section, “Integrating the Asset Browser”, we demonstrated how to work with files. We used the `AdobeUXAssetBrowser` class to provide a UI that let the user select a particular file. Here, we use similar code, slightly modified. The `AdobeUXAssetBrowserConfiguration` class acts as a wrapper to provide powerful and complex filtering and configuration options for the file browser:
+In the previous section, “Integrating the Asset Browser”, we demonstrated how to work with files. We used the `AdobeUXAssetBrowser` class to provide a UI that let the user select a particular file. Here, we use similar code, slightly modified. The `AdobeUXAssetBrowserConfiguration` class acts as a wrapper to provide powerful and complex filtering and configuration options for the Asset Browser:
 
     // Exclude all other data sources. Only allow the "Files" datasource
     AdobeAssetDataSourceFilter *dataSourceFilter = [[AdobeAssetDataSourceFilter alloc] initWithDataSources:@[AdobeAssetDataSourceFiles]
     filterType:AdobeAssetDataSourceFilterInclusive];
-
+    
     // Exclude all other file types, other than PSD files.
     AdobeAssetMIMETypeFilter *mimeTypeFilter = [[AdobeAssetMIMETypeFilter alloc] initWithMIMETypes:@[kAdobeMimeTypePhotoshop]
     filterType:AdobeAssetMIMETypeFilterTypeInclusion];
 
-Once we have an instance of this class, we can perform different operations on it to change how the file browser behaves. The first thing we'll do is specify a PSD mime filter:
+Once we have an instance of this class, we can perform different operations on it to change how the Asset Browser behaves. The first thing we'll do is specify a PSD mime filter:
 
     AdobeUXAssetBrowserConfiguration *configuration = [AdobeUXAssetBrowserConfiguration new];
 
@@ -211,12 +216,14 @@ The next set of options is required to enabled PSD extraction and let the user s
 
     configuration.options = EnablePSDLayerExtraction | EnableMultiplePSDLayerSelection;
 
-This can then be passed to the file browser:
+This can then be passed to the Asset Browser utility method that creates an instance for us:
 
-    // Call the Asset Browser and pass the configuration options
-    [[AdobeUXAssetBrowser sharedBrowser] popupFileBrowserWithParent:self configuration:configuration onSuccess:^(NSArray *itemSelections)
+    // Create an instance of the Asset Browser view controller
+    AdobeUXAssetBrowserViewController *assetBrowserViewController =
+        [AdobeUXAssetBrowserViewController assetBrowserViewControllerWithConfiguration:configuration
+                                                                              delegate:self];
 
-Here is the file browser with the options applied:
+Here is the Asset Browser with the options applied:
 
 <img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd1.jpg" />
 
@@ -250,15 +257,15 @@ Finally, the user selects the layers with which he wants to work:
 
 Clicking OPEN SELECTION causes the selected layer(s) to open.
 
-Keep in mind that once the user selects a file and makes a request to either open it or extract layers, the subsequent UI is driven by the Creative SDK. We only have to ask the `AdobeUXAssetBrowser` to provide the feature.
+Keep in mind that once the user selects an asset and makes a request to either open it or extract layers, the subsequent UI is driven by the Creative SDK. We only have to ask the `AdobeUXAssetBrowserViewController` to provide the feature.
 
     // Call the Asset Browser and pass the configuration options
     [[AdobeUXAssetBrowser sharedBrowser] popupFileBrowserWithParent:self configuration:configuration onSuccess:^(NSArray *itemSelections) {
-        
+    
     // Grab the last item that was selected.
     AdobeSelectionAsset *itemSelection = itemSelections.lastObject;
 
-The rest is up to the developer. The `onSuccess` block of the file-browser API is passed pointers to the selected file and any selected layers. Here is that block of code:
+The rest is up to the developer. The `assetBrowserDidSelectAssets` method of the `AdobeUXAssetBrowserViewControllerDelegate` protocol is passed pointers to the selected file and any selected layers. Here is that block of code:
 
     // Grab the first selection object.
     AdobeSelectionAsset *itemSelection = itemSelections.firstObject;

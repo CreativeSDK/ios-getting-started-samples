@@ -136,7 +136,6 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
                                        progressBlock:nil
                                         successBlock:^(NSData *data, BOOL fromCache)
         {
-            
             UIImage *rendition = [UIImage imageWithData:data];
             
             self.thumbnailImageView.image = rendition;
@@ -175,7 +174,6 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         
         [self presentViewController:alertController animated:YES completion:nil];
     }
-
 }
 
 - (void)assetBrowserDidEncounterError:(NSError *)error
