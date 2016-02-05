@@ -191,7 +191,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
     {
         // Get the root directory. This is where the image will be uploaded. Any other path within
         // a user's Creative Cloud account can be created here.
-        AdobeAssetFolder *rootFolder = [AdobeAssetFolder getRoot];
+        AdobeAssetFolder *rootFolder = [AdobeAssetFolder root];
         
         // Construct a URL object to the temporary image file we exported.
         NSURL *temporaryImagePath = [NSURL fileURLWithPath:temporaryImagePathString];
@@ -210,17 +210,17 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
         // "Uploaded Image") to the newly uploaded file, if there already exists a file with the
         // same name.
         [AdobeAssetFile create:@"Uploaded Image"
-                      inFolder:rootFolder
-                  withDataPath:temporaryImagePath
-                      withType:kAdobeMimeTypeJPEG
-           withCollisionPolicy:AdobeAssetFileCollisionPolicyAppendUniqueNumber
-                    onProgress:^(double fractionCompleted)
+                        folder:rootFolder
+                      dataPath:temporaryImagePath
+                   contentType:kAdobeMimeTypeJPEG
+               collisionPolicy:AdobeAssetFileCollisionPolicyOverwriteWithNewVersion
+                 progressBlock:^(double fractionCompleted)
         {
             NSLog(@"Uploaded %f%%", fractionCompleted);
             
             self.progressView.progress = fractionCompleted;
         }
-                  onCompletion:^(AdobeAssetFile *file)
+                  successBlock:^(AdobeAssetFile *file)
         {
             NSLog(@"Successfully uploaded.");
             
@@ -243,14 +243,14 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
             
             [self presentViewController:alertController animated:YES completion:nil];
         }
-                onCancellation:^
+             cancellationBlock:^
         {
             NSLog(@"Upload operation was cancelled.");
             
             self.uploadingLabel.hidden = YES;
             self.progressView.hidden = YES;
         }
-                       onError:^(NSError *error)
+                    errorBlock:^(NSError *error)
         {
             NSLog(@"An error occurred while uploading: %@", error);
             

@@ -32,7 +32,7 @@
 static NSString * const kCreativeSDKClientId = @"Change me";
 static NSString * const kCreativeSDKClientSecret = @"Change me";
 
-@interface ViewController () <UITableViewDataSource>
+@interface ViewController () <AdobeUXAssetBrowserViewControllerDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *psdFileNameLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -60,56 +60,31 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
 
 - (IBAction)pickPSDFileButtonTouchUpInside
 {
-    AdobeAssetDataSourceFilter *dataSourceFilter = [[AdobeAssetDataSourceFilter alloc] initWithDataSources:@[AdobeAssetDataSourceFiles]
-                                                                                                filterType:AdobeAssetDataSourceFilterInclusive];
+    // Create a datasource filter object that only displays the Files datasource. For the purposes
+    // of this demo, we'll only deal with non-complex datasources like the Files datasource.
+    AdobeAssetDataSourceFilter *dataSourceFilter =
+        [[AdobeAssetDataSourceFilter alloc] initWithDataSources:@[AdobeAssetDataSourceFiles]
+                                                     filterType:AdobeAssetDataSourceFilterInclusive];
     
-    AdobeAssetMIMETypeFilter *mimeTypeFilter = [[AdobeAssetMIMETypeFilter alloc] initWithMIMETypes:@[kAdobeMimeTypePhotoshop]
-                                                                                        filterType:AdobeAssetMIMETypeFilterTypeInclusion];
+    // Limit the types of the files that can be selected to Photoshop (.psd) files.
+    AdobeAssetMIMETypeFilter *mimeTypeFilter =
+        [[AdobeAssetMIMETypeFilter alloc] initWithMIMETypes:@[kAdobeMimeTypePhotoshop]
+                                                 filterType:AdobeAssetMIMETypeFilterTypeInclusion];
     
+    // Create an Asset Browser configuration object and configure it.
     AdobeUXAssetBrowserConfiguration *configuration = [AdobeUXAssetBrowserConfiguration new];
     
     configuration.dataSourceFilter = dataSourceFilter;
     configuration.mimeTypeFilter = mimeTypeFilter;
     configuration.options = EnablePSDLayerExtraction | EnableMultiplePSDLayerSelection;
     
-    [[AdobeUXAssetBrowser sharedBrowser] popupFileBrowserWithParent:self
-                                                      configuration:configuration
-                                                          onSuccess:^(AdobeSelectionAssetArray *itemSelections)
-    {
-        // Grab the first selection object.
-        AdobeSelectionAsset *itemSelection = itemSelections.firstObject;
-        
-        if (IsAdobeSelectionAssetPSDFile(itemSelection))
-        {
-            // We know the selected item is a PSD file so we can safely cast it to the specific type.
-            AdobeSelectionAssetPSDFile *psdSelection = (AdobeSelectionAssetPSDFile *)itemSelection;
-            
-            // Grab the actual Asset file instance.
-            AdobeAssetPSDFile *psdFile = (AdobeAssetPSDFile *)psdSelection.selectedItem;
-            
-            self.psdFileNameLabel.text = [NSString stringWithFormat:@"PSD File: %@", psdFile.name];
-            self.psdFile = psdFile;
-            
-            // Also grab all the selected layers
-            AdobePSDLayerSelectionArray *layerSelections = psdSelection.layerSelections;
-            
-            NSMutableArray *selectedLayers = [NSMutableArray arrayWithCapacity:psdSelection.layerSelections.count];
-            
-            for (AdobeSelectionPSDLayer *psdLayerSelection in layerSelections)
-            {
-                [selectedLayers addObject:psdLayerSelection.layer];
-            }
-            
-            self.selectedLayers = selectedLayers;
-            
-            [self.tableView reloadData];
-            self.tableView.hidden = NO;
-        }
-    }
-                                                            onError:^(NSError *error)
-    {
-        NSLog(@"An error occurred: %@", error);
-    }];
+    // Create an instance of the Asset Browser view controller
+    AdobeUXAssetBrowserViewController *assetBrowserViewController =
+        [AdobeUXAssetBrowserViewController assetBrowserViewControllerWithConfiguration:configuration
+                                                                              delegate:self];
+    
+    // Present the Asset Browser view controller
+    [self presentViewController:assetBrowserViewController animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource
@@ -169,36 +144,98 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     }
     
     // Create a temporary location for the result string.
-    NSString *layerInformation = [NSString stringWithFormat:@"Selected Layer: %li\nLayer name: %@\nType: %@\nLayer ID: %@\nLayer Index: %li\nVisible: %@",
-                                  (long)indexPath.row, layer.name, type, layer.layerId, (long)layer.layerIndex, layer.visible ? @"Yes" : @"No"];
+    NSString *layerInformation = [NSString stringWithFormat:@"Selected Layer: %li\n"
+                                  "Layer name: %@\n"
+                                  "Type: %@\n"
+                                  "Layer ID: %@\n"
+                                  "Layer Index: %li\n"
+                                  "Visible: %@",
+                                  (long)indexPath.row,
+                                  layer.name,
+                                  type,
+                                  layer.layerId,
+                                  (long)layer.layerIndex,
+                                  layer.visible ? @"Yes" : @"No"];
     
     cell.layerInformation = layerInformation;
     
-    [self.psdFile getRenditionForLayer:layer.layerId
-                         withLayerComp:nil
-                              withType:AdobeAssetFileRenditionTypePNG
-                              withSize:CGSizeMake(120, 0)
-                          withPriority:NSOperationQueuePriorityHigh
-                            onProgress:NULL
-                          onCompletion:^(NSData *imageData, BOOL fromCache)
+    // Download a thumbnail for the specific layer
+    [self.psdFile downloadRenditionForLayerID:layer.layerId
+                                  layerCompID:nil
+                                renditionType:AdobeAssetFileRenditionTypePNG
+                                   dimensions:CGSizeMake(120, 0)
+                              requestPriority:NSOperationQueuePriorityHigh
+                                progressBlock:NULL
+                                 successBlock:^(NSData *data, BOOL fromCache)
      {
          if ([cell.layerId isEqualToNumber:layer.layerId])
          {
-             UIImage *image = [UIImage imageWithData:imageData];
+             UIImage *image = [UIImage imageWithData:data];
              
              cell.thumbnailImage = image;
          }
      }
-                        onCancellation:^
+                            cancellationBlock:^
      {
          NSLog(@"Layer rendition cancelled for layer: %@", layer);
      }
-                               onError:^(NSError *error)
+                                   errorBlock:^(NSError *error)
      {
          NSLog(@"An error occurred when fetching the rendition for layer: %@", layer);
      }];
     
     return cell;
+}
+
+#pragma mark - AdobeUXAssetBrowserViewControllerDelegate
+
+- (void)assetBrowserDidSelectAssets:(AdobeSelectionAssetArray *)itemSelections
+{
+    // Dismiss the Asset Browser
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // Grab the first selection object.
+    AdobeSelectionAsset *itemSelection = itemSelections.firstObject;
+    
+    if (IsAdobeSelectionAssetPSDFile(itemSelection))
+    {
+        // We know the selected item is a PSD file so we can safely cast it to the specific type.
+        AdobeSelectionAssetPSDFile *psdSelection = (AdobeSelectionAssetPSDFile *)itemSelection;
+        
+        // Grab the actual Asset file instance.
+        AdobeAssetPSDFile *psdFile = (AdobeAssetPSDFile *)psdSelection.selectedItem;
+        
+        self.psdFileNameLabel.text = [NSString stringWithFormat:@"PSD File: %@", psdFile.name];
+        self.psdFile = psdFile;
+        
+        // Also grab all the selected layers
+        AdobePSDLayerSelectionArray *layerSelections = psdSelection.layerSelections;
+        
+        NSMutableArray *selectedLayers = [NSMutableArray arrayWithCapacity:psdSelection.layerSelections.count];
+        
+        for (AdobeSelectionPSDLayer *psdLayerSelection in layerSelections)
+        {
+            [selectedLayers addObject:psdLayerSelection.layer];
+        }
+        
+        self.selectedLayers = selectedLayers;
+        
+        [self.tableView reloadData];
+        self.tableView.hidden = NO;
+    }
+}
+
+- (void)assetBrowserDidEncounterError:(NSError *)error
+{
+    // Dismiss the Asset Browser
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    NSLog(@"An error occurred: %@", error);
+}
+
+- (void)assetBrowserDidClose
+{
+    NSLog(@"The user closed the Asset Browser without choosing any assets.");
 }
 
 @end

@@ -208,7 +208,7 @@ extension ViewController: UIImagePickerControllerDelegate
             
             // Get the root directory. This is where the image will be uploaded. Any other path 
             // within a user's CreativeCloud account can be created here.
-            let rootFolder = AdobeAssetFolder.getRoot()
+            let rootFolder = AdobeAssetFolder.root()
             
             // Construct a URL object to the temporary image file we exported.
             let temporaryImagePath = NSURL(fileURLWithPath: temporaryImagePathString)
@@ -220,11 +220,11 @@ extension ViewController: UIImagePickerControllerDelegate
             progressView.hidden = false
             
             AdobeAssetFile.create("Uploaded Image",
-                inFolder: rootFolder,
-                withDataPath: temporaryImagePath,
-                withType: kAdobeMimeTypeJPEG,
-                withCollisionPolicy: .AppendUniqueNumber,
-                onProgress:
+                folder: rootFolder,
+                dataPath: temporaryImagePath,
+                contentType: kAdobeMimeTypeJPEG,
+                collisionPolicy: .AppendUniqueNumber,
+                progressBlock:
                 {
                     [weak self] (fractionCompleted: Double) -> Void in
                     
@@ -232,7 +232,7 @@ extension ViewController: UIImagePickerControllerDelegate
                     
                     self?.progressView.progress = Float(fractionCompleted)
                 },
-                onCompletion:
+                successBlock:
                 {
                     [weak self] (file: AdobeAssetFile!) -> Void in
                     
@@ -250,16 +250,16 @@ extension ViewController: UIImagePickerControllerDelegate
                     
                     self?.presentViewController(alertController, animated: true, completion: nil)
                 },
-                onCancellation:
+                cancellationBlock:
                 {
-                    [weak self] in
+                    [weak self] () -> Void in
                     
                     print("Upload operation was cancelled.")
                     
                     self?.uploadingLabel.hidden = true
                     self?.progressView.hidden = true
                 },
-                onError:
+                errorBlock:
                 {
                     [weak self] (error: NSError!) -> Void in
                     

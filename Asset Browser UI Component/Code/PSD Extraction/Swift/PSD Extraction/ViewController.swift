@@ -62,59 +62,15 @@ class ViewController: UIViewController
         configuration.mimeTypeFilter = mimeTypeFilter
         configuration.options = AdobeUXAssetBrowserOption.EnablePSDLayerExtraction.rawValue | AdobeUXAssetBrowserOption.EnableMultiplePSDLayerSelection.rawValue
         
-        // Display the Asset Browser
-        AdobeUXAssetBrowser.sharedBrowser().popupFileBrowserWithParent(self,
-            configuration: configuration,
-            onSuccess:
-            {
-                [weak self] (itemSelections: [AnyObject]?) -> Void in
-                
-                // Make sure something was selected.
-                guard let itemSelection = itemSelections?.first else
-                {
-                    return
-                }
-                
-                // Make sure the selected asset is a PSD selection.
-                guard let psdSelection = itemSelection as? AdobeSelectionAssetPSDFile else
-                {
-                    return
-                }
-                
-                // Now grab the actual PSD item that was selected.
-                guard let psdFile = psdSelection.selectedItem as? AdobeAssetPSDFile else
-                {
-                    return
-                }
-                
-                self?.psdFileNameLabel.text = "PSD File: \(psdFile.name)"
-                self?.psdFile = psdFile
-                
-                // Grab all the selected layers
-                let layerSelections = psdSelection.layerSelections
-                var selectedLayers: Array<AdobePSDLayerNode> = []
-                
-                for psdLayerSelection in layerSelections
-                {
-                    selectedLayers.append((psdLayerSelection as! AdobeSelectionPSDLayer).layer)
-                }
-                
-                self?.selectedLayers = selectedLayers
-                
-                // Reload the table view data
-                self?.tableView.reloadData()
-                self?.tableView.hidden = false
-            },
-            onError:
-            {
-                (error: NSError?) -> Void in
-                
-                print("An error occurred: \(error)")
-            }
-        )
+        // Create an instance of the Asset Browser view controller
+        let assetBrowserViewController = AdobeUXAssetBrowserViewController(configuration: configuration, delegate: self)
+        
+        // Present the Asset Browser view controller
+        self.presentViewController(assetBrowserViewController, animated: true, completion: nil)
     }
 }
 
+// MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource
 {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -160,13 +116,13 @@ extension ViewController: UITableViewDataSource
             "Layer Index: \(layer.layerIndex)\n" +
             "Visible: \(layer.visible)"
         
-        psdFile?.getRenditionForLayer(layer.layerId,
-            withLayerComp: nil,
-            withType: .PNG,
-            withSize: CGSizeMake(120, 0),
-            withPriority: .High,
-            onProgress: nil,
-            onCompletion:
+        psdFile?.downloadRenditionForLayerID(layer.layerId,
+            layerCompID: nil,
+            renditionType: .PNG,
+            dimensions: CGSize(width: 120, height: 0),
+            requestPriority: .High,
+            progressBlock: nil,
+            successBlock:
             {
                 (imageData: NSData!, fromCache: Bool) -> Void in
                 
@@ -177,18 +133,77 @@ extension ViewController: UITableViewDataSource
                     cell.thumbnailImage = image
                 }
             },
-            onCancellation:
+            cancellationBlock:
             {
                 print("Layer rendition cancelled for layer: \(layer)")
             },
-            onError:
+            errorBlock:
             {
                 (error: NSError!) -> Void in
                 
                 print("An error occurred when fetching the rendition for layer: \(layer)")
             }
-        )
+         )
         
         return cell
+    }
+}
+
+// MARK: - AdobeUXAssetBrowserViewControllerDelegate
+extension ViewController : AdobeUXAssetBrowserViewControllerDelegate
+{
+    func assetBrowserDidSelectAssets(itemSelections: [AnyObject])
+    {
+        // Dismiss the Asset Browser view controller.
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        // Make sure something was selected.
+        guard let itemSelection = itemSelections.first else
+        {
+            return
+        }
+        
+        // Make sure the selected asset is a PSD selection.
+        guard let psdSelection = itemSelection as? AdobeSelectionAssetPSDFile else
+        {
+            return
+        }
+        
+        // Now grab the actual PSD item that was selected.
+        guard let psdFile = psdSelection.selectedItem as? AdobeAssetPSDFile else
+        {
+            return
+        }
+        
+        self.psdFileNameLabel.text = "PSD File: \(psdFile.name)"
+        self.psdFile = psdFile
+        
+        // Grab all the selected layers
+        let layerSelections = psdSelection.layerSelections
+        var selectedLayers: Array<AdobePSDLayerNode> = []
+        
+        for psdLayerSelection in layerSelections
+        {
+            selectedLayers.append((psdLayerSelection as! AdobeSelectionPSDLayer).layer)
+        }
+        
+        self.selectedLayers = selectedLayers
+        
+        // Reload the table view data
+        self.tableView.reloadData()
+        self.tableView.hidden = false
+    }
+    
+    func assetBrowserDidEncounterError(error: NSError)
+    {
+        // Dismiss the Asset Browser view controller.
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        print("An error occurred: \(error)")
+    }
+    
+    func assetBrowserDidClose()
+    {
+        print("The user closed the Asset Browser without choosing any assets.")
     }
 }

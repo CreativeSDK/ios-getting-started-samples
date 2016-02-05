@@ -30,7 +30,7 @@
 static NSString * const kCreativeSDKClientId = @"Change me";
 static NSString * const kCreativeSDKClientSecret = @"Change me";
 
-@interface ViewController ()
+@interface ViewController () <AdobeUXAssetBrowserViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailImageView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingActivityIndicator;
@@ -65,109 +65,129 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     AdobeUXAssetBrowserConfiguration *assetBrowserConfiguration = [AdobeUXAssetBrowserConfiguration new];
     assetBrowserConfiguration.dataSourceFilter = dataSourceFilter;
     
-    [[AdobeUXAssetBrowser sharedBrowser] popupFileBrowserWithParent:self
-                                                      configuration:assetBrowserConfiguration
-                                                          onSuccess:^(AdobeSelectionAssetArray *itemSelections)
+    // Create an instance of the Asset Browser view controller
+    AdobeUXAssetBrowserViewController *assetBrowserViewController =
+        [AdobeUXAssetBrowserViewController assetBrowserViewControllerWithConfiguration:assetBrowserConfiguration
+                                                                              delegate:self];
+    
+    // Present the Asset Browser view controller
+    [self presentViewController:assetBrowserViewController animated:YES completion:nil];
+}
+
+#pragma mark - AdobeUXAssetBrowserViewControllerDelegate
+
+- (void)assetBrowserDidSelectAssets:(AdobeSelectionAssetArray *)itemSelections
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if (itemSelections.count == 0)
     {
-        if (itemSelections.count == 0)
+        // Nothing selected so there is nothing to do.
+        return;
+    }
+    
+    // Get the first asset-selection object.
+    AdobeSelectionAsset *assetSelection = itemSelections.firstObject;
+    
+    // Grab the generic AdobeAsset object from the selection object.
+    AdobeAsset *selectedAsset = assetSelection.selectedItem;
+    
+    self.nameLabel.text = selectedAsset.name;
+    
+    // We should have a static instance of the date formatter here to avoid a performance hit,
+    // but we'll go ahead and create one every time to the purposes of this demo.
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+    dateFormatter.timeStyle = NSDateFormatterMediumStyle;
+    dateFormatter.locale = [NSLocale currentLocale];
+    
+    self.modificationDateLabel.text = [dateFormatter stringFromDate:selectedAsset.modificationDate];
+    
+    // Make sure it's an AdobeAssetFile object.
+    if (!IsAdobeAssetFile(selectedAsset))
+    {
+        return;
+    }
+    
+    AdobeAssetFile *selectedAssetFile = (AdobeAssetFile *)selectedAsset;
+    
+    // Nicely format the file size
+    if (selectedAssetFile.fileSize > 0)
+    {
+        self.sizeLabel.text = [NSByteCountFormatter stringFromByteCount:selectedAssetFile.fileSize
+                                                             countStyle:NSByteCountFormatterCountStyleFile];
+    }
+    
+    // Download a thumbnail for common image formats
+    if ([selectedAssetFile.type isEqualToString:kAdobeMimeTypeJPEG] ||
+        [selectedAssetFile.type isEqualToString:kAdobeMimeTypePNG] ||
+        [selectedAssetFile.type isEqualToString:kAdobeMimeTypeGIF] ||
+        [selectedAssetFile.type isEqualToString:kAdobeMimeTypeBMP])
+    {
+        [self.loadingActivityIndicator startAnimating];
+        
+        // Round the width and the height up to avoid any half-pixel values.
+        CGSize thumbnailSize = CGSizeMake(ceilf(self.thumbnailImageView.frame.size.width),
+                                          ceilf(self.thumbnailImageView.frame.size.height));
+        
+        [selectedAssetFile downloadRenditionWithType:AdobeAssetFileRenditionTypePNG
+                                          dimensions:thumbnailSize
+                                     requestPriority:NSOperationQueuePriorityNormal
+                                       progressBlock:nil
+                                        successBlock:^(NSData *data, BOOL fromCache)
         {
-            // Nothing selected so there is nothing to do.
-            return;
-        }
-        
-        // Get the first asset-selection object.
-        AdobeSelectionAsset *assetSelection = itemSelections.firstObject;
-        
-        // Grab the generic AdobeAsset object from the selection object.
-        AdobeAsset *selectedAsset = assetSelection.selectedItem;
-        
-        self.nameLabel.text = selectedAsset.name;
-        
-        // We should have a static instance of the date formatter here to avoid a performance hit,
-        // but we'll go ahead and create one every time to the purposes of this demo.
-        NSDateFormatter *dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateStyle = NSDateFormatterMediumStyle;
-        dateFormatter.timeStyle = NSDateFormatterMediumStyle;
-        dateFormatter.locale = [NSLocale currentLocale];
-        
-        self.modificationDateLabel.text = [dateFormatter stringFromDate:selectedAsset.modificationDate];
-        
-        // Make sure it's an AdobeAssetFile object.
-        if (!IsAdobeAssetFile(selectedAsset))
-        {
-            return;
-        }
-        
-        AdobeAssetFile *selectedAssetFile = (AdobeAssetFile *)selectedAsset;
-        
-        // Nicely format the file size
-        if (selectedAssetFile.fileSize > 0)
-        {
-            self.sizeLabel.text = [NSByteCountFormatter stringFromByteCount:selectedAssetFile.fileSize
-                                                                 countStyle:NSByteCountFormatterCountStyleFile];
-        }
-        
-        // Download a thumbnail for common image formats
-        if ([selectedAssetFile.type isEqualToString:kAdobeMimeTypeJPEG] ||
-            [selectedAssetFile.type isEqualToString:kAdobeMimeTypePNG] ||
-            [selectedAssetFile.type isEqualToString:kAdobeMimeTypeGIF] ||
-            [selectedAssetFile.type isEqualToString:kAdobeMimeTypeBMP])
-        {
-            [self.loadingActivityIndicator startAnimating];
             
-            // Round the width and the height up to avoid any half-pixel values.
-            CGSize thumbnailSize = CGSizeMake(ceilf(self.thumbnailImageView.frame.size.width),
-                                              ceilf(self.thumbnailImageView.frame.size.height));
+            UIImage *rendition = [UIImage imageWithData:data];
             
-            [selectedAssetFile getRenditionWithType:AdobeAssetFileRenditionTypePNG
-                                           withSize:thumbnailSize
-                                       withPriority:NSOperationQueuePriorityNormal
-                                         onProgress:nil
-                                       onCompletion:^(NSData *data, BOOL fromCache)
-            {
-                UIImage *rendition = [UIImage imageWithData:data];
-                
-                self.thumbnailImageView.image = rendition;
-                
-                [self.loadingActivityIndicator stopAnimating];
-                
-                NSLog(@"Successfully downloaded a thumbnail.");
-                
-            } onCancellation:^{
-                
-                NSLog(@"The rendition request was cancelled.");
-                
-                [self.loadingActivityIndicator stopAnimating];
-                
-            } onError:^(NSError *error) {
-                
-                NSLog(@"There was a problem downloading the file rendition: %@", error);
-                
-                [self.loadingActivityIndicator stopAnimating];
-            }];
-        }
-        else
-        {
-            NSString *message = @"The selected file type isn't a common image format so no "
-                "thumbnail will be fetched from the server.\n\nTry selecting a JPEG, PNG or BMP file.";
+            self.thumbnailImageView.image = rendition;
             
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Demo Project"
-                                                                                     message:message
-                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            [self.loadingActivityIndicator stopAnimating];
             
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                               style:UIAlertActionStyleDefault
-                                                             handler:NULL];
+            NSLog(@"Successfully downloaded a thumbnail.");
             
-            [alertController addAction:okAction];
+        } cancellationBlock:^{
             
-            [self presentViewController:alertController animated:YES completion:nil];
-        }
+            NSLog(@"The rendition request was cancelled.");
+            
+            [self.loadingActivityIndicator stopAnimating];
+            
+        } errorBlock:^(NSError *error) {
+            
+            NSLog(@"There was a problem downloading the file rendition: %@", error);
+            
+            [self.loadingActivityIndicator stopAnimating];
+        }];
+    }
+    else
+    {
+        NSString *message = @"The selected file type isn't a common image format so no "
+        "thumbnail will be fetched from the server.\n\nTry selecting a JPEG, PNG or BMP file.";
         
-    } onError:^(NSError *error) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Demo Project"
+                                                                                 message:message
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
         
-        NSLog(@"An error occurred: %@", error);
-    }];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:NULL];
+        
+        [alertController addAction:okAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+
+}
+
+- (void)assetBrowserDidEncounterError:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    NSLog(@"An error occurred: %@", error);
+}
+
+- (void)assetBrowserDidClose
+{
+    NSLog(@"User closed the Asset Browser view controller.");
 }
 
 @end
