@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVr-FP-HmI">
+                                <rect key="frame" x="20" y="28" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ju-Nn-hdO">
+                                <rect key="frame" x="20" y="57" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnK-sa-AXm" userLabel="Log In Button">
+                                <rect key="frame" x="275" y="550" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="dAY-H4-3fV"/>
+                                </constraints>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="loginButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="nOX-Ql-xa6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="&lt;Not Logged In&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="6b3-bo-wt2" userLabel="Display Name Label">
+                                <rect key="frame" x="78" y="28" width="502" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="&lt;Not Logged In&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="R4J-Kv-VHp" userLabel="Email Label">
+                                <rect key="frame" x="78" y="57" width="502" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R4J-Kv-VHp" firstAttribute="leading" secondItem="1Ju-Nn-hdO" secondAttribute="trailing" constant="12" id="5hd-CU-IcL"/>
+                            <constraint firstItem="1Ju-Nn-hdO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="5rd-Jf-UFC"/>
+                            <constraint firstItem="uVr-FP-HmI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="7Iu-tG-0cB"/>
+                            <constraint firstItem="6b3-bo-wt2" firstAttribute="leading" secondItem="uVr-FP-HmI" secondAttribute="trailing" constant="8" id="7SP-pz-5Q0"/>
+                            <constraint firstItem="XnK-sa-AXm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CIO-uL-ocQ"/>
+                            <constraint firstItem="R4J-Kv-VHp" firstAttribute="top" secondItem="6b3-bo-wt2" secondAttribute="bottom" constant="8" id="HMh-9O-ewj"/>
+                            <constraint firstAttribute="trailing" secondItem="6b3-bo-wt2" secondAttribute="trailing" constant="20" id="Ixg-zG-jmZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XnK-sa-AXm" secondAttribute="bottom" constant="20" id="JL6-Go-2GE"/>
+                            <constraint firstAttribute="trailing" secondItem="R4J-Kv-VHp" secondAttribute="trailing" constant="20" id="Lo4-1X-z9i"/>
+                            <constraint firstItem="6b3-bo-wt2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="UQt-Q8-mQK"/>
+                            <constraint firstItem="1Ju-Nn-hdO" firstAttribute="top" secondItem="uVr-FP-HmI" secondAttribute="bottom" constant="8" id="lDb-dR-O3t"/>
+                            <constraint firstItem="uVr-FP-HmI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="phM-E0-yr2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="R4J-Kv-VHp" id="vCS-ew-OSV"/>
+                        <outlet property="loginButton" destination="XnK-sa-AXm" id="XaK-FE-bKg"/>
+                        <outlet property="userNameLabel" destination="6b3-bo-wt2" id="iB7-86-ObN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228" y="247"/>
+        </scene>
+    </scenes>
+</document>
