@@ -113,3 +113,7 @@ If the Cancel and Apply buttons on the main Photo Editor screen are not consiste
       setLeftNavigationBarButtonTitle:kAFLeftNavigationTitlePresetExit];
     [AdobeImageEditorCustomization
       setRightNavigationBarButtonTitle:kAFRightNavigationTitlePresetSave];
+
+### Content Sync
+
+Users can now log in with their Adobe ID to sync their content, such as content acquired from the Aviary app. This is optional and only available to approved partners.  Interested partner can <a href="http://" title="sign up">sign up here</a>!
