@@ -116,4 +116,4 @@ If the Cancel and Apply buttons on the main Photo Editor screen are not consiste
 
 ### Content Sync
 
-Users can now log in with their Adobe ID to sync their content, such as content acquired from the Aviary app. This is optional and only available to approved partners.  Interested partner can <a href="http://" title="sign up">sign up here</a>!
+Users can now log in with their Adobe ID to sync their content, such as content acquired from the Aviary app. This is optional and only available to approved partners.  Interested partner can <a href="https://creativesdk.zendesk.com/hc/en-us/requests/new?ticket_form_id=66896" title="sign up">sign up here</a>!
