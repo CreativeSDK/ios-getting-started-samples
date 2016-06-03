@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eks-L7-eSf">
+                                <rect key="frame" x="223" y="285" width="154" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IjN-Zg-WI1"/>
+                                    <constraint firstAttribute="width" constant="154" id="ge7-r3-okI"/>
+                                </constraints>
+                                <state key="normal" title="Launch Uploader"/>
+                                <connections>
+                                    <action selector="showAssetUploader" destination="BYZ-38-t0r" eventType="touchUpInside" id="xO1-vB-FnO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eks-L7-eSf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="223" id="08B-Zb-J9r"/>
+                            <constraint firstItem="eks-L7-eSf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="265" id="GNd-Pg-5Ga"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eks-L7-eSf" secondAttribute="bottom" constant="285" id="Mx3-6p-ZSK"/>
+                            <constraint firstItem="eks-L7-eSf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T9y-Fh-JJx"/>
+                            <constraint firstAttribute="trailing" secondItem="eks-L7-eSf" secondAttribute="trailing" constant="223" id="iY5-Dy-ATj"/>
+                            <constraint firstItem="eks-L7-eSf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vep-LK-YR8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="08B-Zb-J9r"/>
+                                <exclude reference="GNd-Pg-5Ga"/>
+                                <exclude reference="iY5-Dy-ATj"/>
+                                <exclude reference="Mx3-6p-ZSK"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="579" y="607"/>
+        </scene>
+    </scenes>
+</document>
