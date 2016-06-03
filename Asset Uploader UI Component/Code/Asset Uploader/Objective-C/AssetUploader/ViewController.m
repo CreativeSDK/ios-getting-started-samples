@@ -193,7 +193,23 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         }
         else if (IsAdobePhotoCatalog(destination.selectedItem))
         {
-            // TODO: Upload assets to selelcted photo catalog.
+            AdobePhotoCatalog *selectedPhotoCatalog = destination.selectedItem;
+            
+            // Upload assets to selelcted photo catalog.
+            [AdobePhotoAsset create:assetName
+                            catalog:selectedPhotoCatalog
+                           dataPath:assetURL
+                        contentType:kAdobeMimeTypePNG
+                      progressBlock:nil
+                       successBlock:^(AdobePhotoAsset *asset)
+             {
+                 NSLog(@"Upload success: %@", assetName);
+             }
+                  cancellationBlock:nil
+                         errorBlock:^(NSError *error)
+             {
+                 NSLog(@"Upload failed: %@", error);
+             }];
         }
     }
     
