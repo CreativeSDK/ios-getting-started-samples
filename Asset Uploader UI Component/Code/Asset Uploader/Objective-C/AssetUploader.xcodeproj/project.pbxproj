@@ -22,11 +22,6 @@
 		FE8800C31D00FBD3005D9350 /* Asset1.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8800BB1D00FBD3005D9350 /* Asset1.png */; };
 		FE8800C41D00FBD3005D9350 /* Asset2.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8800BC1D00FBD3005D9350 /* Asset2.png */; };
 		FE8800C51D00FBD3005D9350 /* Asset3.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8800BD1D00FBD3005D9350 /* Asset3.png */; };
-		FE8800C61D00FBD3005D9350 /* Asset4.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8800BE1D00FBD3005D9350 /* Asset4.png */; };
-		FE8800C71D00FBD3005D9350 /* Asset5.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8800BF1D00FBD3005D9350 /* Asset5.png */; };
-		FE8800C81D00FBD3005D9350 /* Asset6.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8800C01D00FBD3005D9350 /* Asset6.png */; };
-		FE8800C91D00FBD3005D9350 /* Asset7.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8800C11D00FBD3005D9350 /* Asset7.png */; };
-		FE8800CA1D00FBD3005D9350 /* Asset8.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8800C21D00FBD3005D9350 /* Asset8.png */; };
 		FEDD6AF81D00B5DA007711EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDD6AF71D00B5DA007711EF /* main.m */; };
 		FEDD6AFB1D00B5DA007711EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDD6AFA1D00B5DA007711EF /* AppDelegate.m */; };
 		FEDD6AFE1D00B5DA007711EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDD6AFD1D00B5DA007711EF /* ViewController.m */; };
@@ -51,11 +46,6 @@
 		FE8800BB1D00FBD3005D9350 /* Asset1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Asset1.png; path = ../../../../Guide/Asset1.png; sourceTree = "<group>"; };
 		FE8800BC1D00FBD3005D9350 /* Asset2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Asset2.png; path = ../../../../Guide/Asset2.png; sourceTree = "<group>"; };
 		FE8800BD1D00FBD3005D9350 /* Asset3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Asset3.png; path = ../../../../Guide/Asset3.png; sourceTree = "<group>"; };
-		FE8800BE1D00FBD3005D9350 /* Asset4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Asset4.png; path = ../../../../Guide/Asset4.png; sourceTree = "<group>"; };
-		FE8800BF1D00FBD3005D9350 /* Asset5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Asset5.png; path = ../../../../Guide/Asset5.png; sourceTree = "<group>"; };
-		FE8800C01D00FBD3005D9350 /* Asset6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Asset6.png; path = ../../../../Guide/Asset6.png; sourceTree = "<group>"; };
-		FE8800C11D00FBD3005D9350 /* Asset7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Asset7.png; path = ../../../../Guide/Asset7.png; sourceTree = "<group>"; };
-		FE8800C21D00FBD3005D9350 /* Asset8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Asset8.png; path = ../../../../Guide/Asset8.png; sourceTree = "<group>"; };
 		FEDD6AF31D00B5DA007711EF /* AssetUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssetUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEDD6AF71D00B5DA007711EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEDD6AF91D00B5DA007711EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,11 +111,6 @@
 				FE8800BB1D00FBD3005D9350 /* Asset1.png */,
 				FE8800BC1D00FBD3005D9350 /* Asset2.png */,
 				FE8800BD1D00FBD3005D9350 /* Asset3.png */,
-				FE8800BE1D00FBD3005D9350 /* Asset4.png */,
-				FE8800BF1D00FBD3005D9350 /* Asset5.png */,
-				FE8800C01D00FBD3005D9350 /* Asset6.png */,
-				FE8800C11D00FBD3005D9350 /* Asset7.png */,
-				FE8800C21D00FBD3005D9350 /* Asset8.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -232,19 +217,14 @@
 			files = (
 				FE8800631D00D309005D9350 /* AdobeCreativeSDKAssetModelResources.bundle in Resources */,
 				FE8800611D00B96E005D9350 /* AdobeCreativeSDKAssetUXResources.bundle in Resources */,
-				FE8800C91D00FBD3005D9350 /* Asset7.png in Resources */,
-				FE8800CA1D00FBD3005D9350 /* Asset8.png in Resources */,
 				FE88005F1D00B95D005D9350 /* AdobeCreativeSDKCommonUXResources.bundle in Resources */,
 				FE8800C41D00FBD3005D9350 /* Asset2.png in Resources */,
 				FE88005D1D00B93C005D9350 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
 				FEDD6B061D00B5DA007711EF /* LaunchScreen.storyboard in Resources */,
-				FE8800C71D00FBD3005D9350 /* Asset5.png in Resources */,
 				FEDD6B031D00B5DA007711EF /* Assets.xcassets in Resources */,
 				FE8800C31D00FBD3005D9350 /* Asset1.png in Resources */,
-				FE8800C61D00FBD3005D9350 /* Asset4.png in Resources */,
 				FE8800C51D00FBD3005D9350 /* Asset3.png in Resources */,
 				FEDD6B011D00B5DA007711EF /* Main.storyboard in Resources */,
-				FE8800C81D00FBD3005D9350 /* Asset6.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

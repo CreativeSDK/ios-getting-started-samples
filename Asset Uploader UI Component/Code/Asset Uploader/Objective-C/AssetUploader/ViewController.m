@@ -54,15 +54,15 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Asset Uploader
+#pragma mark - Asset Uploader Handler
 
 - (IBAction)showAssetUploader
 {
     AdobeUXAssetUploaderConfiguration *browserConfig = [AdobeUXAssetUploaderConfiguration new];
-    NSUInteger maxNumberOfAsset = 8;
+    NSUInteger numberOfAssets = 3;
     NSMutableArray *assetsToUpload = [NSMutableArray new];
     
-    for (NSUInteger i = 1; i <= maxNumberOfAsset; i++)
+    for (NSUInteger i = 1; i <= numberOfAssets; i++)
     {
         AdobeUXAssetBrowserConfigurationProxyAsset *assetToUpload = [AdobeUXAssetBrowserConfigurationProxyAsset new];
         
@@ -213,6 +213,14 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         }
     }
     
+    // Uploading to libraries, then perform sync.
+    if ([destination.selectedItem isKindOfClass:[AdobeLibraryComposite class]])
+    {
+        // Perform sync so that the added assets are uploaded & a delegate callback is received on sync complete.
+        AdobeLibraryManager *libMgr = [AdobeLibraryManager sharedInstance];
+        [libMgr sync];
+    }
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Uploading Assets"
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];
@@ -254,6 +262,8 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
 
 - (void)setupAdobeLibraryManager:(AdobeLibraryDownloadPolicyType)downloadPolicy
 {
+    // Below is the setup for configure & start AdobeLibraryManager.
+    // For more info regarding libraries please refer: https://creativesdk.adobe.com/docs/ios/#/articles/libraries/index.html.
     AdobeLibraryDelegateStartupOptions *startupOptions = [[AdobeLibraryDelegateStartupOptions alloc] init];
 
     startupOptions.autoDownloadPolicy = downloadPolicy;
@@ -283,9 +293,6 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     
     // Register as delegate to get callbacks.
     [libMgr registerDelegate:self options:startupOptions];
-    
-    // Perform sync
-    [libMgr sync];
 }
 
 @end
