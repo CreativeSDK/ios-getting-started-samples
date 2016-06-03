@@ -73,7 +73,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         NSString *assetName = [NSString stringWithFormat:@"Asset%lu", (unsigned long)i];
         assetToUpload.name = assetName;
         
-        // Use bundled images form the test app.
+        // Provide the thumbnails to asset that is being uploaded.
         assetToUpload.thumbnail = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:assetName ofType:@"png"]];
         
         [assetsToUpload addObject:assetToUpload];
@@ -135,6 +135,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         {
              AdobeAssetFolder *selectedFolder = destination.selectedItem;
             
+            // Upload assets to selected folder.
             [AdobeAssetFile create:assetName
                             folder:selectedFolder
                           dataPath:assetURL
@@ -155,6 +156,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
             AdobeLibraryComposite *composite = destination.selectedItem;
             NSError *error;
             
+            // Add assets to selected library and perform sync.
             [AdobeDesignLibraryUtils addImage:assetURL
                                          name:assetName
                                       library:composite
@@ -173,6 +175,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         {
             AdobePhotoCollection *selectedPhotoCollection = destination.selectedItem;
             
+            // Upload assets to selected photo collection.
             [AdobePhotoAsset create:assetName
                          collection:selectedPhotoCollection
                            dataPath:assetURL
@@ -190,7 +193,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         }
         else if (IsAdobePhotoCatalog(destination.selectedItem))
         {
-            // TODO:
+            // TODO: Upload assets to selelcted photo catalog.
         }
     }
     
@@ -227,6 +230,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
 
 - (void)syncFinished
 {
+    // AdobeLibraryManager completed sync, hence deregister as delegate so that AdobeLibraryManager shutsdown.
     [[AdobeLibraryManager sharedInstance] deregisterDelegate:self];
 }
 
@@ -235,18 +239,16 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
 - (void)setupAdobeLibraryManager:(AdobeLibraryDownloadPolicyType)downloadPolicy
 {
     AdobeLibraryDelegateStartupOptions *startupOptions = [[AdobeLibraryDelegateStartupOptions alloc] init];
-    [startupOptions setAutoDownloadPolicy:downloadPolicy];
-    [startupOptions setAutoDownloadContentTypes:@[kAdobeMimeTypeJPEG,
-                                                  kAdobeMimeTypePNG]];
-    [startupOptions setElementTypesFilter:@[AdobeDesignLibraryColorElementType,
-                                            AdobeDesignLibraryColorThemeElementType,
-                                            AdobeDesignLibraryCharacterStyleElementType,
-                                            AdobeDesignLibraryBrushElementType,
-                                            AdobeDesignLibraryImageElementType,
-                                            AdobeDesignLibraryLayerStyleElementType]];
-    
-    NSError *libErr = nil;
-    
+
+    startupOptions.autoDownloadPolicy = downloadPolicy;
+    startupOptions.autoDownloadContentTypes = @[kAdobeMimeTypeJPEG,
+                                                kAdobeMimeTypePNG];
+    startupOptions.elementTypesFilter = @[AdobeDesignLibraryColorElementType,
+                                          AdobeDesignLibraryColorThemeElementType,
+                                          AdobeDesignLibraryCharacterStyleElementType,
+                                          AdobeDesignLibraryBrushElementType,
+                                          AdobeDesignLibraryImageElementType,
+                                          AdobeDesignLibraryLayerStyleElementType];
     syncOnCommit = YES;
     libraryQueue = [NSOperationQueue mainQueue];
     autoSyncDownloadedAssets = NO;
@@ -258,8 +260,15 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     rootLibDir = [rootLibDir stringByAppendingPathComponent:[[NSBundle mainBundle] bundleIdentifier]];
     rootLibDir = [rootLibDir stringByAppendingPathComponent:@"design-libraries"];
     
+    NSError *libErr = nil;
+    
+    // Start the AdobeLibraryManager.
     [libMgr startWithFolder:rootLibDir andError:&libErr];
+    
+    // Register as delegate to get callbacks.
     [libMgr registerDelegate:self options:startupOptions];
+    
+    // Perform sync
     [libMgr sync];
 }
 
