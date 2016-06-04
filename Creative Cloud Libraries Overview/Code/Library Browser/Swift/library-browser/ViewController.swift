@@ -28,6 +28,13 @@ class ViewController: UIViewController
     private let kCreativeSDKClientId = "Change Me"
     private let kCreativeSDKClientSecret = "Change Me"
     
+    // Implemented the required properties that the AdobeLibraryDelegate protocol specifies. Since 
+    // class extensions are not allowed to add properties, we need to define these properties here.
+    var assetDownloadLibraryFilter: [AnyObject]!
+    var autoSyncDownloadedAssets = false
+    var libraryQueue: NSOperationQueue!
+    var syncOnCommit = false
+    
     @IBOutlet weak var selectionThumbnailImageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -68,12 +75,39 @@ class ViewController: UIViewController
 }
 
 // MARK: - AdobeUXAssetBrowserViewControllerDelegate
-extension ViewController : AdobeUXAssetBrowserViewControllerDelegate
+extension ViewController: AdobeUXAssetBrowserViewControllerDelegate
 {
     func assetBrowserDidSelectAssets(itemSelections: [AnyObject])
     {
         // Dismiss the Asset Browser view controller.
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        // Configure the AdobeLibraryManager and start it before we do anything. We're required to 
+        // do this to make sure the latest revision of the Libraries and the contained assets are 
+        // present.
+        let libraryManagerStartupOptions = AdobeLibraryDelegateStartupOptions()
+        libraryManagerStartupOptions.autoDownloadPolicy = .ManifestOnly
+        libraryManagerStartupOptions.autoDownloadContentTypes = [kAdobeMimeTypePNG, kAdobeMimeTypeJPEG]
+        libraryManagerStartupOptions.elementTypesFilter = [AdobeDesignLibraryImageElementType]
+        
+        var rootLibraryDirectory: NSString = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0]
+        rootLibraryDirectory = rootLibraryDirectory.stringByAppendingPathComponent(NSBundle.mainBundle().bundleIdentifier!)
+        rootLibraryDirectory = rootLibraryDirectory.stringByAppendingPathComponent("libraries")
+        
+        let libraryManager = AdobeLibraryManager.sharedInstance()
+        libraryManager.syncAllowedByNetworkStatusMask = UInt(AdobeNetworkStatus.ReachableViaWiFi.rawValue) |
+            UInt(AdobeNetworkStatus.ReachableViaWWAN.rawValue)
+        
+        do
+        {
+            // Start the Library manager
+            try libraryManager.startWithFolder(rootLibraryDirectory as String)
+            libraryManager.registerDelegate(self, options: libraryManagerStartupOptions)
+        }
+        catch let e
+        {
+            print("Could not start the Library Manager. An error occurred: \(e)")
+        }
         
         // Grab the first selected item and make sure we're dealing with a Library selection object.
         // This item is the selection object that has information about the selected item(s). We 
@@ -193,5 +227,14 @@ extension ViewController : AdobeUXAssetBrowserViewControllerDelegate
         
         // Handle the error. Here we only print out a log of the error.
         print("An error occurred: \(error)")
+    }
+}
+
+// MARK: - AdobeLibraryDelegate
+extension ViewController: AdobeLibraryDelegate
+{
+    func syncFinished()
+    {
+        AdobeLibraryManager.sharedInstance().deregisterDelegate(self)
     }
 }

@@ -30,7 +30,7 @@
 static NSString * const kCreativeSDKClientId = @"Change Me";
 static NSString * const kCreativeSDKClientSecret = @"Change Me";
 
-@interface ViewController () <AdobeUXAssetBrowserViewControllerDelegate>
+@interface ViewController () <AdobeLibraryDelegate, AdobeUXAssetBrowserViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *selectionThumbnailImageView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -38,6 +38,11 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
 @end
 
 @implementation ViewController
+
+@synthesize assetDownloadLibraryFilter;
+@synthesize autoSyncDownloadedAssets;
+@synthesize libraryQueue;
+@synthesize syncOnCommit;
 
 - (void)viewDidLoad
 {
@@ -84,6 +89,23 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
 {
     // Dismiss the Asset Browser view controller.
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // Configure the AdobeLibraryManager and start it before we do anything. We're required to do
+    // this to make sure the latest revision of the Libraries and the contained assets are present.
+    AdobeLibraryDelegateStartupOptions *libraryManagerStartupOptions = [AdobeLibraryDelegateStartupOptions new];
+    libraryManagerStartupOptions.autoDownloadPolicy = AdobeLibraryDownloadPolicyTypeManifestOnly;
+    libraryManagerStartupOptions.autoDownloadContentTypes = @[kAdobeMimeTypePNG, kAdobeMimeTypeJPEG];
+    libraryManagerStartupOptions.elementTypesFilter = @[AdobeDesignLibraryImageElementType];
+    
+    NSString *rootLibraryDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+    rootLibraryDirectory = [rootLibraryDirectory stringByAppendingPathComponent:[NSBundle mainBundle].bundleIdentifier];
+    rootLibraryDirectory = [rootLibraryDirectory stringByAppendingPathComponent:@"libraries"];
+    
+    NSError *error = nil;
+    AdobeLibraryManager *libraryManager = [AdobeLibraryManager sharedInstance];
+    libraryManager.syncAllowedByNetworkStatusMask = AdobeNetworkReachableViaWiFi | AdobeNetworkReachableViaWWAN;
+    [libraryManager startWithFolder:rootLibraryDirectory andError:&error];
+    [libraryManager registerDelegate:self options:libraryManagerStartupOptions];
     
     // Grab the first selected item. This item is the a selection object that has information about
     // the selected item(s). We can use this object to pinpoint the selected Library item and
@@ -191,6 +213,15 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
     
     // Handle the error. Here we only print out a log of the error.
     NSLog(@"An error occurred: %@", error);
+}
+
+#pragma mark - AdobeLibraryDelegate
+
+- (void)syncFinished
+{
+    // The Library manager completed a sync operation so unregister the current class so the
+    // manager can shut down.
+    [[AdobeLibraryManager sharedInstance] deregisterDelegate:self];
 }
 
 @end
