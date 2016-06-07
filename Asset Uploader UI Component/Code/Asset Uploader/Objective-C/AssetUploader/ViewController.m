@@ -221,6 +221,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         [libMgr sync];
     }
     
+    [message appendString:@"\n Your assets are being uploaded asynchronously to destination. Please refer the console log for upload success or error for each asset."];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Uploading Assets"
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];
@@ -264,7 +265,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
 {
     // Below is the setup for configure & start AdobeLibraryManager.
     // For more info regarding libraries please refer: https://creativesdk.adobe.com/docs/ios/#/articles/libraries/index.html.
-    AdobeLibraryDelegateStartupOptions *startupOptions = [[AdobeLibraryDelegateStartupOptions alloc] init];
+    AdobeLibraryDelegateStartupOptions *startupOptions = [AdobeLibraryDelegateStartupOptions new];
 
     startupOptions.autoDownloadPolicy = downloadPolicy;
     startupOptions.autoDownloadContentTypes = @[kAdobeMimeTypeJPEG,
@@ -283,8 +284,8 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     libMgr.syncAllowedByNetworkStatusMask = AdobeNetworkReachableViaWiFi | AdobeNetworkReachableViaWWAN;
     
     NSString *rootLibDir = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
-    rootLibDir = [rootLibDir stringByAppendingPathComponent:[[NSBundle mainBundle] bundleIdentifier]];
-    rootLibDir = [rootLibDir stringByAppendingPathComponent:@"design-libraries"];
+    rootLibDir = [rootLibDir stringByAppendingPathComponent:[NSBundle mainBundle].bundleIdentifier];
+    rootLibDir = [rootLibDir stringByAppendingPathComponent:@"libraries"];
     
     NSError *libErr = nil;
     
