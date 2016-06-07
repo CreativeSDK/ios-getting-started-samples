@@ -102,7 +102,7 @@ class ViewController: UIViewController
         autoSyncDownloadedAssets = false;
         
         let libMgr = AdobeLibraryManager.sharedInstance()
-        libMgr.syncAllowedByNetworkStatusMask = 1 << 1 | 1 << 2
+        libMgr.syncAllowedByNetworkStatusMask = UInt(AdobeNetworkStatus.ReachableViaWiFi.rawValue) | UInt(AdobeNetworkStatus.ReachableViaWWAN.rawValue)
         
         var rootLibDir = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0]
         var url = NSURL.init(fileURLWithPath: rootLibDir)
