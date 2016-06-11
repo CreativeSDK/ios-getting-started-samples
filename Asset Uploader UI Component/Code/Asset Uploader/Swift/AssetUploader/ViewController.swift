@@ -50,19 +50,20 @@ class ViewController: UIViewController
         let assetUploaderConfiguration = AdobeUXAssetUploaderConfiguration()
         var assetsToUpload = [AdobeUXAssetBrowserConfigurationProxyAsset]()
         
-        for i in 1...3
+        // For the purpose of this demo we randomly pick the number of images we want to upload.
+        for i in 1...self.randomValue(2, max: 8)
         {
             let assetToUpload = AdobeUXAssetBrowserConfigurationProxyAsset()
             
             // Assign a unique ID
             assetToUpload.assetId = "id\(i-1))"
             
-            // Asset name could be anything, in this case it is Asset1, Asset 2, etc
-            let assetName = "Asset\(i)"
-            assetToUpload.name = assetName
+            // Image name could be anything, in this case it is Image1, Image2, etc
+            assetToUpload.name = "Image\(i)"
             
-            // Provide the thumbnails to asset that is being uploaded.
-            assetToUpload.thumbnail = UIImage(named: assetName)
+            // Provide the thumbnails to image that is being uploaded. (Randomly pick a image to upload for this demo from the images folder within project.)
+            let thumbnailName = "Image\(self.randomValue(1, max: 8))"
+            assetToUpload.thumbnail = UIImage(named: thumbnailName)
             
             assetsToUpload += [assetToUpload]
         }
@@ -122,6 +123,11 @@ class ViewController: UIViewController
         
         // Register as delegate to get callbacks.
         libMgr.registerDelegate(self, options: startupOptions)
+    }
+    
+    func randomValue(min: UInt32, max: UInt32) -> UInt32
+    {
+        return (min + arc4random_uniform(max - min + 1))
     }
 }
 

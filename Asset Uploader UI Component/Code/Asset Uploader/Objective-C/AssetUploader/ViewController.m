@@ -59,7 +59,9 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
 - (IBAction)showAssetUploader
 {
     AdobeUXAssetUploaderConfiguration *browserConfig = [AdobeUXAssetUploaderConfiguration new];
-    NSUInteger numberOfAssets = 3;
+    
+    // For the purpose of this demo we randomly pick the number of images we want to upload.
+    NSUInteger numberOfAssets = [self randomValueBetween:2 and:8];
     NSMutableArray *assetsToUpload = [NSMutableArray new];
     
     for (NSUInteger i = 1; i <= numberOfAssets; i++)
@@ -69,12 +71,12 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         // Assign a unique ID
         assetToUpload.assetId = [NSString stringWithFormat:@"id%lu", (unsigned long)i - 1];
         
-        // Asset name could be anything, in this case it is Asset1, Asset 2, etc
-        NSString *assetName = [NSString stringWithFormat:@"Asset%lu", (unsigned long)i];
-        assetToUpload.name = assetName;
+        // Image name could be anything, in this case it is Image1, Image2, etc
+        assetToUpload.name = [NSString stringWithFormat:@"Image%lu", (unsigned long)i];
         
-        // Provide the thumbnails to asset that is being uploaded.
-        assetToUpload.thumbnail = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:assetName ofType:@"png"]];
+        // Provide the thumbnails to image that is being uploaded. (Randomly pick a image to upload for this demo from the images folder within project.)
+        NSString *thumbnailName = [NSString stringWithFormat:@"Image%d", [self randomValueBetween:1 and:8]];
+        assetToUpload.thumbnail = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:thumbnailName ofType:@"png"]];
         
         [assetsToUpload addObject:assetToUpload];
     }
@@ -92,7 +94,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    NSLog(@"Asset Uploader success! Destination folder: %@\nAssets to upload: %@", destination.selectedItem, assetsToUpload);
+    NSLog(@"Asset Uploader success! Destination folder: %@\nImages to upload: %@", destination.selectedItem, assetsToUpload);
     
     NSMutableString *message = [NSMutableString new];
     
@@ -123,7 +125,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         [message appendFormat:@"Photo Catalog - %@", selectedPhotoCatalog.name];
     }
     
-    [message appendString:@"\n\nAsset Names:\n"];
+    [message appendString:@"\n\nImage Names:\n"];
     
     // Perform the upload.
     for (NSString *assetName in assetsToUpload.allValues)
@@ -221,8 +223,8 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         [libMgr sync];
     }
     
-    [message appendString:@"\n Your assets are being uploaded asynchronously to destination. Please refer the console log for upload success or error for each asset."];
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Uploading Assets"
+    [message appendString:@"\n Your images are being uploaded asynchronously to destination. Please refer the console log for upload success or error for each image."];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Uploading Images"
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     
@@ -294,6 +296,11 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     
     // Register as delegate to get callbacks.
     [libMgr registerDelegate:self options:startupOptions];
+}
+
+- (unsigned int)randomValueBetween:(unsigned int)min and:(unsigned int)max
+{
+    return (min + arc4random_uniform(max - min + 1));
 }
 
 @end
