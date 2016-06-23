@@ -74,7 +74,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
     AdobeUXAssetBrowserConfiguration *configuration = [AdobeUXAssetBrowserConfiguration new];
     configuration.dataSourceFilter = datasourceFilter;
     
-    // Create a new instance of the Asset Brwoser view contrller, set it's configuration and
+    // Create a new instance of the Asset Browser view controller, set it's configuration and
     // delegate and present it.
     AdobeUXAssetBrowserViewController *assetBrowser =
         [AdobeUXAssetBrowserViewController assetBrowserViewControllerWithConfiguration:configuration
@@ -122,7 +122,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
         NSString *selectedImageId = librarySelection.selectedImageIDs.firstObject;
         
         // Now get the selected item, in this case an image, from the Library. Note that, for this
-        // demo, we only handline images, however all other supported Library item types can be
+        // demo, we only handle images, however all other supported Library item types can be
         // retrieved and processed.
         AdobeAssetLibraryItemImage *libraryImage = library.images[selectedImageId];
         
@@ -195,7 +195,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
          }
                                       errorBlock:^(NSError *error)
          {
-             NSLog(@"An error occured when attempting to download a rendition: %@", error);
+             NSLog(@"An error occurred when attempting to download a rendition: %@", error);
              
              [self.activityIndicator stopAnimating];
          }];

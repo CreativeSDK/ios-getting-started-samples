@@ -66,7 +66,7 @@ class ViewController: UIViewController
         let configuration = AdobeUXAssetBrowserConfiguration()
         configuration.dataSourceFilter = dataSourceFilter
         
-        // Create a new instance of the Asset Brwoser view contrller, set it's configuration and
+        // Create a new instance of the Asset Browser view controller, set it's configuration and
         // delegate and present it.
         let assetBrowser = AdobeUXAssetBrowserViewController(configuration: configuration, delegate: self)
         
@@ -144,7 +144,7 @@ extension ViewController: AdobeUXAssetBrowserViewControllerDelegate
         }
         
         // Now get the selected item, in this case an image, from the Library. Note that, for this
-        // demo, we only handline images, however all other supported Library item types can be
+        // demo, we only handle images, however all other supported Library item types can be
         // retrieved and processed.
         guard let libraryImage = library.images[selectedImageId] as? AdobeAssetLibraryItemImage else
         {
