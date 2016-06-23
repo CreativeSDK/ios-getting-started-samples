@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE175D081D0B904500CDFFB5 /* Image1.png in Resources */ = {isa = PBXBuildFile; fileRef = FE175D001D0B904500CDFFB5 /* Image1.png */; };
-		FE175D091D0B904500CDFFB5 /* Image2.png in Resources */ = {isa = PBXBuildFile; fileRef = FE175D011D0B904500CDFFB5 /* Image2.png */; };
-		FE175D0A1D0B904500CDFFB5 /* Image3.png in Resources */ = {isa = PBXBuildFile; fileRef = FE175D021D0B904500CDFFB5 /* Image3.png */; };
-		FE175D0B1D0B904500CDFFB5 /* Image4.png in Resources */ = {isa = PBXBuildFile; fileRef = FE175D031D0B904500CDFFB5 /* Image4.png */; };
-		FE175D0C1D0B904500CDFFB5 /* Image5.png in Resources */ = {isa = PBXBuildFile; fileRef = FE175D041D0B904500CDFFB5 /* Image5.png */; };
-		FE175D0D1D0B904500CDFFB5 /* Image6.png in Resources */ = {isa = PBXBuildFile; fileRef = FE175D051D0B904500CDFFB5 /* Image6.png */; };
-		FE175D0E1D0B904500CDFFB5 /* Image7.png in Resources */ = {isa = PBXBuildFile; fileRef = FE175D061D0B904500CDFFB5 /* Image7.png */; };
-		FE175D0F1D0B904500CDFFB5 /* Image8.png in Resources */ = {isa = PBXBuildFile; fileRef = FE175D071D0B904500CDFFB5 /* Image8.png */; };
+		FE2DAC9B1D1C7C9D00579D7E /* Image1.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2DAC931D1C7C9D00579D7E /* Image1.png */; };
+		FE2DAC9C1D1C7C9D00579D7E /* Image2.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2DAC941D1C7C9D00579D7E /* Image2.png */; };
+		FE2DAC9D1D1C7C9D00579D7E /* Image3.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2DAC951D1C7C9D00579D7E /* Image3.png */; };
+		FE2DAC9E1D1C7C9D00579D7E /* Image4.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2DAC961D1C7C9D00579D7E /* Image4.png */; };
+		FE2DAC9F1D1C7C9D00579D7E /* Image5.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2DAC971D1C7C9D00579D7E /* Image5.png */; };
+		FE2DACA01D1C7C9D00579D7E /* Image6.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2DAC981D1C7C9D00579D7E /* Image6.png */; };
+		FE2DACA11D1C7C9D00579D7E /* Image7.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2DAC991D1C7C9D00579D7E /* Image7.png */; };
+		FE2DACA21D1C7C9D00579D7E /* Image8.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2DAC9A1D1C7C9D00579D7E /* Image8.png */; };
 		FE88005D1D00B93C005D9350 /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE88005C1D00B93C005D9350 /* AdobeCreativeSDKCoreResources.bundle */; };
 		FE88005F1D00B95D005D9350 /* AdobeCreativeSDKCommonUXResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE88005E1D00B95D005D9350 /* AdobeCreativeSDKCommonUXResources.bundle */; };
 		FE8800611D00B96E005D9350 /* AdobeCreativeSDKAssetUXResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE8800601D00B96E005D9350 /* AdobeCreativeSDKAssetUXResources.bundle */; };
@@ -36,14 +36,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FE175D001D0B904500CDFFB5 /* Image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image1.png; sourceTree = "<group>"; };
-		FE175D011D0B904500CDFFB5 /* Image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image2.png; sourceTree = "<group>"; };
-		FE175D021D0B904500CDFFB5 /* Image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image3.png; sourceTree = "<group>"; };
-		FE175D031D0B904500CDFFB5 /* Image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image4.png; sourceTree = "<group>"; };
-		FE175D041D0B904500CDFFB5 /* Image5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image5.png; sourceTree = "<group>"; };
-		FE175D051D0B904500CDFFB5 /* Image6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image6.png; sourceTree = "<group>"; };
-		FE175D061D0B904500CDFFB5 /* Image7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image7.png; sourceTree = "<group>"; };
-		FE175D071D0B904500CDFFB5 /* Image8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image8.png; sourceTree = "<group>"; };
+		FE2DAC931D1C7C9D00579D7E /* Image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image1.png; sourceTree = "<group>"; };
+		FE2DAC941D1C7C9D00579D7E /* Image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image2.png; sourceTree = "<group>"; };
+		FE2DAC951D1C7C9D00579D7E /* Image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image3.png; sourceTree = "<group>"; };
+		FE2DAC961D1C7C9D00579D7E /* Image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image4.png; sourceTree = "<group>"; };
+		FE2DAC971D1C7C9D00579D7E /* Image5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image5.png; sourceTree = "<group>"; };
+		FE2DAC981D1C7C9D00579D7E /* Image6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image6.png; sourceTree = "<group>"; };
+		FE2DAC991D1C7C9D00579D7E /* Image7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image7.png; sourceTree = "<group>"; };
+		FE2DAC9A1D1C7C9D00579D7E /* Image8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image8.png; sourceTree = "<group>"; };
 		FE88005C1D00B93C005D9350 /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
 		FE88005E1D00B95D005D9350 /* AdobeCreativeSDKCommonUXResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCommonUXResources.bundle; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework/Versions/A/Resources/AdobeCreativeSDKCommonUXResources.bundle; sourceTree = "<group>"; };
 		FE8800601D00B96E005D9350 /* AdobeCreativeSDKAssetUXResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKAssetUXResources.bundle; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetUX.framework/Versions/A/Resources/AdobeCreativeSDKAssetUXResources.bundle; sourceTree = "<group>"; };
@@ -90,14 +90,14 @@
 		FE175CF91D0B8F5000CDFFB5 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				FE175D001D0B904500CDFFB5 /* Image1.png */,
-				FE175D011D0B904500CDFFB5 /* Image2.png */,
-				FE175D021D0B904500CDFFB5 /* Image3.png */,
-				FE175D031D0B904500CDFFB5 /* Image4.png */,
-				FE175D041D0B904500CDFFB5 /* Image5.png */,
-				FE175D051D0B904500CDFFB5 /* Image6.png */,
-				FE175D061D0B904500CDFFB5 /* Image7.png */,
-				FE175D071D0B904500CDFFB5 /* Image8.png */,
+				FE2DAC931D1C7C9D00579D7E /* Image1.png */,
+				FE2DAC941D1C7C9D00579D7E /* Image2.png */,
+				FE2DAC951D1C7C9D00579D7E /* Image3.png */,
+				FE2DAC961D1C7C9D00579D7E /* Image4.png */,
+				FE2DAC971D1C7C9D00579D7E /* Image5.png */,
+				FE2DAC981D1C7C9D00579D7E /* Image6.png */,
+				FE2DAC991D1C7C9D00579D7E /* Image7.png */,
+				FE2DAC9A1D1C7C9D00579D7E /* Image8.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -230,19 +230,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE175D0F1D0B904500CDFFB5 /* Image8.png in Resources */,
+				FE2DACA21D1C7C9D00579D7E /* Image8.png in Resources */,
 				FE8800631D00D309005D9350 /* AdobeCreativeSDKAssetModelResources.bundle in Resources */,
-				FE175D081D0B904500CDFFB5 /* Image1.png in Resources */,
+				FE2DAC9B1D1C7C9D00579D7E /* Image1.png in Resources */,
 				FE8800611D00B96E005D9350 /* AdobeCreativeSDKAssetUXResources.bundle in Resources */,
 				FE88005F1D00B95D005D9350 /* AdobeCreativeSDKCommonUXResources.bundle in Resources */,
 				FE88005D1D00B93C005D9350 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
-				FE175D0E1D0B904500CDFFB5 /* Image7.png in Resources */,
-				FE175D0A1D0B904500CDFFB5 /* Image3.png in Resources */,
+				FE2DACA11D1C7C9D00579D7E /* Image7.png in Resources */,
+				FE2DAC9D1D1C7C9D00579D7E /* Image3.png in Resources */,
 				FEDD6B061D00B5DA007711EF /* LaunchScreen.storyboard in Resources */,
-				FE175D0B1D0B904500CDFFB5 /* Image4.png in Resources */,
-				FE175D0D1D0B904500CDFFB5 /* Image6.png in Resources */,
-				FE175D091D0B904500CDFFB5 /* Image2.png in Resources */,
-				FE175D0C1D0B904500CDFFB5 /* Image5.png in Resources */,
+				FE2DAC9E1D1C7C9D00579D7E /* Image4.png in Resources */,
+				FE2DACA01D1C7C9D00579D7E /* Image6.png in Resources */,
+				FE2DAC9C1D1C7C9D00579D7E /* Image2.png in Resources */,
+				FE2DAC9F1D1C7C9D00579D7E /* Image5.png in Resources */,
 				FEDD6B031D00B5DA007711EF /* Assets.xcassets in Resources */,
 				FEDD6B011D00B5DA007711EF /* Main.storyboard in Resources */,
 			);
