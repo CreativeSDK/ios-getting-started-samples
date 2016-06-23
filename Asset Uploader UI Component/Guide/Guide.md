@@ -3,6 +3,8 @@
 
 *You can find the complete `AssetUploader` project for this guide in <a href="https://github.com/CreativeSDK/ios-getting-started-samples" target="_blank">GitHub</a>.*
 
+Frameworks required to integrate for this feature: AdobeCreativeSDKAssetUX, AdobeCreativeSDKAssetModel, AdobeCreativeSDKCommonUX and AdobeCreativeSDKCore.
+
 The `AdobeUXAssetUploaderViewController` class provides a simple user interface for selecting destination for uploading assets to creative cloud files, libraries and lightroom collections/catalogs. In the sample app, we randomly select images from set of 8 images in the resources and launch the upload component.
 
 ### User Interface
