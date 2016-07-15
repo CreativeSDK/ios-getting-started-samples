@@ -1020,11 +1020,19 @@ body .markdown-body
 <p>This guide describes setup and practical use of all components of the Image Editor UI Component.</p>
 <h2 id="editor"><a name="user-content-editor" href="#editor" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Editor</h2>
 <p>The image editor is in <code>AdobeUXImageEditorViewController</code>, a presentable <code>UIViewController</code> subclass. The editor provides fast image editing to users and an easy-to-use programmatic interface to developers.</p>
+<p><a name="prerequisites"></a></p>
 <h2 id="prerequisites"><a name="user-content-prerequisites" href="#prerequisites" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Prerequisites</h2>
-<ul>
-<li>The classes used in this guide are in the <code>&lt;framework name&gt;</code> library. For a complete list of framework dependencies, see the <a href="#">Framework Dependencies</a> guide.</li>
-<li>To follow this guide, you must have the iOS 8.0 SDK and Xcode 6.0 installed on your system. For the latest versions, please visit Apple iOS Development Center.</li>
+<p class="ng-scope">This guide will assume that you have installed all software and completed all of the steps in the following guides:</p>
+<ul class="ng-scope">
+    <li><a href="https://creativesdk.adobe.com/docs/ios/#/articles/gettingstarted/index.html">Getting Started</a></li>
+    <li><a href="https://creativesdk.adobe.com/docs/ios/#/articles/dependencies/index.html">Framework Dependencies</a> guide.</li>
 </ul>
+<p class="ng-scope"><em><strong>Note:</strong></em></p>
+<ul class="ng-scope">
+<li><em>This component offers a better experience for users when they log in with their Adobe ID.</strong>.</em></li>
+<li><em>Your Client ID must be <a href="https://creativesdk.zendesk.com/hc/en-us/articles/204601215-How-to-complete-the-Production-Client-ID-Request">approved for <strong>Production Mode</strong> by Adobe</a> before you release your app.</em></li>
+</ul>
+
 <h2 id="integration"><a name="user-content-integration" href="#integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Integration</h2>
 <p>To launch the editor, create and display an instance of <code>AdobeUXImageEditorViewController</code>. You can present it modally:</p>
 <pre><code>+ (void)displayEditorForImage:(UIImage *)imageToEdit
