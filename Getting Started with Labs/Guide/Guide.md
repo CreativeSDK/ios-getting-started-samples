@@ -36,10 +36,18 @@ The AdobeCreativeSDKLabs.framework (or Labs Framework) contains some of the hott
 - [Class Reference](#reference)
 
 <a name="prerequisites"></a>
+
 ## Prerequisites
 
-+ This guide assumes that you've already read the <a href="/articles/gettingstarted/index.html">Getting Started</a> guide.
-+ For a complete list of framework dependencies, see the <a href="/articles/dependencies/index.html">Framework Dependencies</a> guide.
+This guide will assume that you have installed all software and completed all of the steps in the following guides:
+
+*   [Getting Started](https://creativesdk.adobe.com/docs/ios/#/articles/gettingstarted/index.html)
+*   [Framework Dependencies](https://creativesdk.adobe.com/docs/ios/#/articles/dependencies/index.html) guide.
+
+_**Note:**_
+
+*   _This component requires that the user is **logged in with their Adobe ID**._
+*   _Your Client ID must be [approved for **Production Mode** by Adobe](https://creativesdk.zendesk.com/hc/en-us/articles/204601215-How-to-complete-the-Production-Client-ID-Request) before you release your app._
 
 <a name="setup"></a>
 ## Project Setup
@@ -332,7 +340,8 @@ To compute the bi-level cutout mask, call estimateCutout:
         
 	[magicCutoutMaker estimateCutout: myImage withCompletionBlock: ^(NSError * error) {
 		if (error == nil) {
-			UIImage * biLevelCutout = [magicCutoutMaker getOutput];		}
+			UIImage * biLevelCutout = [magicCutoutMaker getOutput];
+		}
     }];
 ![<center>The Bi-Level Cutout Mask</center>](magiccutout3.png)
 
