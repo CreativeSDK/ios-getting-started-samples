@@ -24,14 +24,13 @@ To integrate the Creative Cloud with your own file picker (instead of using the 
 
 This guide will assume that you have installed all software and completed all of the steps in the following guides:
 
-*   [Getting Started](/articles/gettingstarted/index.html)
-*   [Framework Dependencies](/articles/dependencies/index.html) guide.
+*   [Getting Started](https://creativesdk.adobe.com/docs/ios/#/articles/gettingstarted/index.html)
+*   [Framework Dependencies](https://creativesdk.adobe.com/docs/ios/#/articles/dependencies/index.html) guide.
 
 _**Note:**_
 
 *   _This component requires that the user is **logged in with their Adobe ID**._
 *   _Your Client ID must be [approved for **Production Mode** by Adobe](https://creativesdk.zendesk.com/hc/en-us/articles/204601215-How-to-complete-the-Production-Client-ID-Request) before you release your app._
-*   
 
 <a name="asset_browser"></a>
 ## Integrating the Asset Browser
