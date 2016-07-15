@@ -9,6 +9,19 @@ The `AdobeUXAssetBrowserViewController` class provides a simple UI for browsing 
 ##UI
 The provided interface for this sample is quite straightforward. There is a single button that instantiates the Asset Browser view controller, configures and presents it. The user is presented with an authentication screen to enter their Creative Cloud credentials. Once authenticated, the Libraries datasource of the full Asset Browser is displayed where all Libraries that the user has created or has access to are present. Each Library can be browsed and individual asset types can be selected. This UI is quite similar to the other datasources presented by the Asset Browser.
 
+<a name="prerequisites"></a>
+## Prerequisites
+
+This guide will assume that you have installed all software and completed all of the steps in the following guides:
+
+*   [Getting Started](https://creativesdk.adobe.com/docs/ios/#/articles/gettingstarted/index.html)
+*   [Framework Dependencies](https://creativesdk.adobe.com/docs/ios/#/articles/dependencies/index.html) guide.
+
+_**Note:**_
+
+*   _This component requires that the user is **logged in with their Adobe ID**._
+*   _Your Client ID must be [approved for **Production Mode** by Adobe](https://creativesdk.zendesk.com/hc/en-us/articles/204601215-How-to-complete-the-Production-Client-ID-Request) before you release your app._
+
 ## Code
 There are two main tasks that are performed:
 
