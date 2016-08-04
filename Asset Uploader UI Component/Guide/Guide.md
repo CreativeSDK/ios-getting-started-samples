@@ -10,18 +10,18 @@ The `AdobeUXAssetUploaderViewController` class provides a simple user interface 
 ### User Interface
 The sample app consists of a single view controller with a button titled "Launch Uploader".
 
-<img style="border: 1px solid #ccc;" src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetuploader/launch.png" />
+<img style="border: 1px solid #ccc;" src="launch.png" />
 
 On selecting the button, the asset uploader component is launched and user will be asked to sign-in.
 
-<img style="border: 1px solid #ccc;" src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetuploader/login.png" />
+<img style="border: 1px solid #ccc;" src="login.png" />
 
 Once the user logs in, the default "files" selected in the top drop down. Others options libraries or photos can be selected. You can also see that the current list of assets to upload are shown at the top in a table view.
 The table shows 3 items and then has a collapsible option to display more items. 
 
-<img style="border: 1px solid #ccc;" src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetuploader/files.png" />
+<img style="border: 1px solid #ccc;" src="files.png" />
 
-<img style="border: 1px solid #ccc;" src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetuploader/selector.png" />
+<img style="border: 1px solid #ccc;" src="selector.png" />
 
 Users can select existing folder or create new folders to upload selected assets.
 
