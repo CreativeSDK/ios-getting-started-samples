@@ -1,0 +1,180 @@
+{
+  "id": "TkD-17265-87c34f2b904ad9ccd29ffbc1a7702f8e8d969613",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17265-87c34f2b904ad9ccd29ffbc1a7702f8e8d969613"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-Regular",
+  "sort_order": 800,
+  "type": "otf",
+  "variation": "Regular",
+  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+},
+{
+  "id": "TkD-17266-0bcb3f483b4e0a7734ede65095ab079cec7a7482",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17266-0bcb3f483b4e0a7734ede65095ab079cec7a7482"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-Black",
+  "sort_order": 1800,
+  "type": "otf",
+  "variation": "Black",
+  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+},
+{
+  "id": "TkD-17267-44b14645abee79e7f565a36a226bd7254a3be2f9",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17267-44b14645abee79e7f565a36a226bd7254a3be2f9"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-Bold",
+  "sort_order": 1400,
+  "type": "otf",
+  "variation": "Bold",
+  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+},
+{
+  "id": "TkD-17268-e60b0864114dbb7ee0b9a77efeec19f0c3ee7c8a",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17268-e60b0864114dbb7ee0b9a77efeec19f0c3ee7c8a"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-BoldIt",
+  "sort_order": 1401,
+  "type": "otf",
+  "variation": "Bold Italic",
+  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+},
+{
+  "id": "TkD-17269-e8f36df8aebccaa8f4b7d2c3a253b22768646490",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17269-e8f36df8aebccaa8f4b7d2c3a253b22768646490"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-It",
+  "sort_order": 801,
+  "type": "otf",
+  "variation": "Italic",
+  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+},
+{
+  "id": "TkD-17270-39531d7c017fa50fed9c1588de510c0084a09fed",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17270-39531d7c017fa50fed9c1588de510c0084a09fed"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-Light",
+  "sort_order": 600,
+  "type": "otf",
+  "variation": "Light",
+  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+},
+{
+  "id": "TkD-17271-d5f93fb24e61134a03e220099164d211f4e686c4",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17271-d5f93fb24e61134a03e220099164d211f4e686c4"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-LightIt",
+  "sort_order": 601,
+  "type": "otf",
+  "variation": "Light Italic",
+  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+},
+{
+  "id": "TkD-17272-7ae7b4cc2ce6daaa1e810d231bec951f5915dffe",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17272-7ae7b4cc2ce6daaa1e810d231bec951f5915dffe"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-Semibold",
+  "sort_order": 1200,
+  "type": "otf",
+  "variation": "Semibold",
+  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+},
+{
+  "id": "TkD-17273-b0738d0dd3ae12380ab46a66a33e76b3a77f4a0d",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17273-b0738d0dd3ae12380ab46a66a33e76b3a77f4a0d"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-SemiboldIt",
+  "sort_order": 1201,
+  "type": "otf",
+  "variation": "Semibold Italic",
+  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+},
+{
+  "id": "TkD-17274-80872e7f66b24fee9f1488f02d4874d1ec035ac0",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17274-80872e7f66b24fee9f1488f02d4874d1ec035ac0"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-BlackIt",
+  "sort_order": 1801,
+  "type": "otf",
+  "variation": "Black Italic",
+  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+},
+{
+  "id": "TkD-17275-e3e8d58848f56f9aed44536d0e9cd429d07a42f3",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17275-e3e8d58848f56f9aed44536d0e9cd429d07a42f3"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-ExtraLight",
+  "sort_order": 400,
+  "type": "otf",
+  "variation": "Extra Light",
+  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+},
+{
+  "id": "TkD-17276-d42121c0f304f3ee740fab1b5d88ccf807305943",
+  "family": "Source Sans Pro",
+  "family_opaque_id": "bhyf",
+  "links": {
+	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
+	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17276-d42121c0f304f3ee740fab1b5d88ccf807305943"
+  },
+  "optical_size": 100,
+  "postscript_name": "SourceSansPro-ExtraLightIt",
+  "sort_order": 401,
+  "type": "otf",
+  "variation": "Extra Light Italic",
+  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+}

@@ -1,0 +1,14 @@
+{
+  "optical_size" : 100,
+  "type" : "otf",
+  "id" : "TkD-17265-87c34f2b904ad9ccd29ffbc1a7702f8e8d969613",
+  "family" : "Source Sans Pro",
+  "postscript_name" : "SourceSansPro-Regular",
+  "variation" : "Regular",
+  "links" : {
+    "family" : "https:\/\/api.typekit.com\/desktop_v2\/families\/bhyf",
+    "self" : "https:\/\/api.typekit.com\/desktop_v2\/fonts\/TkD-17265-87c34f2b904ad9ccd29ffbc1a7702f8e8d969613"
+  },
+  "version" : "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930",
+  "family_opaque_id" : "bhyf"
+}

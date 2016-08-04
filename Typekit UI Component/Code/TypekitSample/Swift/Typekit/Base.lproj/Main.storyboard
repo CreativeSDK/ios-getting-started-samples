@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Typekit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svD-hT-yH2" userLabel="Main View">
+                                <rect key="frame" x="0.0" y="30" width="600" height="512"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using System Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8o-f4-lO4" userLabel="Font Status Label">
+                                        <rect key="frame" x="20" y="0.0" width="560" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-0u-U4j" userLabel="Font Style Label">
+                                        <rect key="frame" x="112" y="33" width="39" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4b-RB-GBK">
+                                        <rect key="frame" x="448" y="29" width="132" height="30"/>
+                                        <state key="normal" title="Launch Font Picker"/>
+                                        <connections>
+                                            <action selector="launchFontPickerButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F4m-iS-N3V"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="GU2-lJ-03h" userLabel="Font Name Label">
+                                        <rect key="frame" x="20" y="33" width="84" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRg-qB-5SZ" userLabel="Text View" customClass="TextContainerView" customModule="Typekit" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="67" width="560" height="437"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ac massa non facilisis. Quisque eget posuere elit, in commodo magna. Nullam in finibus nulla. Suspendisse consequat, eros eu aliquam sagittis, nunc ex porttitor ante, eget vulputate ligula urna sed leo. Vestibulum quis pellentesque nunc. Integer malesuada tortor eu ipsum hendrerit molestie. Suspendisse ullamcorper ultricies lorem id egestas. Integer in mattis metus. Donec eget purus pulvinar, pretium diam eu, maximus sem. Sed interdum, ante eget auctor aliquet, ligula purus tristique tellus, quis imperdiet risus massa non nulla. In id est turpis. Sed tortor diam, condimentum posuere fermentum non, elementum nec elit.
+
+In quis nunc a enim interdum dignissim non vestibulum nulla. Praesent vel neque at lorem fermentum lobortis eget sit amet sem. Integer venenatis id purus sit amet eleifend. Cras non feugiat justo. Phasellus faucibus quam est, at ultricies magna efficitur faucibus. Maecenas rhoncus sapien nec ligula mattis, eget ultricies eros mollis. Pellentesque rhoncus nisi at enim dapibus luctus. Vestibulum quis nunc nisi. Donec in purus et eros laoreet congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc suscipit risus a pellentesque iaculis. Etiam suscipit lorem in eleifend sagittis. In rutrum, nunc eget tristique tristique, diam libero lacinia tortor, non fermentum est ligula ut neque. Integer ultricies, risus eget tincidunt suscipit, nulla massa porta lacus, consequat lacinia augue justo quis neque.
+
+Aliquam erat volutpat. Integer a dolor eu augue dapibus cursus. Suspendisse ac elit in dui consequat vulputate sit amet sit amet magna. Aliquam sed lorem augue. Curabitur vitae placerat sapien, ac iaculis erat. Nulla dolor justo, egestas id tortor non, semper accumsan nisl. Sed tincidunt congue nulla non semper. Suspendisse rhoncus mollis magna, non consequat ligula congue a. Maecenas sit amet dictum dolor, nec suscipit arcu. Pellentesque vestibulum nisi pulvinar tincidunt dignissim. Sed vestibulum sodales aliquet. Nullam cursus ante eu augue rhoncus, et molestie libero tincidunt. Nunc nisi diam, tincidunt suscipit metus quis, interdum dignissim nisl.
+
+Etiam interdum in nisi id faucibus. Nulla semper nisi quam, sit amet tristique lorem rutrum quis. Duis tristique lectus id nisl convallis, ac dapibus nunc suscipit. Fusce eu justo fringilla, tincidunt odio sit amet, iaculis dui. Nulla in felis vitae diam pellentesque lobortis. Vestibulum varius nibh mauris, vitae dictum enim pharetra in. Pellentesque hendrerit leo ac est egestas, sit amet tempus enim facilisis. Aliquam posuere justo a urna rhoncus eleifend.
+
+In auctor ipsum facilisis dui elementum, sit amet vestibulum dui feugiat. Vestibulum nec tortor ac eros tempus aliquet egestas sit amet mauris. Aliquam erat volutpat. Quisque pellentesque libero et est malesuada luctus. Suspendisse eget libero nec enim sollicitudin vehicula. Aliquam in consectetur augue. Aliquam at elit arcu. Phasellus sit amet euismod sapien. Integer varius odio eu pellentesque egestas.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ceT-0u-U4j" firstAttribute="leading" secondItem="GU2-lJ-03h" secondAttribute="trailing" constant="8" id="1YA-lJ-6VO"/>
+                                    <constraint firstAttribute="trailing" secondItem="t4b-RB-GBK" secondAttribute="trailing" constant="20" id="6iw-HK-dZm"/>
+                                    <constraint firstItem="t4b-RB-GBK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ceT-0u-U4j" secondAttribute="trailing" constant="8" id="AFd-Lg-K2e"/>
+                                    <constraint firstItem="MRg-qB-5SZ" firstAttribute="top" secondItem="t4b-RB-GBK" secondAttribute="bottom" constant="8" id="Efz-zc-xOB"/>
+                                    <constraint firstItem="ceT-0u-U4j" firstAttribute="leading" secondItem="GU2-lJ-03h" secondAttribute="trailing" constant="8" id="HRp-vy-XdF"/>
+                                    <constraint firstAttribute="trailing" secondItem="MRg-qB-5SZ" secondAttribute="trailing" constant="20" id="JnL-xI-x4c"/>
+                                    <constraint firstItem="t4b-RB-GBK" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ceT-0u-U4j" secondAttribute="trailing" constant="700" id="PJl-9Y-FAZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="MRg-qB-5SZ" secondAttribute="bottom" constant="8" id="Paw-lD-UCe"/>
+                                    <constraint firstItem="O8o-f4-lO4" firstAttribute="leading" secondItem="svD-hT-yH2" secondAttribute="leading" constant="20" id="QQB-NV-3S7"/>
+                                    <constraint firstItem="GU2-lJ-03h" firstAttribute="leading" secondItem="svD-hT-yH2" secondAttribute="leading" constant="20" id="R2g-jP-fnm"/>
+                                    <constraint firstAttribute="trailing" secondItem="O8o-f4-lO4" secondAttribute="trailing" constant="20" id="aAN-vb-ckl"/>
+                                    <constraint firstItem="GU2-lJ-03h" firstAttribute="top" secondItem="O8o-f4-lO4" secondAttribute="bottom" constant="12" id="eOh-h2-aQ4"/>
+                                    <constraint firstItem="MRg-qB-5SZ" firstAttribute="leading" secondItem="svD-hT-yH2" secondAttribute="leading" constant="20" id="fKg-CO-tJt"/>
+                                    <constraint firstItem="t4b-RB-GBK" firstAttribute="top" secondItem="O8o-f4-lO4" secondAttribute="bottom" constant="8" id="g18-zB-VfG"/>
+                                    <constraint firstItem="ceT-0u-U4j" firstAttribute="top" secondItem="O8o-f4-lO4" secondAttribute="bottom" constant="12" id="jAI-3x-6AB"/>
+                                    <constraint firstItem="O8o-f4-lO4" firstAttribute="top" secondItem="svD-hT-yH2" secondAttribute="top" id="phg-q2-kyN"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y36-BH-fbt" userLabel="Login Button">
+                                <rect key="frame" x="228" y="550" width="143" height="30"/>
+                                <state key="normal" title="Login Creative Cloud"/>
+                                <connections>
+                                    <action selector="loginButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="huC-yl-LHA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y36-BH-fbt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RNu-Uh-lcQ"/>
+                            <constraint firstAttribute="trailing" secondItem="svD-hT-yH2" secondAttribute="trailing" id="SXX-lu-DnJ"/>
+                            <constraint firstItem="svD-hT-yH2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="Z5F-OX-ZDE"/>
+                            <constraint firstItem="y36-BH-fbt" firstAttribute="top" secondItem="svD-hT-yH2" secondAttribute="bottom" constant="8" id="al1-WY-tDa"/>
+                            <constraint firstItem="svD-hT-yH2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="b5V-yb-0Hm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="y36-BH-fbt" secondAttribute="bottom" constant="20" id="r7l-pG-JYt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fontNameLabel" destination="GU2-lJ-03h" id="JZ0-8u-o9t"/>
+                        <outlet property="fontStatusLabel" destination="O8o-f4-lO4" id="EZm-JV-jnD"/>
+                        <outlet property="fontStyleLabel" destination="ceT-0u-U4j" id="7mD-ZT-8fj"/>
+                        <outlet property="loginButton" destination="y36-BH-fbt" id="9iQ-0n-ctZ"/>
+                        <outlet property="mainViewContainer" destination="svD-hT-yH2" id="Nef-2p-Mwe"/>
+                        <outlet property="textView" destination="MRg-qB-5SZ" id="Bbe-Aq-DWI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="357"/>
+        </scene>
+    </scenes>
+</document>
