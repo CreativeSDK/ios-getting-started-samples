@@ -43,7 +43,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId, clientSecret: kCreativeSDKClientSecret, enableSignUp: false)
+        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId, withClientSecret: kCreativeSDKClientSecret)
         
         if (AdobeUXAuthManager.sharedManager().authenticated)
         {

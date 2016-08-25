@@ -50,8 +50,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
     // Configure the SDK with the client ID and client secret. This is necessary before doing
     // anything with the SDK.
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
-                                                                   clientSecret:kCreativeSDKClientSecret
-                                                                   enableSignUp:NO];
+                                                               withClientSecret:kCreativeSDKClientSecret];
     
     // Update the UI state based on the user's authentication status
     if ([AdobeUXAuthManager sharedManager].isAuthenticated)
