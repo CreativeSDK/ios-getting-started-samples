@@ -44,8 +44,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     // Do any additional setup after loading the view, typically from a nib.
     
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
-                                                                   clientSecret:kCreativeSDKClientSecret
-                                                                   enableSignUp:NO];
+                                                               withClientSecret:kCreativeSDKClientSecret];
     
     if ([AdobeUXAuthManager sharedManager].isAuthenticated)
     {
