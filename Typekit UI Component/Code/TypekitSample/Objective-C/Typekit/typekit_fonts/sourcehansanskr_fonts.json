@@ -1,0 +1,17 @@
+{
+	"id": "TkD-23604-350311a1bb055ae139617e0c4e27406ae255e2b8",
+	"family": "본고딕 KR",
+	"family_opaque_id": "hgxz",
+	"fvd": "n4",
+	"links": {
+		"family": "https:\/\/api.typekit.com\/desktop_v2\/families\/CA9FBC7455E613B87F000101%40AdobeID\/hgxz",
+		"self": "https:\/\/api.typekit.com\/desktop_v2\/fonts\/TkD-23604-350311a1bb055ae139617e0c4e27406ae255e2b8"
+	},
+	"optical_size": 0,
+	"postscript_name": "SourceHanSansKR-Regular",
+	"sort_order": 800,
+	"type": "otf",
+	"variation": "Regular",
+	"version" : "Version 1.004;PS 1.004;hotconv 1.0.82;makeotf.lib2.5.63406"
+}
+

@@ -1,0 +1,16 @@
+{
+	"id": "TkD-23618-f15acd20ade31dd50e7633faa6b4ec04a5673f4a",
+	"family": "思源黑體 TW",
+	"family_opaque_id": "qhzx",
+	"fvd": "n4",
+	"links": {
+		"family": "https://api.typekit.com/desktop_v2/families/{user_id}/qhzx",
+		"self": "https://api.typekit.com/desktop_v2/fonts/TkD-23618-f15acd20ade31dd50e7633faa6b4ec04a5673f4a"
+	},
+	"optical_size": 0,
+	"postscript_name": "SourceHanSansTW-Regular",
+	"sort_order": 800,
+	"type": "otf",
+	"variation": "Regular",
+	"version" : "Version 1.004;PS 1.004;hotconv 1.0.82;makeotf.lib2.5.63406"
+}
