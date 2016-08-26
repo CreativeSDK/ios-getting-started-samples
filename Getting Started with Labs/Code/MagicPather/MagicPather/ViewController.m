@@ -46,8 +46,7 @@
     
     // first set the clientID and clientSecret
     [AdobeUXAuthManager.sharedManager setAuthenticationParametersWithClientID: CC_CLIENT_ID
-                                                                 clientSecret: CC_CLIENT_SECRET
-                                                                 enableSignUp: YES];
+                                                             withClientSecret: CC_CLIENT_SECRET];
     
     // make the stroke view
     self.pathView = [[PathView alloc] initWithFrame:CGRectMake(0, VIEW_Y_OFFSET, self.view.bounds.size.width, self.view.bounds.size.height-VIEW_Y_OFFSET)];
