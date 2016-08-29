@@ -37,9 +37,60 @@ To register your application, follow these steps:
 **Important: As part of registering your application, you are given a Client ID and Secret. Write these down and save them. You will need them in the future, and this is the only time you can see them.**
 
 <a name="configure_xcode"></a>
-## Configuring Xcode
+## Configuring Xcode For Using Dynamic AdobeCreativeSDK Frameworks
 
-To use the Creative SDK, make the following Xcode configuration changes:
+To use the Creative SDK Dynamic frameworks, make the following Xcode configuration changes:
+
+1. Add linker flags:
+
+    + Select Build Settings -> Linking -> Other Linker Flags. (If you do not see this setting, see if Basic is selected in Xcode and click All instead.)
+    + Double-click the empty area to the right. An empty window pops up for you to add or delete values.
+    + Click the + (plus sign) button, and add a new value, `-ObjC`: <br /><br /><img style="border: 1px solid #ccc;" src="addinglinker.png" /><br /><br />
+
+After the new value is added, the Other Linker Flags area of the screen looks like this: <br /><br /><img style="border: 1px solid #ccc;" src="addedlinker.png" /><br /><br />
+
+2. Add embedded binaries:
+
+    + Switch to **General**.
+    + Ubder **Embedded Binaries**.
+    + Click the **+** button.
+    + Click **Add Other...**
+    + From the location where you extracted the main Creative SDK ZIP file, select `AdobeCreativeSDKCore.framework`.
+    + Click Open, and the **Choose options for adding these files** window will appear.
+    + Under **Destination**, be sure you do _not_ select **Copy items if needed**.
+    + Under **Added folders**, select **Create groups**.
+    + Click **Finish**.<br /><br />
+
+3. Run strip-frameworks script:
+
+    + In Build Phases, add a run script phase (if not present) and add the below line to run the strip-frameworks script.
+      bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCore.framework/strip-frameworks.sh"
+      <br /><br /><img style="border: 1px solid #ccc;" src="strip-frameworks.png" /><br /><br />
+
+4. Add other required linked frameworks and libraries
+
+    + Back on Build Phases, select Link Binary with Libraries and click the + button.
+    + Add these binaries by typing in the "Search" box: `libc++.tbd` , `libz.tbd`,  `MobileCoreServices.framework` and `SystemConfiguration.framework`. Use the `.dylib` version of the `.tbd` libraries if you don't have Bitcode enabled for your project.
+
+5. Add the Framework Search Path (If necessary):
+
+In some cases, Xcode might not add the path to the frameworks to the project. In this case you'd have to add the directory where you extracted the SDK frameworks to the Framework Search Path setting in Xcode. To do so, follow these steps:
+
+    + In the Build Settings of the primary target for your project, locate the **Framework Search Paths** setting under **Search Paths**.
+    + Double click the, potentially empty, value to add the path.
+    + Click the plus icon at the bottom.
+    + Now enter the relative or absolute path to the directory where you uncompressed the CSDK frameworks.
+    + Choose **non-recursive**<br /><br />
+
+Your setup is done. Now you can open any of your project files and import the framework:
+
+    #import <AdobeCreativeSDKCore/AdobeCreativeSDKCore.h>
+
+If Xcode does not auto-complete the framework name, check the setup steps above to ensure you did everything necessary. Specifically check the Framework Search Path step.
+
+## Configuring Xcode For Using Static AdobeCreativeSDK Frameworks
+
+To use the Creative SDK static frameworks, make the following Xcode configuration changes:
 
 1. Add linker flags:
 
@@ -84,11 +135,6 @@ To use the Creative SDK, make the following Xcode configuration changes:
     + Click the plus icon at the bottom.
     + Now enter the relative or absolute path to the directory where you uncompressed the CSDK frameworks.
     + Choose **non-recursive**<br /><br />
-
-5. Add preprocessor macro (for build 0.1.2118 ONLY):
-    + Back on Build Settings , scroll down to Apple LLVM x.x Preprocessing. Click on the Preprocessor Macros property and add the following.
-
-            USE_CSDK_COMPONENTS
 
 Your setup is done. Now you can open any of your project files and import the framework:
 
