@@ -11,8 +11,8 @@ In the Creative SDK for iOS, we've broken the Foundation framework into Micro fr
 
 You can read more about the Framework breakup on our <a target="_blank" href="https://blog.creativesdk.com/2015/08/dividing-up-the-foundation-sdk/">blog</a>.
 
-<a name="Migrating to Embedded Frameworks"></a>
-## Migrating to Embedded Frameworks
+<a name="Migrating to Dynamic Frameworks"></a>
+## Migrating to Dynamic Frameworks
 
 The below steps assumes you are currently using static frameworks.
 
