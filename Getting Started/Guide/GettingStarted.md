@@ -52,7 +52,7 @@ After the new value is added, the Other Linker Flags area of the screen looks li
 2. Add embedded binaries:
 
     + Switch to **General**.
-    + Ubder **Embedded Binaries**.
+    + Under **Embedded Binaries**.
     + Click the **+** button.
     + Click **Add Other...**
     + From the location where you extracted the main Creative SDK ZIP file, select `AdobeCreativeSDKCore.framework`.
@@ -67,7 +67,7 @@ After the new value is added, the Other Linker Flags area of the screen looks li
       bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCore.framework/strip-frameworks.sh"
       <br /><br /><img style="border: 1px solid #ccc;" src="strip-frameworks.png" /><br /><br />
 
-4. Add other required linked frameworks and libraries
+4. Add other required linked frameworks and libraries:
 
     + Back on Build Phases, select Link Binary with Libraries and click the + button.
     + Add these binaries by typing in the "Search" box: `libc++.tbd` , `libz.tbd`,  `MobileCoreServices.framework` and `SystemConfiguration.framework`. Use the `.dylib` version of the `.tbd` libraries if you don't have Bitcode enabled for your project.
