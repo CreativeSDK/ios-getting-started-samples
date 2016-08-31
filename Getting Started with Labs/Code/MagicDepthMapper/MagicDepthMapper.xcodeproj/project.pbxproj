@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9BECD3851BBC7F8600F05D07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECD3841BBC7F8600F05D07 /* main.m */; };
+		9BECD3881BBC7F8600F05D07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECD3871BBC7F8600F05D07 /* AppDelegate.m */; };
+		9BECD38B1BBC7F8600F05D07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECD38A1BBC7F8600F05D07 /* ViewController.m */; };
+		9BECD38E1BBC7F8600F05D07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BECD38C1BBC7F8600F05D07 /* Main.storyboard */; };
+		9BECD3901BBC7F8600F05D07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BECD38F1BBC7F8600F05D07 /* Images.xcassets */; };
+		9BECD3931BBC7F8600F05D07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BECD3911BBC7F8600F05D07 /* LaunchScreen.xib */; };
+		9BECD39F1BBC7F8600F05D07 /* MagicDepthMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECD39E1BBC7F8600F05D07 /* MagicDepthMapperTests.m */; };
+		9BECD3AD1BBC814600F05D07 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BECD3AC1BBC814600F05D07 /* libc++.dylib */; };
+		9BECD3BD1BC5A89800F05D07 /* ViewController+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECD3BC1BC5A89800F05D07 /* ViewController+Buttons.m */; };
+		9BECD3CC1BC744DA00F05D07 /* haleakala.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9BECD3CA1BC744DA00F05D07 /* haleakala.jpg */; };
+		9BECD3CD1BC744DA00F05D07 /* kid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9BECD3CB1BC744DA00F05D07 /* kid.jpg */; };
+		FE5424581D7106FE00371D6E /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5424541D7106EC00371D6E /* AdobeCreativeSDKCore.framework */; };
+		FE5424591D7106FE00371D6E /* AdobeCreativeSDKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE5424541D7106EC00371D6E /* AdobeCreativeSDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FE54245A1D7106FE00371D6E /* AdobeCreativeSDKLabs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5424551D7106EC00371D6E /* AdobeCreativeSDKLabs.framework */; };
+		FE54245B1D7106FE00371D6E /* AdobeCreativeSDKLabs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE5424551D7106EC00371D6E /* AdobeCreativeSDKLabs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9BECD3991BBC7F8600F05D07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BECD3771BBC7F8600F05D07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BECD37E1BBC7F8600F05D07;
+			remoteInfo = MagicDepthMapper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FE54245C1D7106FE00371D6E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FE54245B1D7106FE00371D6E /* AdobeCreativeSDKLabs.framework in Embed Frameworks */,
+				FE5424591D7106FE00371D6E /* AdobeCreativeSDKCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9BECD37F1BBC7F8600F05D07 /* MagicDepthMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicDepthMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BECD3831BBC7F8600F05D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BECD3841BBC7F8600F05D07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9BECD3861BBC7F8600F05D07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9BECD3871BBC7F8600F05D07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9BECD3891BBC7F8600F05D07 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9BECD38A1BBC7F8600F05D07 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9BECD38D1BBC7F8600F05D07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BECD38F1BBC7F8600F05D07 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9BECD3921BBC7F8600F05D07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9BECD3981BBC7F8600F05D07 /* MagicDepthMapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicDepthMapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BECD39D1BBC7F8600F05D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BECD39E1BBC7F8600F05D07 /* MagicDepthMapperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicDepthMapperTests.m; sourceTree = "<group>"; };
+		9BECD3AC1BBC814600F05D07 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		9BECD3BC1BC5A89800F05D07 /* ViewController+Buttons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+Buttons.m"; sourceTree = "<group>"; };
+		9BECD3BE1BC5A8BC00F05D07 /* ViewController+Buttons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+Buttons.h"; sourceTree = "<group>"; };
+		9BECD3CA1BC744DA00F05D07 /* haleakala.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = haleakala.jpg; path = images/haleakala.jpg; sourceTree = "<group>"; };
+		9BECD3CB1BC744DA00F05D07 /* kid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kid.jpg; path = images/kid.jpg; sourceTree = "<group>"; };
+		FE5424541D7106EC00371D6E /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		FE5424551D7106EC00371D6E /* AdobeCreativeSDKLabs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKLabs.framework; path = ../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKLabs.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BECD37C1BBC7F8600F05D07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BECD3AD1BBC814600F05D07 /* libc++.dylib in Frameworks */,
+				FE54245A1D7106FE00371D6E /* AdobeCreativeSDKLabs.framework in Frameworks */,
+				FE5424581D7106FE00371D6E /* AdobeCreativeSDKCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BECD3951BBC7F8600F05D07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9BECD3761BBC7F8600F05D07 = {
+			isa = PBXGroup;
+			children = (
+				9BECD3B41BBC824900F05D07 /* Frameworks */,
+				9BECD3811BBC7F8600F05D07 /* MagicDepthMapper */,
+				9BECD39B1BBC7F8600F05D07 /* MagicDepthMapperTests */,
+				9BECD3801BBC7F8600F05D07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9BECD3801BBC7F8600F05D07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BECD37F1BBC7F8600F05D07 /* MagicDepthMapper.app */,
+				9BECD3981BBC7F8600F05D07 /* MagicDepthMapperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BECD3811BBC7F8600F05D07 /* MagicDepthMapper */ = {
+			isa = PBXGroup;
+			children = (
+				9BECD3C01BC73B1A00F05D07 /* images */,
+				9BECD3861BBC7F8600F05D07 /* AppDelegate.h */,
+				9BECD3871BBC7F8600F05D07 /* AppDelegate.m */,
+				9BECD3BE1BC5A8BC00F05D07 /* ViewController+Buttons.h */,
+				9BECD3BC1BC5A89800F05D07 /* ViewController+Buttons.m */,
+				9BECD3891BBC7F8600F05D07 /* ViewController.h */,
+				9BECD38A1BBC7F8600F05D07 /* ViewController.m */,
+				9BECD38C1BBC7F8600F05D07 /* Main.storyboard */,
+				9BECD38F1BBC7F8600F05D07 /* Images.xcassets */,
+				9BECD3911BBC7F8600F05D07 /* LaunchScreen.xib */,
+				9BECD3821BBC7F8600F05D07 /* Supporting Files */,
+			);
+			path = MagicDepthMapper;
+			sourceTree = "<group>";
+		};
+		9BECD3821BBC7F8600F05D07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9BECD3831BBC7F8600F05D07 /* Info.plist */,
+				9BECD3841BBC7F8600F05D07 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BECD39B1BBC7F8600F05D07 /* MagicDepthMapperTests */ = {
+			isa = PBXGroup;
+			children = (
+				9BECD39E1BBC7F8600F05D07 /* MagicDepthMapperTests.m */,
+				9BECD39C1BBC7F8600F05D07 /* Supporting Files */,
+			);
+			path = MagicDepthMapperTests;
+			sourceTree = "<group>";
+		};
+		9BECD39C1BBC7F8600F05D07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9BECD39D1BBC7F8600F05D07 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BECD3B41BBC824900F05D07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE5424541D7106EC00371D6E /* AdobeCreativeSDKCore.framework */,
+				FE5424551D7106EC00371D6E /* AdobeCreativeSDKLabs.framework */,
+				9BECD3AC1BBC814600F05D07 /* libc++.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BECD3C01BC73B1A00F05D07 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9BECD3CA1BC744DA00F05D07 /* haleakala.jpg */,
+				9BECD3CB1BC744DA00F05D07 /* kid.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BECD37E1BBC7F8600F05D07 /* MagicDepthMapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BECD3A21BBC7F8600F05D07 /* Build configuration list for PBXNativeTarget "MagicDepthMapper" */;
+			buildPhases = (
+				9BECD37B1BBC7F8600F05D07 /* Sources */,
+				9BECD37C1BBC7F8600F05D07 /* Frameworks */,
+				9BECD37D1BBC7F8600F05D07 /* Resources */,
+				FE54245C1D7106FE00371D6E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagicDepthMapper;
+			productName = MagicDepthMapper;
+			productReference = 9BECD37F1BBC7F8600F05D07 /* MagicDepthMapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9BECD3971BBC7F8600F05D07 /* MagicDepthMapperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BECD3A51BBC7F8600F05D07 /* Build configuration list for PBXNativeTarget "MagicDepthMapperTests" */;
+			buildPhases = (
+				9BECD3941BBC7F8600F05D07 /* Sources */,
+				9BECD3951BBC7F8600F05D07 /* Frameworks */,
+				9BECD3961BBC7F8600F05D07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BECD39A1BBC7F8600F05D07 /* PBXTargetDependency */,
+			);
+			name = MagicDepthMapperTests;
+			productName = MagicDepthMapperTests;
+			productReference = 9BECD3981BBC7F8600F05D07 /* MagicDepthMapperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BECD3771BBC7F8600F05D07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Adobe Systems Incorporated";
+				TargetAttributes = {
+					9BECD37E1BBC7F8600F05D07 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					9BECD3971BBC7F8600F05D07 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 9BECD37E1BBC7F8600F05D07;
+					};
+				};
+			};
+			buildConfigurationList = 9BECD37A1BBC7F8600F05D07 /* Build configuration list for PBXProject "MagicDepthMapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9BECD3761BBC7F8600F05D07;
+			productRefGroup = 9BECD3801BBC7F8600F05D07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BECD37E1BBC7F8600F05D07 /* MagicDepthMapper */,
+				9BECD3971BBC7F8600F05D07 /* MagicDepthMapperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BECD37D1BBC7F8600F05D07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BECD38E1BBC7F8600F05D07 /* Main.storyboard in Resources */,
+				9BECD3931BBC7F8600F05D07 /* LaunchScreen.xib in Resources */,
+				9BECD3CC1BC744DA00F05D07 /* haleakala.jpg in Resources */,
+				9BECD3CD1BC744DA00F05D07 /* kid.jpg in Resources */,
+				9BECD3901BBC7F8600F05D07 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BECD3961BBC7F8600F05D07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BECD37B1BBC7F8600F05D07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BECD3BD1BC5A89800F05D07 /* ViewController+Buttons.m in Sources */,
+				9BECD38B1BBC7F8600F05D07 /* ViewController.m in Sources */,
+				9BECD3881BBC7F8600F05D07 /* AppDelegate.m in Sources */,
+				9BECD3851BBC7F8600F05D07 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BECD3941BBC7F8600F05D07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BECD39F1BBC7F8600F05D07 /* MagicDepthMapperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9BECD39A1BBC7F8600F05D07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BECD37E1BBC7F8600F05D07 /* MagicDepthMapper */;
+			targetProxy = 9BECD3991BBC7F8600F05D07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9BECD38C1BBC7F8600F05D07 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BECD38D1BBC7F8600F05D07 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9BECD3911BBC7F8600F05D07 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BECD3921BBC7F8600F05D07 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BECD3A01BBC7F8600F05D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BECD3A11BBC7F8600F05D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BECD3A31BBC7F8600F05D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../AdobeCreativeSDKDynamicFrameworks,
+				);
+				INFOPLIST_FILE = MagicDepthMapper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9BECD3A41BBC7F8600F05D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../AdobeCreativeSDKDynamicFrameworks,
+				);
+				INFOPLIST_FILE = MagicDepthMapper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9BECD3A61BBC7F8600F05D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MagicDepthMapperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicDepthMapper.app/MagicDepthMapper";
+			};
+			name = Debug;
+		};
+		9BECD3A71BBC7F8600F05D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MagicDepthMapperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicDepthMapper.app/MagicDepthMapper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BECD37A1BBC7F8600F05D07 /* Build configuration list for PBXProject "MagicDepthMapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BECD3A01BBC7F8600F05D07 /* Debug */,
+				9BECD3A11BBC7F8600F05D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BECD3A21BBC7F8600F05D07 /* Build configuration list for PBXNativeTarget "MagicDepthMapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BECD3A31BBC7F8600F05D07 /* Debug */,
+				9BECD3A41BBC7F8600F05D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BECD3A51BBC7F8600F05D07 /* Build configuration list for PBXNativeTarget "MagicDepthMapperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BECD3A61BBC7F8600F05D07 /* Debug */,
+				9BECD3A71BBC7F8600F05D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9BECD3771BBC7F8600F05D07 /* Project object */;
+}

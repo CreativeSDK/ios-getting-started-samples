@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="kQH-AM-2jE" userLabel="PSD File Name">
+                                <rect key="frame" x="20" y="66" width="560" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="120" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="gPR-Cu-8ji">
+                                <rect key="frame" x="20" y="94" width="560" height="485.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="Cell" id="rSC-Zm-iSK" customClass="LayerTableViewCell">
+                                        <rect key="frame" x="0.0" y="1" width="560" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rSC-Zm-iSK" id="La4-lN-iU0">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="119.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qOX-9G-fku">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="118"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="L8O-UO-sxB"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="BfI-ez-vPF">
+                                                    <rect key="frame" x="128" y="8" width="424" height="103"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qOX-9G-fku" firstAttribute="leading" secondItem="La4-lN-iU0" secondAttribute="leading" id="Lh5-fU-5bG"/>
+                                                <constraint firstItem="qOX-9G-fku" firstAttribute="top" secondItem="La4-lN-iU0" secondAttribute="top" id="VnL-1k-TrI"/>
+                                                <constraint firstAttribute="bottom" secondItem="qOX-9G-fku" secondAttribute="bottom" constant="1" id="rAT-li-Z0d"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="layerInformationLabel" destination="BfI-ez-vPF" id="sM9-cQ-k8q"/>
+                                            <outlet property="thumbnailImageView" destination="qOX-9G-fku" id="euk-T7-1zR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="MU4-of-bzG"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="c9H-7F-PSu"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxZ-Bf-r2d">
+                                <rect key="frame" x="241.5" y="28" width="117" height="30"/>
+                                <state key="normal" title="Select a PSD File"/>
+                                <connections>
+                                    <action selector="pickPSDFileButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="pkv-Y9-yLD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gPR-Cu-8ji" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1g5-BF-MEh"/>
+                            <constraint firstItem="gPR-Cu-8ji" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6zu-uD-PpU"/>
+                            <constraint firstItem="kQH-AM-2jE" firstAttribute="top" secondItem="FxZ-Bf-r2d" secondAttribute="bottom" constant="8" id="95c-fA-hTY"/>
+                            <constraint firstItem="FxZ-Bf-r2d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LPs-XX-FWY"/>
+                            <constraint firstItem="kQH-AM-2jE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NZK-Qk-lGR"/>
+                            <constraint firstItem="kQH-AM-2jE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XN8-4B-YPI"/>
+                            <constraint firstItem="FxZ-Bf-r2d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="dMi-9u-2Wb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gPR-Cu-8ji" secondAttribute="bottom" constant="20" id="job-7d-CmO"/>
+                            <constraint firstItem="gPR-Cu-8ji" firstAttribute="top" secondItem="kQH-AM-2jE" secondAttribute="bottom" constant="8" id="n5b-vS-Muf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="psdFileNameLabel" destination="kQH-AM-2jE" id="6jx-yb-Kui"/>
+                        <outlet property="tableView" destination="gPR-Cu-8ji" id="nWf-vW-kQf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="429"/>
+        </scene>
+    </scenes>
+</document>

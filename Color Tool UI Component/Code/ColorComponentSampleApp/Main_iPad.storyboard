@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T88-yL-aZV">
+                                <rect key="frame" x="0.0" y="92" width="768" height="832"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dA-e4-6Ag">
+                                <rect key="frame" x="315" y="41" width="139" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PlW-v2-R1Y"/>
+                                    <constraint firstAttribute="width" constant="139" id="lgA-sd-JGh"/>
+                                </constraints>
+                                <state key="normal" title="Launch Color Picker">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="launchColorPicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RRR-zH-Xda"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFN-8O-Yj3">
+                                <rect key="frame" x="283" y="960" width="202" height="30"/>
+                                <state key="normal" title="Log in / out of Creative Cloud">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutOfCreativeCloud:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FqJ-CE-MG1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="9dA-e4-6Ag" secondAttribute="centerX" constant="-0.5" id="3YM-BA-yJC"/>
+                            <constraint firstItem="T88-yL-aZV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CJw-Lc-hDL"/>
+                            <constraint firstItem="9dA-e4-6Ag" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="41" id="P7t-8n-QT7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IFN-8O-Yj3" secondAttribute="bottom" constant="34" id="lEk-MI-UyN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T88-yL-aZV" secondAttribute="bottom" constant="100" id="pdb-oi-db5"/>
+                            <constraint firstAttribute="centerX" secondItem="IFN-8O-Yj3" secondAttribute="centerX" id="q51-p2-NfH"/>
+                            <constraint firstAttribute="trailing" secondItem="T88-yL-aZV" secondAttribute="trailing" id="sjs-pm-tne"/>
+                            <constraint firstItem="T88-yL-aZV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="72" id="xYp-ER-5FK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorView" destination="T88-yL-aZV" id="nJT-TG-yrz"/>
+                        <outlet property="launchColorPickerButton" destination="9dA-e4-6Ag" id="MGO-LN-eYp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

@@ -16,29 +16,18 @@ The Creative SDK provides a color editing UI popover available on iOS. The color
 - [Class Reference](#class_reference)
 
 <a name="prerequisites"></a>
+
 ## Prerequisites
 
-+ This guide assumes that you've already read the <a href="/articles/gettingstarted/index.html">Getting Started</a> guide and have implemented Auth.
-+ For a complete list of framework dependencies, see the <a href="/articles/dependencies/index.html">Framework Dependencies</a> guide.
+This guide will assume that you have installed all software and completed all of the steps in the following guides:
 
-<a name="project_configuration"></a>
-### Adding the Color Tool UI Component into your Project
+*   [Getting Started](https://creativesdk.adobe.com/docs/ios/#/articles/gettingstarted/index.html)
+*   [Framework Dependencies](https://creativesdk.adobe.com/docs/ios/#/articles/dependencies/index.html) guide.
 
-Below you'll find the few steps needed in order to get CreativeSDKColorComponent up and running in your project.  
+_**Note:**_
 
-1. Open your Xcode Project.
-2. Import the following frameworks from AdobeCreativeSDKFrameworks.zip into your workspace:
-    + AdobeCreativeSDKCore.framework
-    + AdobeCreativeSDKAssetModel.framework
-    + AdobeCreativeSDKColorComponent.framework
-3. Import the following resource bundles into your workspace:
-    + AdobeCreativeSDKAssetCore.framework/Resources/AdobeCreativeSDKFoundationResources.bundle
-    + AdobeCreativeSDKAssetModel.framework/Resources/AdobeCreativeSDKFoundationResources.bundle
-    + AdobeCreativeSDKColorComponent.framework/Resources/AdobeCreativeSDKColorComponenentResources.bundle
-4. Go into Build Phases->Link Binary With Libraries and add the frameworks from step 2.
-5. Go into Build Phases->Copy Bundle Resources and add the resource bundles from step 3.
-6. Go into Build Settings->Other Linker Flags and add the -ObjC flag
-7. Build
+*   _This component requires that the user is **logged in with their Adobe ID**._
+*   _Your Client ID must be [approved for **Production Mode** by Adobe](https://creativesdk.zendesk.com/hc/en-us/articles/204601215-How-to-complete-the-Production-Client-ID-Request) before you release your app._
 
 <a name="authentication"></a>
 ### Authentication 

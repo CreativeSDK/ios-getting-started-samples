@@ -14,10 +14,18 @@ If you're interested in embedding with the UI we already made for iOS devices, p
 - [Class Reference](#reference)
 
 <a name="prerequisites"></a>
+
 ## Prerequisites
 
-+ This guide assumes that you've already read the <a href="/articles/gettingstarted/index.html">Getting Started</a> guide and have implemented Auth.
-+ For a complete list of framework dependencies, see the <a href="/articles/dependencies/index.html">Framework Dependencies</a> guide.
+This guide will assume that you have installed all software and completed all of the steps in the following guides:
+
+*   [Getting Started](https://creativesdk.adobe.com/docs/ios/#/articles/gettingstarted/index.html)
+*   [Framework Dependencies](https://creativesdk.adobe.com/docs/ios/#/articles/dependencies/index.html) guide.
+
+_**Note:**_
+
+*   _This component requires that the user is **logged in with their Adobe ID**._
+*   _Your Client ID must be [approved for **Production Mode** by Adobe](https://creativesdk.zendesk.com/hc/en-us/articles/204601215-How-to-complete-the-Production-Client-ID-Request) before you release your app._
 
 <a name="access"></a>
 ## Access Lightroom Photos in the Creative Cloud

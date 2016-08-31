@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HtK-QJ-SfQ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeS-wp-Z4c">
+                                <rect key="frame" x="279" y="72" width="42" height="30"/>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="authButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvp-go-iqh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRJ-UX-9Jh">
+                                <rect key="frame" x="215" y="110" width="170" height="30"/>
+                                <state key="normal" title="Select and Upload Photo"/>
+                                <connections>
+                                    <action selector="uploadButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="kzL-NU-im1"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uploading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqn-5X-n6U">
+                                <rect key="frame" x="254" y="170" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JPx-bw-uOH">
+                                <rect key="frame" x="215" y="199" width="170" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="6bM-OP-gYZ"/>
+                                </constraints>
+                            </progressView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uYX-hr-LkR">
+                                <rect key="frame" x="20" y="209" width="560" height="371"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uYX-hr-LkR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4Lq-F2-oSb"/>
+                            <constraint firstItem="eeS-wp-Z4c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Azh-WQ-iXz"/>
+                            <constraint firstItem="JPx-bw-uOH" firstAttribute="top" secondItem="JRJ-UX-9Jh" secondAttribute="bottom" constant="59" id="Euc-ja-WvU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uYX-hr-LkR" secondAttribute="bottom" constant="20" id="J0i-YL-qwV"/>
+                            <constraint firstItem="kqn-5X-n6U" firstAttribute="top" secondItem="JRJ-UX-9Jh" secondAttribute="bottom" constant="30" id="Oit-Je-lLQ"/>
+                            <constraint firstItem="uYX-hr-LkR" firstAttribute="top" secondItem="JPx-bw-uOH" secondAttribute="bottom" constant="8" id="SKn-Kr-J1j"/>
+                            <constraint firstItem="JPx-bw-uOH" firstAttribute="width" secondItem="JRJ-UX-9Jh" secondAttribute="width" id="f4u-Ia-6OL"/>
+                            <constraint firstItem="uYX-hr-LkR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fGP-ss-weg"/>
+                            <constraint firstItem="eeS-wp-Z4c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="lGl-0R-eBR"/>
+                            <constraint firstItem="kqn-5X-n6U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mWl-Re-yfm"/>
+                            <constraint firstItem="JRJ-UX-9Jh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rIm-lS-YVk"/>
+                            <constraint firstItem="JRJ-UX-9Jh" firstAttribute="top" secondItem="eeS-wp-Z4c" secondAttribute="bottom" constant="8" id="uDz-YO-Q6u"/>
+                            <constraint firstItem="JPx-bw-uOH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wrh-8x-2qJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="f4u-Ia-6OL"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="frL-pT-tjH"/>
+                    <connections>
+                        <outlet property="authButton" destination="eeS-wp-Z4c" id="ATF-HX-0bP"/>
+                        <outlet property="photoView" destination="uYX-hr-LkR" id="Thq-jl-pdg"/>
+                        <outlet property="progressView" destination="JPx-bw-uOH" id="oTC-SI-45d"/>
+                        <outlet property="uploadButton" destination="JRJ-UX-9Jh" id="fiM-SF-JMe"/>
+                        <outlet property="uploadingLabel" destination="kqn-5X-n6U" id="hIz-Bj-9Al"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="452"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DLk-14-adX">
+            <objects>
+                <navigationController id="HtK-QJ-SfQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HpC-4y-Cgc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="RAg-NW-QSv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDC-z4-o5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-504" y="452"/>
+        </scene>
+    </scenes>
+</document>

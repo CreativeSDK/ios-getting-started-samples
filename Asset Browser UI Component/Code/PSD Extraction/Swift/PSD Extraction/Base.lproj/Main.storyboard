@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PSD_Extraction" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbj-Zt-FUR">
+                                <rect key="frame" x="242" y="20" width="117" height="30"/>
+                                <state key="normal" title="Select a PSD File"/>
+                                <connections>
+                                    <action selector="pickPSDFileButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="xaI-A2-fRy"/>
+                                </connections>
+                            </button>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="120" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="qTH-w3-phH">
+                                <rect key="frame" x="20" y="87" width="560" height="493"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="1ff-Ac-j1c" customClass="LayerTableViewCell" customModule="PSD_Extraction" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="560" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1ff-Ac-j1c" id="bdp-si-ES6">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="119.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kdv-a0-DT9" userLabel="Layer Thumbnail">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="119.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="aAL-A0-wGh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="4iH-vz-wch" userLabel="Layer Information">
+                                                    <rect key="frame" x="128" y="8" width="424" height="103.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kdv-a0-DT9" firstAttribute="leading" secondItem="bdp-si-ES6" secondAttribute="leading" id="3PU-gS-fvb"/>
+                                                <constraint firstItem="Kdv-a0-DT9" firstAttribute="top" secondItem="bdp-si-ES6" secondAttribute="top" id="cJR-ux-hJv"/>
+                                                <constraint firstAttribute="bottom" secondItem="Kdv-a0-DT9" secondAttribute="bottom" id="fwe-lr-nnS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="layerInformationLabel" destination="4iH-vz-wch" id="LBH-jh-COh"/>
+                                            <outlet property="thumbnailImageView" destination="Kdv-a0-DT9" id="Fwe-hp-Qmu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5dT-uA-ILL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1X0-My-IaV"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpe-Qt-SoU">
+                                <rect key="frame" x="20" y="58" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qTH-w3-phH" secondAttribute="bottom" constant="20" id="5SH-jn-QuQ"/>
+                            <constraint firstItem="qTH-w3-phH" firstAttribute="top" secondItem="hpe-Qt-SoU" secondAttribute="bottom" constant="8" id="GxM-An-dSH"/>
+                            <constraint firstItem="hpe-Qt-SoU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="IHk-FE-2NH"/>
+                            <constraint firstItem="hpe-Qt-SoU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LeG-s3-gqe"/>
+                            <constraint firstItem="qTH-w3-phH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="YHH-bA-5IK"/>
+                            <constraint firstItem="Hbj-Zt-FUR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bMB-t1-YIG"/>
+                            <constraint firstItem="qTH-w3-phH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mfK-U8-ifr"/>
+                            <constraint firstItem="hpe-Qt-SoU" firstAttribute="top" secondItem="Hbj-Zt-FUR" secondAttribute="bottom" constant="8" id="r9s-Av-ejA"/>
+                            <constraint firstItem="Hbj-Zt-FUR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vw8-ZP-ims"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="psdFileNameLabel" destination="hpe-Qt-SoU" id="Yw1-Jc-Ebj"/>
+                        <outlet property="tableView" destination="qTH-w3-phH" id="60k-NV-BZu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="188" y="258"/>
+        </scene>
+    </scenes>
+</document>

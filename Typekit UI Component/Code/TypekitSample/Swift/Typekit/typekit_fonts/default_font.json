@@ -1,0 +1,9 @@
+{
+	"ja" : "SourceHanSansJP-Regular",
+	"ko" : "SourceHanSansKR-Regular",
+	"zh-Hant" : "SourceHanSansTW-Regular",
+	"zh-HK" : "SourceHanSansTW-Regular",
+    "zh-TW" : "SourceHanSansTW-Regular",
+	"zh-Hans" : "SourceHanSansCN-Regular",
+	"default" : "SourceSansPro-Regular"
+}

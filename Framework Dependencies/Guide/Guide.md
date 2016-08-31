@@ -11,9 +11,19 @@ In the Creative SDK for iOS, we've broken the Foundation framework into Micro fr
 
 You can read more about the Framework breakup on our <a target="_blank" href="https://blog.creativesdk.com/2015/08/dividing-up-the-foundation-sdk/">blog</a>.
 
-## Migrating from Monolithic Foundation Framework to Framework Breakup (v0.11.2118+)
+<a name="Migrating to Dynamic Frameworks"></a>
+## Migrating to Dynamic Frameworks
 
-When migrating from the old Foundation Framework to the newer Creative SDK, you'll need to update previous references to `AdobeCreativeSDKFoundation/AdobeCreativeSDKFoundation.h` with the new broken up header file(s). See below for a full list.
+The below steps assumes you are currently using static frameworks.
+
+1. Select project file, in Build Phases, Link Binary with Libraries, remove all the AdobeCreativeSDK frameworks currently linked.
+2. In Build Phases, Copy Bundle Resources, remove all the AdobeCreativeSDK bundles that are currently added. 
+3. Under General, Embedded Binaries, add the necessary AdobeCreativeSDK frameworks you need. 
+4. Under Build Settings, Framework Search Paths, make sure you have correct path to folders containing AdobeCreativeSDK frameworks.
+5. For each Embedded framework you include, you will need to run the strip-frameworks shell script in order to remove the simulator slices and force a code resign on the frameworks.
+In Build Phases, add a run script phase (if not present) and add the below line for each embedded AdobeCreativeSDK framework to run the strip-frameworks script.
+bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCore.framework/strip-frameworks.sh"
+<br /><br /><img style="border: 1px solid #ccc;" src="strip-frameworks.png" /><br /><br />
 
 ## Frameworks Overview
 
@@ -129,7 +139,6 @@ Below is a table that contains all of the Framework and header dependencies for 
          <td>Image Editor UI Component</td>
          <td colspan="1">
             <a href="#core">AdobeCreativeSDKCore.framework</a>
-
             <br /><a href="#imageeditor">AdobeCreativeSDKImage.framework</a>
          </td>
          <td>
@@ -138,20 +147,20 @@ Below is a table that contains all of the Framework and header dependencies for 
          </td>
       </tr>
       <tr>
-         <td>Color Tool UI Component</td>
+         <td>Color Tool</td>
          <td colspan="1">
             <a href="#core">AdobeCreativeSDKCore.framework</a>
             <br /><a href="#commonux">AdobeCreativeSDKCommonUX.framework</a>
             <br /><a href="#assetmodel">AdobeCreativeSDKAssetModel.framework</a>
             <br /><a href="#assetux">AdobeCreativeSDKAssetUX.framework</a>
-            <br /><a href="#colorcomponent">AdobeCreativeSDKColorComponent.framework</a>
+            <br /><a href="#color">AdobeCreativeSDKColor.framework</a>
          </td>
          <td>
             AdobeCreativeSDKCore/AdobeCreativeSDKCore.h
             <br />AdobeCreativeSDKCommonUX/AdobeCreativeSDKCommonUX.h
             <br />AdobeCreativeSDKAssetModel/AdobeCreativeSDKAssetModel.h
             <br />AdobeCreativeSDKAssetUX/AdobeCreativeSDKAssetUX.h
-            <br />AdobeCreativeSDKColorComponent/AdobeCreativeSDKColorComponent.h
+            <br />AdobeCreativeSDKColor/AdobeCreativeSDKColor.h
          </td>
       </tr>
       <tr>
@@ -175,9 +184,7 @@ Below is a table that contains all of the Framework and header dependencies for 
          <td>SendToDesktop API</td>
          <td colspan="1">
             <a href="#core">AdobeCreativeSDKCore.framework</a>
-
             <br /><a href="#assetmodel">AdobeCreativeSDKAssetModel.framework</a>
-
          </td>
          <td>
             AdobeCreativeSDKCore/AdobeCreativeSDKCore.h
@@ -242,8 +249,7 @@ The following section outlines the required setup for each part of the Creative 
 + [AdobeCreativeSDKAssetModel](#assetmodel)
 + [AdobeCreativeSDKAssetUX](#assetux)
 + [AdobeCreativeSDKMarketUX](#marketux)
-+ [AdobeCreativeSDKColorComponent](#colorcomponent)
-+ [AdobeCreativeSDKDevice](#device)
++ [AdobeCreativeSDKColor](#color)
 + [AdobeCreativeSDKImage](#imageeditor)
 + [AdobeCreativeSDKBehance](#behance)
 + [AdobeCreativeSDKLabs](#labs)
@@ -260,9 +266,10 @@ The following configuration settings are required for this framework:
 4. In the same area, add the following libraries:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
-    + libc++.dylib
-    + libz.dylib
-5. In Build Settings, Apple LLVM 6.1 - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
+    + libc++.tbd
+    + libz.tbd
+    + WebKit.framework
+5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
 
 <a name="commonux"></a>
 ### AdobeCreativeSDKCommonUX
@@ -279,9 +286,10 @@ The following configuration settings are required for this framework:
 4. In the same area, add the following libraries:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
-    + libc++.dylib
-    + libz.dylib
-5. In Build Settings, Apple LLVM 6.1 - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
+    + libc++.tbd
+    + libz.tbd
+    + WebKit.framework
+5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
 
 <a name="applibraryux"></a>
 ### AdobeCreativeSDKAppLibraryUX
@@ -302,9 +310,10 @@ The following configuration settings are required for this framework:
 4. In the same area, add the following libraries:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
-    + libc++.dylib
-    + libz.dylib
-5. In Build Settings, Apple LLVM 6.1 - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
+    + libc++.tbd
+    + libz.tbd
+    + WebKit.framework
+5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
 
 <a name="assetmodel"></a>
 ### AdobeCreativeSDKAssetModel
@@ -321,9 +330,10 @@ The following configuration settings are required for this framework:
 4. In the same area, add the following libraries:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
-    + libc++.dylib
-    + libz.dylib
-5. In Build Settings, Apple LLVM 6.1 - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
+    + libc++.tbd
+    + libz.tbd
+    + WebKit.framework
+5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
 
 <a name="assetux"></a>
 ### AdobeCreativeSDKAssetUX
@@ -344,9 +354,10 @@ The following configuration settings are required for this framework:
 4. In the same area, add the following libraries:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
-    + libc++.dylib
-    + libz.dylib
-5. In Build Settings, Apple LLVM 6.1 - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
+    + libc++.tbd
+    + libz.tbd
+    + WebKit.framework
+5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
 
 <a name="marketux"></a>
 ### AdobeCreativeSDKMarketUX
@@ -369,12 +380,13 @@ The following configuration settings are required for this framework:
 4. In the same area, add the following libraries:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
-    + libc++.dylib
-    + libz.dylib
-5. In Build Settings, Apple LLVM 6.1 - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
+    + libc++.tbd
+    + libz.tbd
+    + WebKit.framework
+5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
 
-<a name="colorcomponent"></a>
-### AdobeCreativeSDKColorComponent
+<a name="color"></a>
+### AdobeCreativeSDKColor
 
 The following configuration settings are required for this framework:
 
@@ -382,51 +394,19 @@ The following configuration settings are required for this framework:
 2. In Build Phases, expand Copy Bundle Resources, click the + button, select "Add Other" and select the following bundles:
     + AdobeCreativeSDKCore.framework/Resources/AdobeCreativeSDKCoreResources.bundle
     + AdobeCreativeSDKAssetModel.framework/Resources/AdobeCreativeSDKAssetModelResources.bundle
-    + AdobeCreativeSDKColorComponent.framework/Resources/AdobeCreativeSDKColorComponenentResources.bundle
+    + AdobeCreativeSDKColor.framework/Resources/AdobeCreativeSDKColorResources.bundle
 3. In Build Phases, Link Binary with Libraries, add the following:
     + AdobeCreativeSDKCore.framework
     + AdobeCreativeSDKAssetModel.framework
-    + AdobeCreativeSDKColorComponent.framework
+    + AdobeCreativeSDKColor.framework
 5. In the same area, add the following libraries:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
-    + libc++.dylib
-    + libz.dylib
-6. In Build Settings, Apple LLVM 6.1 - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
+    + libc++.tbd
+    + libz.tbd
+    + WebKit.framework
+6. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
 
-<a name="device"></a>
-### AdobeCreativeSDKDevice
-
-The following configuration settings are required for this framework:
-
-1. Add -ObjC as a linker flag in Build Settings/Linking/Other Linker Flags.
-2. In Build Phases, expand Copy Bundle Resources, click the + button, select "Add Other" and select the following bundles:
-    + AdobeCreativeSDKCore.framework/Resources/AdobeCreativeSDKCoreResources.bundle
-    + AdobeCreativeSDKAssetModel.framework/Resources/AdobeCreativeSDKAssetModelResources.bundle
-    + AdobeCreativeSDKColorComponent.framework/Resources/AdobeCreativeSDKColorComponenentResources.bundle
-    + AdobeCreativeSDKDevice.framework/Resources/AdobeCreativeSDKDeviceResources.bundle
-3. In Build Phases, Link Binary with Libraries, add the following libraries:
-    + AdobeCreativeSDKCore.framework
-    + AdobeCreativeSDKAssetModel.framework 
-    + AdobeCreativeSDKColorComponent.framework
-    + AdobeCreativeSDKDevice.framework
-    + Ink Support:
-        * AdobeCreativeSDKDeviceExtensionJotTouchSDK.framework
-        * JotTouchSDK.framework
-    + Wacom Support:
-        * AdobeCreativeSDKDeviceExtensionWacomDevice.framework
-        * The WacomDevice.framework available from Wacom's iOS Developer <a href="http://www.wacom.com/en-us/enterprise/business-solutions/software-and-solutions/sdks" target="_blank">site</a>.
-    + Pencil 53 Support:
-        + AdobeCreativeSDKDeviceExtensionFiftyThreeSdk.framework
-        + The FiftyThreeSdk.framework available from Pencil 53’s iOS Developer <a href="http://www.fiftythree.com/pencil" target="_blank">site</a>.
-4. In the same area, add the following libraries:
-    + libc++.dylib
-    + libz.dylib
-    + CoreBluetooth.framework
-    + CoreMotion.framework
-    + MobileCoreServices.framework
-    + SystemConfiguration.framework
-5. In Build Settings, Apple LLVM 6.1 - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
 
 <a name="imageeditor"></a>
 ### AdobeCreativeSDKImage
@@ -443,15 +423,16 @@ The following configuration settings are required for this framework:
 4. In the same area, add the following libraries:
     + Accelerate.framework
     + CoreData.framework
-    + libsqlite3.0.dylib
-    + libz.1.2.5.dylib
+    + libsqlite3.0.tbd
+    + libz.1.2.5.tbd
     + Foundation.framework
     + MessageUI.framework
     + OpenGLES.framework
     + QuartzCore.framework
     + StoreKit.framework
     + UIKit.framework
-5. In Build Settings, Apple LLVM 6.1 - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
+    + WebKit.framework
+5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
 
 <a name="behance"></a>
 ### AdobeCreativeSDKBehance
@@ -472,9 +453,10 @@ The following configuration settings are required for this framework:
     + AdobeCreativeSDKCommonUX.framework
     + AdobeCreativeSDKBehance.framework
 4. In the same area, add the following libraries:
-    + libc++.dylib
-    + libz.dylib
-5. In Build Settings, Apple LLVM 6.1 - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
+    + libc++.tbd
+    + libz.tbd
+    + WebKit.framework
+5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
 
 <a name="labs"></a>
 ### AdobeCreativeSDKLabs
@@ -491,6 +473,10 @@ The following configuration settings are required for this framework:
 4. In the same area, add the following libraries:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
-    + libc++.dylib
-    + libz.dylib
-5. In Build Settings, Apple LLVM 6.1 - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
+    + libc++.tbd
+    + libz.tbd
+    + WebKit.framework
+5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
+
+
+

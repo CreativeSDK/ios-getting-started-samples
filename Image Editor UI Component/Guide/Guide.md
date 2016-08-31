@@ -10,10 +10,19 @@ This guide describes setup and practical use of all components of the Image Edit
 
 The image editor is in `AdobeUXImageEditorViewController`, a presentable `UIViewController` subclass. The editor provides fast image editing to users and an easy-to-use programmatic interface to developers.
 
+<a name="prerequisites"></a>
+
 ## Prerequisites
 
-+ The classes used in this guide are in the `<framework name>` library. For a complete list of framework dependencies, see the <a href="/articles/dependencies/index.html">Framework Dependencies</a> guide.
-+ To follow this guide, you must have the iOS 8.0 SDK and Xcode 6.0 installed on your system. For the latest versions, please visit Apple iOS Development Center.
+This guide will assume that you have installed all software and completed all of the steps in the following guides:
+
+*   [Getting Started](https://creativesdk.adobe.com/docs/ios/#/articles/gettingstarted/index.html)
+*   [Framework Dependencies](https://creativesdk.adobe.com/docs/ios/#/articles/dependencies/index.html) guide.
+
+_**Note:**_
+
+*   _This component offers a better experience for users when they log in with their Adobe ID.._
+*   _Your Client ID must be [approved for **Production Mode** by Adobe](https://creativesdk.zendesk.com/hc/en-us/articles/204601215-How-to-complete-the-Production-Client-ID-Request) before you release your app._
 
 ## Integration
 
@@ -113,3 +122,7 @@ If the Cancel and Apply buttons on the main Photo Editor screen are not consiste
       setLeftNavigationBarButtonTitle:kAFLeftNavigationTitlePresetExit];
     [AdobeImageEditorCustomization
       setRightNavigationBarButtonTitle:kAFRightNavigationTitlePresetSave];
+
+### Content Sync
+
+Users can now log in with their Adobe ID to sync their content, such as content acquired from the Aviary app. This is optional and only available to approved partners.  Interested partner can <a href="https://creativesdk.zendesk.com/hc/en-us/requests/new?ticket_form_id=66896" title="sign up">sign up here</a>!

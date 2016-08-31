@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXV-dC-czl" userLabel="Main View">
+                                <rect key="frame" x="0.0" y="40" width="600" height="502"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using System Font" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="xE9-tg-Wbb">
+                                        <rect key="frame" x="20" y="0.0" width="560" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-38-vX1">
+                                        <rect key="frame" x="20" y="33" width="84" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyn-De-qVP">
+                                        <rect key="frame" x="448" y="29" width="132" height="30"/>
+                                        <state key="normal" title="Launch Font Picker"/>
+                                        <connections>
+                                            <action selector="launchFontPickerButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PWp-Jh-egP"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ULR-9G-qPn">
+                                        <rect key="frame" x="112" y="33" width="39" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rxK-f3-Gup" customClass="TextContainerView">
+                                        <rect key="frame" x="20" y="67" width="560" height="427"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae enim non mauris porta volutpat. Sed fringilla, nibh et vehicula tincidunt, nisl dui volutpat ex, eu vestibulum nulla nibh eu dui. Aenean vestibulum ante erat, sed lobortis nibh lacinia vel. Donec sem augue, sollicitudin quis congue eu, suscipit eget orci. Maecenas tristique consequat ligula, non semper elit. Aliquam interdum, enim in dapibus imperdiet, erat nunc ullamcorper turpis, vitae aliquam magna orci at felis. Etiam accumsan, erat in pharetra ultricies, leo purus scelerisque quam, sed consequat arcu ante sed odio. Mauris nec elit tristique, elementum metus sed, sagittis metus. Donec at consequat velit. Donec at tortor ornare, laoreet libero nec, varius elit. Praesent faucibus urna imperdiet purus scelerisque, a sollicitudin arcu aliquam. Proin eleifend ornare posuere.
+
+In porta placerat iaculis. Mauris maximus suscipit purus a elementum. Etiam ornare varius quam, nec dignissim dolor pulvinar in. Pellentesque euismod ut ante ac volutpat. Nulla at nulla eget tellus malesuada porttitor. Praesent condimentum ante nisl, vel mattis purus interdum in. Suspendisse sit amet imperdiet ipsum. Fusce imperdiet ligula non neque fermentum, quis fringilla mi cursus. Duis dolor augue, auctor quis varius eu, mollis ut lorem. Ut vulputate tellus in posuere ornare.
+
+Pellentesque id turpis eros. Aliquam laoreet vitae dui in eleifend. Vestibulum ipsum mi, varius ac accumsan vel, ultrices at urna. Curabitur placerat mauris odio, id consequat neque maximus nec. Curabitur aliquet ex vel pellentesque blandit. Sed dolor ante, convallis ut lorem quis, tempor blandit tortor. Curabitur condimentum cursus elit, id accumsan mauris tempor a.
+
+Cras venenatis blandit volutpat. Vestibulum quis elit diam. Quisque quis quam urna. Fusce sit amet dui tempor, malesuada augue a, mollis ex. Nunc quis ipsum nec neque lacinia varius et a ante. Integer dapibus arcu non ipsum volutpat fermentum. Aenean condimentum felis vel lectus lacinia mattis. Suspendisse ac sem consectetur, porta orci eu, faucibus ex. Integer blandit aliquam accumsan. Duis placerat risus a massa feugiat volutpat. Suspendisse cursus sagittis pretium. Quisque eget arcu id quam dignissim mollis quis ut dui. Aenean maximus vitae mauris eget malesuada. Fusce ultrices fringilla pretium.
+
+Integer vel hendrerit enim. Sed congue ligula venenatis consectetur luctus. Cras ut est lectus. Aliquam urna dolor, placerat sit amet hendrerit ut, bibendum eu nisl. Donec maximus nisl vel nisl tempor blandit. Mauris molestie nisi non magna dapibus, ut vehicula augue aliquet. Ut ac facilisis libero, sed pellentesque ante. Quisque erat mi, consequat quis tempor ut, placerat a nisi. Fusce sagittis turpis sed aliquam dignissim. Etiam ornare euismod ornare. Nam consectetur condimentum lectus. Suspendisse molestie mi eu metus ultricies, nec congue est gravida. Ut non lobortis massa. Integer pulvinar interdum hendrerit. Etiam ac porttitor libero. Pellentesque enim purus, sagittis non nulla id, commodo luctus lorem.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oyn-De-qVP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ULR-9G-qPn" secondAttribute="trailing" constant="8" id="4eg-IB-ZH2"/>
+                                    <constraint firstAttribute="trailing" secondItem="oyn-De-qVP" secondAttribute="trailing" constant="20" id="58g-Vi-KaS"/>
+                                    <constraint firstItem="xE9-tg-Wbb" firstAttribute="top" secondItem="BXV-dC-czl" secondAttribute="top" id="6Aj-nM-iNa"/>
+                                    <constraint firstAttribute="trailing" secondItem="xE9-tg-Wbb" secondAttribute="trailing" constant="20" id="7mA-D2-nh2"/>
+                                    <constraint firstItem="xE9-tg-Wbb" firstAttribute="leading" secondItem="BXV-dC-czl" secondAttribute="leading" constant="20" id="PXG-Jh-ff3"/>
+                                    <constraint firstItem="rxK-f3-Gup" firstAttribute="top" secondItem="oyn-De-qVP" secondAttribute="bottom" constant="8" id="RoK-do-wxK"/>
+                                    <constraint firstItem="ULR-9G-qPn" firstAttribute="top" secondItem="xE9-tg-Wbb" secondAttribute="bottom" constant="12" id="RwF-fC-I7P"/>
+                                    <constraint firstItem="oyn-De-qVP" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ULR-9G-qPn" secondAttribute="trailing" constant="700" id="Sl1-Kh-WgO"/>
+                                    <constraint firstItem="rxK-f3-Gup" firstAttribute="leading" secondItem="BXV-dC-czl" secondAttribute="leading" constant="20" id="UEg-Mr-Gn2"/>
+                                    <constraint firstItem="tyn-38-vX1" firstAttribute="top" secondItem="xE9-tg-Wbb" secondAttribute="bottom" constant="12" id="WXR-gn-CIq"/>
+                                    <constraint firstItem="tyn-38-vX1" firstAttribute="leading" secondItem="BXV-dC-czl" secondAttribute="leading" constant="20" id="anz-FO-PFz"/>
+                                    <constraint firstAttribute="trailing" secondItem="rxK-f3-Gup" secondAttribute="trailing" constant="20" id="f1L-7L-z7J"/>
+                                    <constraint firstAttribute="bottom" secondItem="rxK-f3-Gup" secondAttribute="bottom" constant="8" id="gO1-R0-Qoa"/>
+                                    <constraint firstItem="oyn-De-qVP" firstAttribute="top" secondItem="xE9-tg-Wbb" secondAttribute="bottom" constant="8" id="ikp-DF-baE"/>
+                                    <constraint firstItem="ULR-9G-qPn" firstAttribute="leading" secondItem="tyn-38-vX1" secondAttribute="trailing" constant="8" id="njp-7m-S3V"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gN-rF-bmg">
+                                <rect key="frame" x="229" y="550" width="143" height="30"/>
+                                <state key="normal" title="Login Creative Cloud"/>
+                                <connections>
+                                    <action selector="loginButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="iGw-jL-oeA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BXV-dC-czl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Qu-E5-uVX"/>
+                            <constraint firstAttribute="bottom" secondItem="8gN-rF-bmg" secondAttribute="bottom" constant="20" id="ETj-Sa-ea8"/>
+                            <constraint firstItem="8gN-rF-bmg" firstAttribute="top" secondItem="BXV-dC-czl" secondAttribute="bottom" constant="8" id="OTc-7d-OGS"/>
+                            <constraint firstItem="8gN-rF-bmg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ajB-Dk-vjI"/>
+                            <constraint firstAttribute="trailing" secondItem="BXV-dC-czl" secondAttribute="trailing" id="mSL-DD-U2h"/>
+                            <constraint firstItem="BXV-dC-czl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="u2H-Db-D80"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fontNameLabel" destination="tyn-38-vX1" id="6d1-UZ-fDw"/>
+                        <outlet property="fontStatusLabel" destination="xE9-tg-Wbb" id="LU7-av-jz2"/>
+                        <outlet property="fontStyleLabel" destination="ULR-9G-qPn" id="J36-1G-jU4"/>
+                        <outlet property="loginButton" destination="8gN-rF-bmg" id="JJh-rj-Nzb"/>
+                        <outlet property="mainViewContainer" destination="BXV-dC-czl" id="93p-Jt-nfh"/>
+                        <outlet property="textView" destination="rxK-f3-Gup" id="7Rc-kY-Ncq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195" y="305"/>
+        </scene>
+    </scenes>
+</document>

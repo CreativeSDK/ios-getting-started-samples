@@ -28,11 +28,10 @@
 #import "RKCViewController.h"
 #import "RKCView.h"
 #import <AdobeCreativeSDKCore/AdobeCreativeSDKCore.h> // AdobeUXAuthManager.h
-#import <AdobeCreativeSDKAssetModel/AdobeCreativeSDKAssetModel.h> //AdobeMarketAsset.h>
-//#import <AdobeCreativeSDKAssetModel/AdobeMarketCategory.h>
+#import <AdobeCreativeSDKAssetModel/AdobeCreativeSDKAssetModel.h> //
 #import <AdobeCreativeSDKMarketUX/AdobeCreativeSDKMarketUX.h> //AdobeUXMarketAssetBrowser.h>
 
-@interface RKCViewController ()
+@interface RKCViewController () <AdobeUXMarketBrowserViewControllerDelegate>
 
 @end
 
@@ -82,7 +81,7 @@
     static NSString* const CreativeSDKClientId = @"changeme";
     static NSString* const CreativeSDKClientSecret = @"changemetoo";
     
-    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:CreativeSDKClientId clientSecret:CreativeSDKClientSecret enableSignUp:true];
+    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:CreativeSDKClientId withClientSecret:CreativeSDKClientSecret];
         
     //The authManager caches our login, so check on startup
     BOOL loggedIn = [AdobeUXAuthManager sharedManager].authenticated;
@@ -126,90 +125,75 @@
     }
 }
 
-//kMarketAssetsCategoryBrushes
-- (void)showMarketBrowser {
-    [[AdobeUXMarketAssetBrowser sharedBrowser] popupMarketAssetBrowserWithParent:self
-                                                                        category:kMarketAssetsCategoryBrushes
-                                                              withCategoryFilter:nil
-                                                          withCategoryFilterType:AdobeUXMarketAssetBrowserCategoryFilterTypeInclusion
-                                                                       onSuccess:^(AdobeMarketAsset *itemSelection) {
-                                                                           NSLog(@"ran success, %@", itemSelection);
-                                                                           // Ok, let's create a text block of data about the selection for the demo
-                                                                           NSMutableString *desc = [[NSMutableString alloc] initWithFormat:@"Market Asset: %@\n", itemSelection.title ];
+- (void)showMarketBrowser
+{
+    AdobeUXMarketBrowserConfiguration *configuration = [AdobeUXMarketBrowserConfiguration new];
+    configuration.categories = @[kMarketAssetsCategoryBrushes,
+                                 kMarketAssetsCategoryForPlacement,
+                                 kMarketAssetsCategoryIcons,
+                                 kMarketAssetsCategoryPatterns,
+                                 kMarketAssetsCategoryUserInterfaces,
+                                 kMarketAssetsCategoryVectors];
+    configuration.categoryFilterType = AdobeUXMarketBrowserCategoryFilterTypeInclusion;
+    
+    AdobeUXMarketBrowserViewController *marketViewController =
+    [AdobeUXMarketBrowserViewController marketBrowserViewControllerWithConfiguration:configuration
+                                                                            delegate:self];
+    
+    [self presentViewController:marketViewController animated:YES completion:nil];
+}
 
-                                                                           [desc appendFormat:@"Created by: %@\n %@n", itemSelection.creator.firstName, itemSelection.creator.lastName];
-                                                                           [desc appendFormat:@"Featured on: %@\n", itemSelection.featured];
-                                                                           [desc appendFormat:@"Asset ID: %@\n", itemSelection.assetID];
-                                                                           [desc appendFormat:@"Date Created: %@\n", itemSelection.dateCreated];
-                                                                           [desc appendFormat:@"Date Published: %@\n", itemSelection.datePublished];
-                                                                           [desc appendFormat:@"File Size: %ld\n", itemSelection.fileSize];
-                                                                           [desc appendFormat:@"Tags: %@\n", itemSelection.tags];
+#pragma mark - AdobeUXMarketBrowserViewControllerDelegate
 
-                                                                           [((RKCView *)self.view).resultText setText:desc];
+- (void)marketBrowserDidSelectAsset:(AdobeMarketAsset *)itemSelection
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if (itemSelection != nil)
+    {
+        NSLog(@"Market asset selected: %@", itemSelection);
+        
+        // Ok, let's create a text block of data about the selection for the demo
+        NSMutableString *desc = [[NSMutableString alloc] initWithFormat:@"Market Asset: %@\n", itemSelection.name ];
+        
+        [desc appendFormat:@"Created by: %@\n %@n", itemSelection.creator.firstName, itemSelection.creator.lastName];
+        [desc appendFormat:@"Featured on: %@\n", itemSelection.dateFeatured];
+        [desc appendFormat:@"Asset ID: %@\n", itemSelection.assetID];
+        [desc appendFormat:@"Date Created: %@\n", itemSelection.dateCreated];
+        [desc appendFormat:@"Date Published: %@\n", itemSelection.datePublished];
+        [desc appendFormat:@"File Size: %ld\n", itemSelection.fileSize];
+        [desc appendFormat:@"Tags: %@\n", itemSelection.tags];
+        
+        RKCView *view = (RKCView *)self.view;
+        view.resultText.text = desc;
+        
+        [itemSelection downloadRenditionWithDimension:AdobeCommunityAssetImageDimensionWidth
+                                                 size:250
+                                                 type:AdobeCommunityAssetImageTypeJPEG
+                                             priority:NSOperationQueuePriorityHigh
+                                        progressBlock:nil
+                                         successBlock:^(NSData *imageData, BOOL fromCache)
+         {
+             view.uiImage.image = [UIImage imageWithData:imageData];
+         }
+                                    cancellationBlock:nil
+                                           errorBlock:^(NSError *error)
+         {
+             NSLog(@"Error getting rendition: %@", error);
+         }];
+    }
+}
 
-                                                                           [itemSelection downloadRenditionWithDimension:AdobeMarketImageDimensionWidth
-                                                                                                                    size:250
-                                                                                                                    type:AdobeMarketAssetFileRenditionTypeJPEG
-                                                                                                                priority:NSOperationQueuePriorityHigh
-                                                                                                           progressBlock:nil
-                                                                                                         completionBlock:^(NSData *imageData, BOOL fromCache)
-                                                                            {
-/*                                                                                [Logger log:@"Rendition complete"];
-                                                                                selectedFileImageView.image = [UIImage imageWithData:imageData];
-                                                                            }
- 
-                                                                                                         completionBlock:^( UIImage *image , BOOL fromCache ) {
-*/                                                                                                             NSLog(@"yeah i got a rendition");
-  //                                                                                                           [((RKCView *)self.view) uiImage].image = image;
-    //                                                                                                         [[((RKCView *)self.view) uiImage] sizeToFit];
-                                                                                                         }
-                                                                                                    cancellationBlock:nil
-                                                                                                              errorBlock:^(NSError *error) {
-                                                                                                                  NSLog(@"Error getting rendition: %@", error);
-                                                                                                              }];
+- (void)marketBrowserDidEncounterError:(NSError *)error
+{
+    NSLog(@"Market Browser failed with error: %@", error);
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
-                                                                      /*     [itemSelection downloadRenditionWithDimension:AdobeMarketImageDimensionWidth
-                                                                                                                withSize:250
-                                                                                                            withPriority:NSOperationQueuePriorityHigh
-                                                                                                              onProgress:nil
-                                                                                                            onCompletion:^( UIImage *image , BOOL fromCache ) {
-                                                                                                                NSLog(@"yeah i got a rendition");
-                                                                                                                [((RKCView *)self.view) uiImage].image = image;
-                                                                                                                [[((RKCView *)self.view) uiImage] sizeToFit];
-                                                                                                            }
-                                                                                                          onCancellation:nil
-                                                                                                                 onError:^(NSError *error) {
-                                                                                                                     NSLog(@"Error getting rendition: %@", error);
-                                                                                                                 }];
-                                                                           */
-
-                                                                       }
-                                                                         onError: ^(NSError * error) {
-                                                                         
-                                                                         }];
-
-    //Do categories for funsies
-    [AdobeMarketCategory categories:NSOperationQueuePriorityHigh
-                         onProgress:nil
-                       onCompletion:^(NSArray *categories) {
-                           for(AdobeMarketCategory *cat in categories) {
-                               
-                               NSLog(@"cat %@\n hasSub? %hhd\n subCats %@\nEnglish name: %@\n\n", cat.categoryName, cat.hasSubCategories, cat.subCategories, cat.englishCategoryName);
-                               NSArray *foo = cat.subCategories;
-                               /*
-                               for(item *i in foo) {
-                                   NSLog(@"what is it %@", i);
-                               }
-                                */
-                               for(AdobeMarketCategory *subCat in cat.subCategories) {
-                                   NSLog(@"%@", subCat.categoryName);
-                               }
-                               NSLog(@"%@",foo);
-                               
-                           }
-                       }
-                     onCancellation:nil
-                            onError:nil];
+- (void)marketBrowserDidClose
+{
+    NSLog(@"Market Browser was closed without selecting a Market Asset.");
 }
 
 

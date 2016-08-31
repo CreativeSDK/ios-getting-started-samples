@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		535D30251B728561001B2C75 /* ViewController+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 535D30241B728561001B2C75 /* ViewController+Buttons.m */; };
+		535D30271B7298D0001B2C75 /* park.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 535D30261B7298D0001B2C75 /* park.jpg */; };
+		538F988A1B7154600045E26F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 538F98891B7154600045E26F /* main.m */; };
+		538F988D1B7154600045E26F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 538F988C1B7154600045E26F /* AppDelegate.m */; };
+		538F98901B7154600045E26F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 538F988F1B7154600045E26F /* ViewController.m */; };
+		538F98931B7154600045E26F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 538F98911B7154600045E26F /* Main.storyboard */; };
+		538F98951B7154600045E26F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 538F98941B7154600045E26F /* Images.xcassets */; };
+		538F98981B7154600045E26F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 538F98961B7154600045E26F /* LaunchScreen.xib */; };
+		538F98A41B7154600045E26F /* MagicPerspectivatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 538F98A31B7154600045E26F /* MagicPerspectivatorTests.m */; };
+		538F98B31B7155FC0045E26F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 538F98B21B7155FC0045E26F /* libc++.dylib */; };
+		538F98BE1B7158F10045E26F /* baker-hamilton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 538F98BB1B7158F10045E26F /* baker-hamilton.jpg */; };
+		538F98C01B7158F10045E26F /* townsend.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 538F98BD1B7158F10045E26F /* townsend.jpg */; };
+		FE54246B1D7107D100371D6E /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5424671D7107C900371D6E /* AdobeCreativeSDKCore.framework */; };
+		FE54246C1D7107D100371D6E /* AdobeCreativeSDKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE5424671D7107C900371D6E /* AdobeCreativeSDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FE54246D1D7107D200371D6E /* AdobeCreativeSDKLabs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5424681D7107C900371D6E /* AdobeCreativeSDKLabs.framework */; };
+		FE54246E1D7107D200371D6E /* AdobeCreativeSDKLabs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE5424681D7107C900371D6E /* AdobeCreativeSDKLabs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		538F989E1B7154600045E26F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 538F987C1B7154600045E26F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 538F98831B7154600045E26F;
+			remoteInfo = MagicPerspectivator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FE54246F1D7107D200371D6E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FE54246E1D7107D200371D6E /* AdobeCreativeSDKLabs.framework in Embed Frameworks */,
+				FE54246C1D7107D100371D6E /* AdobeCreativeSDKCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		535D30231B72853A001B2C75 /* ViewController+Buttons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+Buttons.h"; sourceTree = "<group>"; };
+		535D30241B728561001B2C75 /* ViewController+Buttons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+Buttons.m"; sourceTree = "<group>"; };
+		535D30261B7298D0001B2C75 /* park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = park.jpg; sourceTree = "<group>"; };
+		538F98841B7154600045E26F /* MagicPerspectivator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicPerspectivator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		538F98881B7154600045E26F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		538F98891B7154600045E26F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		538F988B1B7154600045E26F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		538F988C1B7154600045E26F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		538F988E1B7154600045E26F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		538F988F1B7154600045E26F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		538F98921B7154600045E26F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		538F98941B7154600045E26F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		538F98971B7154600045E26F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		538F989D1B7154600045E26F /* MagicPerspectivatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicPerspectivatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		538F98A21B7154600045E26F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		538F98A31B7154600045E26F /* MagicPerspectivatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicPerspectivatorTests.m; sourceTree = "<group>"; };
+		538F98B21B7155FC0045E26F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		538F98BB1B7158F10045E26F /* baker-hamilton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "baker-hamilton.jpg"; sourceTree = "<group>"; };
+		538F98BD1B7158F10045E26F /* townsend.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = townsend.jpg; sourceTree = "<group>"; };
+		FE5424671D7107C900371D6E /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		FE5424681D7107C900371D6E /* AdobeCreativeSDKLabs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKLabs.framework; path = ../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKLabs.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		538F98811B7154600045E26F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				538F98B31B7155FC0045E26F /* libc++.dylib in Frameworks */,
+				FE54246D1D7107D200371D6E /* AdobeCreativeSDKLabs.framework in Frameworks */,
+				FE54246B1D7107D100371D6E /* AdobeCreativeSDKCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		538F989A1B7154600045E26F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		538F987B1B7154600045E26F = {
+			isa = PBXGroup;
+			children = (
+				538F98AD1B71559F0045E26F /* Frameworks */,
+				538F98861B7154600045E26F /* MagicPerspectivator */,
+				538F98A01B7154600045E26F /* MagicPerspectivatorTests */,
+				538F98851B7154600045E26F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		538F98851B7154600045E26F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				538F98841B7154600045E26F /* MagicPerspectivator.app */,
+				538F989D1B7154600045E26F /* MagicPerspectivatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		538F98861B7154600045E26F /* MagicPerspectivator */ = {
+			isa = PBXGroup;
+			children = (
+				538F98BA1B7158D20045E26F /* images */,
+				538F988B1B7154600045E26F /* AppDelegate.h */,
+				538F988C1B7154600045E26F /* AppDelegate.m */,
+				535D30231B72853A001B2C75 /* ViewController+Buttons.h */,
+				535D30241B728561001B2C75 /* ViewController+Buttons.m */,
+				538F988E1B7154600045E26F /* ViewController.h */,
+				538F988F1B7154600045E26F /* ViewController.m */,
+				538F98911B7154600045E26F /* Main.storyboard */,
+				538F98941B7154600045E26F /* Images.xcassets */,
+				538F98961B7154600045E26F /* LaunchScreen.xib */,
+				538F98871B7154600045E26F /* Supporting Files */,
+			);
+			path = MagicPerspectivator;
+			sourceTree = "<group>";
+		};
+		538F98871B7154600045E26F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				538F98881B7154600045E26F /* Info.plist */,
+				538F98891B7154600045E26F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		538F98A01B7154600045E26F /* MagicPerspectivatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				538F98A31B7154600045E26F /* MagicPerspectivatorTests.m */,
+				538F98A11B7154600045E26F /* Supporting Files */,
+			);
+			path = MagicPerspectivatorTests;
+			sourceTree = "<group>";
+		};
+		538F98A11B7154600045E26F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				538F98A21B7154600045E26F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		538F98AD1B71559F0045E26F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE5424671D7107C900371D6E /* AdobeCreativeSDKCore.framework */,
+				FE5424681D7107C900371D6E /* AdobeCreativeSDKLabs.framework */,
+				538F98B21B7155FC0045E26F /* libc++.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		538F98BA1B7158D20045E26F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				535D30261B7298D0001B2C75 /* park.jpg */,
+				538F98BD1B7158F10045E26F /* townsend.jpg */,
+				538F98BB1B7158F10045E26F /* baker-hamilton.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		538F98831B7154600045E26F /* MagicPerspectivator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 538F98A71B7154600045E26F /* Build configuration list for PBXNativeTarget "MagicPerspectivator" */;
+			buildPhases = (
+				538F98801B7154600045E26F /* Sources */,
+				538F98811B7154600045E26F /* Frameworks */,
+				538F98821B7154600045E26F /* Resources */,
+				FE54246F1D7107D200371D6E /* Embed Frameworks */,
+				FE5424701D7107E200371D6E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagicPerspectivator;
+			productName = MagicPerspectivator;
+			productReference = 538F98841B7154600045E26F /* MagicPerspectivator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		538F989C1B7154600045E26F /* MagicPerspectivatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 538F98AA1B7154600045E26F /* Build configuration list for PBXNativeTarget "MagicPerspectivatorTests" */;
+			buildPhases = (
+				538F98991B7154600045E26F /* Sources */,
+				538F989A1B7154600045E26F /* Frameworks */,
+				538F989B1B7154600045E26F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				538F989F1B7154600045E26F /* PBXTargetDependency */,
+			);
+			name = MagicPerspectivatorTests;
+			productName = MagicPerspectivatorTests;
+			productReference = 538F989D1B7154600045E26F /* MagicPerspectivatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		538F987C1B7154600045E26F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Adobe Systems Incorporated";
+				TargetAttributes = {
+					538F98831B7154600045E26F = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					538F989C1B7154600045E26F = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 538F98831B7154600045E26F;
+					};
+				};
+			};
+			buildConfigurationList = 538F987F1B7154600045E26F /* Build configuration list for PBXProject "MagicPerspectivator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 538F987B1B7154600045E26F;
+			productRefGroup = 538F98851B7154600045E26F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				538F98831B7154600045E26F /* MagicPerspectivator */,
+				538F989C1B7154600045E26F /* MagicPerspectivatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		538F98821B7154600045E26F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				538F98931B7154600045E26F /* Main.storyboard in Resources */,
+				538F98981B7154600045E26F /* LaunchScreen.xib in Resources */,
+				538F98951B7154600045E26F /* Images.xcassets in Resources */,
+				535D30271B7298D0001B2C75 /* park.jpg in Resources */,
+				538F98BE1B7158F10045E26F /* baker-hamilton.jpg in Resources */,
+				538F98C01B7158F10045E26F /* townsend.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		538F989B1B7154600045E26F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FE5424701D7107E200371D6E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCore.framework/strip-frameworks.sh\"\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKLabs.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		538F98801B7154600045E26F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				535D30251B728561001B2C75 /* ViewController+Buttons.m in Sources */,
+				538F98901B7154600045E26F /* ViewController.m in Sources */,
+				538F988D1B7154600045E26F /* AppDelegate.m in Sources */,
+				538F988A1B7154600045E26F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		538F98991B7154600045E26F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				538F98A41B7154600045E26F /* MagicPerspectivatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		538F989F1B7154600045E26F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 538F98831B7154600045E26F /* MagicPerspectivator */;
+			targetProxy = 538F989E1B7154600045E26F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		538F98911B7154600045E26F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				538F98921B7154600045E26F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		538F98961B7154600045E26F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				538F98971B7154600045E26F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		538F98A51B7154600045E26F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		538F98A61B7154600045E26F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		538F98A81B7154600045E26F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../AdobeCreativeSDKDynamicFrameworks,
+				);
+				INFOPLIST_FILE = MagicPerspectivator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		538F98A91B7154600045E26F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../../../AdobeCreativeSDKDynamicFrameworks,
+				);
+				INFOPLIST_FILE = MagicPerspectivator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		538F98AB1B7154600045E26F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MagicPerspectivatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicPerspectivator.app/MagicPerspectivator";
+			};
+			name = Debug;
+		};
+		538F98AC1B7154600045E26F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MagicPerspectivatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicPerspectivator.app/MagicPerspectivator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		538F987F1B7154600045E26F /* Build configuration list for PBXProject "MagicPerspectivator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				538F98A51B7154600045E26F /* Debug */,
+				538F98A61B7154600045E26F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		538F98A71B7154600045E26F /* Build configuration list for PBXNativeTarget "MagicPerspectivator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				538F98A81B7154600045E26F /* Debug */,
+				538F98A91B7154600045E26F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		538F98AA1B7154600045E26F /* Build configuration list for PBXNativeTarget "MagicPerspectivatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				538F98AB1B7154600045E26F /* Debug */,
+				538F98AC1B7154600045E26F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 538F987C1B7154600045E26F /* Project object */;
+}
