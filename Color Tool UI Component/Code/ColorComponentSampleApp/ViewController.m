@@ -31,7 +31,7 @@
 
 #import <AdobeCreativeSDKCore/AdobeUXAuthManager.h>
 #import <AdobeCreativeSDKAssetModel/AdobeColorTheme.h>
-#import <AdobeCreativeSDKColorComponent/AdobeCreativeSDKColorComponent.h>
+#import <AdobeCreativeSDKColor/AdobeCreativeSDKColor.h>
 
 static NSString* const CreativeSDKClientId = @"CHANGEME_CLIENT_ID";
 static NSString* const CreativeSDKClientSecret = @"CHANGEME_CLIENT_SECRET";
@@ -53,8 +53,7 @@ static NSString* const CreativeSDKClientSecret = @"CHANGEME_CLIENT_SECRET";
     [super viewDidLoad];
     
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:CreativeSDKClientId
-                                                               clientSecret:CreativeSDKClientSecret
-                                                                   enableSignUp:NO];
+                                                               withClientSecret:CreativeSDKClientSecret];
     
     self.colorView.backgroundColor = [UIColor redColor];
     

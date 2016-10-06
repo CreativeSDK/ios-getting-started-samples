@@ -83,8 +83,7 @@
     
     // first set the clientID and clientSecret
     [AdobeUXAuthManager.sharedManager setAuthenticationParametersWithClientID: CC_CLIENT_ID
-                                                                 clientSecret: CC_CLIENT_SECRET
-                                                                 enableSignUp: YES];
+                                                             withClientSecret: CC_CLIENT_SECRET];
     // calculate button placement
     CGRect buttonRect = CGRectMake(BUTTON_X_MARGIN, BUTTON_Y_MARGIN, BUTTON_WIDTH, BUTTON_HEIGHT);
     CGFloat viewWidth = self.view.bounds.size.width;

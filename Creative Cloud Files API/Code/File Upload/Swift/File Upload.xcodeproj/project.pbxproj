@@ -16,11 +16,29 @@
 		704BA18A1C3B305800775DA8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 704BA1891C3B305800775DA8 /* libz.tbd */; };
 		704BA18D1C3B306800775DA8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704BA18B1C3B306800775DA8 /* MobileCoreServices.framework */; };
 		704BA18E1C3B306800775DA8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704BA18C1C3B306800775DA8 /* SystemConfiguration.framework */; };
-		704BA1921C3B30B600775DA8 /* AdobeCreativeSDKAssetModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704BA18F1C3B30B600775DA8 /* AdobeCreativeSDKAssetModel.framework */; };
-		704BA1931C3B30B600775DA8 /* AdobeCreativeSDKCommonUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704BA1901C3B30B600775DA8 /* AdobeCreativeSDKCommonUX.framework */; };
-		704BA1941C3B30B600775DA8 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704BA1911C3B30B600775DA8 /* AdobeCreativeSDKCore.framework */; };
-		704BA1961C3B30CA00775DA8 /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 704BA1951C3B30CA00775DA8 /* AdobeCreativeSDKCoreResources.bundle */; };
+		FEB26F501D6FA943006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26F4A1D6FA936006F69C7 /* AdobeCreativeSDKAssetModel.framework */; };
+		FEB26F511D6FA943006F69C7 /* AdobeCreativeSDKAssetModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26F4A1D6FA936006F69C7 /* AdobeCreativeSDKAssetModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEB26F521D6FA943006F69C7 /* AdobeCreativeSDKCommonUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26F4B1D6FA936006F69C7 /* AdobeCreativeSDKCommonUX.framework */; };
+		FEB26F531D6FA943006F69C7 /* AdobeCreativeSDKCommonUX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26F4B1D6FA936006F69C7 /* AdobeCreativeSDKCommonUX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEB26F541D6FA943006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26F4C1D6FA936006F69C7 /* AdobeCreativeSDKCore.framework */; };
+		FEB26F551D6FA943006F69C7 /* AdobeCreativeSDKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26F4C1D6FA936006F69C7 /* AdobeCreativeSDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FEB26F561D6FA943006F69C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FEB26F551D6FA943006F69C7 /* AdobeCreativeSDKCore.framework in Embed Frameworks */,
+				FEB26F531D6FA943006F69C7 /* AdobeCreativeSDKCommonUX.framework in Embed Frameworks */,
+				FEB26F511D6FA943006F69C7 /* AdobeCreativeSDKAssetModel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		704BA1721C3B2FE600775DA8 /* File Upload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "File Upload.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,11 +52,10 @@
 		704BA1891C3B305800775DA8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		704BA18B1C3B306800775DA8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		704BA18C1C3B306800775DA8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		704BA18F1C3B30B600775DA8 /* AdobeCreativeSDKAssetModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetModel.framework; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKAssetModel.framework; sourceTree = "<group>"; };
-		704BA1901C3B30B600775DA8 /* AdobeCreativeSDKCommonUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCommonUX.framework; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCommonUX.framework; sourceTree = "<group>"; };
-		704BA1911C3B30B600775DA8 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
-		704BA1951C3B30CA00775DA8 /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../../../../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
 		704BA1971C3B31A300775DA8 /* File_Upload-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "File_Upload-Bridging-Header.h"; sourceTree = "<group>"; };
+		FEB26F4A1D6FA936006F69C7 /* AdobeCreativeSDKAssetModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetModel.framework; path = ../../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKAssetModel.framework; sourceTree = "<group>"; };
+		FEB26F4B1D6FA936006F69C7 /* AdobeCreativeSDKCommonUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCommonUX.framework; path = ../../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKCommonUX.framework; sourceTree = "<group>"; };
+		FEB26F4C1D6FA936006F69C7 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,12 +63,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				704BA1921C3B30B600775DA8 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
-				704BA1931C3B30B600775DA8 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
-				704BA1941C3B30B600775DA8 /* AdobeCreativeSDKCore.framework in Frameworks */,
 				704BA18D1C3B306800775DA8 /* MobileCoreServices.framework in Frameworks */,
 				704BA18E1C3B306800775DA8 /* SystemConfiguration.framework in Frameworks */,
 				704BA18A1C3B305800775DA8 /* libz.tbd in Frameworks */,
+				FEB26F501D6FA943006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
+				FEB26F521D6FA943006F69C7 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
+				FEB26F541D6FA943006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */,
 				704BA1881C3B305300775DA8 /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,9 +105,9 @@
 		704BA1981C3B46A600775DA8 /* Linked Binaries */ = {
 			isa = PBXGroup;
 			children = (
-				704BA18F1C3B30B600775DA8 /* AdobeCreativeSDKAssetModel.framework */,
-				704BA1901C3B30B600775DA8 /* AdobeCreativeSDKCommonUX.framework */,
-				704BA1911C3B30B600775DA8 /* AdobeCreativeSDKCore.framework */,
+				FEB26F4A1D6FA936006F69C7 /* AdobeCreativeSDKAssetModel.framework */,
+				FEB26F4B1D6FA936006F69C7 /* AdobeCreativeSDKCommonUX.framework */,
+				FEB26F4C1D6FA936006F69C7 /* AdobeCreativeSDKCore.framework */,
 				704BA18B1C3B306800775DA8 /* MobileCoreServices.framework */,
 				704BA18C1C3B306800775DA8 /* SystemConfiguration.framework */,
 				704BA1871C3B305300775DA8 /* libc++.tbd */,
@@ -100,19 +117,9 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		704BA1991C3B46DA00775DA8 /* Linked Resources */ = {
-			isa = PBXGroup;
-			children = (
-				704BA1951C3B30CA00775DA8 /* AdobeCreativeSDKCoreResources.bundle */,
-			);
-			name = "Linked Resources";
-			path = ..;
-			sourceTree = "<group>";
-		};
 		704BA19A1C3B46E500775DA8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				704BA1991C3B46DA00775DA8 /* Linked Resources */,
 				704BA1981C3B46A600775DA8 /* Linked Binaries */,
 				704BA1791C3B2FE700775DA8 /* Main.storyboard */,
 				704BA17C1C3B2FE700775DA8 /* Assets.xcassets */,
@@ -133,6 +140,8 @@
 				704BA16E1C3B2FE600775DA8 /* Sources */,
 				704BA16F1C3B2FE600775DA8 /* Frameworks */,
 				704BA1701C3B2FE600775DA8 /* Resources */,
+				FEB26F561D6FA943006F69C7 /* Embed Frameworks */,
+				FEB26F571D6FA958006F69C7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -181,7 +190,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				704BA1961C3B30CA00775DA8 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
 				704BA1801C3B2FE700775DA8 /* LaunchScreen.storyboard in Resources */,
 				704BA17D1C3B2FE700775DA8 /* Assets.xcassets in Resources */,
 				704BA17B1C3B2FE700775DA8 /* Main.storyboard in Resources */,
@@ -189,6 +197,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FEB26F571D6FA958006F69C7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCore.framework/strip-frameworks.sh\"\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKAssetModel.framework/strip-frameworks.sh\"\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCommonUX.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		704BA16E1C3B2FE600775DA8 /* Sources */ = {
@@ -312,12 +336,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					../../../../AdobeCreativeSDKFrameworks,
+					../../../../AdobeCreativeSDKDynamicFrameworks,
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"USE_CSDK_COMPONENTS=1",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "File Upload/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -335,9 +356,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					../../../../AdobeCreativeSDKFrameworks,
+					../../../../AdobeCreativeSDKDynamicFrameworks,
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = "USE_CSDK_COMPONENTS=1";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "File Upload/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

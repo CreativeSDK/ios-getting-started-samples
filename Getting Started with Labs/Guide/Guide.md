@@ -49,14 +49,6 @@ _**Note:**_
 *   _This component requires that the user is **logged in with their Adobe ID**._
 *   _Your Client ID must be [approved for **Production Mode** by Adobe](https://creativesdk.zendesk.com/hc/en-us/articles/204601215-How-to-complete-the-Production-Client-ID-Request) before you release your app._
 
-<a name="setup"></a>
-## Project Setup
-1. From the application project's Build Phases:
-   + Add `AdobeCreativeSDKLabs.framework`, `AdobeCreativeSDKCore.framework`, and several dependent frameworks (see the screenshot below) to **Link Binary With Libraries**.
-   + Add `AdobeCreativeSDKCoreResources.bundle` and `AdobeCreativeSDKLabsResources.bundle` to **Copy Bundle Resources**.<br/><img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/magicselection/Build_Phase.png"/>
-2. Specify an iOS Deployment Target of **8.1** or greater (note the image below specifies 8.0; you should use **8.1** or greater): <br/><img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/magicselection/Deployment_Target.png" />
-3. Add the **-ObjC** Other Linker Flag:<br/><img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/magicselection/Linker_Flag.png"/>
-
 <a name="magicaudiospeechmatcher"></a>
 ## MagicAudioSpeechMatcher
 

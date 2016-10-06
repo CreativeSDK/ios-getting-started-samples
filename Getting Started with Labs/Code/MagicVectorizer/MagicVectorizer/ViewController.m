@@ -74,8 +74,7 @@
     
     // first set the clientID and clientSecret
     [AdobeUXAuthManager.sharedManager setAuthenticationParametersWithClientID: CC_CLIENT_ID
-                                                                 clientSecret: CC_CLIENT_SECRET
-                                                                 enableSignUp: YES];
+                                                             withClientSecret: CC_CLIENT_SECRET];
 
     // add two buttons: Image and Vectors
     CGRect rect = CGRectMake(0, 20, 126, 40);

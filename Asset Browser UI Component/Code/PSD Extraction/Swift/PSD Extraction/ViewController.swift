@@ -41,7 +41,7 @@ class ViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         
         // Configure the SDK with the client Id and secret values.
-        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId, clientSecret: kCreativeSDKClientSecret, enableSignUp: false)
+        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId, withClientSecret: kCreativeSDKClientSecret)
         
         tableView.layoutMargins = UIEdgeInsetsZero
     }

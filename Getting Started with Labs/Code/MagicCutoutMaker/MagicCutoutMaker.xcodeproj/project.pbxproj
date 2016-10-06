@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5329EC371BF27C340005681B /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5329EC361BF27C340005681B /* AdobeCreativeSDKCore.framework */; };
-		5329EC391BF27C3C0005681B /* AdobeCreativeSDKLabs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5329EC381BF27C3C0005681B /* AdobeCreativeSDKLabs.framework */; };
-		5329EC3B1BF27C480005681B /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5329EC3A1BF27C480005681B /* AdobeCreativeSDKCoreResources.bundle */; };
-		5329EC3D1BF27C5C0005681B /* AdobeCreativeSDKLabsResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5329EC3C1BF27C5C0005681B /* AdobeCreativeSDKLabsResources.bundle */; };
 		9BECD3AD1BBC814600F05D07 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BECD3AC1BBC814600F05D07 /* libc++.dylib */; };
 		DE6733421BC8D7DD00EB0277 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67333D1BC8D7DD00EB0277 /* AppDelegate.m */; };
 		DE6733431BC8D7DD00EB0277 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67333F1BC8D7DD00EB0277 /* ViewController.m */; };
@@ -23,6 +19,10 @@
 		DE6733541BC8E31C00EB0277 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE6733531BC8E31C00EB0277 /* Default-568h@2x.png */; };
 		DE6733651BCACEAF00EB0277 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE6733611BCACEAF00EB0277 /* LaunchScreen.xib */; };
 		DE6733661BCACEAF00EB0277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6733631BCACEAF00EB0277 /* Main.storyboard */; };
+		FE54244F1D71064500371D6E /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE54244B1D71063700371D6E /* AdobeCreativeSDKCore.framework */; };
+		FE5424501D71064500371D6E /* AdobeCreativeSDKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE54244B1D71063700371D6E /* AdobeCreativeSDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FE5424511D71064500371D6E /* AdobeCreativeSDKLabs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE54244C1D71063700371D6E /* AdobeCreativeSDKLabs.framework */; };
+		FE5424521D71064500371D6E /* AdobeCreativeSDKLabs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE54244C1D71063700371D6E /* AdobeCreativeSDKLabs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +35,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FE5424531D71064500371D6E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FE5424521D71064500371D6E /* AdobeCreativeSDKLabs.framework in Embed Frameworks */,
+				FE5424501D71064500371D6E /* AdobeCreativeSDKCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		5329EC361BF27C340005681B /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
-		5329EC381BF27C3C0005681B /* AdobeCreativeSDKLabs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKLabs.framework; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKLabs.framework; sourceTree = "<group>"; };
 		5329EC3A1BF27C480005681B /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
 		5329EC3C1BF27C5C0005681B /* AdobeCreativeSDKLabsResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKLabsResources.bundle; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKLabs.framework/Versions/A/Resources/AdobeCreativeSDKLabsResources.bundle; sourceTree = "<group>"; };
 		9BECD37F1BBC7F8600F05D07 /* MagicCutoutMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicCutoutMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +72,8 @@
 		DE6733531BC8E31C00EB0277 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DE6733621BCACEAF00EB0277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MagicCutoutMaker/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		DE6733641BCACEAF00EB0277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MagicCutoutMaker/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		FE54244B1D71063700371D6E /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		FE54244C1D71063700371D6E /* AdobeCreativeSDKLabs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKLabs.framework; path = ../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKLabs.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5329EC371BF27C340005681B /* AdobeCreativeSDKCore.framework in Frameworks */,
-				5329EC391BF27C3C0005681B /* AdobeCreativeSDKLabs.framework in Frameworks */,
 				9BECD3AD1BBC814600F05D07 /* libc++.dylib in Frameworks */,
+				FE5424511D71064500371D6E /* AdobeCreativeSDKLabs.framework in Frameworks */,
+				FE54244F1D71064500371D6E /* AdobeCreativeSDKCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +166,8 @@
 		9BECD3B41BBC824900F05D07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5329EC361BF27C340005681B /* AdobeCreativeSDKCore.framework */,
-				5329EC381BF27C3C0005681B /* AdobeCreativeSDKLabs.framework */,
+				FE54244B1D71063700371D6E /* AdobeCreativeSDKCore.framework */,
+				FE54244C1D71063700371D6E /* AdobeCreativeSDKLabs.framework */,
 				5329EC3A1BF27C480005681B /* AdobeCreativeSDKCoreResources.bundle */,
 				5329EC3C1BF27C5C0005681B /* AdobeCreativeSDKLabsResources.bundle */,
 				9BECD3AC1BBC814600F05D07 /* libc++.dylib */,
@@ -179,6 +194,7 @@
 				9BECD37B1BBC7F8600F05D07 /* Sources */,
 				9BECD37C1BBC7F8600F05D07 /* Frameworks */,
 				9BECD37D1BBC7F8600F05D07 /* Resources */,
+				FE5424531D71064500371D6E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,8 +265,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5329EC3B1BF27C480005681B /* AdobeCreativeSDKCoreResources.bundle in Resources */,
-				5329EC3D1BF27C5C0005681B /* AdobeCreativeSDKLabsResources.bundle in Resources */,
 				DE6733661BCACEAF00EB0277 /* Main.storyboard in Resources */,
 				DE67334A1BC8D81000EB0277 /* Images.xcassets in Resources */,
 				DE6733521BC8D84D00EB0277 /* Info.plist in Resources */,
@@ -410,7 +424,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-					../AdobeCreativeSDKFrameworks,
+					../../../AdobeCreativeSDKDynamicFrameworks,
 				);
 				INFOPLIST_FILE = MagicCutoutMaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -429,7 +443,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-					../AdobeCreativeSDKFrameworks,
+					../../../AdobeCreativeSDKDynamicFrameworks,
 				);
 				INFOPLIST_FILE = MagicCutoutMaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;

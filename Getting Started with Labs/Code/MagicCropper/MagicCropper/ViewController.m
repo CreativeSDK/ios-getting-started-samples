@@ -80,8 +80,7 @@ static int        _cropIndex;
     // first set the clientID and clientSecret
     
     [AdobeUXAuthManager.sharedManager setAuthenticationParametersWithClientID: CC_CLIENT_ID
-                                                                 clientSecret: CC_CLIENT_SECRET
-                                                                 enableSignUp: YES];
+                                                             withClientSecret: CC_CLIENT_SECRET];
 
     
     // calculate button placement
