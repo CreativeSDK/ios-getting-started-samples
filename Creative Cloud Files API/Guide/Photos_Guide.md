@@ -27,18 +27,23 @@ _**Note:**_
 AdobePhotoCatalog is the topmost container of assets in a user's lightroom photos. Each catalog contains zero or more AdobePhotoCollection. AdobePhotoCollection is a container of collections in a user's catalog. Each collection contains zero or more AdobePhotoAsset. You can upload assets to photo catalog or a photo collection.
 
 * Use the below API in AdobePhotoCatalog to list user photo catalogs
+```Objective-C
     + (void)listOfType:(AdobePhotoCatalogType)type
           successBlock:(void (^)(AdobePhotoCatalogs *catalogs))successBlock
             errorBlock:(void (^)(NSError *error))errorBlock;
+```
 
 * Use the below API in in AdobePhotoCatalog to list user photo collections
+```Objective-C
     - (void)listCollectionsAfterName:(NSString *)name
                                limit:(NSUInteger)limit
            includeDeletedCollections:(BOOL)deleted
                         successBlock:(void (^)(AdobePhotoCollections *collections))successBlock
                           errorBlock:(void (^)(NSError *error))errorBlock;
+```
 
 * Uploading to photo collection
+```Objective-C
     // Upload assets to selected photo collection.
     [AdobePhotoAsset create:<assetName>
                  collection:<selectedPhotoCollection>
@@ -54,8 +59,10 @@ AdobePhotoCatalog is the topmost container of assets in a user's lightroom photo
     {
         NSLog(@"Upload failed: %@", error);
     }];
+```
 
 * Uploading to photo catalog
+```Objective-C
     // Upload assets to selelcted photo catalog.
     [AdobePhotoAsset create:<assetName>
                     catalog:<selectedPhotoCatalog>
@@ -71,6 +78,7 @@ AdobePhotoCatalog is the topmost container of assets in a user's lightroom photo
     {
         NSLog(@"Upload failed: %@", error);
     }];
+```
 
 <a name="reference"></a>
 ## Class Reference

@@ -53,7 +53,7 @@ In a few seconds, the file (named) is available with the rest of the files the u
 ### Code
 
 Here is the event handler for clicking the upload button from the device:
-
+```Objective-C
     + (void)uploadPhoto
     {
         UIImagePickerController *selImage = [UIImagePickerController new];
@@ -71,11 +71,12 @@ Here is the event handler for clicking the upload button from the device:
         
         [self presentViewController:selImage animated:YES completion:nil];
     }
+```
 
 We start the image-picker control, defaulting to the camera if the device supports it; otherwise, we use the photo library. (Tip: If you are testing with the simulator, your gallery may be empty. Go to any Web page, long-click on an image, and you can save that image to the simulator. Then the image will appear in the gallery.)
 
 After an image is selected, this code runs:
-
+```Objective-C
     + (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
     {
         NSLog(@"%@", info);
@@ -127,6 +128,7 @@ After an image is selected, this code runs:
         
         [self dismissViewControllerAnimated:YES completion:nil];
     }
+```
 
 The handler is passed a dictionary of information, including the image’s location. From that, we create a temporary copy as a JPG file. We use a filename of foo.jpg; this will be important in a minute.
 
