@@ -74,19 +74,16 @@ The AdobeLibraryManager class is responsible for managing libraries. It's a sing
     ```
 
 ## List libraries
-    ```
     NSArray <AdobeLibraryComposite *> *composites = [[AdobeLibraryManager sharedInstance] libraries];
-    ```
+
 ## Create a new library
-    ```
     AdobeLibraryComposite *result = [[AdobeLibraryManager sharedInstance] newLibraryWithName:<libraryName> andError:nil];
 
     // Perform sync so that the added assets are uploaded & a delegate callback is received on sync complete.
     [AdobeLibraryManager sharedInstance] sync];
-    ```
 
 ## Add element to a library
-    ```
+    ```Objective-C
     // Add assets to selected library and perform sync.
     [AdobeDesignLibraryUtils addImage:<assetURL>
                                  name:<assetName>
@@ -99,7 +96,7 @@ The AdobeLibraryManager class is responsible for managing libraries. It's a sing
 
 ## Clean up and shutdown
 * Implement AdobeLibraryDelegate to get callback after the sync finishes.
-    ```
+    ```Objective-C
     - (void)syncFinished
     {
         // AdobeLibraryManager completed sync, hence deregister as delegate so that AdobeLibraryManager shutsdown.
