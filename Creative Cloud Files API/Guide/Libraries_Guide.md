@@ -94,6 +94,7 @@ The AdobeLibraryManager class is responsible for managing libraries. It's a sing
 
 ## Clean up and shutdown
 * Implement AdobeLibraryDelegate to get callback after the sync finishes.
+    
     ```
     - (void)syncFinished
     {
@@ -101,7 +102,7 @@ The AdobeLibraryManager class is responsible for managing libraries. It's a sing
         [[AdobeLibraryManager sharedInstance] deregisterDelegate:self];
     }
     ```
-
+    
 ## Remove local copies on logout
 * Observe for logout notification
     ```Objective-C
