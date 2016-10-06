@@ -1,6 +1,6 @@
 # Creative Cloud Files API
 
-In addition to the [Asset Browser UI Component](/articles/assetbrowser/index.html), the Creative SDK provides headless APIs for accessing Creative Cloud files directly. This guide demonstrates how to use these APIs to download existing files in the Creative Cloud and upload new files to the Creative Cloud.
+The Creative SDK provides headless APIs for accessing Creative Cloud files directly. This guide demonstrates how to use these APIs to download existing files in the Creative Cloud and upload new files to the Creative Cloud.
 
 ## Contents
 
@@ -28,8 +28,8 @@ _**Note:**_
 
 See below for a list of Classes for accessing Creative Cloud Files with our headless API:
 
-+ [AdobeAssetFile](/Classes/AdobeAssetFile.html)
-+ [AdobeAssetFolder](/Classes/AdobeAssetFolder.html)
++ [AdobeAssetFile](https://creativesdk.adobe.com/docs/ios/#/Classes/AdobeAssetFile.html)
++ [AdobeAssetFolder](https://creativesdk.adobe.com/docs/ios/#/Classes/AdobeAssetFolder.html)
 
 <a name="upload"></a>
 ## Upload Files to the Creative Cloud
@@ -139,5 +139,5 @@ Finally, a `UIAlertView` is presented to let the user know the file was uploaded
 <a name="reference"></a>
 ## Class Reference
 
-+ [AdobeAssetFile](/Classes/AdobeAssetFile.html)
-+ [AdobeAssetFolder](/Classes/AdobeAssetFolder.html)
++ [AdobeAssetFile](https://creativesdk.adobe.com/docs/ios/#/Classes/AdobeAssetFile.html)
++ [AdobeAssetFolder](https://creativesdk.adobe.com/docs/ios/#/Classes/AdobeAssetFolder.html)
