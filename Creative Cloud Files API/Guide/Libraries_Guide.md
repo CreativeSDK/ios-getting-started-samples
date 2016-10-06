@@ -28,10 +28,12 @@ The AdobeLibraryManager class is responsible for managing libraries. It's a sing
 
 ## Setting up Adobe Library Manager
 * Observe for login notification
-    ```[[NSNotificationCenter defaultCenter] addObserver:self
+    ```Objective-C
+    [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(authDidLogin:)
                                                  name:AdobeAuthManagerLoggedInNotification
-                                               object:nil];```
+                                               object:nil];
+    ```
 
 * Start AdobeLibraryManager after receiving login notification
     - (void)authDidLogin:(NSNotification *)notification
