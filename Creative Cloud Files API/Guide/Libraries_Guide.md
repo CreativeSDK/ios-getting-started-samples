@@ -94,11 +94,13 @@ The AdobeLibraryManager class is responsible for managing libraries. It's a sing
 
 ## Clean up and shutdown
 * Implement AdobeLibraryDelegate to get callback after the sync finishes.
+    ```
     - (void)syncFinished
     {
         // AdobeLibraryManager completed sync, hence deregister as delegate so that AdobeLibraryManager shutsdown.
         [[AdobeLibraryManager sharedInstance] deregisterDelegate:self];
     }
+    ```
 
 ## Remove local copies on logout
 * Observe for logout notification
