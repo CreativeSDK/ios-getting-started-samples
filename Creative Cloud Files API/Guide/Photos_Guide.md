@@ -24,9 +24,9 @@ _**Note:**_
 
 <a name="upload"></a>
 ## Upload Files to the Photos
+AdobePhotoCatalog is the topmost container of assets in a user's lightroom photos. Each catalog contains zero or more AdobePhotoCollection. AdobePhotoCollection is a container of collections in a user's catalog. Each collection contains zero or more AdobePhotoAsset. You can upload assets to photo catalog or a photo collection.
 
-### Code
-* Use the below API in in AdobePhotoCatalog to list user photo catalogs
+* Use the below API in AdobePhotoCatalog to list user photo catalogs
     + (void)listOfType:(AdobePhotoCatalogType)type
           successBlock:(void (^)(AdobePhotoCatalogs *catalogs))successBlock
             errorBlock:(void (^)(NSError *error))errorBlock;
