@@ -32,6 +32,8 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
 
 @interface ViewController () <AdobeUXAssetUploaderViewControllerDelegate, AdobeLibraryDelegate>
 
+@property (strong, nonatomic) NSString *rootLibDir;
+
 @end
 
 @implementation ViewController
@@ -47,6 +49,21 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
                                                                withClientSecret:kCreativeSDKClientSecret];
+    
+    // If you do provide a logout option, listen for the observer. If anytime the user uploaded to libraries,
+    // your app will have configured AdobeLibraryManager and hence synced the user libraries.
+    // You can clear them from your local device when user logs out.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(authDidLogout:)
+                                                 name:AdobeAuthManagerLoggedOutNotification
+                                               object:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:AdobeAuthManagerLoggedOutNotification
+                                                  object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -261,7 +278,44 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     [[AdobeLibraryManager sharedInstance] deregisterDelegate:self];
 }
 
-#pragma mark - Priavte methods
+#pragma mark - Notification handlers
+
+- (void)authDidLogout:(NSNotification *)notification
+{
+    if (self.rootLibDir.length > 0)
+    {
+        [AdobeLibraryManager removeLocalLibraryFilesInRootFolder:self.rootLibDir withError:nil];
+        
+        // Clean up the root folder.
+        NSFileManager *fm = [NSFileManager defaultManager];
+        [fm removeItemAtPath:[[self.rootLibDir stringByDeletingLastPathComponent] stringByDeletingLastPathComponent] error:nil];
+        self.rootLibDir = nil;
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userSpecificPathKey"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
+#pragma mark - Private methods
+
+- (NSString *)UUIDForUserSpecificPath
+{
+    // If we have a UUID then use it.
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSString *userSpecificID = [[NSUserDefaults standardUserDefaults] objectForKey:@"userSpecificPathKey"];
+    
+    if (userSpecificID.length > 0)
+    {
+        return userSpecificID;
+    }
+    
+    // Generate a new UUID
+    userSpecificID = [[NSUUID UUID] UUIDString];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:userSpecificID forKey:@"userSpecificPathKey"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    return userSpecificID;
+}
 
 - (void)setupAdobeLibraryManager:(AdobeLibraryDownloadPolicyType)downloadPolicy
 {
@@ -289,10 +343,12 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     rootLibDir = [rootLibDir stringByAppendingPathComponent:[NSBundle mainBundle].bundleIdentifier];
     rootLibDir = [rootLibDir stringByAppendingPathComponent:@"libraries"];
     
+    // User specific path to sync libraries from cloud.
+    self.rootLibDir = [rootLibDir stringByAppendingPathComponent:[self UUIDForUserSpecificPath]];
     NSError *libErr = nil;
     
     // Start the AdobeLibraryManager.
-    [libMgr startWithFolder:rootLibDir andError:&libErr];
+    [libMgr startWithFolder:self.rootLibDir andError:&libErr];
     
     // Register as delegate to get callbacks.
     [libMgr registerDelegate:self options:startupOptions];
