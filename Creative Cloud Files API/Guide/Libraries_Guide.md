@@ -63,6 +63,9 @@ The AdobeLibraryManager class is responsible for managing libraries. It's a sing
         rootLibDir = [rootLibDir stringByAppendingPathComponent:[NSBundle mainBundle].bundleIdentifier];
         rootLibDir = [rootLibDir stringByAppendingPathComponent:@"libraries"];
 
+        // Add a user-specific path. This can be a hash of some user specific information or a simple UUID which you can persist
+        // and keep track of so that you can clean up local files when user logs out.
+        rootLibDir = [rootLibDir stringByAppendingPathComponent:<user-specific-path>];
         NSError *libErr = nil;
 
         // Start the AdobeLibraryManager.
