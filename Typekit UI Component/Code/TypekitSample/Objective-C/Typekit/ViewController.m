@@ -53,7 +53,8 @@ const CGFloat typekitFontSize = 18;
     
     // Set up Auth
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:CreativeSDKClientId
-                                                               withClientSecret:CreativeSDKClientSecret];
+                                                                   clientSecret:CreativeSDKClientSecret
+                                                            additionalScopeList:@[@"tk_platform", @"tk_platform_sync"]];
     
     // Change the font size for Typekit fonts
     self.textView.fontSize = typekitFontSize;

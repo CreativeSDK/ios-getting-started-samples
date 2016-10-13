@@ -42,7 +42,8 @@ class ViewController: UIViewController, AdobeTypekitFontPickerControllerDelegate
         
         // Set up Auth
         AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(creativeSDKClientID,
-                                                                                   withClientSecret:creativeSDKClientSecret)
+                                                                                   clientSecret:creativeSDKClientSecret,
+                                                                            additionalScopeList:["tk_platform", "tk_platform_sync"]);
         
         // Change the font size for Typekit fonts
         textView.fontSize = typekitFontSize;

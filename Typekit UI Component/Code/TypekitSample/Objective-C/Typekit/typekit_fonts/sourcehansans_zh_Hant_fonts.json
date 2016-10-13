@@ -1,16 +1,24 @@
 {
-	"id": "TkD-23618-f15acd20ade31dd50e7633faa6b4ec04a5673f4a",
-	"family": "思源黑體 TW",
-	"family_opaque_id": "qhzx",
-	"fvd": "n4",
-	"links": {
-		"family": "https://api.typekit.com/desktop_v2/families/{user_id}/qhzx",
-		"self": "https://api.typekit.com/desktop_v2/fonts/TkD-23618-f15acd20ade31dd50e7633faa6b4ec04a5673f4a"
-	},
-	"optical_size": 0,
-	"postscript_name": "SourceHanSansTW-Regular",
-	"sort_order": 800,
-	"type": "otf",
-	"variation": "Regular",
-	"version" : "Version 1.004;PS 1.004;hotconv 1.0.82;makeotf.lib2.5.63406"
+    "id": 23618,
+    "family": {
+        "web_id": "qhzx",
+        "name": "Source Han Sans Traditional Chinese",
+        "slug": "source-han-sans-traditional-chinese",
+        "web_name": "Source Han Sans Traditional Chinese",
+        "css_font_stack": "\"source-han-sans-traditional\",sans-serif"
+    },
+    "name": "Source Han Sans TW Regular",
+    "rtl": false,
+    "default_language": "zh-Hant",
+    "font": {
+        "sync": {
+            "font_id": "TkD-23618-f15acd20ade31dd50e7633faa6b4ec04a5673f4a"
+        }
+    },
+    "style": "regular",
+    "sort_order": 3,
+    "weight": 400,
+    "postscript_name": "SourceHanSansTW-Regular",
+    "preferred_family_name": "Source Han Sans TW",
+    "preferred_subfamily_name": "Regular"
 }
