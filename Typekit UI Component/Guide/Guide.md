@@ -80,6 +80,13 @@ Management of bundled fonts is in the application so that the app has full contr
 Prior to using any Typekit APIs, you need to do the followings:
 
 1. Setup authentication using `AdobeUXAuthManager` class. Typekit Manager must have the app clientID from AdobeUXAuthManager.
+
+Use the following method to setup authentication with `AdobeUXAuthManager` class with tk_platform and tk_platform_sync as the additional scope lists.
+
+[[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:YourClientID
+                                                               clientSecret:YourClientSecret
+                                                        additionalScopeList:@[@"tk_platform", @"tk_platform_sync"]];
+
 2. Call the `syncFonts` method at least once
 
 ```
