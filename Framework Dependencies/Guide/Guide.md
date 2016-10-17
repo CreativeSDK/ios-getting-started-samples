@@ -331,6 +331,7 @@ The following configuration settings are required for this framework:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
     + libc++.tbd
+    + libsqlite.tbd
     + libz.tbd
     + WebKit.framework
 5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
@@ -423,8 +424,8 @@ The following configuration settings are required for this framework:
 4. In the same area, add the following libraries:
     + Accelerate.framework
     + CoreData.framework
-    + libsqlite3.0.tbd
-    + libz.1.2.5.tbd
+    + libsqlite3.tbd
+    + libz.tbd
     + Foundation.framework
     + MessageUI.framework
     + OpenGLES.framework
@@ -477,6 +478,3 @@ The following configuration settings are required for this framework:
     + libz.tbd
     + WebKit.framework
 5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
-
-
-

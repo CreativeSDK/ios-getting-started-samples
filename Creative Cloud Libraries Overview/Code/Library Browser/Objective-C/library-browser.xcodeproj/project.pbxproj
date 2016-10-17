@@ -17,6 +17,7 @@
 		41D75A3E1CED33EC00F57F9B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D75A3D1CED33EC00F57F9B /* libc++.tbd */; };
 		41D75A411CED340A00F57F9B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D75A3F1CED340A00F57F9B /* MobileCoreServices.framework */; };
 		41D75A421CED340A00F57F9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D75A401CED340A00F57F9B /* SystemConfiguration.framework */; };
+		41D9182B1DAD7E27005894A6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D9182A1DAD7E27005894A6 /* libsqlite3.tbd */; };
 		FEB26F601D6FAA35006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26F581D6FAA27006F69C7 /* AdobeCreativeSDKAssetModel.framework */; };
 		FEB26F611D6FAA35006F69C7 /* AdobeCreativeSDKAssetModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26F581D6FAA27006F69C7 /* AdobeCreativeSDKAssetModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FEB26F621D6FAA35006F69C7 /* AdobeCreativeSDKAssetUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26F591D6FAA27006F69C7 /* AdobeCreativeSDKAssetUX.framework */; };
@@ -59,6 +60,7 @@
 		41D75A3D1CED33EC00F57F9B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		41D75A3F1CED340A00F57F9B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		41D75A401CED340A00F57F9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		41D9182A1DAD7E27005894A6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FEB26F581D6FAA27006F69C7 /* AdobeCreativeSDKAssetModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetModel.framework; path = ../../../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKAssetModel.framework; sourceTree = "<group>"; };
 		FEB26F591D6FAA27006F69C7 /* AdobeCreativeSDKAssetUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetUX.framework; path = ../../../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKAssetUX.framework; sourceTree = "<group>"; };
 		FEB26F5A1D6FAA27006F69C7 /* AdobeCreativeSDKCommonUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCommonUX.framework; path = ../../../../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKCommonUX.framework; sourceTree = "<group>"; };
@@ -70,13 +72,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41D75A3E1CED33EC00F57F9B /* libc++.tbd in Frameworks */,
-				41D75A3C1CED33DF00F57F9B /* libz.tbd in Frameworks */,
-				FEB26F621D6FAA35006F69C7 /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
 				FEB26F661D6FAA36006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */,
-				41D75A411CED340A00F57F9B /* MobileCoreServices.framework in Frameworks */,
 				FEB26F641D6FAA36006F69C7 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
 				FEB26F601D6FAA35006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
+				FEB26F621D6FAA35006F69C7 /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
+				41D75A3E1CED33EC00F57F9B /* libc++.tbd in Frameworks */,
+				41D9182B1DAD7E27005894A6 /* libsqlite3.tbd in Frameworks */,
+				41D75A3C1CED33DF00F57F9B /* libz.tbd in Frameworks */,
+				41D75A411CED340A00F57F9B /* MobileCoreServices.framework in Frameworks */,
 				41D75A421CED340A00F57F9B /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				41D75A731CEE750700F57F9B /* CSDK Frameworks */,
-				41D75A741CEE751200F57F9B /* System Frameworks */,
 				41D75A171CED30E900F57F9B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -133,19 +135,13 @@
 				FEB26F591D6FAA27006F69C7 /* AdobeCreativeSDKAssetUX.framework */,
 				FEB26F5A1D6FAA27006F69C7 /* AdobeCreativeSDKCommonUX.framework */,
 				FEB26F5B1D6FAA27006F69C7 /* AdobeCreativeSDKCore.framework */,
-			);
-			name = "CSDK Frameworks";
-			sourceTree = "<group>";
-		};
-		41D75A741CEE751200F57F9B /* System Frameworks */ = {
-			isa = PBXGroup;
-			children = (
+				41D75A3D1CED33EC00F57F9B /* libc++.tbd */,
+				41D9182A1DAD7E27005894A6 /* libsqlite3.tbd */,
+				41D75A3B1CED33DF00F57F9B /* libz.tbd */,
 				41D75A3F1CED340A00F57F9B /* MobileCoreServices.framework */,
 				41D75A401CED340A00F57F9B /* SystemConfiguration.framework */,
-				41D75A3D1CED33EC00F57F9B /* libc++.tbd */,
-				41D75A3B1CED33DF00F57F9B /* libz.tbd */,
 			);
-			name = "System Frameworks";
+			name = "CSDK Frameworks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,9 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../AdobeCreativeSDKDynamicFrameworks";
 				INFOPLIST_FILE = "library-browser/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk.samples.library-browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -368,9 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../AdobeCreativeSDKDynamicFrameworks";
 				INFOPLIST_FILE = "library-browser/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk.samples.library-browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

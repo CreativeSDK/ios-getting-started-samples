@@ -24,8 +24,7 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    // Note: Please update the ClientId and Secret to the values provided by creativesdk.com or 
-    // from Adobe
+    // TODO: Please update the ClientId and Secret to the values provided by creativesdk.com
     private let kCreativeSDKClientID = "Change me"
     private let kCreativeSDKClientSecret = "Change me"
     

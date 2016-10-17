@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -25,27 +25,37 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jeE-V5-O7a">
-                                <rect key="frame" x="20" y="66" width="560" height="514"/>
+                                <rect key="frame" x="20" y="104" width="560" height="476"/>
                             </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pvh-zj-4A7">
                                 <rect key="frame" x="282" y="282" width="37" height="37"/>
                                 <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qM5-kv-lS8">
+                                <rect key="frame" x="273" y="66" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logoutButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="998-sX-NHI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AQr-DW-Kij" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="28" id="2fF-En-jzs"/>
                             <constraint firstAttribute="bottom" secondItem="jeE-V5-O7a" secondAttribute="bottom" constant="20" id="3wK-Gb-CSY"/>
                             <constraint firstItem="pvh-zj-4A7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Yn-Wb-vDa"/>
+                            <constraint firstItem="jeE-V5-O7a" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="104" id="AhK-WH-YAE"/>
+                            <constraint firstItem="qM5-kv-lS8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DGq-cr-VkI"/>
                             <constraint firstItem="jeE-V5-O7a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="I25-c8-fao"/>
                             <constraint firstItem="AQr-DW-Kij" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RF1-lw-qCE"/>
                             <constraint firstAttribute="trailing" secondItem="jeE-V5-O7a" secondAttribute="trailing" constant="20" id="adF-6T-MtX"/>
+                            <constraint firstItem="qM5-kv-lS8" firstAttribute="top" secondItem="AQr-DW-Kij" secondAttribute="bottom" constant="8" id="mMO-zD-Cfl"/>
                             <constraint firstItem="pvh-zj-4A7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wno-Jl-DeI"/>
-                            <constraint firstItem="jeE-V5-O7a" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="66" id="yIY-55-SRV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="pvh-zj-4A7" id="bTK-RO-lL1"/>
+                        <outlet property="logoutButton" destination="qM5-kv-lS8" id="9Xr-4K-PgU"/>
                         <outlet property="selectionThumbnailImageView" destination="jeE-V5-O7a" id="Yor-2U-WS1"/>
                     </connections>
                 </viewController>

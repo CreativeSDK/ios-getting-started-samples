@@ -29,8 +29,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate
 {
     // Note: Please update the ClientId and Secret to the values provided by  creativesdk.com or
     // from Adobe
-    private let kCreativeSDKClientId = "Change Me"
-    private let kCreativeSDKClientSecret = "Change Me"
+    private let kCreativeSDKClientId = "Change me"
+    private let kCreativeSDKClientSecret = "Change me"
     
     @IBOutlet weak var authButton: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
@@ -162,7 +162,7 @@ extension ViewController: UIImagePickerControllerDelegate
         if (CFStringCompare(mediaType as! CFStringRef, kUTTypeImage, CFStringCompareFlags.CompareCaseInsensitive) != CFComparisonResult.CompareEqualTo)
         {
             let message = "The file you've selected isn't an image file (is it a video perhaps?)" +
-            "For the purposes of this demo, please select an image file."
+                "For the purposes of this demo, please select an image file."
             
             let alertController = UIAlertController(title: "Image", message: message, preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)

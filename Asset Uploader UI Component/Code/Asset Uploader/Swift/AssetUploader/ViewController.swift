@@ -24,8 +24,7 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    // Note: Please update the ClientId and Secret to the values provided by  creativesdk.com or
-    // from Adobe
+    // TODO: Please update the ClientId and Secret to the values provided by creativesdk.com
     private let kCreativeSDKClientId = "Change me"
     private let kCreativeSDKClientSecret = "Change me"
     
@@ -35,7 +34,7 @@ class ViewController: UIViewController
     var autoSyncDownloadedAssets = false
     var libraryQueue: NSOperationQueue!
     var syncOnCommit = false
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -56,12 +55,13 @@ class ViewController: UIViewController
             let assetToUpload = AdobeUXAssetBrowserConfigurationProxyAsset()
             
             // Assign a unique ID
-            assetToUpload.assetId = "id\(i-1))"
+            assetToUpload.assetId = "Image\(i)"
             
             // Image name could be anything, in this case it is Image1, Image2, etc
-            assetToUpload.name = "Image\(i)"
+            assetToUpload.name = "Image (\(i))"
             
-            // Provide the thumbnails to image that is being uploaded. (Randomly pick a image to upload for this demo from the images folder within project.)
+            // Provide the thumbnails to image that is being uploaded. (Randomly pick a image to 
+            // upload for this demo from the images folder within project.)
             let thumbnailName = "Image\(self.randomValue(1, max: 8))"
             assetToUpload.thumbnail = UIImage(named: thumbnailName)
             
@@ -86,7 +86,8 @@ class ViewController: UIViewController
     func setupAdobeLibraryManager(downloadPolicy: AdobeLibraryDownloadPolicyType)
     {
         // Below is the setup for configure & start AdobeLibraryManager.
-        // For more info regarding libraries please refer: https://creativesdk.adobe.com/docs/ios/#/articles/libraries/index.html.
+        // For more info regarding libraries please refer: 
+        // https://creativesdk.adobe.com/docs/ios/#/articles/libraries/index.html.
         let startupOptions = AdobeLibraryDelegateStartupOptions()
         
         startupOptions.autoDownloadPolicy = downloadPolicy
@@ -103,10 +104,11 @@ class ViewController: UIViewController
         autoSyncDownloadedAssets = false;
         
         let libMgr = AdobeLibraryManager.sharedInstance()
-        libMgr.syncAllowedByNetworkStatusMask = UInt(AdobeNetworkStatus.ReachableViaWiFi.rawValue) | UInt(AdobeNetworkStatus.ReachableViaWWAN.rawValue)
+        libMgr.syncAllowedByNetworkStatusMask = UInt(AdobeNetworkStatus.ReachableViaWiFi.rawValue) |
+            UInt(AdobeNetworkStatus.ReachableViaWWAN.rawValue)
         
         var rootLibDir = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0]
-        var url = NSURL.init(fileURLWithPath: rootLibDir)
+        var url = NSURL(fileURLWithPath: rootLibDir)
         url = url.URLByAppendingPathComponent(NSBundle.mainBundle().bundleIdentifier!)
         url = url.URLByAppendingPathComponent("libraries")
         rootLibDir = url.absoluteString
@@ -162,10 +164,10 @@ extension ViewController : AdobeUXAssetUploaderViewControllerDelegate
         message += "\n\nAsset Names:\n"
         
         // Perform the upload.
-        for assetName in assetsToUpload.values
+        for assetName in assetsToUpload.keys
         {
-            message += "\(assetName)\n"
-            let assetURL = NSURL.init(fileURLWithPath: NSBundle.mainBundle().pathForResource(assetName, ofType: "png")!)
+            message += "\(assetsToUpload[assetName])\n"
+            let assetURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(assetName, ofType: "png")!)
             
             if let selectedFolder = destination.selectedItem as? AdobeAssetFolder
             {
@@ -178,6 +180,7 @@ extension ViewController : AdobeUXAssetUploaderViewControllerDelegate
                                       successBlock:
                     {
                         (file: AdobeAssetFile!) in
+                        
                         print("Upload success: %@", assetName)
                         
                     },
@@ -186,7 +189,8 @@ extension ViewController : AdobeUXAssetUploaderViewControllerDelegate
                     {
                         (error: NSError!) in
                         print("Upload failed: %@", error)
-                })
+                    }
+                )
             }
             else if let selectedLibrary = destination.selectedItem as? AdobeLibraryComposite
             {
@@ -194,6 +198,7 @@ extension ViewController : AdobeUXAssetUploaderViewControllerDelegate
                 {
                     // Add assets to selected library and perform sync.
                     try AdobeDesignLibraryUtils.addImage(assetURL, name: assetName, library: selectedLibrary)
+                    
                     print("Added to library: %@", assetName)
                 }
                 catch
@@ -212,18 +217,21 @@ extension ViewController : AdobeUXAssetUploaderViewControllerDelegate
                                        successBlock:
                     {
                         (asset: AdobePhotoAsset!) in
+                        
                         print("Upload success: %@", assetName)
                     },
                                        cancellationBlock: nil,
                                        errorBlock:
                     {
                         (error: NSError!) in
+                        
                         print("Upload failed: %@", error)
-                })
+                    }
+                )
             }
             else if let selectedPhotoCatalog = destination.selectedItem as? AdobePhotoCatalog
             {
-                // Upload assets to selelcted photo catalog.
+                // Upload assets to selected photo catalog.
                 AdobePhotoAsset.create(assetName,
                                        catalog: selectedPhotoCatalog,
                                        dataPath: assetURL,
@@ -232,28 +240,35 @@ extension ViewController : AdobeUXAssetUploaderViewControllerDelegate
                                        successBlock:
                     {
                         (asset: AdobePhotoAsset!) in
+                        
                         print("Upload success: %@", assetName)
                     },
                                        cancellationBlock: nil,
                                        errorBlock:
                     {
                         (error: NSError!) in
+                        
                         print("Upload failed: %@", error)
-                })
+                    }
+                )
             }
         }
         
         // Uploading to libraries, then perform sync.
         if ((destination.selectedItem as? AdobeLibraryComposite) != nil)
         {
-            // Perform sync so that the added assets are uploaded & a delegate callback is received on sync complete.
+            // Perform sync so that the added assets are uploaded & a delegate callback is 
+            // received on sync complete.
             let libMgr = AdobeLibraryManager.sharedInstance()
             libMgr.sync()
         }
-        message += "\n Your assets are being uploaded asynchronously to destination. Please refer the console log for upload success or error for each asset."
         
-        let alertController = UIAlertController.init(title:"Uploading Assets", message: message, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction.init(title: "OK", style: .Default, handler: nil))
+        message += "\n Your assets are being uploaded asynchronously to destination. Please refer" +
+            " the console log for upload success or error for each asset."
+        
+        let alertController = UIAlertController(title:"Uploading Assets", message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -262,16 +277,19 @@ extension ViewController : AdobeUXAssetUploaderViewControllerDelegate
         self.dismissViewControllerAnimated(true, completion: nil)
         
         print("Asset Uploader failed with error: %@", error)
+        
         let message = "Error: \(error)"
-        let alertController = UIAlertController.init(title:"Upload Error", message: message, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction.init(title: "OK", style: .Default, handler: nil))
+        let alertController = UIAlertController(title:"Upload Error", message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func assetUploaderViewControllerDidClose(assetUploader: AdobeUXAssetUploaderViewController)
     {
         self.dismissViewControllerAnimated(true, completion: nil)
-        print("Asset Uploader was dismissed without selectiong a destination folder.");
+        
+        print("Asset Uploader was dismissed without selecting a destination folder.");
     }
 }
 
@@ -280,7 +298,7 @@ extension ViewController: AdobeLibraryDelegate
 {
     func syncFinished()
     {
-        // AdobeLibraryManager completed sync, hence deregister as delegate so that AdobeLibraryManager shutsdown.
+        // AdobeLibraryManager completed sync, hence deregister as delegate so that AdobeLibraryManager shuts down.
         AdobeLibraryManager.sharedInstance().deregisterDelegate(self)
     }
 }

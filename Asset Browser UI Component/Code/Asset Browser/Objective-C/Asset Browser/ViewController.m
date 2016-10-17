@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Adobe Systems Incorporated. All rights reserved.
+ * Copyright (c) 2016 Adobe Systems Incorporated. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -48,8 +48,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     // Do any additional setup after loading the view, typically from a nib.
     
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
-                                                                   clientSecret:kCreativeSDKClientSecret
-                                                                   enableSignUp:NO];
+                                                               withClientSecret:kCreativeSDKClientSecret];
 }
 
 - (IBAction)showAssetBrowserButtonTouchUpInside

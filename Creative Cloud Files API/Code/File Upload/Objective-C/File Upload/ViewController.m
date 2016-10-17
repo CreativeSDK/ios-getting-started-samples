@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Adobe Systems Incorporated. All rights reserved.
+ * Copyright (c) 2016 Adobe Systems Incorporated. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -228,7 +228,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
             
             NSString *message = [NSString stringWithFormat:@"The selected file was successfully "
                                  "uploaded to Creative Cloud at \n\n'%@'",
-                                 [file.href stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                                 [file.href stringByRemovingPercentEncoding]];
             
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"File Uploaded"
                                                                                      message:message

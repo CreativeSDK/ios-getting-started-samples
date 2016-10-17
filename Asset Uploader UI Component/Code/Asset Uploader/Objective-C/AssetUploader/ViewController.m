@@ -41,7 +41,8 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
 @synthesize libraryQueue;
 @synthesize assetDownloadLibraryFilter;
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -49,7 +50,8 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
                                                                withClientSecret:kCreativeSDKClientSecret];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -69,10 +71,10 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         AdobeUXAssetBrowserConfigurationProxyAsset *assetToUpload = [AdobeUXAssetBrowserConfigurationProxyAsset new];
         
         // Assign a unique ID
-        assetToUpload.assetId = [NSString stringWithFormat:@"id%lu", (unsigned long)i - 1];
+        assetToUpload.assetId = [NSString stringWithFormat:@"Image%lu", (unsigned long)i];
         
         // Image name could be anything, in this case it is Image1, Image2, etc
-        assetToUpload.name = [NSString stringWithFormat:@"Image%lu", (unsigned long)i];
+        assetToUpload.name = [NSString stringWithFormat:@"Image (%lu)", (unsigned long)i];
         
         // Provide the thumbnails to image that is being uploaded. (Randomly pick a image to upload for this demo from the images folder within project.)
         NSString *thumbnailName = [NSString stringWithFormat:@"Image%d", [self randomValueBetween:1 and:8]];
@@ -90,7 +92,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
 
 #pragma mark - AdobeUXAssetUploaderViewControllerDelegate
 
-- (void)assetUploaderViewController:(AdobeUXAssetUploaderViewController *)assetUploader didSelectDestination:(AdobeSelection *)destination assetsToUpload:(NSDictionary<NSString *,NSString *> *)assetsToUpload
+- (void)assetUploaderViewController:(AdobeUXAssetUploaderViewController *)assetUploader didSelectDestination:(AdobeSelection *)destination assetsToUpload:(NSDictionary<NSString *, NSString *> *)assetsToUpload
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -128,24 +130,26 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     [message appendString:@"\n\nImage Names:\n"];
     
     // Perform the upload.
-    for (NSString *assetName in assetsToUpload.allValues)
+    for (NSString *assetId in assetsToUpload.allKeys)
     {
-        [message appendFormat:@"%@\n", assetName];
-        NSURL *assetURL = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:assetName ofType:@"png"]];
+        [message appendFormat:@"%@\n", assetsToUpload[assetId]];
+        
+        NSURL *assetURL = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:assetId
+                                                                               ofType:@"png"]];
         
         if (IsAdobeAssetFolder(destination.selectedItem))
         {
              AdobeAssetFolder *selectedFolder = destination.selectedItem;
             
             // Upload assets to selected folder.
-            [AdobeAssetFile create:assetName
+            [AdobeAssetFile create:assetId
                             folder:selectedFolder
                           dataPath:assetURL
                        contentType:kAdobeMimeTypePNG
                      progressBlock:nil
                       successBlock:^(AdobeAssetFile *file)
              {
-                 NSLog(@"Upload success: %@", assetName);
+                 NSLog(@"Upload success: %@", assetId);
              }
                  cancellationBlock:nil
                         errorBlock:^(NSError *error)
@@ -156,17 +160,17 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         else if ([destination.selectedItem isKindOfClass:[AdobeLibraryComposite class]])
         {
             AdobeLibraryComposite *composite = destination.selectedItem;
-            NSError *error;
+            NSError *error = nil;
             
             // Add assets to selected library and perform sync.
             [AdobeDesignLibraryUtils addImage:assetURL
-                                         name:assetName
+                                         name:assetId
                                       library:composite
                                         error:&error];
             
-            if (!error)
+            if (error == nil)
             {
-                NSLog(@"Added to library: %@", assetName);
+                NSLog(@"Added to library: %@", assetId);
             }
             else
             {
@@ -178,14 +182,14 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
             AdobePhotoCollection *selectedPhotoCollection = destination.selectedItem;
             
             // Upload assets to selected photo collection.
-            [AdobePhotoAsset create:assetName
+            [AdobePhotoAsset create:assetId
                          collection:selectedPhotoCollection
                            dataPath:assetURL
                         contentType:kAdobeMimeTypePNG
                       progressBlock:nil
                        successBlock:^(AdobePhotoAsset *asset)
              {
-                 NSLog(@"Upload success: %@", assetName);
+                 NSLog(@"Upload success: %@", assetId);
              }
                   cancellationBlock:nil
                          errorBlock:^(NSError *error)
@@ -197,15 +201,15 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         {
             AdobePhotoCatalog *selectedPhotoCatalog = destination.selectedItem;
             
-            // Upload assets to selelcted photo catalog.
-            [AdobePhotoAsset create:assetName
+            // Upload assets to selected photo catalog.
+            [AdobePhotoAsset create:assetId
                             catalog:selectedPhotoCatalog
                            dataPath:assetURL
                         contentType:kAdobeMimeTypePNG
                       progressBlock:nil
                        successBlock:^(AdobePhotoAsset *asset)
              {
-                 NSLog(@"Upload success: %@", assetName);
+                 NSLog(@"Upload success: %@", assetId);
              }
                   cancellationBlock:nil
                          errorBlock:^(NSError *error)
@@ -218,25 +222,31 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     // Uploading to libraries, then perform sync.
     if ([destination.selectedItem isKindOfClass:[AdobeLibraryComposite class]])
     {
-        // Perform sync so that the added assets are uploaded & a delegate callback is received on sync complete.
+        // Perform sync so that the added assets are uploaded & a delegate callback is received on
+        // sync complete.
         AdobeLibraryManager *libMgr = [AdobeLibraryManager sharedInstance];
         [libMgr sync];
     }
     
-    [message appendString:@"\n Your images are being uploaded asynchronously to destination. Please refer the console log for upload success or error for each image."];
+    [message appendString:@"\n Your images are being uploaded asynchronously to destination. "
+        "Please refer the console log for upload success or error for each image."];
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Uploading Images"
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     [alertController addAction:okAction];
+    
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)assetUploaderViewController:(AdobeUXAssetUploaderViewController *)assetUploader didEncounterError:(NSError *)error
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
     NSLog(@"Asset Uploader failed with error: %@", error);
+    
     NSString *message = [NSString stringWithFormat:@"Error: %@", error];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Upload Error"
                                                                              message:message
@@ -244,20 +254,22 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     [alertController addAction:okAction];
+    
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)assetUploaderViewControllerDidClose:(AdobeUXAssetUploaderViewController *)assetUploader
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"Asset Uploader was dismissed without selectiong a destination folder.");
+    
+    NSLog(@"Asset Uploader was dismissed without selecting a destination folder.");
 }
 
 #pragma mark - AdobeLibraryDelegate
 
 - (void)syncFinished
 {
-    // AdobeLibraryManager completed sync, hence deregister as delegate so that AdobeLibraryManager shutsdown.
+    // AdobeLibraryManager completed sync, hence deregister as delegate so that AdobeLibraryManager shuts down.
     [[AdobeLibraryManager sharedInstance] deregisterDelegate:self];
 }
 
@@ -298,7 +310,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     [libMgr registerDelegate:self options:startupOptions];
 }
 
-- (unsigned int)randomValueBetween:(unsigned int)min and:(unsigned int)max
+- (u_int32_t)randomValueBetween:(u_int32_t)min and:(u_int32_t)max
 {
     return (min + arc4random_uniform(max - min + 1));
 }

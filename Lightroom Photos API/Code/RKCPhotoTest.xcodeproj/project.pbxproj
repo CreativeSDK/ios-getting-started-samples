@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41D0DDBD1DB04A83009298FE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0DDBC1DB04A83009298FE /* libsqlite3.tbd */; };
+		41D0DDBF1DB04A9E009298FE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0DDBE1DB04A9E009298FE /* libc++.tbd */; };
+		41D0DDC11DB04AA3009298FE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0DDC01DB04AA3009298FE /* libz.tbd */; };
+		41D0DDC31DB04B00009298FE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0DDC21DB04B00009298FE /* SystemConfiguration.framework */; };
 		712FF75A19AD16CE00958A7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712FF75919AD16CE00958A7C /* Foundation.framework */; };
 		712FF75C19AD16CE00958A7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712FF75B19AD16CE00958A7C /* CoreGraphics.framework */; };
 		712FF75E19AD16CE00958A7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712FF75D19AD16CE00958A7C /* UIKit.framework */; };
@@ -14,35 +18,16 @@
 		712FF76619AD16CE00958A7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 712FF76519AD16CE00958A7C /* main.m */; };
 		712FF76A19AD16CE00958A7C /* RKCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 712FF76919AD16CE00958A7C /* RKCAppDelegate.m */; };
 		712FF76C19AD16CE00958A7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712FF76B19AD16CE00958A7C /* Images.xcassets */; };
-		712FF77319AD16CE00958A7C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712FF77219AD16CE00958A7C /* XCTest.framework */; };
-		712FF77419AD16CE00958A7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712FF75919AD16CE00958A7C /* Foundation.framework */; };
-		712FF77519AD16CE00958A7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712FF75D19AD16CE00958A7C /* UIKit.framework */; };
-		712FF77D19AD16CE00958A7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 712FF77B19AD16CE00958A7C /* InfoPlist.strings */; };
-		712FF77F19AD16CE00958A7C /* RKCPhotoTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 712FF77E19AD16CE00958A7C /* RKCPhotoTestTests.m */; };
 		712FF78D19AD171C00958A7C /* RKCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 712FF78C19AD171C00958A7C /* RKCView.m */; };
-		712FF79319AD185700958A7C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 712FF79219AD185600958A7C /* libc++.dylib */; };
 		712FF79519AD18E000958A7C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712FF79419AD18E000958A7C /* MobileCoreServices.framework */; };
 		D403DB2E1B61B317005BAD42 /* RKCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D403DB2D1B61B317005BAD42 /* RKCViewController.m */; };
-		D403DB301B61B33C005BAD42 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D403DB2F1B61B33C005BAD42 /* libz.dylib */; };
 		FEB26FB91D6FB6C6006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26FA71D6FB3E6006F69C7 /* AdobeCreativeSDKAssetModel.framework */; };
 		FEB26FBA1D6FB6C6006F69C7 /* AdobeCreativeSDKAssetModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26FA71D6FB3E6006F69C7 /* AdobeCreativeSDKAssetModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FEB26FBB1D6FB6C6006F69C7 /* AdobeCreativeSDKAssetUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26FA81D6FB3E6006F69C7 /* AdobeCreativeSDKAssetUX.framework */; };
-		FEB26FBC1D6FB6C6006F69C7 /* AdobeCreativeSDKAssetUX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26FA81D6FB3E6006F69C7 /* AdobeCreativeSDKAssetUX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FEB26FBD1D6FB6C6006F69C7 /* AdobeCreativeSDKCommonUX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26FA91D6FB3E6006F69C7 /* AdobeCreativeSDKCommonUX.framework */; };
 		FEB26FBE1D6FB6C6006F69C7 /* AdobeCreativeSDKCommonUX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26FA91D6FB3E6006F69C7 /* AdobeCreativeSDKCommonUX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FEB26FBF1D6FB6C6006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26FAA1D6FB3E6006F69C7 /* AdobeCreativeSDKCore.framework */; };
 		FEB26FC01D6FB6C6006F69C7 /* AdobeCreativeSDKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEB26FAA1D6FB3E6006F69C7 /* AdobeCreativeSDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		712FF77619AD16CE00958A7C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 712FF74E19AD16CE00958A7C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 712FF75519AD16CE00958A7C;
-			remoteInfo = RKCPhotoTest;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FEB26FC11D6FB6C7006F69C7 /* Embed Frameworks */ = {
@@ -51,7 +36,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FEB26FBC1D6FB6C6006F69C7 /* AdobeCreativeSDKAssetUX.framework in Embed Frameworks */,
 				FEB26FBE1D6FB6C6006F69C7 /* AdobeCreativeSDKCommonUX.framework in Embed Frameworks */,
 				FEB26FBA1D6FB6C6006F69C7 /* AdobeCreativeSDKAssetModel.framework in Embed Frameworks */,
 				FEB26FC01D6FB6C6006F69C7 /* AdobeCreativeSDKCore.framework in Embed Frameworks */,
@@ -62,6 +46,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41D0DDBC1DB04A83009298FE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		41D0DDBE1DB04A9E009298FE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		41D0DDC01DB04AA3009298FE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		41D0DDC21DB04B00009298FE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		712FF75619AD16CE00958A7C /* RKCPhotoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RKCPhotoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		712FF75919AD16CE00958A7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		712FF75B19AD16CE00958A7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,18 +61,11 @@
 		712FF76819AD16CE00958A7C /* RKCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKCAppDelegate.h; sourceTree = "<group>"; };
 		712FF76919AD16CE00958A7C /* RKCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKCAppDelegate.m; sourceTree = "<group>"; };
 		712FF76B19AD16CE00958A7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		712FF77119AD16CE00958A7C /* RKCPhotoTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RKCPhotoTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		712FF77219AD16CE00958A7C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		712FF77A19AD16CE00958A7C /* RKCPhotoTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RKCPhotoTestTests-Info.plist"; sourceTree = "<group>"; };
-		712FF77C19AD16CE00958A7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		712FF77E19AD16CE00958A7C /* RKCPhotoTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKCPhotoTestTests.m; sourceTree = "<group>"; };
 		712FF78B19AD171C00958A7C /* RKCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCView.h; sourceTree = "<group>"; };
 		712FF78C19AD171C00958A7C /* RKCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCView.m; sourceTree = "<group>"; };
-		712FF79219AD185600958A7C /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		712FF79419AD18E000958A7C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D403DB2C1B61B317005BAD42 /* RKCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKCViewController.h; sourceTree = "<group>"; };
 		D403DB2D1B61B317005BAD42 /* RKCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKCViewController.m; sourceTree = "<group>"; };
-		D403DB2F1B61B33C005BAD42 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FEB26FA71D6FB3E6006F69C7 /* AdobeCreativeSDKAssetModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetModel.framework; path = ../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKAssetModel.framework; sourceTree = "<group>"; };
 		FEB26FA81D6FB3E6006F69C7 /* AdobeCreativeSDKAssetUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKAssetUX.framework; path = ../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKAssetUX.framework; sourceTree = "<group>"; };
 		FEB26FA91D6FB3E6006F69C7 /* AdobeCreativeSDKCommonUX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCommonUX.framework; path = ../../AdobeCreativeSDKDynamicFrameworks/AdobeCreativeSDKCommonUX.framework; sourceTree = "<group>"; };
@@ -96,26 +77,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D403DB301B61B33C005BAD42 /* libz.dylib in Frameworks */,
-				FEB26FB91D6FB6C6006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
-				712FF79519AD18E000958A7C /* MobileCoreServices.framework in Frameworks */,
-				712FF79319AD185700958A7C /* libc++.dylib in Frameworks */,
-				712FF75C19AD16CE00958A7C /* CoreGraphics.framework in Frameworks */,
-				712FF75E19AD16CE00958A7C /* UIKit.framework in Frameworks */,
-				FEB26FBB1D6FB6C6006F69C7 /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
+				41D0DDC31DB04B00009298FE /* SystemConfiguration.framework in Frameworks */,
 				FEB26FBF1D6FB6C6006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */,
+				FEB26FB91D6FB6C6006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
 				FEB26FBD1D6FB6C6006F69C7 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
 				712FF75A19AD16CE00958A7C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		712FF76E19AD16CE00958A7C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				712FF77319AD16CE00958A7C /* XCTest.framework in Frameworks */,
-				712FF77519AD16CE00958A7C /* UIKit.framework in Frameworks */,
-				712FF77419AD16CE00958A7C /* Foundation.framework in Frameworks */,
+				712FF75C19AD16CE00958A7C /* CoreGraphics.framework in Frameworks */,
+				41D0DDC11DB04AA3009298FE /* libz.tbd in Frameworks */,
+				41D0DDBF1DB04A9E009298FE /* libc++.tbd in Frameworks */,
+				41D0DDBD1DB04A83009298FE /* libsqlite3.tbd in Frameworks */,
+				712FF79519AD18E000958A7C /* MobileCoreServices.framework in Frameworks */,
+				712FF75E19AD16CE00958A7C /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				712FF75F19AD16CE00958A7C /* RKCPhotoTest */,
-				712FF77819AD16CE00958A7C /* RKCPhotoTestTests */,
 				712FF75819AD16CE00958A7C /* Frameworks */,
 				712FF75719AD16CE00958A7C /* Products */,
 			);
@@ -136,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				712FF75619AD16CE00958A7C /* RKCPhotoTest.app */,
-				712FF77119AD16CE00958A7C /* RKCPhotoTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,13 +118,14 @@
 				FEB26FA81D6FB3E6006F69C7 /* AdobeCreativeSDKAssetUX.framework */,
 				FEB26FA91D6FB3E6006F69C7 /* AdobeCreativeSDKCommonUX.framework */,
 				FEB26FAA1D6FB3E6006F69C7 /* AdobeCreativeSDKCore.framework */,
-				D403DB2F1B61B33C005BAD42 /* libz.dylib */,
-				712FF79419AD18E000958A7C /* MobileCoreServices.framework */,
-				712FF79219AD185600958A7C /* libc++.dylib */,
-				712FF75919AD16CE00958A7C /* Foundation.framework */,
 				712FF75B19AD16CE00958A7C /* CoreGraphics.framework */,
+				712FF75919AD16CE00958A7C /* Foundation.framework */,
+				41D0DDBE1DB04A9E009298FE /* libc++.tbd */,
+				41D0DDBC1DB04A83009298FE /* libsqlite3.tbd */,
+				41D0DDC01DB04AA3009298FE /* libz.tbd */,
+				712FF79419AD18E000958A7C /* MobileCoreServices.framework */,
+				41D0DDC21DB04B00009298FE /* SystemConfiguration.framework */,
 				712FF75D19AD16CE00958A7C /* UIKit.framework */,
-				712FF77219AD16CE00958A7C /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,14 +133,14 @@
 		712FF75F19AD16CE00958A7C /* RKCPhotoTest */ = {
 			isa = PBXGroup;
 			children = (
-				D403DB2C1B61B317005BAD42 /* RKCViewController.h */,
-				D403DB2D1B61B317005BAD42 /* RKCViewController.m */,
 				712FF76819AD16CE00958A7C /* RKCAppDelegate.h */,
 				712FF76919AD16CE00958A7C /* RKCAppDelegate.m */,
-				712FF76B19AD16CE00958A7C /* Images.xcassets */,
-				712FF76019AD16CE00958A7C /* Supporting Files */,
 				712FF78B19AD171C00958A7C /* RKCView.h */,
 				712FF78C19AD171C00958A7C /* RKCView.m */,
+				D403DB2C1B61B317005BAD42 /* RKCViewController.h */,
+				D403DB2D1B61B317005BAD42 /* RKCViewController.m */,
+				712FF76B19AD16CE00958A7C /* Images.xcassets */,
+				712FF76019AD16CE00958A7C /* Supporting Files */,
 			);
 			path = RKCPhotoTest;
 			sourceTree = "<group>";
@@ -177,28 +148,10 @@
 		712FF76019AD16CE00958A7C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				712FF76119AD16CE00958A7C /* RKCPhotoTest-Info.plist */,
 				712FF76219AD16CE00958A7C /* InfoPlist.strings */,
 				712FF76519AD16CE00958A7C /* main.m */,
+				712FF76119AD16CE00958A7C /* RKCPhotoTest-Info.plist */,
 				712FF76719AD16CE00958A7C /* RKCPhotoTest-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		712FF77819AD16CE00958A7C /* RKCPhotoTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				712FF77E19AD16CE00958A7C /* RKCPhotoTestTests.m */,
-				712FF77919AD16CE00958A7C /* Supporting Files */,
-			);
-			path = RKCPhotoTestTests;
-			sourceTree = "<group>";
-		};
-		712FF77919AD16CE00958A7C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				712FF77A19AD16CE00958A7C /* RKCPhotoTestTests-Info.plist */,
-				712FF77B19AD16CE00958A7C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -225,24 +178,6 @@
 			productReference = 712FF75619AD16CE00958A7C /* RKCPhotoTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		712FF77019AD16CE00958A7C /* RKCPhotoTestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 712FF78519AD16CF00958A7C /* Build configuration list for PBXNativeTarget "RKCPhotoTestTests" */;
-			buildPhases = (
-				712FF76D19AD16CE00958A7C /* Sources */,
-				712FF76E19AD16CE00958A7C /* Frameworks */,
-				712FF76F19AD16CE00958A7C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				712FF77719AD16CE00958A7C /* PBXTargetDependency */,
-			);
-			name = RKCPhotoTestTests;
-			productName = RKCPhotoTestTests;
-			productReference = 712FF77119AD16CE00958A7C /* RKCPhotoTestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -250,13 +185,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = RKC;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Adobe;
-				TargetAttributes = {
-					712FF77019AD16CE00958A7C = {
-						TestTargetID = 712FF75519AD16CE00958A7C;
-					};
-				};
 			};
 			buildConfigurationList = 712FF75119AD16CE00958A7C /* Build configuration list for PBXProject "RKCPhotoTest" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -271,7 +201,6 @@
 			projectRoot = "";
 			targets = (
 				712FF75519AD16CE00958A7C /* RKCPhotoTest */,
-				712FF77019AD16CE00958A7C /* RKCPhotoTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -283,14 +212,6 @@
 			files = (
 				712FF76419AD16CE00958A7C /* InfoPlist.strings in Resources */,
 				712FF76C19AD16CE00958A7C /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		712FF76F19AD16CE00958A7C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				712FF77D19AD16CE00958A7C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +229,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCore.framework/strip-frameworks.sh\"\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKAssetModel.framework/strip-frameworks.sh\"\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCommonUX.framework/strip-frameworks.sh\"\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKAssetUX.framework/strip-frameworks.sh\"";
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCore.framework/strip-frameworks.sh\"\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKAssetModel.framework/strip-frameworks.sh\"\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCommonUX.framework/strip-frameworks.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -324,37 +245,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		712FF76D19AD16CE00958A7C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				712FF77F19AD16CE00958A7C /* RKCPhotoTestTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		712FF77719AD16CE00958A7C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 712FF75519AD16CE00958A7C /* RKCPhotoTest */;
-			targetProxy = 712FF77619AD16CE00958A7C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		712FF76219AD16CE00958A7C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				712FF76319AD16CE00958A7C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		712FF77B19AD16CE00958A7C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				712FF77C19AD16CE00958A7C /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -380,6 +277,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -394,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -427,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -446,14 +344,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RKCPhotoTest/RKCPhotoTest-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "RKCPhotoTest/RKCPhotoTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.Lightroom-Photos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -473,51 +367,10 @@
 				GCC_PREFIX_HEADER = "RKCPhotoTest/RKCPhotoTest-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "RKCPhotoTest/RKCPhotoTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.Lightroom-Photos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		712FF78619AD16CF00958A7C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RKCPhotoTest.app/RKCPhotoTest";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RKCPhotoTest/RKCPhotoTest-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "RKCPhotoTestTests/RKCPhotoTestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		712FF78719AD16CF00958A7C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RKCPhotoTest.app/RKCPhotoTest";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RKCPhotoTest/RKCPhotoTest-Prefix.pch";
-				INFOPLIST_FILE = "RKCPhotoTestTests/RKCPhotoTestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -538,15 +391,6 @@
 			buildConfigurations = (
 				712FF78319AD16CF00958A7C /* Debug */,
 				712FF78419AD16CF00958A7C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		712FF78519AD16CF00958A7C /* Build configuration list for PBXNativeTarget "RKCPhotoTestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				712FF78619AD16CF00958A7C /* Debug */,
-				712FF78719AD16CF00958A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

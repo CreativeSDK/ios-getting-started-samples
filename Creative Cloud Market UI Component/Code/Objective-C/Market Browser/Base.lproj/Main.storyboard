@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjc-f4-2CR">
+                                <rect key="frame" x="219" y="20" width="162" height="30"/>
+                                <state key="normal" title="Display Market Browser"/>
+                                <connections>
+                                    <action selector="displayMarketBrowserButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="r7t-j0-U46"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfu-rp-HBg">
+                                <rect key="frame" x="273" y="58" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logoutButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="HLT-mY-dMU"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCo-ph-KGk">
+                                <rect key="frame" x="20" y="96" width="560" height="484"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nc5-d6-mr6">
+                                <rect key="frame" x="282" y="319" width="37" height="37"/>
+                                <color key="color" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wjc-f4-2CR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="0IK-KH-00a"/>
+                            <constraint firstItem="hfu-rp-HBg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gbj-Ux-SYh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fCo-ph-KGk" secondAttribute="bottom" constant="20" id="Gda-7I-WKa"/>
+                            <constraint firstAttribute="trailing" secondItem="fCo-ph-KGk" secondAttribute="trailing" constant="20" id="Kao-oL-vnO"/>
+                            <constraint firstItem="fCo-ph-KGk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="96" id="Psk-Cc-Ddp"/>
+                            <constraint firstItem="nc5-d6-mr6" firstAttribute="centerX" secondItem="fCo-ph-KGk" secondAttribute="centerX" id="Rd0-5A-Kvm"/>
+                            <constraint firstItem="nc5-d6-mr6" firstAttribute="centerY" secondItem="fCo-ph-KGk" secondAttribute="centerY" id="Unt-BL-ASV"/>
+                            <constraint firstItem="hfu-rp-HBg" firstAttribute="top" secondItem="wjc-f4-2CR" secondAttribute="bottom" constant="8" id="n8z-5q-2r8"/>
+                            <constraint firstItem="fCo-ph-KGk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="sEr-LL-MpV"/>
+                            <constraint firstItem="wjc-f4-2CR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sQt-FQ-yJH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="nc5-d6-mr6" id="0bC-v0-gVc"/>
+                        <outlet property="logoutButton" destination="hfu-rp-HBg" id="yJx-XV-3TG"/>
+                        <outlet property="selectionThumbnailImageView" destination="fCo-ph-KGk" id="MaG-yd-cJm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="659"/>
+        </scene>
+    </scenes>
+</document>
