@@ -26,6 +26,8 @@
 
 #import "ViewController.h"
 
+#define userSpecificPathKey @"userSpecificPathKey"
+
 #warning Please update the client ID and secret values to match the ones provided by creativesdk.com
 static NSString * const kCreativeSDKClientId = @"Change me";
 static NSString * const kCreativeSDKClientSecret = @"Change me";
@@ -290,8 +292,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
         NSFileManager *fm = [NSFileManager defaultManager];
         [fm removeItemAtPath:[[self.rootLibDir stringByDeletingLastPathComponent] stringByDeletingLastPathComponent] error:nil];
         self.rootLibDir = nil;
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userSpecificPathKey"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:userSpecificPathKey];
     }
 }
 
@@ -300,8 +301,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
 - (NSString *)UUIDForUserSpecificPath
 {
     // If we have a UUID then use it.
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    NSString *userSpecificID = [[NSUserDefaults standardUserDefaults] objectForKey:@"userSpecificPathKey"];
+    NSString *userSpecificID = [[NSUserDefaults standardUserDefaults] objectForKey:userSpecificPathKey];
     
     if (userSpecificID.length > 0)
     {
@@ -309,10 +309,9 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     }
     
     // Generate a new UUID
-    userSpecificID = [[NSUUID UUID] UUIDString];
+    userSpecificID = [NSUUID UUID].UUIDString;
     
-    [[NSUserDefaults standardUserDefaults] setObject:userSpecificID forKey:@"userSpecificPathKey"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSUserDefaults standardUserDefaults] setObject:userSpecificID forKey:userSpecificPathKey];
     
     return userSpecificID;
 }
@@ -340,7 +339,6 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     libMgr.syncAllowedByNetworkStatusMask = AdobeNetworkReachableViaWiFi | AdobeNetworkReachableViaWWAN;
     
     NSString *rootLibDir = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
-    rootLibDir = [rootLibDir stringByAppendingPathComponent:[NSBundle mainBundle].bundleIdentifier];
     rootLibDir = [rootLibDir stringByAppendingPathComponent:@"libraries"];
     
     // User specific path to sync libraries from cloud.
