@@ -29,8 +29,10 @@
 
 #import <AdobeCreativeSDKCore/AdobeUXAuthManager.h>
 
-#define CC_CLIENT_ID                  @"CHANGE_ME_CLIENT_ID"
-#define CC_CLIENT_SECRET              @"CHANGE_ME_CLIENT_SECRET"
+#warning Please update these required values to match the ones provided by creativesdk.com
+static NSString * const kCreativeSDKClientId = @"Change me";
+static NSString * const kCreativeSDKClientSecret = @"Change me";
+static NSString * const kCreativeSDKRedirectURLString = @"Change me";
 
 @implementation ViewController
 
@@ -38,9 +40,17 @@
     
     [super viewDidLoad];
     
-    // first set the clientID and clientSecret
-    [AdobeUXAuthManager.sharedManager setAuthenticationParametersWithClientID: CC_CLIENT_ID
-                                                             withClientSecret: CC_CLIENT_SECRET];
+    // Set the client ID and secret values so the CSDK can identify the calling app. The three
+    // specified scopes are required at a minimum.
+    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
+                                                                   clientSecret:kCreativeSDKClientSecret
+                                                            additionalScopeList:@[AdobeAuthManagerUserProfileScope,
+                                                                                  AdobeAuthManagerEmailScope,
+                                                                                  AdobeAuthManagerAddressScope]];
+    
+    // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+    [AdobeUXAuthManager sharedManager].redirectURL = [NSURL URLWithString:kCreativeSDKRedirectURLString];
+    
     // add the buttons
     [self addButtons];
     

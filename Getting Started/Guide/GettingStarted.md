@@ -147,18 +147,35 @@ If Xcode does not auto-complete the framework name, check the setup steps above 
 
 *You can find the complete code for this guide in <a href="https://github.com/CreativeSDK/ios-getting-started-samples" target="_blank">GitHub</a>.*
 
-Authentication is part of every Creative SDK workflow and every action performed requires a logged-in user. Fortunately, using the Authentication component is easy. The first thing we need to do is to specify the client ID and secret values for our app from the registration site. We also need to decide whether we want to enable user signup in the Authentication component. 
+Authentication is part of every Creative SDK workflow and every action performed requires a logged-in user. Fortunately, using the Authentication component is easy. The first thing we need to do is to specify the client ID and secret values for our app from the registration site.
 
-Note that this signup process allows a user to create a new Adobe ID. Also note that enabling signup might cause App Store rejection if there are paid components of your app that depend on an account. Please consult the Apple Developer program terms and App Store review guidelines for more information.
+We set up our client ID and secret by calling the `setAuthenticationParametersWithClientID:clientSecret:additionalScopeList:` method:
 
-We set up our client ID and secret by calling the `setAuthenticationParametersWithClientID:clientSecret:enableSignUp:` method:
+Objective-C
 
+    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
+                                                                   clientSecret:kCreativeSDKClientSecret
+                                                            additionalScopeList:@[@"", @"", @""]];
 
-    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:@"client-id"
-                                                                   clientSecret:@"client-secret"
-                                                                   enableSignUp:NO];
+Swift 2
+
+    AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId,
+                                                                               clientSecret: kCreativeSDKClientSecret,
+                                                                               additionalScopeList: ["", "", ""])
+
+We also need to set the redirect URL for app. Note that all of this information, i.e. the client ID, secret and the redirect URL can be retrieved from the app registration portal.
+
+Objective-C
+
+    [AdobeUXAuthManager sharedManager].redirectURL = [NSURL URLWithString:kCreativeSDKRedirectURLString];
+
+Swift 2
+
+    AdobeUXAuthManager.sharedManager().redirectURL = NSURL(string: kCreativeSDKRedirectURLString)
 
 At this point we need to decide whether the user is already authenticated. If the user isn't already authenticated, we'd have to bring up the Authentication component UI which will ask for the user's credentials and handle the actual login process:
+
+Objective-C
 
     if ([AdobeUXAuthManager sharedManager].isAuthenticated)
     {
@@ -166,16 +183,43 @@ At this point we need to decide whether the user is already authenticated. If th
     }
     else
     {
-        [[AdobeUXAuthManager sharedManager] login:self onSuccess:^(AdobeAuthUserProfile *profile) {
-        
+        [[AdobeUXAuthManager sharedManager] login:self 
+                                        onSuccess:^(AdobeAuthUserProfile *profile)
+        {
             NSLog(@"Successfully logged in. User profile: %@", profile);
-        
-            [self.loginButton setTitle:@"Log Out" forState:UIControlStateNormal];
-        
-        } onError:^(NSError *error) {
-       
+            
+            ...
+        } 
+                                         onError:^(NSError *error)
+        {
             NSLog(@"There was a problem logging in: %@", error);
         }];
+    }
+
+Swift
+
+    if (AdobeUXAuthManager.sharedManager().authenticated)
+    {
+        print("The user has already been authenticated. User profile: \(AdobeUXAuthManager.sharedManager().userProfile)")
+    }
+    else
+    {
+        AdobeUXAuthManager.sharedManager().login(self,
+                                                 onSuccess:
+            {
+                (profile: AdobeAuthUserProfile!) -> Void in
+                
+                print("Successfully logged in. User profile: \(profile)")
+                
+                ...
+            },
+                                                 onError:
+            {
+                (error: NSError!) -> Void in
+                
+                print("There was a problem logging in: \(error)")
+            }
+        )
     }
 
 When the user clicks the Login button, the SDK takes over: <br /><br /><img style="border: 1px solid #ccc;" src="device1.jpg" />

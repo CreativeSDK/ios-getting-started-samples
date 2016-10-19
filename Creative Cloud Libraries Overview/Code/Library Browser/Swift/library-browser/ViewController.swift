@@ -27,6 +27,8 @@ class ViewController: UIViewController
     // TODO: Please update the ClientId and Secret to the values provided by creativesdk.com
     private let kCreativeSDKClientId = "Change me"
     private let kCreativeSDKClientSecret = "Change me"
+    private let kCreativeSDKRedirectURLString = "Change me"
+    
     private let kLibraryRootFolderPathPreferencesKey = "kLibraryRootFolderPath"
     
     // Implement the required properties that the AdobeLibraryDelegate protocol specifies. Since
@@ -48,9 +50,17 @@ class ViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Set the client ID and secret values so the SDK can identify the calling app.
+        // Set the client ID and secret values so the CSDK can identify the calling app. The three
+        // specified scopes are required at a minimum.
         AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId,
-                                                                                   withClientSecret: kCreativeSDKClientSecret)
+                                                                                   clientSecret: kCreativeSDKClientSecret,
+                                                                                   additionalScopeList: [
+                                                                                    AdobeAuthManagerUserProfileScope,
+                                                                                    AdobeAuthManagerEmailScope,
+                                                                                    AdobeAuthManagerUserProfileScope])
+        
+        // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+        AdobeUXAuthManager.sharedManager().redirectURL = NSURL(string: kCreativeSDKRedirectURLString)
         
         // Register for the logout notification so we can perform the necessary Library Manager
         // cleanup tasks.
@@ -161,7 +171,7 @@ class ViewController: UIViewController
 // MARK: - AdobeUXAssetBrowserViewControllerDelegate
 extension ViewController: AdobeUXAssetBrowserViewControllerDelegate
 {
-    func assetBrowserDidSelectAssets(itemSelections: [AnyObject])
+    func assetBrowserDidSelectAssets(itemSelections: [AdobeSelectionAsset])
     {
         // Dismiss the Asset Browser view controller.
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -207,8 +217,14 @@ extension ViewController: AdobeUXAssetBrowserViewControllerDelegate
             print("Could not start the Library Manager. An error occurred: \(e)")
         }
         
-        // Grab the first selected item and make sure we're dealing with a Library selection object.
-        guard let librarySelection = itemSelections.first as? AdobeSelectionLibraryAsset else
+        // AdobeSelection is the superclass for both AdobeSelectionAsset and 
+        // AdobeSelectionLibraryAsset. We cannot cross-cast from one sibling type to another, so we 
+        // need to retrieve the first selected item as the more generic AdobeSelection, which will 
+        // then be casted down to AdobeSelectionLibraryAssets.
+        let selection: AdobeSelection? = itemSelections.first
+        
+        // Now make sure we're dealing with a Library selection object.
+        guard let librarySelection = selection as? AdobeSelectionLibraryAsset else
         {
             print("The selected item isn't a Library selection.")
             

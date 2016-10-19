@@ -26,9 +26,10 @@
 
 #import "ViewController.h"
 
-#warning Please update the ClientId and Secret to the values provided by creativesdk.com or from Adobe
-static NSString * const kCreativeSDKClientId = @"Change Me";
-static NSString * const kCreativeSDKClientSecret = @"Change Me";
+#warning Please update the ClientId and Secret to the values provided by creativesdk.com
+static NSString * const kCreativeSDKClientId = @"Change me";
+static NSString * const kCreativeSDKClientSecret = @"Change me";
+static NSString * const kCreativeSDKRedirectURLString = @"Change me";
 
 static NSString * const kLibraryRootFolderPathPreferencesKey = @"kLibraryRootFolderPath";
 
@@ -54,9 +55,16 @@ static NSString * const kLibraryRootFolderPathPreferencesKey = @"kLibraryRootFol
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // Set the client ID and secret values so the SDK can identify the calling app.
+    // Set the client ID and secret values so the CSDK can identify the calling app. The three
+    // specified scopes are required at a minimum.
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
-                                                               withClientSecret:kCreativeSDKClientSecret];
+                                                                   clientSecret:kCreativeSDKClientSecret
+                                                            additionalScopeList:@[AdobeAuthManagerUserProfileScope,
+                                                                                  AdobeAuthManagerEmailScope,
+                                                                                  AdobeAuthManagerAddressScope]];
+    
+    // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+    [AdobeUXAuthManager sharedManager].redirectURL = [NSURL URLWithString:kCreativeSDKRedirectURLString];
     
     // Register for the logout notification so we can perform the necessary Library Manager cleanup
     // tasks.
@@ -164,11 +172,14 @@ static NSString * const kLibraryRootFolderPathPreferencesKey = @"kLibraryRootFol
     // Grab the first selected item. This item is the a selection object that has information about
     // the selected item(s). We can use this object to pinpoint the selected Library item and
     // perform interesting tasks, like downloading a thumbnail.
-    AdobeSelectionLibraryAsset *librarySelection = itemSelections.firstObject;
+    AdobeSelection *selection = itemSelections.firstObject;
     
     // Make sure we're dealing with a Library selection object.
-    if (IsAdobeSelectionLibraryAsset(librarySelection))
+    if (IsAdobeSelectionLibraryAsset(selection))
     {
+        // We know that we've selected a Library item so casting is safe.
+        AdobeSelectionLibraryAsset *librarySelection = (AdobeSelectionLibraryAsset *)selection;
+        
         // Grab the Library ID.
         NSString *selectedLibraryId = librarySelection.selectedLibraryID;
         

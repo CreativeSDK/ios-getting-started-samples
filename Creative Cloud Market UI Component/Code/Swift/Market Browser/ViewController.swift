@@ -27,6 +27,7 @@ class ViewController: UIViewController
     // TODO: Please update the ClientId and Secret to the values provided by  creativesdk.com
     private let kCreativeSDKClientId = "Change me"
     private let kCreativeSDKClientSecret = "Change me"
+    private let kCreativeSDKRedirectURLString = "Change me"
     
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var selectionThumbnailImageView: UIImageView!
@@ -37,8 +38,17 @@ class ViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Set the client ID and secret values so the SDK can identify the calling app.
-        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId, withClientSecret: kCreativeSDKClientSecret)
+        // Set the client ID and secret values so the CSDK can identify the calling app. The three
+        // specified scopes are required at a minimum.
+        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId,
+                                                                                   clientSecret: kCreativeSDKClientSecret,
+                                                                                   additionalScopeList: [
+                                                                                    AdobeAuthManagerUserProfileScope,
+                                                                                    AdobeAuthManagerEmailScope,
+                                                                                    AdobeAuthManagerUserProfileScope])
+        
+        // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+        AdobeUXAuthManager.sharedManager().redirectURL = NSURL(string: kCreativeSDKRedirectURLString)
     }
     
     override func viewWillAppear(animated: Bool)

@@ -25,8 +25,9 @@ import UIKit
 class ViewController: UIViewController
 {
     // TODO: Please update the ClientId and Secret to the values provided by creativesdk.com
-    private let kCreativeSDKClientID = "Change me"
+    private let kCreativeSDKClientId = "Change me"
     private let kCreativeSDKClientSecret = "Change me"
+    private let kCreativeSDKRedirectURLString = "Change me"
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -37,7 +38,17 @@ class ViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientID, withClientSecret: kCreativeSDKClientSecret)
+        // Set the client ID and secret values so the CSDK can identify the calling app. The three
+        // specified scopes are required at a minimum.
+        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId,
+                                                                                   clientSecret: kCreativeSDKClientSecret,
+                                                                                   additionalScopeList: [
+                                                                                    AdobeAuthManagerUserProfileScope,
+                                                                                    AdobeAuthManagerEmailScope,
+                                                                                    AdobeAuthManagerUserProfileScope])
+        
+        // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+        AdobeUXAuthManager.sharedManager().redirectURL = NSURL(string: kCreativeSDKRedirectURLString)
         
         if (AdobeUXAuthManager.sharedManager().authenticated)
         {
@@ -54,35 +65,46 @@ class ViewController: UIViewController
     {
         if (AdobeUXAuthManager.sharedManager().authenticated)
         {
-            AdobeUXAuthManager.sharedManager().logout({ [unowned self]() -> Void in
-                
-                print("User was successfully logged out.")
-                
-                self.nameLabel.text = "<Not Logged In>"
-                self.emailLabel.text = "<Not Logged In>"
-                
-                self.loginButton.setTitle("Log In", forState: .Normal)
-                
-            }, onError: { (error: NSError!) -> Void in
-                
-                print("There was a problem logging out: \(error)")
-            })
+            AdobeUXAuthManager.sharedManager().logout(
+                {
+                    [unowned self]() -> Void in
+                    
+                    print("User was successfully logged out.")
+                    
+                    self.nameLabel.text = "<Not Logged In>"
+                    self.emailLabel.text = "<Not Logged In>"
+                    
+                    self.loginButton.setTitle("Log In", forState: .Normal)
+                },
+                onError:
+                {
+                    (error: NSError!) -> Void in
+                    
+                    print("There was a problem logging out: \(error)")
+                }
+            )
         }
         else
         {
-            AdobeUXAuthManager.sharedManager().login(self, onSuccess: { [unowned self](profile: AdobeAuthUserProfile!) -> Void in
-                
-                print("Successfully logged in. User profile: \(profile)")
-                
-                self.nameLabel.text = profile.displayName
-                self.emailLabel.text = profile.email
-                
-                self.loginButton.setTitle("Log Out", forState: .Normal)
-                
-            }, onError: { (error: NSError!) -> Void in
-                
-                print("There was a problem logging in: \(error)")
-            })
+            AdobeUXAuthManager.sharedManager().login(self,
+                                                     onSuccess:
+                {
+                    [unowned self] (profile: AdobeAuthUserProfile!) -> Void in
+                    
+                    print("Successfully logged in. User profile: \(profile)")
+                    
+                    self.nameLabel.text = profile.displayName
+                    self.emailLabel.text = profile.email
+                    
+                    self.loginButton.setTitle("Log Out", forState: .Normal)
+                },
+                                                     onError:
+                {
+                    (error: NSError!) -> Void in
+                    
+                    print("There was a problem logging in: \(error)")
+                }
+            )
         }
     }
 }

@@ -32,8 +32,10 @@
 #import <AdobeCreativeSDKLabs/AdobeLabsUXMagicSelectionView.h>
 #import <AdobeCreativeSDKCore/AdobeUXAuthManager.h>
 
-#define CC_CLIENT_ID                @"CHANGE_ME_CLIENT_ID"
-#define CC_CLIENT_SECRET            @"CHANGE_ME_CLIENT_SECRET"
+#warning Please update these required values to match the ones provided by creativesdk.com
+static NSString * const kCreativeSDKClientId = @"Change me";
+static NSString * const kCreativeSDKClientSecret = @"Change me";
+static NSString * const kCreativeSDKRedirectURLString = @"Change me";
 
 #define BUTTON_X_MARGIN             0
 #define BUTTON_Y_MARGIN             20
@@ -81,9 +83,17 @@
     
     // Do any additional setup after loading the view, typically from a nib.
     
-    // first set the clientID and clientSecret
-    [AdobeUXAuthManager.sharedManager setAuthenticationParametersWithClientID: CC_CLIENT_ID
-                                                             withClientSecret: CC_CLIENT_SECRET];
+    // Set the client ID and secret values so the CSDK can identify the calling app. The three
+    // specified scopes are required at a minimum.
+    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
+                                                                   clientSecret:kCreativeSDKClientSecret
+                                                            additionalScopeList:@[AdobeAuthManagerUserProfileScope,
+                                                                                  AdobeAuthManagerEmailScope,
+                                                                                  AdobeAuthManagerAddressScope]];
+    
+    // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+    [AdobeUXAuthManager sharedManager].redirectURL = [NSURL URLWithString:kCreativeSDKRedirectURLString];
+    
     // calculate button placement
     CGRect buttonRect = CGRectMake(BUTTON_X_MARGIN, BUTTON_Y_MARGIN, BUTTON_WIDTH, BUTTON_HEIGHT);
     CGFloat viewWidth = self.view.bounds.size.width;

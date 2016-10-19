@@ -167,8 +167,8 @@
 				703AB4E91C18E582006C70D9 /* Sources */,
 				703AB4EA1C18E582006C70D9 /* Frameworks */,
 				703AB4EB1C18E582006C70D9 /* Resources */,
-				FEB26EC81D6F8BD9006F69C7 /* ShellScript */,
 				41B9AEEB1DAEFD9400FDF2BD /* Embed Frameworks */,
+				FEB26EC81D6F8BD9006F69C7 /* ShellScript */,
 			);
 			buildRules = (
 			);
