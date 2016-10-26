@@ -17,7 +17,7 @@ The Creative SDK Typekit provides a convenient UI for accessing Adobe Typekit fo
 ## Prerequisites
 
 + This guide assumes that you've already read the <a href="/articles/gettingstarted/index.html">Getting Started</a> guide and have implemented Auth.
-+ Authenticating your application to Typekit Platform service that is available in November 2016 release or later requires 2 Typekit scopes. Please visit creativesdk.com and add Typekit service to your application. In your application, add the following 2 constants to `additionalScopeList` parameter of `[AdobeUXAuthManager setAuthenticationParametersWithClientID:clientSecret:additionalScopeList:]` method.
++ Authenticating your application to Typekit Platform service that is available in November 2016 release or later requires 2 Typekit scopes. Please visit creativesdk.com and add Typekit service to your application. In your application, add the following 2 scopes to `additionalScopeList` parameter of `[AdobeUXAuthManager setAuthenticationParametersWithClientID:clientSecret:additionalScopeList:]` method.
 
 - AdobeAuthManagerTypekitPlatformScope
 - AdobeAuthManagerTypekitPlatformSyncScope
