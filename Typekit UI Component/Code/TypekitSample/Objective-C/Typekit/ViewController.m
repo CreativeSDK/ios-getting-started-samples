@@ -27,9 +27,11 @@
 
 #import "TextContainerView.h"
 
-
+#warning Please update these required values to match the ones provided by creativesdk.com
 static NSString *const CreativeSDKClientId = @"change me";
 static NSString *const CreativeSDKClientSecret = @"change me";
+static NSString *const CreativeSDKRedirectURLString = @"Change me";
+
 const CGFloat typekitFontSize = 18;
 
 @interface ViewController ()<AdobeTypekitFontPickerControllerDelegate, UIPopoverPresentationControllerDelegate>
@@ -51,10 +53,18 @@ const CGFloat typekitFontSize = 18;
 {
     [super viewDidLoad];
     
-    // Set up Auth
+    // Set the client ID and secret values so the CSDK can identify the calling app.
+    // Typekit Platform service requires 2 Typekit scopes in addition to the minimum set of scopes.
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:CreativeSDKClientId
                                                                    clientSecret:CreativeSDKClientSecret
-                                                            additionalScopeList:@[@"tk_platform", @"tk_platform_sync"]];
+                                                            additionalScopeList:@[AdobeAuthManagerUserProfileScope,
+                                                                                  AdobeAuthManagerEmailScope,
+                                                                                  AdobeAuthManagerAddressScope,
+                                                                                  AdobeAuthManagerTypekitPlatformScope,
+                                                                                  AdobeAuthManagerTypekitPlatformSyncScope]];
+    
+    // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+    [AdobeUXAuthManager sharedManager].redirectURL = [NSURL URLWithString:CreativeSDKRedirectURLString];
     
     // Change the font size for Typekit fonts
     self.textView.fontSize = typekitFontSize;
