@@ -155,13 +155,17 @@ Objective-C
 
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
                                                                    clientSecret:kCreativeSDKClientSecret
-                                                            additionalScopeList:@[@"", @"", @""]];
+                                                            additionalScopeList:@[AdobeAuthManagerUserProfileScope, 
+                                                                                  AdobeAuthManagerEmailScope, 
+                                                                                  AdobeAuthManagerAddressScope]];
 
 Swift 2
 
     AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId,
                                                                                clientSecret: kCreativeSDKClientSecret,
-                                                                               additionalScopeList: ["", "", ""])
+                                                                               additionalScopeList: [AdobeAuthManagerUserProfileScope, 
+                                                                                                     AdobeAuthManagerEmailScope, 
+                                                                                                     AdobeAuthManagerAddressScope])
 
 We also need to set the redirect URL for app. Note that all of this information, i.e. the client ID, secret and the redirect URL can be retrieved from the app registration portal.
 
