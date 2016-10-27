@@ -17,6 +17,11 @@ The Creative SDK Typekit provides a convenient UI for accessing Adobe Typekit fo
 ## Prerequisites
 
 + This guide assumes that you've already read the <a href="/articles/gettingstarted/index.html">Getting Started</a> guide and have implemented Auth.
++ Authenticating your application to Typekit Platform service that is available in November 2016 release or later requires 2 Typekit scopes. Please visit creativesdk.com and add Typekit service to your application. In your application, add the following 2 scopes to `additionalScopeList` parameter of `[AdobeUXAuthManager setAuthenticationParametersWithClientID:clientSecret:additionalScopeList:]` method.
+
+ - AdobeAuthManagerTypekitPlatformScope
+ - AdobeAuthManagerTypekitPlatformSyncScope
+
 + Framework Dependencies: The following frameworks are required to use Creative SDK Typekit.
 
  - AdobeCreativeSDKCore
@@ -80,6 +85,21 @@ Management of bundled fonts is in the application so that the app has full contr
 Prior to using any Typekit APIs, you need to do the followings:
 
 1. Setup authentication using `AdobeUXAuthManager` class. Typekit Manager must have the app clientID from AdobeUXAuthManager.
+
+   Use the following method to setup authentication with `AdobeUXAuthManager` class. Include `AdobeAuthManagerTypekitPlatformScope` and `AdobeAuthManagerTypekitPlatformSyncScope` in the additional scope list.
+
+```
+[[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:YourAPIKey
+                                                                   clientSecret:YourClientSecret
+                                                            additionalScopeList:@[AdobeAuthManagerUserProfileScope,
+                                                                                  AdobeAuthManagerEmailScope,
+                                                                                  AdobeAuthManagerAddressScope,
+                                                                                  AdobeAuthManagerTypekitPlatformScope,
+                                                                                  AdobeAuthManagerTypekitPlatformSyncScope]];
+
+[AdobeUXAuthManager sharedManager].redirectURL = [NSURL URLWithString:YourRedirectURL];
+```
+
 2. Call the `syncFonts` method at least once
 
 ```
