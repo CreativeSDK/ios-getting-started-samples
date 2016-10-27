@@ -28,87 +28,89 @@ _**Note:**_
 <a name="integrate"></a>
 ## Integrating the Market UI Component
 
-*You can find the complete `MarketAssetBrowserDemo` project for this guide in <a href="https://github.com/CreativeSDK/ios-getting-started-samples" target="_blank">GitHub</a>.*
+*You can find the complete "Creative Cloud Market UI Component" project for this guide in <a href="https://github.com/CreativeSDK/ios-getting-started-samples" target="_blank">GitHub</a>.*
 
-The core class our sample application uses is `AdobeUXMarketAssetBrowser`. This class provides a browser to the Market. It gives the user the ability to sort by featured assets, filter by categories, and search.
+The core class our sample application uses is `AdobeUXMarketAssetBrowserViewController`. This class provides a browser to the Market. It gives the user the ability to sort by featured assets, filter by categories, and search:
+
+<img width="538" height="703" style="border: 1px solid #ccc;" src="market-01.jpg"  />
 
 By default, the Market does not filter what is shown to the user, but the class does let you filter which categories are shown to the user. For example, a painting program may want to limit results to brushes.
 
-If the user finds an asset he likes, he can select it to see a larger preview:
+When a desired asset is selected, a larger preview is provided by the Market Browser:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/market/market2.jpg"/>
+<img width="538" height="703" style="border: 1px solid #ccc;" src="market-02.jpg" />
 
-In either the grid view or preview, users can download the asset. This copies the asset to their Files on the Creative Cloud (in a **Market Downloads** folder):
+In either the grid view or preview, users can download the asset. This copies the asset to their Files on the Creative Cloud (in a **Market Downloads** folder).
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/market/market3.jpg"/>
+Users also can send an asset to the integrating application:
 
-Users also can send an asset to the application. In the preview, this is automatic. In the grid view, the user must explicitly click the icon after downloading the asset:
+<img width="538" height="703" style="border: 1px solid #ccc;" src="market-03.jpg" />
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/market/market4.jpg"/>
+The `AdobeUXMarketAssetBrowserViewController` class provides a way to handle this “open in app” action and lets your action take whatever next steps make sense for it. Let's look at a sample application that makes use of the browser.
 
-The `AdobeUXMarketAssetBrowser` class provides a way to handle this “open in app” action and lets your action take whatever next steps make sense for it. Let's look at a sample application that makes use of the browser.
+The main way you will use the Market browser is by instantiating a new instance of the `AdobeUXMarketAssetBrowserViewController`, specifying a configuration object, if any, specifying a delegate class, and presenting it like a regular UIViewController subclassing using the `presentViewController:animated:completion:` method.
 
-Note that if you run the Market browser with a user who is not logged into the Creative Cloud, the user will be asked to login. You do not need a login button in your application if only the browser uses the Creative SDK.
+Objective-C:
 
-The main way you will use the Market browser is via the `sharedBrowser` property of `AdobeUXMarketAssetBrowser`. There are two methods for opening up a browser:
+    AdobeUXMarketBrowserViewController *mbvc = [AdobeUXMarketBrowserViewController marketBrowserViewControllerWithConfiguration:nil
+                                                                                                                       delegate:self];
+    
+    [self presentViewController:mbvc animated:YES completion:nil];
 
-+ `popupMarketAssetBrowserWithParent` - This is more generic and allows you to specify which view controller will contain the UI. 
-+ `popupMarketAssetBrowserWithCategory ` - This method also lets method you filter by category(ies) as well as default to a specified category.
+Swift 2:
 
-Both methods let you handle the user action of opening a resource within the application.
+    let mbvc = AdobeUXMarketBrowserViewController(configuration: nil, delegate: self)
+    
+    self.presentViewController(mbvc, animated: true, completion: nil)
 
-A simple use of `popupMarketAssetBrowserWithParent` might look like this:
+Specifying a default category, or other configuration properties, is simple too. You can dynamically fetch categories from the API using the categories method of the `AdobeMarketCategory` class, or you can use one of the constants. As an example:
 
-    [[AdobeUXMarketAssetBrowser sharedBrowser] popupMarketAssetBrowserWithParent:self
-       category:nil
-       withCategoryFilter:nil
-       withCategoryFilterType:AdobeUXMarketAssetBrowserCategoryFilterTypeInclusion
-       onSuccess:^(AdobeMarketAsset *itemSelection) {
-       }
-       onError: ^(NSError * error) {
-       }];
+Objective-C:
 
-Specifying a default category is simple too. You can dynamically fetch categories from the API using the categories method of the `AdobeMarketCategory` class, or you can use one of the constants. As an example:
+    AdobeUXMarketBrowserConfiguration *configuration = [AdobeUXMarketBrowserConfiguration new];
+    configuration.initialCategory = kMarketAssetsCategoryBrushes;
+    
+    AdobeUXMarketBrowserViewController *mbvc = [AdobeUXMarketBrowserViewController marketBrowserViewControllerWithConfiguration:configuration
+                                                                                                                       delegate:self];
+    
+    [self presentViewController:mbvc animated:YES completion:nil];
 
-    [[AdobeUXMarketAssetBrowser sharedBrowser] popupMarketAssetBrowserWithParent:self
-       category:kMarketAssetsCategoryBrushes
-       withCategoryFilter:nil
-       withCategoryFilterType:AdobeUXMarketAssetBrowserCategoryFilterTypeInclusion
-       onSuccess:^(AdobeMarketAsset *itemSelection) {
-       }
-       onError: ^(NSError * error) {
-       }];
+Swift 2:
 
-You have created the market browser, but how do you handle selections from it? The `onSuccess` block executes after a user selects an asset to send to the application. (Remember that the interaction for this differs depending on the user’s view of the market browser. The grid view requires two clicks; the detail view, one.) The block is passed an instance of an `AdobeMarketAsset`. You can get detailed information about the asset (who created it, when it was created, and so on), as well as a thumbnail view of the asset. Optionally, you can choose to download the asset or copy it to the user's Creative Cloud folder. (Again, remember that in the detail view in the market browser, the asset goes directly to the application rather than being copied to the user's folder first.) For our sample application, we simply print metadata about the asset, then request a rendition. Here is the modified `onSuccess` handler:
+    let configuration = AdobeUXMarketBrowserConfiguration()
+    configuration.initialCategory = kMarketAssetsCategoryBrushes
+    
+    let mbvc = AdobeUXMarketBrowserViewController(configuration: configuration, delegate: self)
+    
+    self.presentViewController(mbvc, animated: true, completion: nil)
 
-    onSuccess:^(AdobeMarketAsset *itemSelection) {
+Once an asset is selected, the `marketBrowserDidSelectAsset` method will be called. This method accepts an argument which is a Market asset. This object can be used to retrieve useful information about the state of the Market asset, as well as, download a rendition (thumbnail).
 
-       // Ok, let's create a text block of data about the selection for the demo
-       NSMutableString *desc = [[NSMutableString alloc] initWithFormat:@"Market Asset: %@\n",
-         itemSelection.title ];
-       [desc appendFormat:@"Created by: %@\n %@n", itemSelection.creator.firstName,
-         itemSelection.creator.lastName];
-       [desc appendFormat:@"Featured on: %@\n", itemSelection.featured];
-       [desc appendFormat:@"Asset ID: %@\n", itemSelection.assetID];
-       [desc appendFormat:@"Date Created: %@\n", itemSelection.dateCreated];
-       [desc appendFormat:@"Date Published: %@\n", itemSelection.datePublished];
-       [desc appendFormat:@"File Size: %ld\n", itemSelection.fileSize];
-       [desc appendFormat:@"Tags: %@\n", itemSelection.tags];
-       [((RKCView *)self.view).resultText setText:desc];
+A simplified except of code that retrieves a thumbnail from a selected Market asset would look something like this:
 
-       [itemSelection downloadRenditionWithDimension:AdobeMarketImageDimensionWidth
-          withSize:250
-          withPriority:NSOperationQueuePriorityHigh
-          onProgress:nil
-          onCompletion:^( UIImage *image , BOOL fromCache ) {
-             [((RKCView *)self.view) uiImage].image = image;
-             [[((RKCView *)self.view) uiImage] sizeToFit];
-           }
-          onCancellation:nil
-          onError:^(NSError *error) {
-             NSLog(@"Error getting rendition: %@", error);
-          }];
-       }
+    [itemSelection downloadRenditionWithDimension:AdobeCommunityAssetImageDimensionWidth
+                                             size:CGRectGetWidth(self.selectionThumbnailImageView.frame)
+                                             type:AdobeCommunityAssetImageTypePNG
+                                         priority:NSOperationQueuePriorityNormal
+                                    progressBlock:null
+                                     successBlock:^(NSData *imageData, BOOL fromCache)
+    {
+        UIImage *thumbnail = [UIImage imageWithData:imageData];
+        
+        if (thumbnail == nil)
+        {
+            NSLog(@"Could not create a usable UIImage instance from returned data.");
+        }
+        else
+        {
+            // Display the thumbnail image
+        }
+    }
+                                cancellationBlock:NULL
+                                       errorBlock:^(NSError *error)
+    {
+        NSLog(@"An error occurred while downloading a thumbnail for the selected Market Asset: %@", error);
+    }];
 
 In the code above, we update a label item in our view with information about the asset. A rendition is then requested, and when it completes, an image is updated with the result. Here are two examples:
 
@@ -138,27 +140,54 @@ If only certain content categories (types of content) are relevant to your appli
     /** The market asset category for brushes. */
     extern NSString* const kMarketAssetsCategoryBrushes;
 
-You would pass the appropriate constant into the category: parameter when you call `popupMarketAssetBrowserWithCategory:` or `popupMarketAssetBrowserWithParent: `
+You would pass the appropriate constant into the `initialCategory` parameter of the `AdobeUXMarketBrowserConfiguration` instance when setting up the `AdobeUXMarketBrowserViewController` instance.
 
-You also can fetch categories dynamically. By using this method on AdobeMarketCategory:, your code can dynamically fetch both categories and subcategories:
+You also can fetch the latest categories from the network, as well. Using the `categoriesForCommunityID:priority:successBlock:errorBlock` method from AdobeMarketCategory, your code can dynamically fetch both categories and subcategories:
 
-    categories:onProgress:onCompletion:onCancellation:onError:
+Objective-C
 
-This simple example fetches the categories and displays relevant properties:
+    [AdobeMarketCategory categoriesForCommunityID:[AdobeCommunity market].communityID
+                                         priority:NSOperationQueuePriorityNormal
+                                     successBlock:^(NSArray *categories)
+    {
+        for (AdobeMarketCategory *category in categories)
+        {
+            NSLog(@"Name: %@\n\tSubcategories: %@", category.name, category.subCategories);
+        }
+    }
+                                       errorBlock:^(NSError *error)
+    {
+        NSLog(@"There was a problem while retrieving categories: %@", error);
+    }];
 
-    [AdobeMarketCategory categories:NSOperationQueuePriorityHigh
-       onProgress:nil
-       onCompletion:^(NSArray *categories) {
-          for(AdobeMarketCategory *cat in categories) {
-             NSLog(@"cat %@\n hasSub? %hhd\n subCats %@\nEnglish name: %@\n\n",
-               cat.categoryName, cat.hasSubCategories, cat.subCategories,
-               cat.englishCategoryName);
-          }
-       }
-       onCancellation:nil
-       onError:nil];
+Swift 2
 
-This data could be fetched and then cached in your application, to provide more control over which assets are displayed in the browser. In our example, this code was added to the same code that makes a request to open the Market browser. To see the result, check the login XCode.
+    AdobeMarketCategory.categoriesForCommunityID(AdobeCommunity.market().communityID,
+                                                 priority: .Normal,
+                                                 successBlock:
+        {
+            (categories: [AnyObject]!) in
+            
+            categories.forEach { (object: AnyObject) in
+                
+                // Note that the actual subclass for `object` is AdobeMarketCategory but a bug 
+                // in Swift prevents the compiler from see that type as a subclass of 
+                // AdobeCommunityCategory, hence the cast to AdobeCommunitCategory instead of 
+                // AdobeMarketCategory.
+                let category = object as? AdobeCommunityCategory
+                
+                print("Name: \(category?.name)\nSubcategories: \(category?.subCategories)\n\n")
+            }
+        },
+                                                 errorBlock:
+        {
+            (error: NSError!) in
+            
+            print("There was a problem while retrieving categories: %@", error);
+        }
+    )
+
+This data could be fetched and then cached in your application, to provide more control over which assets are displayed in the browser.
 
 <a name="reference"></a>
 ## Class Reference

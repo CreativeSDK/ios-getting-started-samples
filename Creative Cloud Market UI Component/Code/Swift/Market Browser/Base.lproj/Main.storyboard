@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Market_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpo-Wh-LxH">
+                                <rect key="frame" x="219" y="28" width="162" height="30"/>
+                                <state key="normal" title="Display Market Browser"/>
+                                <connections>
+                                    <action selector="displayMarketBrowserButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="7dy-Ya-KVz"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXc-4m-U5b">
+                                <rect key="frame" x="273" y="66" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logoutButtonTouchUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Yp-5f-AQu"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qGB-XT-jg1">
+                                <rect key="frame" x="20" y="104" width="560" height="476"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oJl-Dp-5vK">
+                                <rect key="frame" x="282" y="323" width="37" height="37"/>
+                                <color key="color" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jpo-Wh-LxH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Dx-Sa-SKR"/>
+                            <constraint firstItem="lXc-4m-U5b" firstAttribute="top" secondItem="jpo-Wh-LxH" secondAttribute="bottom" constant="8" id="AY7-W4-SPu"/>
+                            <constraint firstItem="qGB-XT-jg1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="CEE-G1-Nnp"/>
+                            <constraint firstItem="oJl-Dp-5vK" firstAttribute="centerX" secondItem="qGB-XT-jg1" secondAttribute="centerX" id="Ed4-S8-IHf"/>
+                            <constraint firstItem="lXc-4m-U5b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GVH-dh-cJ8"/>
+                            <constraint firstItem="oJl-Dp-5vK" firstAttribute="centerY" secondItem="qGB-XT-jg1" secondAttribute="centerY" id="MH1-oy-Xpc"/>
+                            <constraint firstItem="qGB-XT-jg1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="104" id="Mc7-RJ-sUl"/>
+                            <constraint firstItem="jpo-Wh-LxH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="28" id="Trw-Jj-sCK"/>
+                            <constraint firstAttribute="trailing" secondItem="qGB-XT-jg1" secondAttribute="trailing" constant="20" id="q4X-UE-3T9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qGB-XT-jg1" secondAttribute="bottom" constant="20" id="zxY-w6-njh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="oJl-Dp-5vK" id="6oc-cd-yvY"/>
+                        <outlet property="logoutButton" destination="lXc-4m-U5b" id="usr-3l-4d2"/>
+                        <outlet property="selectionThumbnailImageView" destination="qGB-XT-jg1" id="nh7-Qd-V6N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="429"/>
+        </scene>
+    </scenes>
+</document>

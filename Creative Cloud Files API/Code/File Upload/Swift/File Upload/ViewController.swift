@@ -27,10 +27,10 @@ import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate
 {
-    // Note: Please update the ClientId and Secret to the values provided by  creativesdk.com or
-    // from Adobe
-    private let kCreativeSDKClientId = "Change Me"
-    private let kCreativeSDKClientSecret = "Change Me"
+    // Note: Please update the ClientId and Secret to the values provided by creativesdk.com
+    private let kCreativeSDKClientId = "Change me"
+    private let kCreativeSDKClientSecret = "Change me"
+    private let kCreativeSDKRedirectURLString = "Change me"
     
     @IBOutlet weak var authButton: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
@@ -43,7 +43,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId, withClientSecret: kCreativeSDKClientSecret)
+        // Set the client ID and secret values so the CSDK can identify the calling app. The three
+        // specified scopes are required at a minimum.
+        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId,
+                                                                                   clientSecret: kCreativeSDKClientSecret,
+                                                                                   additionalScopeList: [
+                                                                                    AdobeAuthManagerUserProfileScope,
+                                                                                    AdobeAuthManagerEmailScope,
+                                                                                    AdobeAuthManagerUserProfileScope])
+        
+        // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+        AdobeUXAuthManager.sharedManager().redirectURL = NSURL(string: kCreativeSDKRedirectURLString)
         
         if (AdobeUXAuthManager.sharedManager().authenticated)
         {
@@ -162,7 +172,7 @@ extension ViewController: UIImagePickerControllerDelegate
         if (CFStringCompare(mediaType as! CFStringRef, kUTTypeImage, CFStringCompareFlags.CompareCaseInsensitive) != CFComparisonResult.CompareEqualTo)
         {
             let message = "The file you've selected isn't an image file (is it a video perhaps?)" +
-            "For the purposes of this demo, please select an image file."
+                "For the purposes of this demo, please select an image file."
             
             let alertController = UIAlertController(title: "Image", message: message, preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)

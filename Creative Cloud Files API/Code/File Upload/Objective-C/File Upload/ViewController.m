@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Adobe Systems Incorporated. All rights reserved.
+ * Copyright (c) 2016 Adobe Systems Incorporated. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -26,9 +26,10 @@
 
 #import "ViewController.h"
 
-#warning Please update the ClientId and Secret to the values provided by creativesdk.com or from Adobe
-static NSString * const kCreativeSDKClientId = @"Change Me";
-static NSString * const kCreativeSDKClientSecret = @"Change Me";
+#warning Please update the ClientId and Secret to the values provided by creativesdk.com
+static NSString * const kCreativeSDKClientId = @"Change me";
+static NSString * const kCreativeSDKClientSecret = @"Change me";
+static NSString * const kCreativeSDKRedirectURLString = @"Change me";
 
 @interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -47,10 +48,16 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // Configure the SDK with the client ID and client secret. This is necessary before doing
-    // anything with the SDK.
+    // Set the client ID and secret values so the CSDK can identify the calling app. The three
+    // specified scopes are required at a minimum.
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
-                                                               withClientSecret:kCreativeSDKClientSecret];
+                                                                   clientSecret:kCreativeSDKClientSecret
+                                                            additionalScopeList:@[AdobeAuthManagerUserProfileScope,
+                                                                                  AdobeAuthManagerEmailScope,
+                                                                                  AdobeAuthManagerAddressScope]];
+    
+    // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+    [AdobeUXAuthManager sharedManager].redirectURL = [NSURL URLWithString:kCreativeSDKRedirectURLString];
     
     // Update the UI state based on the user's authentication status
     if ([AdobeUXAuthManager sharedManager].isAuthenticated)
@@ -228,7 +235,7 @@ static NSString * const kCreativeSDKClientSecret = @"Change Me";
             
             NSString *message = [NSString stringWithFormat:@"The selected file was successfully "
                                  "uploaded to Creative Cloud at \n\n'%@'",
-                                 [file.href stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                                 [file.href stringByRemovingPercentEncoding]];
             
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"File Uploaded"
                                                                                      message:message

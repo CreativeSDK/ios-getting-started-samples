@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		415091411DA46DD100005229 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 415091401DA46DD100005229 /* libsqlite3.tbd */; };
 		703AB4961C17B626006C70D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AB4951C17B626006C70D9 /* main.m */; };
 		703AB4991C17B626006C70D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AB4981C17B626006C70D9 /* AppDelegate.m */; };
 		703AB49C1C17B626006C70D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AB49B1C17B626006C70D9 /* ViewController.m */; };
@@ -45,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		415091401DA46DD100005229 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		703AB4911C17B626006C70D9 /* Asset Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Asset Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		703AB4951C17B626006C70D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		703AB4971C17B626006C70D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,14 +72,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				703AB4B21C17B66F006C70D9 /* MobileCoreServices.framework in Frameworks */,
-				703AB4B01C17B66B006C70D9 /* SystemConfiguration.framework in Frameworks */,
-				FEB26EB01D6F888E006F69C7 /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
 				FEB26EB41D6F888E006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */,
-				703AB4AE1C17B665006C70D9 /* libz.tbd in Frameworks */,
 				FEB26EB21D6F888E006F69C7 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
 				FEB26EAE1D6F888E006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
+				FEB26EB01D6F888E006F69C7 /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
 				703AB4AC1C17B660006C70D9 /* libc++.tbd in Frameworks */,
+				415091411DA46DD100005229 /* libsqlite3.tbd in Frameworks */,
+				703AB4AE1C17B665006C70D9 /* libz.tbd in Frameworks */,
+				703AB4B21C17B66F006C70D9 /* MobileCoreServices.framework in Frameworks */,
+				703AB4B01C17B66B006C70D9 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +136,7 @@
 				FEB26E7B1D6F8616006F69C7 /* AdobeCreativeSDKCommonUX.framework */,
 				FEB26E7C1D6F8616006F69C7 /* AdobeCreativeSDKCore.framework */,
 				703AB4AB1C17B660006C70D9 /* libc++.tbd */,
+				415091401DA46DD100005229 /* libsqlite3.tbd */,
 				703AB4AD1C17B665006C70D9 /* libz.tbd */,
 				703AB4B11C17B66F006C70D9 /* MobileCoreServices.framework */,
 				703AB4AF1C17B66B006C70D9 /* SystemConfiguration.framework */,
@@ -293,7 +297,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -331,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -348,14 +352,9 @@
 					"$(PROJECT_DIR)",
 					../../../../AdobeCreativeSDKDynamicFrameworks,
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Asset Browser/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.Asset-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -372,9 +371,7 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "Asset Browser/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.Asset-Browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

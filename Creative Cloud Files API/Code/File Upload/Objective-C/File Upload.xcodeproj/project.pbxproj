@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41930F0A1DA4804E0024E719 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41930F091DA4804E0024E719 /* libsqlite3.tbd */; };
 		70DCB8B71C2A117000205FBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCB8B61C2A117000205FBE /* main.m */; };
 		70DCB8BA1C2A117000205FBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCB8B91C2A117000205FBE /* AppDelegate.m */; };
 		70DCB8BD1C2A117000205FBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCB8BC1C2A117000205FBE /* ViewController.m */; };
@@ -42,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41930F091DA4804E0024E719 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		70DCB8B21C2A117000205FBE /* File Upload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "File Upload.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70DCB8B61C2A117000205FBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70DCB8B81C2A117000205FBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,13 +68,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB26F461D6FA8AA006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */,
+				FEB26F441D6FA8AA006F69C7 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
+				FEB26F421D6FA8AA006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
+				70DCB8CD1C2A125300205FBE /* libc++.tbd in Frameworks */,
+				41930F0A1DA4804E0024E719 /* libsqlite3.tbd in Frameworks */,
+				70DCB8CF1C2A125B00205FBE /* libz.tbd in Frameworks */,
 				70DCB8D31C2A126400205FBE /* MobileCoreServices.framework in Frameworks */,
 				70DCB8D11C2A126000205FBE /* SystemConfiguration.framework in Frameworks */,
-				70DCB8CF1C2A125B00205FBE /* libz.tbd in Frameworks */,
-				FEB26F421D6FA8AA006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
-				FEB26F441D6FA8AA006F69C7 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
-				FEB26F461D6FA8AA006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */,
-				70DCB8CD1C2A125300205FBE /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,10 +88,11 @@
 				FEB26F3C1D6FA89C006F69C7 /* AdobeCreativeSDKAssetModel.framework */,
 				FEB26F3D1D6FA89C006F69C7 /* AdobeCreativeSDKCommonUX.framework */,
 				FEB26F3E1D6FA89C006F69C7 /* AdobeCreativeSDKCore.framework */,
+				70DCB8CC1C2A125300205FBE /* libc++.tbd */,
+				41930F091DA4804E0024E719 /* libsqlite3.tbd */,
+				70DCB8CE1C2A125B00205FBE /* libz.tbd */,
 				70DCB8D21C2A126400205FBE /* MobileCoreServices.framework */,
 				70DCB8D01C2A126000205FBE /* SystemConfiguration.framework */,
-				70DCB8CE1C2A125B00205FBE /* libz.tbd */,
-				70DCB8CC1C2A125300205FBE /* libc++.tbd */,
 			);
 			name = "Linked Binaries";
 			path = ..;
@@ -287,7 +291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -325,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -340,9 +344,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../AdobeCreativeSDKDynamicFrameworks";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "File Upload/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.File-Upload";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -355,9 +357,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../AdobeCreativeSDKDynamicFrameworks";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "File Upload/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.File-Upload";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

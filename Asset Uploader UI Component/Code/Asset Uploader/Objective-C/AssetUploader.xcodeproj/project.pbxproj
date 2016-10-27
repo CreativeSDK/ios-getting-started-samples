@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41D0DDBB1DAF0139009298FE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0DDBA1DAF0139009298FE /* libsqlite3.tbd */; };
 		FE2DAC9B1D1C7C9D00579D7E /* Image1.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2DAC931D1C7C9D00579D7E /* Image1.png */; };
 		FE2DAC9C1D1C7C9D00579D7E /* Image2.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2DAC941D1C7C9D00579D7E /* Image2.png */; };
 		FE2DAC9D1D1C7C9D00579D7E /* Image3.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2DAC951D1C7C9D00579D7E /* Image3.png */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41D0DDBA1DAF0139009298FE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FE2DAC931D1C7C9D00579D7E /* Image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image1.png; sourceTree = "<group>"; };
 		FE2DAC941D1C7C9D00579D7E /* Image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image2.png; sourceTree = "<group>"; };
 		FE2DAC951D1C7C9D00579D7E /* Image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Image3.png; sourceTree = "<group>"; };
@@ -86,14 +88,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE8800711D00D440005D9350 /* SystemConfiguration.framework in Frameworks */,
-				FE88006F1D00D439005D9350 /* MobileCoreServices.framework in Frameworks */,
-				FEB26F101D6FA4CE006F69C7 /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
 				FEB26F141D6FA4CE006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */,
-				FE8800751D00D456005D9350 /* libc++.tbd in Frameworks */,
 				FEB26F121D6FA4CE006F69C7 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
+				FEB26F101D6FA4CE006F69C7 /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
 				FEB26F0E1D6FA4CE006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
+				FE8800751D00D456005D9350 /* libc++.tbd in Frameworks */,
+				41D0DDBB1DAF0139009298FE /* libsqlite3.tbd in Frameworks */,
 				FE8800731D00D44B005D9350 /* libz.tbd in Frameworks */,
+				FE88006F1D00D439005D9350 /* MobileCoreServices.framework in Frameworks */,
+				FE8800711D00D440005D9350 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,10 +125,11 @@
 				FEB26F071D6FA483006F69C7 /* AdobeCreativeSDKAssetUX.framework */,
 				FEB26F081D6FA483006F69C7 /* AdobeCreativeSDKCommonUX.framework */,
 				FEB26F091D6FA483006F69C7 /* AdobeCreativeSDKCore.framework */,
-				FE8800701D00D440005D9350 /* SystemConfiguration.framework */,
-				FE88006E1D00D439005D9350 /* MobileCoreServices.framework */,
 				FE8800741D00D456005D9350 /* libc++.tbd */,
+				41D0DDBA1DAF0139009298FE /* libsqlite3.tbd */,
 				FE8800721D00D44B005D9350 /* libz.tbd */,
+				FE88006E1D00D439005D9350 /* MobileCoreServices.framework */,
+				FE8800701D00D440005D9350 /* SystemConfiguration.framework */,
 			);
 			name = "Linked Binaries";
 			path = ..;
@@ -167,8 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				FE175CF91D0B8F5000CDFFB5 /* images */,
-				FEDD6AF71D00B5DA007711EF /* main.m */,
 				FE88006C1D00D35C005D9350 /* Linked Binaries */,
+				FEDD6AF71D00B5DA007711EF /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -337,7 +341,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -376,7 +379,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

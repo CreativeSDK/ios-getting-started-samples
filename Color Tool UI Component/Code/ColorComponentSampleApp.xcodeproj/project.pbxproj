@@ -92,16 +92,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB26F381D6FA770006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */,
 				FEB26F361D6FA770006F69C7 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
-				D46FD9011BE0385C006A8F85 /* libz.tbd in Frameworks */,
 				FEB26F321D6FA770006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
-				D46FD8FF1BE03855006A8F85 /* libsqlite3.0.tbd in Frameworks */,
-				D46FD8FD1BE0380E006A8F85 /* libc++.tbd in Frameworks */,
-				D41785E21AB796DE00244CE0 /* MobileCoreServices.framework in Frameworks */,
 				FEB26F341D6FA770006F69C7 /* AdobeCreativeSDKColor.framework in Frameworks */,
+				D46FD8FD1BE0380E006A8F85 /* libc++.tbd in Frameworks */,
+				D46FD8FF1BE03855006A8F85 /* libsqlite3.0.tbd in Frameworks */,
+				D46FD9011BE0385C006A8F85 /* libz.tbd in Frameworks */,
+				D41785E21AB796DE00244CE0 /* MobileCoreServices.framework in Frameworks */,
 				D41785E01AB796D100244CE0 /* Security.framework in Frameworks */,
 				D41785DE1AB796C700244CE0 /* SystemConfiguration.framework in Frameworks */,
-				FEB26F381D6FA770006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */,
 				D41785DC1AB796B400244CE0 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,13 +123,13 @@
 				FEB26F2B1D6FA72D006F69C7 /* AdobeCreativeSDKColor.framework */,
 				FEB26F2C1D6FA72D006F69C7 /* AdobeCreativeSDKCommonUX.framework */,
 				FEB26F2D1D6FA72D006F69C7 /* AdobeCreativeSDKCore.framework */,
-				D46FD9001BE0385C006A8F85 /* libz.tbd */,
-				D46FD8FE1BE03855006A8F85 /* libsqlite3.0.tbd */,
 				D46FD8FC1BE0380E006A8F85 /* libc++.tbd */,
-				D41785DB1AB796B400244CE0 /* UIKit.framework */,
-				D41785DD1AB796C700244CE0 /* SystemConfiguration.framework */,
-				D41785DF1AB796D100244CE0 /* Security.framework */,
+				D46FD8FE1BE03855006A8F85 /* libsqlite3.0.tbd */,
+				D46FD9001BE0385C006A8F85 /* libz.tbd */,
 				D41785E11AB796DE00244CE0 /* MobileCoreServices.framework */,
+				D41785DF1AB796D100244CE0 /* Security.framework */,
+				D41785DD1AB796C700244CE0 /* SystemConfiguration.framework */,
+				D41785DB1AB796B400244CE0 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -385,7 +385,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -421,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,7 +433,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
@@ -441,13 +440,9 @@
 					"$(PROJECT_DIR)",
 					../../AdobeCreativeSDKDynamicFrameworks,
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = ColorComponentSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -456,7 +451,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -466,7 +460,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = ColorComponentSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
