@@ -1,198 +1,334 @@
 {"bundled":[
 {
-  "id": "TkD-23618-f15acd20ade31dd50e7633faa6b4ec04a5673f4a",
-  "family": "思源黑體 TW",
-  "family_opaque_id": "qhzx",
-  "fvd": "n4",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/{user_id}/qhzx",
-  	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-23618-f15acd20ade31dd50e7633faa6b4ec04a5673f4a"
-  },
-  "optical_size": 0,
-  "postscript_name": "SourceHanSansTW-Regular",
-  "sort_order": 800,
-  "type": "otf",
-  "variation": "Regular",
-  "version" : "Version 1.004;PS 1.004;hotconv 1.0.82;makeotf.lib2.5.63406"
+    "id": 23618,
+    "family": {
+        "web_id": "qhzx",
+        "name": "Source Han Sans Traditional Chinese",
+        "slug": "source-han-sans-traditional-chinese",
+        "web_name": "Source Han Sans Traditional Chinese",
+        "css_font_stack": "\"source-han-sans-traditional\",sans-serif"
+    },
+    "name": "Source Han Sans TW Regular",
+    "rtl": false,
+    "default_language": "zh-Hant",
+    "font": {
+        "sync": {
+            "font_id": "TkD-23618-f15acd20ade31dd50e7633faa6b4ec04a5673f4a"
+        }
+    },
+    "style": "regular",
+    "sort_order": 3,
+    "weight": 400,
+    "postscript_name": "SourceHanSansTW-Regular",
+    "preferred_family_name": "Source Han Sans TW",
+    "preferred_subfamily_name": "Regular"
 },
 {
-  "id": "TkD-17265-87c34f2b904ad9ccd29ffbc1a7702f8e8d969613",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17265-87c34f2b904ad9ccd29ffbc1a7702f8e8d969613"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-Regular",
-  "sort_order": 800,
-  "type": "otf",
-  "variation": "Regular",
-  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17265,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro Regular",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17265-9ea2b520f8632438d98df3b5c68a61f0369b2ddb",
+            "language_support": [
+                                 "de",
+                                 "es",
+                                 "nl",
+                                 "en",
+                                 "pl",
+                                 "ru",
+                                 "fr",
+                                 "cs",
+                                 "sv",
+                                 "pt",
+                                 "ca",
+                                 "it",
+                                 "sl",
+                                 "mt",
+                                 "el",
+                                 "tr",
+                                 "hu",
+                                 "vi"
+                                 ]
+        }
+    },
+    "style": "regular",
+    "sort_order": 4,
+    "weight": 400,
+    "postscript_name": "SourceSansPro-Regular",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "Regular"
 },
 {
-  "id": "TkD-17266-0bcb3f483b4e0a7734ede65095ab079cec7a7482",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17266-0bcb3f483b4e0a7734ede65095ab079cec7a7482"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-Black",
-  "sort_order": 1800,
-  "type": "otf",
-  "variation": "Black",
-  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17266,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro Black",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17266-3caac6f1b0df6524836987aa49ebd15aa34695f1"
+        }
+    },
+    "style": "regular",
+    "sort_order": 10,
+    "weight": 900,
+    "postscript_name": "SourceSansPro-Black",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "Black"
 },
 {
-  "id": "TkD-17267-44b14645abee79e7f565a36a226bd7254a3be2f9",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17267-44b14645abee79e7f565a36a226bd7254a3be2f9"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-Bold",
-  "sort_order": 1400,
-  "type": "otf",
-  "variation": "Bold",
-  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17267,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro Bold",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17267-49763ee7d8d497a6be449989d13e185cebd642aa"
+        }
+    },
+    "style": "regular",
+    "sort_order": 8,
+    "weight": 700,
+    "postscript_name": "SourceSansPro-Bold",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "Bold"
 },
 {
-  "id": "TkD-17268-e60b0864114dbb7ee0b9a77efeec19f0c3ee7c8a",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17268-e60b0864114dbb7ee0b9a77efeec19f0c3ee7c8a"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-BoldIt",
-  "sort_order": 1401,
-  "type": "otf",
-  "variation": "Bold Italic",
-  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17268,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro Bold Italic",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17268-a168003c4d3f62d75394b4e035d1ce4460c5b222"
+        }
+    },
+    "style": "italic",
+    "sort_order": 9,
+    "weight": 700,
+    "postscript_name": "SourceSansPro-BoldIt",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "Bold Italic"
 },
 {
-  "id": "TkD-17269-e8f36df8aebccaa8f4b7d2c3a253b22768646490",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17269-e8f36df8aebccaa8f4b7d2c3a253b22768646490"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-It",
-  "sort_order": 801,
-  "type": "otf",
-  "variation": "Italic",
-  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17269,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro Italic",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17269-6f856ed8521c579cf6a9921c16cc7781aef05627"
+        }
+    },
+    "style": "italic",
+    "sort_order": 5,
+    "weight": 400,
+    "postscript_name": "SourceSansPro-It",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "Italic"
 },
 {
-  "id": "TkD-17270-39531d7c017fa50fed9c1588de510c0084a09fed",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17270-39531d7c017fa50fed9c1588de510c0084a09fed"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-Light",
-  "sort_order": 600,
-  "type": "otf",
-  "variation": "Light",
-  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17270,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro Light",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17270-7612c7e7524dc0f6dec9c655ff22217d9e28e339"
+        }
+    },
+    "style": "regular",
+    "sort_order": 2,
+    "weight": 300,
+    "postscript_name": "SourceSansPro-Light",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "Light"
 },
 {
-  "id": "TkD-17271-d5f93fb24e61134a03e220099164d211f4e686c4",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17271-d5f93fb24e61134a03e220099164d211f4e686c4"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-LightIt",
-  "sort_order": 601,
-  "type": "otf",
-  "variation": "Light Italic",
-  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17271,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro Light Italic",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17271-b034151e94c17471075cfb3992eacfacab237a32"
+        }
+    },
+    "style": "italic",
+    "sort_order": 3,
+    "weight": 300,
+    "postscript_name": "SourceSansPro-LightIt",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "Light Italic"
 },
 {
-  "id": "TkD-17272-7ae7b4cc2ce6daaa1e810d231bec951f5915dffe",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17272-7ae7b4cc2ce6daaa1e810d231bec951f5915dffe"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-Semibold",
-  "sort_order": 1200,
-  "type": "otf",
-  "variation": "Semibold",
-  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17272,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro Semibold",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17272-fe9e9d3dca20c462b3403ff104e224342a249370"
+        }
+    },
+    "style": "regular",
+    "sort_order": 6,
+    "weight": 600,
+    "postscript_name": "SourceSansPro-Semibold",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "Semibold"
 },
 {
-  "id": "TkD-17273-b0738d0dd3ae12380ab46a66a33e76b3a77f4a0d",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17273-b0738d0dd3ae12380ab46a66a33e76b3a77f4a0d"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-SemiboldIt",
-  "sort_order": 1201,
-  "type": "otf",
-  "variation": "Semibold Italic",
-  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17273,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro Semibold Italic",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17273-d9e60671ad7f382aae62cb5facebaae05c47ff52"
+        }
+    },
+    "style": "italic",
+    "sort_order": 7,
+    "weight": 600,
+    "postscript_name": "SourceSansPro-SemiboldIt",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "Semibold Italic"
 },
 {
-  "id": "TkD-17274-80872e7f66b24fee9f1488f02d4874d1ec035ac0",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17274-80872e7f66b24fee9f1488f02d4874d1ec035ac0"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-BlackIt",
-  "sort_order": 1801,
-  "type": "otf",
-  "variation": "Black Italic",
-  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17274,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro Black Italic",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17274-5957f33e65cc56229d3cc1a57e93dacd34865b48"
+        }
+    },
+    "style": "italic",
+    "sort_order": 11,
+    "weight": 900,
+    "postscript_name": "SourceSansPro-BlackIt",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "Black Italic"
 },
 {
-  "id": "TkD-17275-e3e8d58848f56f9aed44536d0e9cd429d07a42f3",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17275-e3e8d58848f56f9aed44536d0e9cd429d07a42f3"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-ExtraLight",
-  "sort_order": 400,
-  "type": "otf",
-  "variation": "Extra Light",
-  "version": "Version 2.010;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17275,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro ExtraLight",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17275-c70c9747416ecb863e8f7ebfe59181eb80382ec7"
+        }
+    },
+    "style": "regular",
+    "sort_order": 0,
+    "weight": 200,
+    "postscript_name": "SourceSansPro-ExtraLight",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "ExtraLight"
 },
 {
-  "id": "TkD-17276-d42121c0f304f3ee740fab1b5d88ccf807305943",
-  "family": "Source Sans Pro",
-  "family_opaque_id": "bhyf",
-  "links": {
-	"family": "https://api.typekit.com/desktop_v2/families/bhyf",
-	"self": "https://api.typekit.com/desktop_v2/fonts/TkD-17276-d42121c0f304f3ee740fab1b5d88ccf807305943"
-  },
-  "optical_size": 100,
-  "postscript_name": "SourceSansPro-ExtraLightIt",
-  "sort_order": 401,
-  "type": "otf",
-  "variation": "Extra Light Italic",
-  "version": "Version 1.065;PS 2.0;hotconv 1.0.78;makeotf.lib2.5.61930"
+    "id": 17276,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro ExtraLight Italic",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17276-22dcb3d47c0a46f682d39f355eca1cd4d73c823c"
+        }
+    },
+    "style": "italic",
+    "sort_order": 1,
+    "weight": 200,
+    "postscript_name": "SourceSansPro-ExtraLightIt",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "ExtraLight Italic"
 }
 ]}
