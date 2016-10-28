@@ -36,6 +36,10 @@ class ViewController: UIViewController
     var libraryQueue: NSOperationQueue!
     var syncOnCommit = false
     
+    private let userSpecifiedPathKey = "userSpecifiedPathKey"
+    
+    var rootLibDir: String = ""
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -52,6 +56,10 @@ class ViewController: UIViewController
         
         // Also set the redirect URL, which is required by the CSDK authentication mechanism.
         AdobeUXAuthManager.sharedManager().redirectURL = NSURL(string: kCreativeSDKRedirectURLString)
+        
+        // Listen for the logout notification so we can perform some cleanup for the Library 
+        // Manager.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(authDidLogout), name: AdobeAuthManagerLoggedOutNotification, object: nil)
     }
     
     @IBAction func showAssetUploaderButtonTouchUpInside()
@@ -87,13 +95,32 @@ class ViewController: UIViewController
         // Now present the Asset Uploader view controller.
         self.presentViewController(assetUploaderViewController!, animated: true, completion: nil)
     }
-
+    
+    deinit
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: AdobeAuthManagerLoggedOutNotification, object: nil)
+    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Notification Handlers
+    func authDidLogout(notification: NSNotification)
+    {
+        if rootLibDir.characters.count > 0
+        {
+            AdobeLibraryManager.removeLocalLibraryFilesInRootFolder(rootLibDir, withError: nil)
+            
+            rootLibDir = ""
+            
+            NSUserDefaults.standardUserDefaults().removeObjectForKey(userSpecifiedPathKey)
+        }
+    }
+    
+    // MARK: - Private Methods
     func setupAdobeLibraryManager(downloadPolicy: AdobeLibraryDownloadPolicyType)
     {
         // Below is the setup for configure & start AdobeLibraryManager.
@@ -120,8 +147,11 @@ class ViewController: UIViewController
         
         var rootLibDir = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0]
         var url = NSURL(fileURLWithPath: rootLibDir)
-        url = url.URLByAppendingPathComponent(NSBundle.mainBundle().bundleIdentifier!)
         url = url.URLByAppendingPathComponent("libraries")
+        
+        // User-specific path to sync Libraries from the cloud.
+        url = url.URLByAppendingPathComponent(UUIDForUserSpecificPath())
+        
         rootLibDir = url.absoluteString
         
         do
@@ -141,6 +171,24 @@ class ViewController: UIViewController
     func randomValue(min: UInt32, max: UInt32) -> UInt32
     {
         return (min + arc4random_uniform(max - min + 1))
+    }
+    
+    func UUIDForUserSpecificPath() -> String
+    {
+        // If we have a UUID then use it.
+        var userSpecificID = NSUserDefaults.standardUserDefaults().stringForKey(userSpecifiedPathKey)
+        
+        if (userSpecificID?.characters.count > 0)
+        {
+            return userSpecificID!
+        }
+        
+        // Generate a new UUID
+        userSpecificID = NSUUID().UUIDString
+        
+        NSUserDefaults.standardUserDefaults().setObject(userSpecificID, forKey: userSpecifiedPathKey)
+        
+        return userSpecificID!
     }
 }
 
