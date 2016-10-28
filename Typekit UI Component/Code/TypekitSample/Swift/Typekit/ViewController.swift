@@ -25,8 +25,11 @@ import UIKit
 class ViewController: UIViewController, AdobeTypekitFontPickerControllerDelegate, UIPopoverPresentationControllerDelegate
 {
     
+    // TODO: Please update these required values to match the ones provided by creativesdk.com
     let creativeSDKClientID: String = "change me"
     let creativeSDKClientSecret: String = "change me"
+    let creativeSDKRedirectURLString: String = "Change me"
+    
     private let typekitFontSize: CGFloat = 18
 
     @IBOutlet weak var mainViewContainer: UIView!
@@ -42,7 +45,15 @@ class ViewController: UIViewController, AdobeTypekitFontPickerControllerDelegate
         
         // Set up Auth
         AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(creativeSDKClientID,
-                                                                                   withClientSecret:creativeSDKClientSecret)
+                                                                                   clientSecret:creativeSDKClientSecret,
+                                                                            additionalScopeList:[AdobeAuthManagerUserProfileScope,
+                                                                                                 AdobeAuthManagerEmailScope,
+                                                                                                 AdobeAuthManagerAddressScope,
+                                                                                                 AdobeAuthManagerTypekitPlatformScope,
+                                                                                                 AdobeAuthManagerTypekitPlatformSyncScope]);
+        
+        // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+        AdobeUXAuthManager.sharedManager().redirectURL = NSURL(string: creativeSDKRedirectURLString)
         
         // Change the font size for Typekit fonts
         textView.fontSize = typekitFontSize;

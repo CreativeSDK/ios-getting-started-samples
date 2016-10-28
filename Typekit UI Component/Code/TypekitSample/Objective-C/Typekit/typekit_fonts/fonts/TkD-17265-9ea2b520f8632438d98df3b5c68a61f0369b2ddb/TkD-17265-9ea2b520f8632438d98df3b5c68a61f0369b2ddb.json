@@ -1,0 +1,44 @@
+{
+    "id": 17265,
+    "family": {
+        "web_id": "bhyf",
+        "name": "Source Sans",
+        "slug": "source-sans",
+        "web_name": "Source Sans Pro",
+        "css_font_stack": "\"source-sans-pro\",sans-serif"
+    },
+    "name": "Source Sans Pro Regular",
+    "rtl": false,
+    "default_language": "en",
+    "font": {
+        "sync": {
+            "font_id": "TkD-17265-9ea2b520f8632438d98df3b5c68a61f0369b2ddb",
+            "language_support": [
+                                 "de",
+                                 "es",
+                                 "nl",
+                                 "en",
+                                 "pl",
+                                 "ru",
+                                 "fr",
+                                 "cs",
+                                 "sv",
+                                 "pt",
+                                 "ca",
+                                 "it",
+                                 "sl",
+                                 "mt",
+                                 "el",
+                                 "tr",
+                                 "hu",
+                                 "vi"
+                                 ]
+        }
+    },
+    "style": "regular",
+    "sort_order": 4,
+    "weight": 400,
+    "postscript_name": "SourceSansPro-Regular",
+    "preferred_family_name": "Source Sans Pro",
+    "preferred_subfamily_name": "Regular"
+}

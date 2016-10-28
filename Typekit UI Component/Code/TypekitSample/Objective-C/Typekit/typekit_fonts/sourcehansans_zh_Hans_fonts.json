@@ -1,16 +1,24 @@
 {
-	"id": "TkD-23611-7a37150d59d35410f3e2b943d3d69db41e36c81b",
-	"family": "思源黑体 CN",
-	"family_opaque_id": "wqtd",
-	"fvd": "n4",
-	"links": {
-		"family": "https://api.typekit.com/desktop_v2/families/{user_id}/wqtd",
-		"self": "https://api.typekit.com/desktop_v2/fonts/TkD-23611-7a37150d59d35410f3e2b943d3d69db41e36c81b"
-	},
-	"optical_size": 0,
-	"postscript_name": "SourceHanSansCN-Regular",
-	"sort_order": 800,
-	"type": "otf",
-	"variation": "Regular",
-	"version" : "Version 1.004;PS 1.004;hotconv 1.0.82;makeotf.lib2.5.63406"
+    "id": 23611,
+    "family": {
+        "web_id": "wqtd",
+        "name": "Source Han Sans Simplified Chinese",
+        "slug": "source-han-sans-simplified-chinese",
+        "web_name": "Source Han Sans Simplified Chinese",
+        "css_font_stack": "\"source-han-sans-simplified-c\",sans-serif"
+    },
+    "name": "Source Han Sans CN Regular",
+    "rtl": false,
+    "default_language": "zh-Hans",
+    "font": {
+        "sync": {
+            "font_id": "TkD-23611-7a37150d59d35410f3e2b943d3d69db41e36c81b"
+        }
+    },
+    "style": "regular",
+    "sort_order": 3,
+    "weight": 400,
+    "postscript_name": "SourceHanSansCN-Regular",
+    "preferred_family_name": "Source Han Sans CN",
+    "preferred_subfamily_name": "Regular"
 }

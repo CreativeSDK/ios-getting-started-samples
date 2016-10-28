@@ -1,16 +1,24 @@
 {
-	"id": "TkD-23597-586b8e75d0dd143fbef6f8f368223eb49bc9bea9",
-	"family": "源ノ角ゴシック",
-	"family_opaque_id": "pkbr",
-	"fvd": "n4",
-	"links": {
-		"family" : "https:\/\/api.typekit.com\/desktop_v2\/families\/pkbr",
-		"self" : "https:\/\/api.typekit.com\/desktop_v2\/fonts\/TkD-23597-586b8e75d0dd143fbef6f8f368223eb49bc9bea9"
-	},
-	"optical_size": 0,
-	"postscript_name": "SourceHanSansJP-Regular",
-	"sort_order": 800,
-	"type": "otf",
-	"variation": "Regular",
-	"version" : "Version 1.004;PS 1.004;hotconv 1.0.82;makeotf.lib2.5.63406"
+    "id": 23597,
+    "family": {
+        "web_id": "pkbr",
+        "name": "Source Han Sans Japanese",
+        "slug": "source-han-sans-japanese",
+        "web_name": "Source Han Sans Japanese",
+        "css_font_stack": "\"source-han-sans-japanese\",sans-serif"
+    },
+    "name": "Source Han Sans JP Regular",
+    "rtl": false,
+    "default_language": "ja",
+    "font": {
+        "sync": {
+            "font_id": "TkD-23597-586b8e75d0dd143fbef6f8f368223eb49bc9bea9"
+        }
+    },
+    "style": "regular",
+    "sort_order": 3,
+    "weight": 400,
+    "postscript_name": "SourceHanSansJP-Regular",
+    "preferred_family_name": "Source Han Sans JP",
+    "preferred_subfamily_name": "Regular"
 }
