@@ -22,7 +22,7 @@ This guide discusses how to set up the iOS Creative SDK, then steps through a si
 The following software is required:
 
 + [Xcode](https://developer.apple.com/xcode/) 7 or higher — See  [Configuring Xcode](#configure_xcode).
-+ iOS 8.2 or higher
++ iOS 9 or higher
 
 <a name="register_application"></a>
 ## Registering Your Application
@@ -31,10 +31,15 @@ To register your application, follow these steps:
 
 1. Sign in. (If needed, register for an account)
 2. Go to the My Apps page, [https://creativesdk.adobe.com/myapps.html](https://creativesdk.adobe.com/myapps.html).
-3. Click + NEW APPLICATION.
-4. Fill out form, then click ADD APPLICATION.
+3. From the Integrations List page, click the + New integration button.
+4. Make sure ADOBE ID KEY is selected, click the Next button.
+5. Complete the Configure your new integration form, then click the Next button.
+6. In the Integration services section, add the scope(s) for your integration. E.g. Select Creative SDK, then click the + Add service button.
+7. Right under the Intergration service section, you are given a API Key ID, Client Secret, Redirect URI/URL that you will need to integrate the SDK with.
 
-**Important: As part of registering your application, you are given a Client ID and Secret. Write these down and save them. You will need them in the future, and this is the only time you can see them.**
+**Important: Make sure you write the Client Secret down and save it. It only appeared once right after your application is registered. You need will to pass it to the API, and this is the only time you can see it.**
+
+<img style="border: 1px solid #ccc;" src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/gettingstarted/myapp_registration.png" />
 
 <a name="configure_xcode"></a>
 ## Configuring Xcode For Using Dynamic AdobeCreativeSDK Frameworks
