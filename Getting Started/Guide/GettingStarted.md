@@ -127,7 +127,7 @@ To use the Creative SDK static frameworks, make the following Xcode configuratio
 4. Add other required linked frameworks and libraries
 
     + Back on Build Phases, select Link Binary with Libraries and click the + button.
-    + Add these binaries by typing in the "Search" box: `libc++.tbd` , `libz.tbd`,  `MobileCoreServices.framework` and `SystemConfiguration.framework`. Use the `.dylib` version of the `.tbd` libraries if you don't have Bitcode enabled for your project.
+    + Add these binaries by typing in the "Search" box: `libc++.tbd` ,`libsqlite3.tbd`, `libz.tbd`,  `MobileCoreServices.framework` and `SystemConfiguration.framework`. Use the `.dylib` version of the `.tbd` libraries if you don't have Bitcode enabled for your project.
 
     This is what the Link Binary With Libraries section should look like after you've added all the required frameworks:<br /><br /><img style="border: 1px solid #ccc;" src="linkbinary2.png"/><br /><br />
     
