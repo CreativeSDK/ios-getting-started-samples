@@ -75,7 +75,7 @@ After the new value is added, the Other Linker Flags area of the screen looks li
 4. Add other required linked frameworks and libraries:
 
     + Back on Build Phases, select Link Binary with Libraries and click the + button.
-    + Add these binaries by typing in the "Search" box: `libc++.tbd` , `libz.tbd`,  `MobileCoreServices.framework` and `SystemConfiguration.framework`. Use the `.dylib` version of the `.tbd` libraries if you don't have Bitcode enabled for your project.
+    + Add these binaries by typing in the "Search" box: `libc++.tbd` , `libsqlite3.tbd`, `libz.tbd`, `MobileCoreServices.framework` and `SystemConfiguration.framework`. Use the `.dylib` version of the `.tbd` libraries if you don't have Bitcode enabled for your project.
 
 5. Add the Framework Search Path (If necessary):
 
