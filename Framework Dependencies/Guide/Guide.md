@@ -212,6 +212,7 @@ Below is a table that contains all of the Framework and header dependencies for 
             <br /><a href="#assetmodel">AdobeCreativeSDKAssetModel.framework</a>
             <br /><a href="#assetux">AdobeCreativeSDKAssetUX.framework</a>
             <br /><a href="#behance">AdobeCreativeSDKBehance.framework</a>
+            <br /><a href="#color">AdobeCreativeSDKColor.framework</a>
          </td>
          <td>
             AdobeCreativeSDKCore/AdobeCreativeSDKCore.h
@@ -219,6 +220,7 @@ Below is a table that contains all of the Framework and header dependencies for 
             <br />AdobeCreativeSDKAssetModel/AdobeCreativeSDKAssetModel.h
             <br />AdobeCreativeSDKAssetUX/AdobeCreativeSDKAssetUX.h
             <br />AdobeCreativeSDKBehance/AdobePublish.h
+            <br />AdobeCreativeSDKColor/AdobeCreativeSDKColor.h
          </td>
       </tr>
       <tr>
@@ -267,6 +269,7 @@ The following configuration settings are required for this framework:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
     + libc++.tbd
+    + libsqlite3.0.tbd
     + libz.tbd
     + WebKit.framework
 5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
@@ -287,6 +290,7 @@ The following configuration settings are required for this framework:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
     + libc++.tbd
+    + libsqlite3.0.tbd
     + libz.tbd
     + WebKit.framework
 5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
@@ -311,6 +315,7 @@ The following configuration settings are required for this framework:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
     + libc++.tbd
+    + libsqlite3.0.tbd
     + libz.tbd
     + WebKit.framework
 5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
@@ -331,6 +336,7 @@ The following configuration settings are required for this framework:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
     + libc++.tbd
+    + libsqlite3.0.tbd
     + libz.tbd
     + WebKit.framework
 5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
@@ -355,6 +361,7 @@ The following configuration settings are required for this framework:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
     + libc++.tbd
+    + libsqlite3.0.tbd
     + libz.tbd
     + WebKit.framework
 5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
@@ -381,6 +388,7 @@ The following configuration settings are required for this framework:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
     + libc++.tbd
+    + libsqlite3.0.tbd
     + libz.tbd
     + WebKit.framework
 5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
@@ -403,6 +411,7 @@ The following configuration settings are required for this framework:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
     + libc++.tbd
+    + libsqlite3.0.tbd
     + libz.tbd
     + WebKit.framework
 6. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
@@ -446,6 +455,7 @@ The following configuration settings are required for this framework:
     + AdobeCreativeSDKAssetModel.framework/Resources/AdobeCreativeSDKAssetModelResources.bundle
     + AdobeCreativeSDKAssetUX.framework/Resources/AdobeCreativeSDKAssetUXResources.bundle
     + AdobeCreativeSDKBehance.framework/Resources/AdobeCreativeSDKBehanceResources.bundle
+    + AdobeCreativeSDKColor.framework/Resources/AdobeCreativeSDKColorResources.bundle
 3. In Build Phases, Link Binary with Libraries, add the following:
     + AdobeCreativeSDKAssetModel.framework
     + AdobeCreativeSDKAssetUX.framework
@@ -454,6 +464,7 @@ The following configuration settings are required for this framework:
     + AdobeCreativeSDKBehance.framework
 4. In the same area, add the following libraries:
     + libc++.tbd
+    + libsqlite3.0.tbd
     + libz.tbd
     + WebKit.framework
 5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
@@ -474,6 +485,7 @@ The following configuration settings are required for this framework:
     + MobileCoreServices.framework
     + SystemConfiguration.framework
     + libc++.tbd
+    + libsqlite3.0.tbd
     + libz.tbd
     + WebKit.framework
 5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
