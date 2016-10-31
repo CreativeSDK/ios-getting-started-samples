@@ -462,6 +462,7 @@ The following configuration settings are required for this framework:
     + AdobeCreativeSDKCore.framework
     + AdobeCreativeSDKCommonUX.framework
     + AdobeCreativeSDKBehance.framework
+    + AdobeCreativeSDKColor.framework
 4. In the same area, add the following libraries:
     + libc++.tbd
     + libsqlite3.0.tbd
