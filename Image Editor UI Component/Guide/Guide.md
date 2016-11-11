@@ -103,6 +103,25 @@ The crop tool can be configured to show only the sizes that make sense for your 
             kAFCropPresetWidth:@4, 
             kAFCropPresetHeight:@11}]];
 
+### Mandatory Crop
+
+In some cases, you might want to ensure that the images created in the editor are of a specific aspect ratio. In this case, initialize the `AdobeUXImageEditorViewController` with a call to `initWithImage:mandatoryCropPresets:`. Choose one or more aspect ratios, like in the following example:
+
+    + (void)displayEditorForImage:(UIImage *)imageToEdit
+    {
+        NSArray<AdobeImageEditorCropPreset *> *presets = @[
+            [[AdobeImageEditorCropPreset alloc] initWithName:@"3:2"
+                                                       width:3.0f
+                                                      height:2.0f],
+        ];
+        AdobeUXImageEditorViewController *editorController = [[AdobeUXImageEditorViewController
+         alloc] initWithImage:imageToEdit mandatoryCropPresets:presets];
+        [editorController setDelegate:self];
+        [self presentViewController:editorController animated:YES completion:nil];
+    }
+
+The above example will ensure an output image that has a 3:2 aspect ratio.
+
 ### Supported Interface Orientations
 
 The interface orientations supported by the iPad version of the editor can be customized with the `setSupportedIPadOrientations:` method. (On the iPhone, only the portrait orientation is supported.)
