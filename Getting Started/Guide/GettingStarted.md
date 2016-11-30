@@ -8,8 +8,7 @@ This guide discusses how to set up the iOS Creative SDK, then steps through a si
 
 - [Prerequisites](#prerequisites)
 - [Registering Your Application](#register_application)
-- [Configuring Xcode For Using Dynamic AdobeCreativeSDK Frameworks](#configure-dynamic-framework)
-- [Configuring Xcode For Using Static AdobeCreativeSDK Frameworks](#configure-static-framework)
+- [Configuring Xcode](#configure_xcode)
 - [Integrating the Authentication Component](#integrating_auth)
 - [What’s Next?](#whats_next)
 - [Explore iOS Creative SDK Documentation](#explore)
@@ -23,7 +22,7 @@ This guide discusses how to set up the iOS Creative SDK, then steps through a si
 The following software is required:
 
 + [Xcode](https://developer.apple.com/xcode/) 7 or higher — See  [Configuring Xcode](#configure_xcode).
-+ iOS 9.3.5 or higher
++ iOS 9 or higher
 
 <a name="register_application"></a>
 ## Registering Your Application
@@ -32,17 +31,30 @@ To register your application, follow these steps:
 
 1. Sign in. (If needed, register for an account)
 2. Go to the My Apps page, [https://creativesdk.adobe.com/myapps.html](https://creativesdk.adobe.com/myapps.html).
-3. Click + NEW APPLICATION.
-4. Fill out form, then click ADD APPLICATION.
+3. From the Integrations List page, click the + New integration button.
+4. Make sure ADOBE ID KEY is selected, click the Next button.
+5. Complete the Configure your new integration form, then click the Next button.
+6. In the Integration services section, add the scope(s) for your integration. E.g. Select Creative SDK, then click the + Add service button.
+7. Right under the Intergration service section, you are given a API Key ID, Client Secret, Redirect URI/URL that you will need to integrate the SDK with.
 
-**Important: As part of registering your application, you are given a Client ID and Secret. Write these down and save them. You will need them in the future, and this is the only time you can see them.**
+**Important: Make sure you write the Client Secret down and save it. It only appeared once right after your application is registered. You need will to pass it to the API, and this is the only time you can see it.**
 
-<a name="configure-dynamic-framework"></a>
+<img style="border: 1px solid #ccc;" src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/gettingstarted/myapp_registration.png" />
+
+<a name="configure_xcode"></a>
 ## Configuring Xcode For Using Dynamic AdobeCreativeSDK Frameworks
 
 To use the Creative SDK Dynamic frameworks, make the following Xcode configuration changes:
 
-1. Add embedded binaries:
+1. Add linker flags:
+
+    + Select Build Settings -> Linking -> Other Linker Flags. (If you do not see this setting, see if Basic is selected in Xcode and click All instead.)
+    + Double-click the empty area to the right. An empty window pops up for you to add or delete values.
+    + Click the + (plus sign) button, and add a new value, `-ObjC`: <br /><br /><img style="border: 1px solid #ccc;" src="addinglinker.png" /><br /><br />
+
+After the new value is added, the Other Linker Flags area of the screen looks like this: <br /><br /><img style="border: 1px solid #ccc;" src="addedlinker.png" /><br /><br />
+
+2. Add embedded binaries:
 
     + Switch to **General**.
     + Under **Embedded Binaries**.
@@ -54,26 +66,20 @@ To use the Creative SDK Dynamic frameworks, make the following Xcode configurati
     + Under **Added folders**, select **Create groups**.
     + Click **Finish**.<br /><br />
 
-2. Run strip-frameworks script:
+3. Run strip-frameworks script:
 
-    + In Build Phases, add a **Run Script** phase and add the below line to run the strip-frameworks script. 
-    `bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCore.framework/strip-frameworks.sh"`
-    
-    <br /><br /><img style="border: 1px solid #ccc;" src="strip-frameworks.png" /><br /><br />
+    + In Build Phases, add a run script phase (if not present) and add the below line to run the strip-frameworks script.
+      bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCore.framework/strip-frameworks.sh"
+      <br /><br /><img style="border: 1px solid #ccc;" src="strip-frameworks.png" /><br /><br />
 
-3. Add other required linked frameworks and libraries:
+4. Add other required linked frameworks and libraries:
 
     + Back on Build Phases, select Link Binary with Libraries and click the + button.
-    + Add the following binaries. Note: use `.dylib` versions of the `.tbd` libraries if you don't use bitcode.
-        - `libc++.tbd` 
-        - `libsqlite3.tbd`
-        - `libz.tbd`
-        - `MobileCoreServices.framework`
-        - `SystemConfiguration.framework`.
+    + Add these binaries by typing in the "Search" box: `libc++.tbd` , `libsqlite3.tbd`, `libz.tbd`, `MobileCoreServices.framework` and `SystemConfiguration.framework`. Use the `.dylib` version of the `.tbd` libraries if you don't have Bitcode enabled for your project.
 
-4. Add the Framework Search Path (If necessary):
+5. Add the Framework Search Path (If necessary):
 
-    In some cases, Xcode might not add the path to the frameworks to the project. In this case you'd have to add the directory where you extracted the SDK frameworks to the Framework Search Path setting in Xcode. To do so, follow these steps:
+In some cases, Xcode might not add the path to the frameworks to the project. In this case you'd have to add the directory where you extracted the SDK frameworks to the Framework Search Path setting in Xcode. To do so, follow these steps:
 
     + In the Build Settings of the primary target for your project, locate the **Framework Search Paths** setting under **Search Paths**.
     + Double click the, potentially empty, value to add the path.
@@ -87,7 +93,6 @@ Your setup is done. Now you can open any of your project files and import the fr
 
 If Xcode does not auto-complete the framework name, check the setup steps above to ensure you did everything necessary. Specifically check the Framework Search Path step.
 
-<a name="configure-static-framework"></a>
 ## Configuring Xcode For Using Static AdobeCreativeSDK Frameworks
 
 To use the Creative SDK static frameworks, make the following Xcode configuration changes:
@@ -122,7 +127,7 @@ To use the Creative SDK static frameworks, make the following Xcode configuratio
 4. Add other required linked frameworks and libraries
 
     + Back on Build Phases, select Link Binary with Libraries and click the + button.
-    + Add these binaries by typing in the "Search" box: `libc++.tbd` , `libz.tbd`,  `MobileCoreServices.framework` and `SystemConfiguration.framework`. Use the `.dylib` version of the `.tbd` libraries if you don't have Bitcode enabled for your project.
+    + Add these binaries by typing in the "Search" box: `libc++.tbd` ,`libsqlite3.tbd`, `libz.tbd`,  `MobileCoreServices.framework` and `SystemConfiguration.framework`. Use the `.dylib` version of the `.tbd` libraries if you don't have Bitcode enabled for your project.
 
     This is what the Link Binary With Libraries section should look like after you've added all the required frameworks:<br /><br /><img style="border: 1px solid #ccc;" src="linkbinary2.png"/><br /><br />
     
@@ -147,39 +152,18 @@ If Xcode does not auto-complete the framework name, check the setup steps above 
 
 *You can find the complete code for this guide in <a href="https://github.com/CreativeSDK/ios-getting-started-samples" target="_blank">GitHub</a>.*
 
-Authentication is part of every Creative SDK workflow and every action performed requires a logged-in user. Fortunately, using the Authentication component is easy. The first thing we need to do is to specify the client ID and secret values for our app from the registration site.
+Authentication is part of every Creative SDK workflow and every action performed requires a logged-in user. Fortunately, using the Authentication component is easy. The first thing we need to do is to specify the client ID and secret values for our app from the registration site. We also need to decide whether we want to enable user signup in the Authentication component. 
 
-We set up our client ID and secret by calling the `setAuthenticationParametersWithClientID:clientSecret:additionalScopeList:` method:
+Note that this signup process allows a user to create a new Adobe ID. Also note that enabling signup might cause App Store rejection if there are paid components of your app that depend on an account. Please consult the Apple Developer program terms and App Store review guidelines for more information.
 
-Objective-C
+We set up our client ID and secret by calling the `setAuthenticationParametersWithClientID:clientSecret:enableSignUp:` method:
 
-    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
-                                                                   clientSecret:kCreativeSDKClientSecret
-                                                            additionalScopeList:@[AdobeAuthManagerUserProfileScope, 
-                                                                                  AdobeAuthManagerEmailScope, 
-                                                                                  AdobeAuthManagerAddressScope]];
 
-Swift 2
-
-    AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId,
-                                                                               clientSecret: kCreativeSDKClientSecret,
-                                                                               additionalScopeList: [AdobeAuthManagerUserProfileScope, 
-                                                                                                     AdobeAuthManagerEmailScope, 
-                                                                                                     AdobeAuthManagerAddressScope])
-
-We also need to set the redirect URL for app. Note that all of this information, i.e. the client ID, secret and the redirect URL can be retrieved from the app registration portal.
-
-Objective-C
-
-    [AdobeUXAuthManager sharedManager].redirectURL = [NSURL URLWithString:kCreativeSDKRedirectURLString];
-
-Swift 2
-
-    AdobeUXAuthManager.sharedManager().redirectURL = NSURL(string: kCreativeSDKRedirectURLString)
+    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:@"client-id"
+                                                                   clientSecret:@"client-secret"
+                                                                   enableSignUp:NO];
 
 At this point we need to decide whether the user is already authenticated. If the user isn't already authenticated, we'd have to bring up the Authentication component UI which will ask for the user's credentials and handle the actual login process:
-
-Objective-C
 
     if ([AdobeUXAuthManager sharedManager].isAuthenticated)
     {
@@ -187,43 +171,16 @@ Objective-C
     }
     else
     {
-        [[AdobeUXAuthManager sharedManager] login:self 
-                                        onSuccess:^(AdobeAuthUserProfile *profile)
-        {
+        [[AdobeUXAuthManager sharedManager] login:self onSuccess:^(AdobeAuthUserProfile *profile) {
+        
             NSLog(@"Successfully logged in. User profile: %@", profile);
-            
-            ...
-        } 
-                                         onError:^(NSError *error)
-        {
+        
+            [self.loginButton setTitle:@"Log Out" forState:UIControlStateNormal];
+        
+        } onError:^(NSError *error) {
+       
             NSLog(@"There was a problem logging in: %@", error);
         }];
-    }
-
-Swift
-
-    if (AdobeUXAuthManager.sharedManager().authenticated)
-    {
-        print("The user has already been authenticated. User profile: \(AdobeUXAuthManager.sharedManager().userProfile)")
-    }
-    else
-    {
-        AdobeUXAuthManager.sharedManager().login(self,
-                                                 onSuccess:
-            {
-                (profile: AdobeAuthUserProfile!) -> Void in
-                
-                print("Successfully logged in. User profile: \(profile)")
-                
-                ...
-            },
-                                                 onError:
-            {
-                (error: NSError!) -> Void in
-                
-                print("There was a problem logging in: \(error)")
-            }
-        )
     }
 
 When the user clicks the Login button, the SDK takes over: <br /><br /><img style="border: 1px solid #ccc;" src="device1.jpg" />
