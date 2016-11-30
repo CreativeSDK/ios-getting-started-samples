@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41D0DDB71DAEFEC0009298FE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0DDB61DAEFEC0009298FE /* libsqlite3.tbd */; };
 		7038AAA91C1A32BD005A984D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7038AAA81C1A32BD005A984D /* main.m */; };
 		7038AAAC1C1A32BD005A984D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7038AAAB1C1A32BD005A984D /* AppDelegate.m */; };
 		7038AAAF1C1A32BD005A984D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7038AAAE1C1A32BD005A984D /* ViewController.m */; };
@@ -46,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41D0DDB61DAEFEC0009298FE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7038AAA41C1A32BD005A984D /* PSD Extraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PSD Extraction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7038AAA81C1A32BD005A984D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7038AAAA1C1A32BD005A984D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,14 +75,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7038AAC51C1A330F005A984D /* MobileCoreServices.framework in Frameworks */,
-				7038AAC31C1A330B005A984D /* SystemConfiguration.framework in Frameworks */,
-				FEB26EE51D6F930D006F69C7 /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
 				FEB26EE91D6F930D006F69C7 /* AdobeCreativeSDKCore.framework in Frameworks */,
-				7038AAC11C1A3306005A984D /* libz.tbd in Frameworks */,
 				FEB26EE71D6F930D006F69C7 /* AdobeCreativeSDKCommonUX.framework in Frameworks */,
 				FEB26EE31D6F930D006F69C7 /* AdobeCreativeSDKAssetModel.framework in Frameworks */,
+				FEB26EE51D6F930D006F69C7 /* AdobeCreativeSDKAssetUX.framework in Frameworks */,
 				7038AABF1C1A3302005A984D /* libc++.tbd in Frameworks */,
+				41D0DDB71DAEFEC0009298FE /* libsqlite3.tbd in Frameworks */,
+				7038AAC11C1A3306005A984D /* libz.tbd in Frameworks */,
+				7038AAC51C1A330F005A984D /* MobileCoreServices.framework in Frameworks */,
+				7038AAC31C1A330B005A984D /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +124,7 @@
 		7038AAA71C1A32BD005A984D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7067C37B1C1BC2AC00CBAF00 /* Linked Binaries */,
+				7067C37B1C1BC2AC00CBAF00 /* Linked Frameworks and Libraries */,
 				7038AAB31C1A32BD005A984D /* Assets.xcassets */,
 				7038AAB81C1A32BD005A984D /* Info.plist */,
 				7038AAA81C1A32BD005A984D /* main.m */,
@@ -129,19 +132,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7067C37B1C1BC2AC00CBAF00 /* Linked Binaries */ = {
+		7067C37B1C1BC2AC00CBAF00 /* Linked Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
 				FEB26ED11D6F92A9006F69C7 /* AdobeCreativeSDKAssetModel.framework */,
 				FEB26ED21D6F92A9006F69C7 /* AdobeCreativeSDKAssetUX.framework */,
 				FEB26ED31D6F92A9006F69C7 /* AdobeCreativeSDKCommonUX.framework */,
 				FEB26ED41D6F92A9006F69C7 /* AdobeCreativeSDKCore.framework */,
+				7038AABE1C1A3302005A984D /* libc++.tbd */,
+				41D0DDB61DAEFEC0009298FE /* libsqlite3.tbd */,
+				7038AAC01C1A3306005A984D /* libz.tbd */,
 				7038AAC41C1A330F005A984D /* MobileCoreServices.framework */,
 				7038AAC21C1A330B005A984D /* SystemConfiguration.framework */,
-				7038AAC01C1A3306005A984D /* libz.tbd */,
-				7038AABE1C1A3302005A984D /* libc++.tbd */,
 			);
-			name = "Linked Binaries";
+			name = "Linked Frameworks and Libraries";
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -307,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -345,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -360,9 +364,7 @@
 				FRAMEWORK_SEARCH_PATHS = ../../../../AdobeCreativeSDKDynamicFrameworks;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "PSD Extraction/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.PSD-Extraction";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -375,9 +377,7 @@
 				FRAMEWORK_SEARCH_PATHS = ../../../../AdobeCreativeSDKDynamicFrameworks;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "PSD Extraction/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.PSD-Extraction";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

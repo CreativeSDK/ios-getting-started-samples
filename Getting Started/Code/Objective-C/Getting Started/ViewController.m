@@ -27,6 +27,7 @@
 #warning Please update the ClientId and Secret to the values provided by creativesdk.com or from Adobe
 static NSString * const kCreativeSDKClientId = @"Change me";
 static NSString * const kCreativeSDKClientSecret = @"Change me";
+static NSString * const kCreativeSDKRedirectURLString = @"Change me";
 
 @interface ViewController ()
 
@@ -43,8 +44,16 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    // Set the client ID and secret values so the CSDK can identify the calling app. The three
+    // specified scopes are required at a minimum.
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
-                                                               withClientSecret:kCreativeSDKClientSecret];
+                                                                   clientSecret:kCreativeSDKClientSecret
+                                                            additionalScopeList:@[AdobeAuthManagerUserProfileScope,
+                                                                                  AdobeAuthManagerEmailScope,
+                                                                                  AdobeAuthManagerAddressScope]];
+    
+    // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+    [AdobeUXAuthManager sharedManager].redirectURL = [NSURL URLWithString:kCreativeSDKRedirectURLString];
     
     if ([AdobeUXAuthManager sharedManager].isAuthenticated)
     {

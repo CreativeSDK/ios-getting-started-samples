@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Adobe Systems Incorporated. All rights reserved.
+ * Copyright (c) 2016 Adobe Systems Incorporated. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -26,9 +26,10 @@
 
 #import "ViewController.h"
 
-#warning Please update the client ID and secret values to match the ones provided by creativesdk.com
+#warning Please update these required values to match the ones provided by creativesdk.com
 static NSString * const kCreativeSDKClientId = @"Change me";
 static NSString * const kCreativeSDKClientSecret = @"Change me";
+static NSString * const kCreativeSDKRedirectURLString = @"Change me";
 
 @interface ViewController () <AdobeUXAssetBrowserViewControllerDelegate>
 
@@ -47,9 +48,16 @@ static NSString * const kCreativeSDKClientSecret = @"Change me";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    // Set the client ID and secret values so the CSDK can identify the calling app. The three
+    // specified scopes are required at a minimum.
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
                                                                    clientSecret:kCreativeSDKClientSecret
-                                                                   enableSignUp:NO];
+                                                            additionalScopeList:@[AdobeAuthManagerUserProfileScope,
+                                                                                  AdobeAuthManagerEmailScope,
+                                                                                  AdobeAuthManagerAddressScope]];
+    
+    // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+    [AdobeUXAuthManager sharedManager].redirectURL = [NSURL URLWithString:kCreativeSDKRedirectURLString];
 }
 
 - (IBAction)showAssetBrowserButtonTouchUpInside

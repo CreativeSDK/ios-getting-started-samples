@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Adobe Systems Incorporated. All rights reserved.
+ * Copyright (c) 2016 Adobe Systems Incorporated. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -18,7 +18,6 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
- *
  */
 
 //
@@ -26,15 +25,16 @@
 //  CreativeSDKColorSample
 //
 
-
-#import "ViewController.h"
-
 #import <AdobeCreativeSDKCore/AdobeUXAuthManager.h>
 #import <AdobeCreativeSDKAssetModel/AdobeColorTheme.h>
 #import <AdobeCreativeSDKColor/AdobeCreativeSDKColor.h>
 
-static NSString* const CreativeSDKClientId = @"CHANGEME_CLIENT_ID";
-static NSString* const CreativeSDKClientSecret = @"CHANGEME_CLIENT_SECRET";
+#import "ViewController.h"
+
+#warning Please update these required values to match the ones provided by creativesdk.com
+static NSString * const kCreativeSDKClientId = @"Change me";
+static NSString * const kCreativeSDKClientSecret = @"Change me";
+static NSString * const kCreativeSDKRedirectURLString = @"Change me";
 
 @interface ViewController () <AdobeColorPickerControllerDelegate, UIPopoverControllerDelegate>
 
@@ -52,8 +52,16 @@ static NSString* const CreativeSDKClientSecret = @"CHANGEME_CLIENT_SECRET";
 {
     [super viewDidLoad];
     
-    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:CreativeSDKClientId
-                                                               withClientSecret:CreativeSDKClientSecret];
+    // Set the client ID and secret values so the CSDK can identify the calling app. The three
+    // specified scopes are required at a minimum.
+    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:kCreativeSDKClientId
+                                                                   clientSecret:kCreativeSDKClientSecret
+                                                            additionalScopeList:@[AdobeAuthManagerUserProfileScope,
+                                                                                  AdobeAuthManagerEmailScope,
+                                                                                  AdobeAuthManagerAddressScope]];
+    
+    // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+    [AdobeUXAuthManager sharedManager].redirectURL = [NSURL URLWithString:kCreativeSDKRedirectURLString];
     
     self.colorView.backgroundColor = [UIColor redColor];
     

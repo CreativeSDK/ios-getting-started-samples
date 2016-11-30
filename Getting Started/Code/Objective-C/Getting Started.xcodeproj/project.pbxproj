@@ -73,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				703524D71C1266EB005071BD /* Getting Started */,
-				703524F31C1268AA005071BD /* Linked Frameworks */,
 				703524EF1C126864005071BD /* Resources */,
 				703524D61C1266EB005071BD /* Products */,
 			);
@@ -102,6 +101,7 @@
 		703524D81C1266EB005071BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				703524F31C1268AA005071BD /* Linked Frameworks */,
 				703524E91C1266EB005071BD /* Info.plist */,
 				703524D91C1266EB005071BD /* main.m */,
 			);
@@ -129,6 +129,7 @@
 				703524F61C126939005071BD /* libz.tbd */,
 			);
 			name = "Linked Frameworks";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -323,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,9 +342,7 @@
 					../../../AdobeCreativeSDKDynamicFrameworks,
 				);
 				INFOPLIST_FILE = "Getting Started/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.Getting-Started";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -359,9 +358,7 @@
 					../../../AdobeCreativeSDKDynamicFrameworks,
 				);
 				INFOPLIST_FILE = "Getting Started/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.csdk-samples.Getting-Started";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

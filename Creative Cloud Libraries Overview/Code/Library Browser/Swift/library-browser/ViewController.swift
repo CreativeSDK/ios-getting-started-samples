@@ -24,17 +24,23 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    // TODO: Please update the ClientId and Secret to the values provided by creativesdk.com or from Adobe
-    private let kCreativeSDKClientId = "Change Me"
-    private let kCreativeSDKClientSecret = "Change Me"
+    // TODO: Please update the ClientId and Secret to the values provided by creativesdk.com
+    private let kCreativeSDKClientId = "Change me"
+    private let kCreativeSDKClientSecret = "Change me"
+    private let kCreativeSDKRedirectURLString = "Change me"
     
-    // Implemented the required properties that the AdobeLibraryDelegate protocol specifies. Since 
+    private let kLibraryRootFolderPathPreferencesKey = "kLibraryRootFolderPath"
+    
+    // Implement the required properties that the AdobeLibraryDelegate protocol specifies. Since
     // class extensions are not allowed to add properties, we need to define these properties here.
     var assetDownloadLibraryFilter: [AnyObject]!
     var autoSyncDownloadedAssets = false
     var libraryQueue: NSOperationQueue!
     var syncOnCommit = false
     
+    var localLibraryRootFolder: String?
+    
+    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var selectionThumbnailImageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -44,15 +50,44 @@ class ViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Set the client ID and secret values so the SDK can identify the calling app.
+        // Set the client ID and secret values so the CSDK can identify the calling app. The three
+        // specified scopes are required at a minimum.
         AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID(kCreativeSDKClientId,
-                                                                                   withClientSecret: kCreativeSDKClientSecret)
+                                                                                   clientSecret: kCreativeSDKClientSecret,
+                                                                                   additionalScopeList: [
+                                                                                    AdobeAuthManagerUserProfileScope,
+                                                                                    AdobeAuthManagerEmailScope,
+                                                                                    AdobeAuthManagerUserProfileScope])
+        
+        // Also set the redirect URL, which is required by the CSDK authentication mechanism.
+        AdobeUXAuthManager.sharedManager().redirectURL = NSURL(string: kCreativeSDKRedirectURLString)
+        
+        // Register for the logout notification so we can perform the necessary Library Manager
+        // cleanup tasks.
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(userDidLogOutNotificationHandler),
+                                                         name: AdobeAuthManagerLoggedOutNotification,
+                                                         object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        logoutButton.hidden = !AdobeUXAuthManager.sharedManager().authenticated
     }
     
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    deinit
+    {
+        // Although we don't need to do this starting in iOS 9[1], it's probably good practice to 
+        // do it anyway.
+        //
+        // [1]: https://developer.apple.com/library/content/releasenotes/Foundation/RN-Foundation/#10_11NotificationCenter
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: AdobeAuthManagerLoggedOutNotification, object: nil)
     }
     
     // MARK: - UI Actions
@@ -72,12 +107,71 @@ class ViewController: UIViewController
         
         self.presentViewController(assetBrowser, animated: true, completion: nil)
     }
+    
+    @IBAction func logoutButtonTouchUpInside()
+    {
+        AdobeUXAuthManager.sharedManager().logout(
+            {
+                print("Successfully logged out.")
+            },
+            onError:
+            {
+                (error: NSError!) in
+                
+                print("There was a problem logging out: \(error)")
+            }
+        )
+    }
+    
+    // Mark: - Notification Handlers
+    func userDidLogOutNotificationHandler(notification: NSNotification)
+    {
+        if AdobeLibraryManager.sharedInstance().isStarted()
+        {
+            AdobeLibraryManager.sharedInstance().deregisterDelegate(self)
+            
+            if localLibraryRootFolder?.characters.count > 0
+            {
+                var error: NSError? = nil
+                
+                AdobeLibraryManager.removeLocalLibraryFilesInRootFolder(localLibraryRootFolder, withError: &error)
+                
+                if error != nil
+                {
+                    print("Could not remove local library file ('\(localLibraryRootFolder)') due to: \(error)")
+                }
+            }
+        }
+        
+        logoutButton.hidden = !AdobeUXAuthManager.sharedManager().authenticated
+        
+        // Reset the Library root folder path variable
+        localLibraryRootFolder = nil
+        
+        // Also remove the Library root folder path from the preferences since we're logging out
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(kLibraryRootFolderPathPreferencesKey)
+    }
+    
+    // Mark: - Private/Utility Methods
+    func displayUnsupportedSelectionAlert()
+    {
+        let message = "For the purposes of this demo, please select an image/graphic Library item type."
+        
+        print(message)
+        
+        let alertController = UIAlertController(title: "Demo", message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - AdobeUXAssetBrowserViewControllerDelegate
 extension ViewController: AdobeUXAssetBrowserViewControllerDelegate
 {
-    func assetBrowserDidSelectAssets(itemSelections: [AnyObject])
+    func assetBrowserDidSelectAssets(itemSelections: [AdobeSelectionAsset])
     {
         // Dismiss the Asset Browser view controller.
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -90,9 +184,22 @@ extension ViewController: AdobeUXAssetBrowserViewControllerDelegate
         libraryManagerStartupOptions.autoDownloadContentTypes = [kAdobeMimeTypePNG, kAdobeMimeTypeJPEG]
         libraryManagerStartupOptions.elementTypesFilter = [AdobeDesignLibraryImageElementType]
         
-        var rootLibraryDirectory: NSString = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0]
-        rootLibraryDirectory = rootLibraryDirectory.stringByAppendingPathComponent(NSBundle.mainBundle().bundleIdentifier!)
-        rootLibraryDirectory = rootLibraryDirectory.stringByAppendingPathComponent("libraries")
+        localLibraryRootFolder = NSUserDefaults.standardUserDefaults().stringForKey(kLibraryRootFolderPathPreferencesKey)
+        
+        if localLibraryRootFolder == nil || localLibraryRootFolder?.characters.count == 0
+        {
+            // Create a temporary path for the locally synced files to be stored.
+            var rootLibraryFolder: NSString = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).first!
+            rootLibraryFolder = rootLibraryFolder.stringByAppendingPathComponent("libraries")
+            rootLibraryFolder = rootLibraryFolder.stringByAppendingPathComponent(NSUUID().UUIDString)
+            
+            // Remember the path so we can clean it up on logout.
+            localLibraryRootFolder = rootLibraryFolder as String
+            
+            // Store the user-specific Library root folder path in the preferences so it could be
+            // retrieved on subsequent calls to the Asset Browser.
+            NSUserDefaults.standardUserDefaults().setObject(rootLibraryFolder, forKey: kLibraryRootFolderPathPreferencesKey)
+        }
         
         let libraryManager = AdobeLibraryManager.sharedInstance()
         libraryManager.syncAllowedByNetworkStatusMask = UInt(AdobeNetworkStatus.ReachableViaWiFi.rawValue) |
@@ -101,7 +208,8 @@ extension ViewController: AdobeUXAssetBrowserViewControllerDelegate
         do
         {
             // Start the Library manager
-            try libraryManager.startWithFolder(rootLibraryDirectory as String)
+            try libraryManager.startWithFolder(localLibraryRootFolder)
+            
             libraryManager.registerDelegate(self, options: libraryManagerStartupOptions)
         }
         catch let e
@@ -109,36 +217,30 @@ extension ViewController: AdobeUXAssetBrowserViewControllerDelegate
             print("Could not start the Library Manager. An error occurred: \(e)")
         }
         
-        // Grab the first selected item and make sure we're dealing with a Library selection object.
-        // This item is the selection object that has information about the selected item(s). We 
-        // can use this object to pinpoint the selected Library item and perform interesting tasks, 
-        // like downloading a thumbnail.
-        guard let librarySelection = itemSelections.first as? AdobeSelectionLibraryAsset else
+        // AdobeSelection is the superclass for both AdobeSelectionAsset and 
+        // AdobeSelectionLibraryAsset. We cannot cross-cast from one sibling type to another, so we 
+        // need to retrieve the first selected item as the more generic AdobeSelection, which will 
+        // then be casted down to AdobeSelectionLibraryAssets.
+        let selection: AdobeSelection? = itemSelections.first
+        
+        // Now make sure we're dealing with a Library selection object.
+        guard let librarySelection = selection as? AdobeSelectionLibraryAsset else
         {
             print("The selected item isn't a Library selection.")
             
             return
         }
         
-        // Grab the Library object.
-        guard let library = librarySelection.selectedItem as? AdobeAssetLibrary else
-        {
-            print("No selected item found.")
-            
-            return
-        }
+        // Grab the Library ID.
+        let selectedLibraryId = librarySelection.selectedLibraryID
         
-        // Get the first selected image ID.
-        guard let selectedImageId = librarySelection.selectedImageIDs?.first else
+        // Grab the Library object.
+        let library = AdobeLibraryManager.sharedInstance().libraryWithId(selectedLibraryId)
+        
+        // Get the first selected item ID.
+        guard let selectedImageId = librarySelection.selectedElementIDs?.first else
         {
-            let message = "For the purposes of this demo, please select an image/graphic Library item type."
-            
-            print(message)
-            
-            let alertController = UIAlertController(title: "Demo", message: message, preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.displayUnsupportedSelectionAlert()
             
             return
         }
@@ -146,74 +248,56 @@ extension ViewController: AdobeUXAssetBrowserViewControllerDelegate
         // Now get the selected item, in this case an image, from the Library. Note that, for this
         // demo, we only handle images, however all other supported Library item types can be
         // retrieved and processed.
-        guard let libraryImage = library.images[selectedImageId] as? AdobeAssetLibraryItemImage else
-        {
-            print("Although an image was selected, its ID could not be retrieved.")
-            
-            return
-        }
+        let libraryElement = library.elementWithId(selectedImageId)
         
-        // Get the rendition file reference. This reference can be used to download the rendition
-        // from the server.
-        var thumbnailFile: AdobeAssetFile? = libraryImage.rendition
+        print("Selected Library Element:\n\tID: \(libraryElement.elementId)\n\tName: \(libraryElement.name)\n" +
+            "\tCreated: \(NSDate(timeIntervalSinceReferenceDate: libraryElement.created))\n" +
+            "\tModified: \(NSDate(timeIntervalSinceReferenceDate: libraryElement.modified))\n" +
+            "\tType: \(libraryElement.type)\n\tTags: \(libraryElement.tags)")
         
-        // If the Library item doesn't have a rendition, fall back to the actual image data.
-        if thumbnailFile == nil
-        {
-            thumbnailFile = libraryImage.image;
-        }
-        
-        guard thumbnailFile != nil else
-        {
-            print("No rendition or image is present for this Library image: \(libraryImage). Existing.")
-            
-            return
-        }
+        // Clear out any existing thumbnails from already-selected images.
+        selectionThumbnailImageView.image = nil
         
         // Start the activity indicator to get the user feedback.
         activityIndicator.startAnimating()
         
-        // Kick off the download action. Here we're requesting a PNG rendition with dimensions of
-        // 1024×1024 points. The network request priority is set to normal. We've opted to not
-        // specify a progress handler, however, we've chosen to listen for when the thumbnail is
-        // downloaded successfully, so we can display it, when the request has been canceled and
-        // for when there is an error with the request.
-        thumbnailFile?.downloadRenditionWithType(.PNG,
-            dimensions: CGSizeMake(1024, 2014),
-            requestPriority: .Normal,
-            progressBlock: nil,
-            successBlock:
+        library.getRenditionPath(selectedImageId,
+                                 withSize: 0,
+                                 isFullSize: true,
+                                 handlerQueue: NSOperationQueue.mainQueue(),
+                                 onCompletion:
             {
-                [weak self] (data: NSData!, fromCache: Bool) in
+                [weak self] (path: String!) in
                 
-                // Try to parse the data.
-                let thumbnailImage = UIImage(data: data)
+                // Try to create a UIImage object from the rendition and display it.
+                let thumbnailImage = UIImage(contentsOfFile: path)
                 
-                if (thumbnailImage != nil)
+                if thumbnailImage == nil
                 {
-                    // Everything is good, display the image and stop the activity indicator.
-                    self?.selectionThumbnailImageView.image = thumbnailImage;
-                    
-                    self?.activityIndicator.stopAnimating();
+                    print("The returned rendition path cannot be converted into an image.")
                 }
                 else
                 {
-                    print("The returned data cannot be converted into an image.")
+                    // We have everything we need. Now we display the image.
+                    self?.selectionThumbnailImageView.image = thumbnailImage
                 }
-            },
-            cancellationBlock:
-            {
-                [weak self] in
-                
-                print("Rendition request canceled.")
                 
                 self?.activityIndicator.stopAnimating()
             },
-            errorBlock:
+                                 onError:
             {
-                [weak self](error: NSError!) in
+                [weak self] (error: NSError!) in
                 
-                print("An error occurred when attempting to download a rendition: \(error)")
+                print("An error occurred when attempting to retrieve the path to the rendition representation: \(error)")
+                
+                if error.domain == AdobeLibraryErrorDomain
+                {
+                    if error.code == AdobeLibraryErrorCode.RepresentationHasNoFile.rawValue ||
+                       error.code == AdobeLibraryErrorCode.NoRenditionCandidate.rawValue
+                    {
+                        self?.displayUnsupportedSelectionAlert()
+                    }
+                }
                 
                 self?.activityIndicator.stopAnimating()
             }
