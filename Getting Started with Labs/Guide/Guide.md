@@ -1,3 +1,5 @@
+#*Note*: The Creative SDK Labs component is no longer supported. Adobe will release a new version of the SDK in November 2017, and this component will not be included in the new version. We suggest removing this component from your application as soon as possible to avoid any interruption in service. You can find more information on this deprecation here: [https://creativesdk.zendesk.com/hc/en-us/articles/115004788463-End-of-Support-for-the-Creative-SDK-Image-Editor-UI-Color-UI-Market-Browser-and-Labs-Components](https://creativesdk.zendesk.com/hc/en-us/articles/115004788463-End-of-Support-for-the-Creative-SDK-Image-Editor-UI-Color-UI-Market-Browser-and-Labs-Components)
+
 # AdobeCreativeSDKLabs.framework
 
 The AdobeCreativeSDKLabs.framework (or Labs Framework) contains some of the hottest new technologies straight out of Adobe Labs.  The Labs framework provides the following technologies:

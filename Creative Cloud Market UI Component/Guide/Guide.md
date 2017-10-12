@@ -1,3 +1,5 @@
+#*Note*: The Creative SDK Market Browser is no longer supported. Adobe will release a new version of the SDK in November 2017, and this component will not be included in the new version. We suggest removing this component from your application as soon as possible to avoid any interruption in service. You can find more information on this deprecation here: [https://creativesdk.zendesk.com/hc/en-us/articles/115004788463-End-of-Support-for-the-Creative-SDK-Image-Editor-UI-Color-UI-Market-Browser-and-Labs-Components](https://creativesdk.zendesk.com/hc/en-us/articles/115004788463-End-of-Support-for-the-Creative-SDK-Image-Editor-UI-Color-UI-Market-Browser-and-Labs-Components)
+
 #Creative Cloud Market UI Component
 
 The Creative Cloud Market is a collection of curated, high quality assets, free for use in applications by any member of the Creative Cloud. Assets include vector graphics, icons, images, and brushes. While these are available from the Creative Cloud application itself, you also can provide Market assets to users of your applications. For instance, a paint program can let your users browse brushes to enhance their creative experience.
