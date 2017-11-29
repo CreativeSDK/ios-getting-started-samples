@@ -42,11 +42,11 @@ In this application, we send files to the user's Creative Cloud file storage.
 
 We use a simple **Login** button on top, with a button below it (in this case, called **Upload Photo**) that is activated after the user logs in. This button works with new photos or ones in the user’s gallery. (This means you can run the code on the iOS simulator if desired.)
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/files/06.jpg"/>
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/files/06.jpg)
 
 As soon as this is done, the application begins to upload the file. Once the upload completes, an alert is displayed to let the user know what happened:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/files/08.jpg"/>
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/files/08.jpg)
 
 In a few seconds, the file (named) is available with the rest of the files the user has on the Creative Cloud. (In this example, new photos are named test.jpg or test.png.) To confirm this, login to Creative Cloud from any Creative Cloud connected app or visit [creative.adobe.com](http://creative.adobe.com) and check from the **Files** tab.
 
@@ -57,7 +57,7 @@ Here is the event handler for clicking the upload button from the device:
     + (void)uploadPhoto
     {
         UIImagePickerController *selImage = [UIImagePickerController new];
-       
+
         if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
         {
             selImage.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -66,9 +66,9 @@ Here is the event handler for clicking the upload button from the device:
         {
             selImage.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         }
-        
+
         selImage.delegate = self;
-        
+
         [self presentViewController:selImage animated:YES completion:nil];
     }
 ```
@@ -81,28 +81,28 @@ After an image is selected, this code runs:
     {
         NSLog(@"%@", info);
         NSURL *path = info[UIImagePickerControllerReferenceURL];
-        
+
         NSString *stringURL = [path absoluteString];
         NSLog(@"stringurl %@", stringURL);
-        
+
         UIImage *img = info[UIImagePickerControllerOriginalImage];
         [((RKCView *)self.view) selectedImgView].image = img;
-        
+
         // convert to jpeg
         NSData *imgData = UIImageJPEGRepresentation( img, 0.8f );
-        
+
         __block NSString *dataPath = [NSTemporaryDirectory() stringByAppendingPathComponent: @"foo.jpg"];
         NSURL* dataURL = [NSURL fileURLWithPath: dataPath];
-        
+
         NSError* err;
         BOOL success = [imgData writeToFile:dataPath options:NSDataWritingAtomic error:&err];
-        
+
         if (success)
         {
             AdobeAssetFolder *root = [AdobeAssetFolder getRootOrderedByField:AdobeAssetFolderOrderByName
                                                               orderDirection:AdobeAssetFolderOrderDescending];
-            
-            [AdobeAssetFile create:@"foo.jpg" 
+
+            [AdobeAssetFile create:@"foo.jpg"
                           inFolder:root
                       withDataPath:dataURL
                           withType:kMimeTypeJPEG
@@ -112,7 +112,7 @@ After an image is selected, this code runs:
                         }
                       onCompletion:^(AdobeAssetFile *file) {
                           NSLog(@"I DID IT!");
-                          
+
                           UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"File Uploaded"
                                                                           message:@"Your file was uploaded!"
                                                                          delegate:nil
@@ -125,7 +125,7 @@ After an image is selected, this code runs:
                                NSLog(@"error uploading %@", error);
                            }];
         }
-        
+
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 ```

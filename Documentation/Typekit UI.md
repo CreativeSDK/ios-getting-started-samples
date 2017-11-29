@@ -62,22 +62,22 @@ Management of bundled fonts is in the application so that the app has full contr
 
 - Once the user logs in, clicking on the 'Launch Font Picker' button will launch the AdobeTypekitFontPickerController UI.  If the user already synced some fonts to the user's Adobe ID, the Font Picker shows a list of font families for the synced fonts and the bundled fonts.
 
-<img src="FontPicker.png" />
+![](images/FontPicker.png)
 
 - Click 'Add' button on the top right of the Font Picker will bring the user to the Font Browser.
 
-<img src="FontBrowser.png" />
+![](images/FontBrowser.png)
 
 - Tapping on a font family in the Font Browser will bring the user to the Font Family Details, where the user can sync and unsync fonts.
 - The green checkmark on the Font Detail cell indicated that the font is synced and downloaded
 - The cloud icon on a Font Detail cell indicated that the font is not synced, tapping on the cloud icon will sync and download the font to the device
 - To unsync or sync multiple fonts in this font family, select 'Edit Fonts' in the menu then select/deselect the cell and hit 'UPDATE FONTS'
 
-<img src="FontFamilyDetails.png" />
+![](images/FontFamilyDetails.png)
 
 - Tapping on 'Synced Fonts' in the Font Browser will bring the user to the syned fonts list. Swiping left on any row in the synced fonts list reveals the Delete button. Tapping the button unsyncs the selected font and it becomes no longer usable on the device.
 
-<img src="SyncedFonts.png" /> 
+![](images/SyncedFonts.png) 
 
 <a name="code"></a>
 ### Code
@@ -149,7 +149,7 @@ Create a UIViewController and use the following code to launch the AdobeTypekitF
 ```
 
 #### Apply Typekit Font to Text View
-- Text View (TextContainerView in the sample app) 
+- Text View (TextContainerView in the sample app)
  1. Extend `UITextView` class
  2. Add a property to store a Typekit font. Refer to `tkFont` in the sample app.
  3. Add a setter to the property and apply the Typekit font to the `font` property. Refer to `setTkFont:` in the sample app.

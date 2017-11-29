@@ -45,23 +45,23 @@ In our application (found in the TestFiles folder in the ZIP archive referenced 
 
 Once the user logs in, the Show File Chooser button prompts him to select a file:
 
-<img style="border: 1px solid #ccc;" src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/browser1.jpg" />
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/browser1.jpg)
 
 After that button is selected, AdobeUXAssetBrowser runs. All the UI you see here is driven by the SDK:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/browser2.jpg" />
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/browser2.jpg)
 
 Newer files are on top. Two controls at the top bring up a selection of options (selected here) and let you search for files:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/browser3.jpg" />
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/browser3.jpg)
 
 Selecting a file may bring up a preview, as shown here. The SDK can create previews for most common file types. (If the SDK can't provide a preview, no error occurs.)
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/browser4.jpg" />
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/browser4.jpg)
 
 Click Open, and in the final part of our application, basic metadata about the file is displayed, and if the file is an image, it is downloaded and displayed in the application:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/browser5.jpg" />
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/browser5.jpg)
 
 ### Code
 
@@ -75,16 +75,16 @@ The main view controller of the application sets up the "Select a File" button a
         AdobeAssetDataSourceFilter *dataSourceFilter =
             [[AdobeAssetDataSourceFilter alloc] initWithDataSources:@[AdobeAssetDataSourceLibrary, AdobeAssetDataSourcePhotos]
                                                          filterType:AdobeAssetDataSourceFilterExclusive];
-    
+
         // Create an Asset Browser configuration object and set the datasource filter object.
         AdobeUXAssetBrowserConfiguration *assetBrowserConfiguration = [AdobeUXAssetBrowserConfiguration new];
         assetBrowserConfiguration.dataSourceFilter = dataSourceFilter;
-    
+
         // Create an instance of the Asset Browser view controller
         AdobeUXAssetBrowserViewController *assetBrowserViewController =
             [AdobeUXAssetBrowserViewController assetBrowserViewControllerWithConfiguration:assetBrowserConfiguration
                                                                                   delegate:self];
-    
+
         // Present the Asset Browser view controller
         [self presentViewController:assetBrowserViewController animated:YES completion:nil];
     }
@@ -94,45 +94,45 @@ To start, create a new instance of the `AdobeUXAssetBrowserViewController` class
 The `AdobeUXAssetBrowserViewControllerDelegate` protocol has three callback methods that could be implemented in order to know which assets were selected, whether there was an error or whether the user closed the Asset Browser view controller without selecting an Asset. Let's have a look at the body of the callback method for when the user has successfully selected one or more assets:
 
     [self dismissViewControllerAnimated:YES completion:nil];
-        
+
         if (itemSelections.count == 0)
         {
             // Nothing selected so there is nothing to do.
             return;
         }
-        
+
         // Get the first asset-selection object.
         AdobeSelectionAsset *assetSelection = itemSelections.firstObject;
-        
+
         // Grab the generic AdobeAsset object from the selection object.
         AdobeAsset *selectedAsset = assetSelection.selectedItem;
-        
+
         self.nameLabel.text = selectedAsset.name;
-        
+
         // We should have a static instance of the date formatter here to avoid a performance hit,
         // but we'll go ahead and create one every time to the purposes of this demo.
         NSDateFormatter *dateFormatter = [NSDateFormatter new];
         dateFormatter.dateStyle = NSDateFormatterMediumStyle;
         dateFormatter.timeStyle = NSDateFormatterMediumStyle;
         dateFormatter.locale = [NSLocale currentLocale];
-        
+
         self.modificationDateLabel.text = [dateFormatter stringFromDate:selectedAsset.modificationDate];
-        
+
         // Make sure it's an AdobeAssetFile object.
         if (!IsAdobeAssetFile(selectedAsset))
         {
             return;
         }
-        
+
         AdobeAssetFile *selectedAssetFile = (AdobeAssetFile *)selectedAsset;
-        
+
         // Nicely format the file size
         if (selectedAssetFile.fileSize > 0)
         {
             self.sizeLabel.text = [NSByteCountFormatter stringFromByteCount:selectedAssetFile.fileSize
                                                                  countStyle:NSByteCountFormatterCountStyleFile];
         }
-        
+
         // Download a thumbnail for common image formats
         if ([selectedAssetFile.type isEqualToString:kAdobeMimeTypeJPEG] ||
             [selectedAssetFile.type isEqualToString:kAdobeMimeTypePNG] ||
@@ -140,11 +140,11 @@ The `AdobeUXAssetBrowserViewControllerDelegate` protocol has three callback meth
             [selectedAssetFile.type isEqualToString:kAdobeMimeTypeBMP])
         {
             [self.loadingActivityIndicator startAnimating];
-            
+
             // Round the width and the height up to avoid any half-pixel values.
             CGSize thumbnailSize = CGSizeMake(ceilf(self.thumbnailImageView.frame.size.width),
                                               ceilf(self.thumbnailImageView.frame.size.height));
-                                              
+
             [selectedAssetFile downloadRenditionWithType:AdobeAssetFileRenditionTypePNG
                                               dimensions:thumbnailSize
                                          requestPriority:NSOperationQueuePriorityNormal
@@ -152,23 +152,23 @@ The `AdobeUXAssetBrowserViewControllerDelegate` protocol has three callback meth
                                             successBlock:^(NSData *data, BOOL fromCache)
             {
                 UIImage *rendition = [UIImage imageWithData:data];
-                
+
                 self.thumbnailImageView.image = rendition;
-                
+
                 [self.loadingActivityIndicator stopAnimating];
-                
+
                 NSLog(@"Successfully downloaded a thumbnail.");
-                
+
             } cancellationBlock:^{
-                
+
                 NSLog(@"The rendition request was cancelled.");
-                
+
                 [self.loadingActivityIndicator stopAnimating];
-                
+
             } errorBlock:^(NSError *error) {
-                
+
                 NSLog(@"There was a problem downloading the file rendition: %@", error);
-                
+
                 [self.loadingActivityIndicator stopAnimating];
             }];
         }
@@ -176,17 +176,17 @@ The `AdobeUXAssetBrowserViewControllerDelegate` protocol has three callback meth
         {
             NSString *message = @"The selected file type isn't a common image format so no "
             "thumbnail will be fetched from the server.\n\nTry selecting a JPEG, PNG or BMP file.";
-            
+
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Demo Project"
                                                                                      message:message
                                                                               preferredStyle:UIAlertControllerStyleAlert];
-                                                                              
+
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                                style:UIAlertActionStyleDefault
                                                              handler:NULL];
-                                                             
+
             [alertController addAction:okAction];
-            
+
             [self presentViewController:alertController animated:YES completion:nil];
         }
 
@@ -208,7 +208,7 @@ In the previous section, “Integrating the Asset Browser”, we demonstrated ho
     // Exclude all other data sources. Only allow the "Files" datasource
     AdobeAssetDataSourceFilter *dataSourceFilter = [[AdobeAssetDataSourceFilter alloc] initWithDataSources:@[AdobeAssetDataSourceFiles]
     filterType:AdobeAssetDataSourceFilterInclusive];
-    
+
     // Exclude all other file types, other than PSD files.
     AdobeAssetMIMETypeFilter *mimeTypeFilter = [[AdobeAssetMIMETypeFilter alloc] initWithMIMETypes:@[kAdobeMimeTypePhotoshop]
     filterType:AdobeAssetMIMETypeFilterTypeInclusion];
@@ -233,35 +233,35 @@ This can then be passed to the Asset Browser utility method that creates an inst
 
 Here is the Asset Browser with the options applied:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd1.jpg" />
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd1.jpg)
 
 Non-PSDs are grayed out and not selectable by the user. This is an example of the filter being applied (which has uses outside the PSD extraction feature being demonstrated here).
 
 After selecting an image, you get a preview as usual, but when you click **Open**, something new happens:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd2.jpg" />
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd2.jpg)
 
 Now the user can either open the PSD image or extract layers.
 
 If **Extract Layers** is selected, some basic information about how this feature works is displayed:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd3.jpg" />
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd3.jpg)
 
 The NEVER SHOW AGAIN button enables users to skip this dialog in the future.
 
 When this dialog is dismissed, the user can click and drag around the PSD, to select a region of the PSD:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd4.jpg" />
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd4.jpg)
 
 Once an area is selected, the Creative SDK analyzes the PSD and determines which layers are covered by the user’s selection:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd5.jpg" />
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd5.jpg)
 
 Notice how layers are named and previews are provided. The user can scroll up to redraw his selection or search for a layer by name.
 
 Finally, the user selects the layers with which he wants to work:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd6.jpg" />
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/assetbrowser/psd6.jpg)
 
 Clicking OPEN SELECTION causes the selected layer(s) to open.
 
@@ -269,7 +269,7 @@ Keep in mind that once the user selects an asset and makes a request to either o
 
     // Call the Asset Browser and pass the configuration options
     [[AdobeUXAssetBrowser sharedBrowser] popupFileBrowserWithParent:self configuration:configuration onSuccess:^(NSArray *itemSelections) {
-    
+
     // Grab the last item that was selected.
     AdobeSelectionAsset *itemSelection = itemSelections.lastObject;
 
@@ -277,30 +277,30 @@ The rest is up to the developer. The `assetBrowserDidSelectAssets` method of the
 
     // Grab the first selection object.
     AdobeSelectionAsset *itemSelection = itemSelections.firstObject;
-    
+
     if (IsAdobeSelectionAssetPSDFile(itemSelection))
     {
         // We know the selected item is a PSD file so we can safely cast it to the specific type.
         AdobeSelectionAssetPSDFile *psdSelection = (AdobeSelectionAssetPSDFile *)itemSelection;
-        
+
         // Grab the actual Asset file instance.
         AdobeAssetPSDFile *psdFile = (AdobeAssetPSDFile *)psdSelection.selectedItem;
-        
+
         self.psdFileNameLabel.text = [NSString stringWithFormat:@"PSD File: %@", psdFile.name];
         self.psdFile = psdFile;
-        
+
         // Also grab all the selected layers
         AdobePSDLayerSelectionArray *layerSelections = psdSelection.layerSelections;
-        
+
         NSMutableArray *selectedLayers = [NSMutableArray arrayWithCapacity:psdSelection.layerSelections.count];
-        
+
         for (AdobeSelectionPSDLayer *psdLayerSelection in layerSelections)
         {
             [selectedLayers addObject:psdLayerSelection.layer];
         }
-        
+
         self.selectedLayers = selectedLayers;
-        
+
         [self.tableView reloadData];
         self.tableView.hidden = NO;
     }

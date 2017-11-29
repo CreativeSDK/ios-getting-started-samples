@@ -9,7 +9,7 @@ In the Creative SDK for iOS, we've broken the Foundation framework into Micro fr
 - AdobeCreativeSDKAssetUX
 - AdobeCreativeSDKMarketUX
 
-You can read more about the Framework breakup on our <a target="_blank" href="https://blog.creativesdk.com/2015/08/dividing-up-the-foundation-sdk/">blog</a>.
+You can read more about the Framework breakup on our [blog](https://blog.creativesdk.com/2015/08/dividing-up-the-foundation-sdk/).
 
 <a name="Migrating to Dynamic Frameworks"></a>
 ## Migrating to Dynamic Frameworks
@@ -17,13 +17,13 @@ You can read more about the Framework breakup on our <a target="_blank" href="ht
 The below steps assumes you are currently using static frameworks.
 
 1. Select project file, in Build Phases, Link Binary with Libraries, remove all the AdobeCreativeSDK frameworks currently linked.
-2. In Build Phases, Copy Bundle Resources, remove all the AdobeCreativeSDK bundles that are currently added. 
-3. Under General, Embedded Binaries, add the necessary AdobeCreativeSDK frameworks you need. 
+2. In Build Phases, Copy Bundle Resources, remove all the AdobeCreativeSDK bundles that are currently added.
+3. Under General, Embedded Binaries, add the necessary AdobeCreativeSDK frameworks you need.
 4. Under Build Settings, Framework Search Paths, make sure you have correct path to folders containing AdobeCreativeSDK frameworks.
 5. For each Embedded framework you include, you will need to run the strip-frameworks shell script in order to remove the simulator slices and force a code resign on the frameworks.
 In Build Phases, add a run script phase (if not present) and add the below line for each embedded AdobeCreativeSDK framework to run the strip-frameworks script.
 bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCore.framework/strip-frameworks.sh"
-<br /><br /><img style="border: 1px solid #ccc;" src="strip-frameworks.png" /><br /><br />
+![](images/strip-frameworks.png)
 
 ## Frameworks Overview
 
@@ -490,6 +490,3 @@ The following configuration settings are required for this framework:
     + libz.tbd
     + WebKit.framework
 5. In Build Settings, Apple LLVM - Preprocessing, add *USE_CSDK_COMPONENTS* to the *Preprocessor Macros*.
-
-
-

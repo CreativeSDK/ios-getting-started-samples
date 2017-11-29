@@ -35,7 +35,7 @@ This example shows you how to accesses a user's collection and displays it's con
 
 This is what a logged-in user sees when running our sample project:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/photos/photos1.jpg"/>
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/photos/photos1.jpg)
 
 After the user clicks **Show Photos**, the code asks the Photos API for all catalogs to which the user has access. (Currently, Lightroom allows only one catalog to be synced with the Creative Cloud, so only one catalog is returned.)
 
@@ -43,7 +43,7 @@ Think of a catalog as a high-level grouping. Under each catalog is a set of coll
 
 Our code asks each collection for a rendition of its assets. Here is an example of the result:
 
-<img src="https://aviarystatic.s3.amazonaws.com/creativesdk/ios/photos/photos2.jpg"/>
+![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/photos/photos2.jpg)
 
 In the code, everything is driven from a main `showPhotos` method. We begin by asking for the list of catalogs from the user's data:
 
@@ -115,5 +115,5 @@ See the Class Reference below for a list of Classes for uploading Lightroom Phot
 ## Class Reference
 
 + [AdobePhotoAsset](/Classes/AdobePhotoAsset.html)
-+ [AdobePhotoCatalog](/Classes/AdobePhotoCatalog.html) 
-+ [AdobePhotoCollection](/Classes/AdobePhotoCollection.html) 
++ [AdobePhotoCatalog](/Classes/AdobePhotoCatalog.html)
++ [AdobePhotoCollection](/Classes/AdobePhotoCollection.html)
