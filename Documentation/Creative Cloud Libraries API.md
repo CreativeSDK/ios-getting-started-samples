@@ -1,6 +1,6 @@
-# Creative Cloud Files API
+# Creative Cloud Libraries API
 
-The Creative SDK provides headless APIs for creating Creative Cloud(CC) Libraries and adding elements to existing libraries. This guide demonstrates how to use these APIs to upload new elements to the CC Libraries.
+The Creative SDK provides headless APIs for creating Creative Cloud (CC) Libraries and adding elements to existing libraries. This guide demonstrates how to use these APIs to upload new elements to the CC Libraries.
 
 ## Contents
 
@@ -14,8 +14,8 @@ The Creative SDK provides headless APIs for creating Creative Cloud(CC) Librarie
 
 This guide will assume that you have installed all software and completed all of the steps in the following guides:
 
-*   [Getting Started](https://creativesdk.adobe.com/docs/ios/#/articles/gettingstarted/index.html)
-*   [Framework Dependencies](https://creativesdk.adobe.com/docs/ios/#/articles/dependencies/index.html) guide.
+*   Getting Started
+*   Framework Dependencies
 
 _**Note:**_
 
@@ -23,7 +23,7 @@ _**Note:**_
 *   _Your Client ID must be [approved for **Production Mode** by Adobe](https://creativesdk.zendesk.com/hc/en-us/articles/204601215-How-to-complete-the-Production-Client-ID-Request) before you release your app._
 
 <a name="upload"></a>
-## Upload Files to CC Libraries 
+## Upload Files to CC Libraries
 The AdobeLibraryManager class is responsible for managing libraries. It's a singleton class that needs to be initialized and started with startup options. It allows to create and delete libraries. The AdobeDesignLibraryUtils class defines supported element types and provides helper methods for creating each element type.
 
 ## Setting up Adobe Library Manager
@@ -97,7 +97,7 @@ The AdobeLibraryManager class is responsible for managing libraries. It's a sing
 
 ## Clean up and shutdown
 * Implement AdobeLibraryDelegate to get callback after the sync finishes.
-    
+
     ```
     - (void)syncFinished
     {
@@ -105,7 +105,7 @@ The AdobeLibraryManager class is responsible for managing libraries. It's a sing
         [[AdobeLibraryManager sharedInstance] deregisterDelegate:self];
     }
     ```
-    
+
 ## Remove local copies on logout
 * Observe for logout notification
     ```Objective-C
@@ -130,6 +130,6 @@ The AdobeLibraryManager class is responsible for managing libraries. It's a sing
 <a name="reference"></a>
 ## Class Reference
 
-+ [AdobeLibraryManager](https://creativesdk.adobe.com/docs/ios/#/Classes/AdobeLibraryManager.html)
-+ [AdobeLibraryDelegateStartupOptions](https://creativesdk.adobe.com/docs/ios/#/Classes/AdobeLibraryDelegateStartupOptions.html)
-+ [AdobeDesignLibraryUtils](https://creativesdk.adobe.com/docs/ios/#/Classes/AdobeDesignLibraryUtils.html)
++ AdobeLibraryManager
++ AdobeLibraryDelegateStartupOptions
++ AdobeDesignLibraryUtils

@@ -109,9 +109,7 @@ Below is a table that contains all of the Framework and header dependencies for 
          <td colspan="1">Creative Cloud Libraries</td>
          <td colspan="1">
             <a href="#core">AdobeCreativeSDKCore.framework</a>
-
             <br /><a href="#assetmodel">AdobeCreativeSDKAssetModel.framework</a>
-
          </td>
          <td>
             AdobeCreativeSDKCore/AdobeCreativeSDKCore.h
@@ -181,7 +179,7 @@ Below is a table that contains all of the Framework and header dependencies for 
          </td>
       </tr>
       <tr>
-         <td>SendToDesktop API</td>
+         <td>Send To Desktop API</td>
          <td colspan="1">
             <a href="#core">AdobeCreativeSDKCore.framework</a>
             <br /><a href="#assetmodel">AdobeCreativeSDKAssetModel.framework</a>

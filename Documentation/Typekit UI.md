@@ -1,4 +1,4 @@
-# Creative SDK Typekit
+# Typekit UI
 
 The Creative SDK Typekit provides a convenient UI for accessing Adobe Typekit fonts.
 
@@ -11,7 +11,7 @@ The Creative SDK Typekit provides a convenient UI for accessing Adobe Typekit fo
 - [Prerequisites](#prerequisites)
 - [Integrating the Typekit Component](#typekit)
 - [Sample Code](#code)
-- [iOS9 App Transport Security] (#ats)
+- [iOS9 App Transport Security](#ats)
 
 <a name="prerequisites"></a>
 ## Prerequisites
@@ -77,7 +77,7 @@ Management of bundled fonts is in the application so that the app has full contr
 
 - Tapping on 'Synced Fonts' in the Font Browser will bring the user to the syned fonts list. Swiping left on any row in the synced fonts list reveals the Delete button. Tapping the button unsyncs the selected font and it becomes no longer usable on the device.
 
-![](images/SyncedFonts.png) 
+![](images/SyncedFonts.png)
 
 <a name="code"></a>
 ### Code

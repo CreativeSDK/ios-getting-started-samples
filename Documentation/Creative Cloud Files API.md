@@ -15,8 +15,8 @@ The Creative SDK provides headless APIs for accessing Creative Cloud files direc
 
 This guide will assume that you have installed all software and completed all of the steps in the following guides:
 
-*   [Getting Started](https://creativesdk.adobe.com/docs/ios/#/articles/gettingstarted/index.html)
-*   [Framework Dependencies](https://creativesdk.adobe.com/docs/ios/#/articles/dependencies/index.html) guide.
+*   Getting Started
+*   Framework Dependencies
 
 _**Note:**_
 
@@ -28,8 +28,8 @@ _**Note:**_
 
 See below for a list of Classes for accessing Creative Cloud Files with our headless API:
 
-+ [AdobeAssetFile](https://creativesdk.adobe.com/docs/ios/#/Classes/AdobeAssetFile.html)
-+ [AdobeAssetFolder](https://creativesdk.adobe.com/docs/ios/#/Classes/AdobeAssetFolder.html)
++ AdobeAssetFile
++ AdobeAssetFolder
 
 <a name="upload"></a>
 ## Upload Files to the Creative Cloud
@@ -53,6 +53,7 @@ In a few seconds, the file (named) is available with the rest of the files the u
 ### Code
 
 Here is the event handler for clicking the upload button from the device:
+
 ```Objective-C
     + (void)uploadPhoto
     {
@@ -76,6 +77,7 @@ Here is the event handler for clicking the upload button from the device:
 We start the image-picker control, defaulting to the camera if the device supports it; otherwise, we use the photo library. (Tip: If you are testing with the simulator, your gallery may be empty. Go to any Web page, long-click on an image, and you can save that image to the simulator. Then the image will appear in the gallery.)
 
 After an image is selected, this code runs:
+
 ```Objective-C
     + (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
     {
@@ -141,5 +143,5 @@ Finally, a `UIAlertView` is presented to let the user know the file was uploaded
 <a name="reference"></a>
 ## Class Reference
 
-+ [AdobeAssetFile](https://creativesdk.adobe.com/docs/ios/#/Classes/AdobeAssetFile.html)
-+ [AdobeAssetFolder](https://creativesdk.adobe.com/docs/ios/#/Classes/AdobeAssetFolder.html)
++ AdobeAssetFile
++ AdobeAssetFolder

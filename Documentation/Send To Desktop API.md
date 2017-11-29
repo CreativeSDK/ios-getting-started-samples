@@ -17,8 +17,8 @@ You can specify which application to open with the shared data. Three applicatio
 
 This guide will assume that you have installed all software and completed all of the steps in the following guides:
 
-*   [Getting Started](https://creativesdk.adobe.com/docs/ios/#/articles/gettingstarted/index.html)
-*   [Framework Dependencies](https://creativesdk.adobe.com/docs/ios/#/articles/dependencies/index.html) guide.
+*   Getting Started
+*   Framework Dependencies
 
 _**Note:**_
 
@@ -30,9 +30,9 @@ _**Note:**_
 
 `AdobeSendToDesktopApplication` enables you to send an asset to the desktop directly. Here is an example that takes a `UIImage` object, saves it as "SendToDesktopImage.jpg", and launches Photoshop on a user's desktop with the specified image.
 
-    [AdobeSendToDesktopApplication sendImage:img 
+    [AdobeSendToDesktopApplication sendImage:img
                                toApplication:AdobePhotoshopCreativeCloud
-                                    withName:@"SendToDesktopImage.jpg" 
+                                    withName:@"SendToDesktopImage.jpg"
                                    onSuccess:^{
                                              NSLog(@"opened in Photoshop");
                                }  onProgress: nil

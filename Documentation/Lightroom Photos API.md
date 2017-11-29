@@ -19,8 +19,8 @@ If you're interested in embedding with the UI we already made for iOS devices, p
 
 This guide will assume that you have installed all software and completed all of the steps in the following guides:
 
-*   [Getting Started](https://creativesdk.adobe.com/docs/ios/#/articles/gettingstarted/index.html)
-*   [Framework Dependencies](https://creativesdk.adobe.com/docs/ios/#/articles/dependencies/index.html) guide.
+* Getting Started
+* Framework Dependencies
 
 _**Note:**_
 

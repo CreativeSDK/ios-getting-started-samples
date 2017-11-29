@@ -1,4 +1,4 @@
-# Getting Started with the iOS Creative SDK
+# Getting Started
 
 The Creative SDK lets you build applications that integrate with the Creative Cloud and leverage the power of our Creative Cloud offerings to benefit your users. From simply letting them import from and save to their Creative Cloud storage, to using innovative Photoshop APIs via your application, the Creative SDK will help you expand the features of your application by using the Adobe platform.
 
@@ -17,7 +17,7 @@ This guide discusses how to set up the iOS Creative SDK, then steps through a si
 ## Prerequisites
 
 + Before you can work with the Creative SDK, you must register your application and get Client ID and Client Secret values. For details, see [Registering Your Application](#register_application).
-+ To get the iOS SDK, go to the [Downloads page](https://creativesdk.adobe.com/downloads.html), download the ZIP files, and extract them to a location you will remember. The ZIP files contain all the frameworks in the Creative SDK. To learn more about each framework, see the [Framework Dependencies](../18_Framework_Dependencies/18_Framework_Dependencies.htm#XREF_98693_Framework)   guide. The classes used in this guide are in the `AdobeCreativeSDKCore.framework` library.
++ To get the iOS SDK, go to the [Downloads page](https://console.adobe.io/downloads), download the ZIP files, and extract them to a location you will remember. The ZIP files contain all the frameworks in the Creative SDK. To learn more about each framework, see the [Framework Dependencies](../18_Framework_Dependencies/18_Framework_Dependencies.htm#XREF_98693_Framework)   guide. The classes used in this guide are in the `AdobeCreativeSDKCore.framework` library.
 
 The following software is required:
 
@@ -30,12 +30,12 @@ The following software is required:
 To register your application, follow these steps:
 
 1. Sign in. (If needed, register for an account)
-2. Go to the My Apps page, [https://creativesdk.adobe.com/myapps.html](https://creativesdk.adobe.com/myapps.html).
+2. Go to the Integrations page, [https://console.adobe.io/integrations](https://console.adobe.io/integrations).
 3. From the Integrations List page, click the + New integration button.
 4. Make sure ADOBE ID KEY is selected, click the Next button.
 5. Complete the Configure your new integration form, then click the Next button.
 6. In the Integration services section, add the scope(s) for your integration. E.g. Select Creative SDK, then click the + Add service button.
-7. Right under the Intergration service section, you are given a API Key ID, Client Secret, Redirect URI/URL that you will need to integrate the SDK with.
+7. Right under the Integration service section, you are given a API Key ID, Client Secret, Redirect URI/URL that you will need to integrate the SDK with.
 
 ![](https://aviarystatic.s3.amazonaws.com/creativesdk/ios/gettingstarted/myapp_registration.png)
 
@@ -194,7 +194,9 @@ In addition, the SDK caches the login for approximately 14 days, which means on 
 
 ### Submit Your Application for Review
 
-Adobe must review all applications that use the Creative SDK before they are released. See the guidelines in  [Using the Creative Cloud Badge and Brand](https://creativesdk.adobe.com/docs/ios/#/brandguidelines/index.html)   and the [terms of use](http://wwwimages.adobe.com/content/dam/Adobe/en/legal/servicetou/Creative_SDK-en_US.pdf) . Instructions for submitting your app for review are [here](https://creativesdk.zendesk.com/hc/en-us/articles/204601215-How-to-complete-the-Production-Client-ID-Request).
+Adobe must review all applications that use the Creative SDK before they are released. See the Creative SDK Branding guidelines and the terms of use.
+
+Instructions for submitting your app for review are [here](https://creativesdk.zendesk.com/hc/en-us/articles/204601215-How-to-complete-the-Production-Client-ID-Request).
 
 ### Troubleshooting and Support
 
