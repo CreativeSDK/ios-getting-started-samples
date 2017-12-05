@@ -1,3 +1,5 @@
+#*Note*: The Creative SDK Image Editor UI component is no longer supported. Adobe will release a new version of the SDK in November 2017, and this component will not be included in the new version. We suggest removing this component from your application as soon as possible to avoid any interruption in service. You can find more information on this deprecation here: [https://creativesdk.zendesk.com/hc/en-us/articles/115004788463-End-of-Support-for-the-Creative-SDK-Image-Editor-UI-Color-UI-Market-Browser-and-Labs-Components](https://creativesdk.zendesk.com/hc/en-us/articles/115004788463-End-of-Support-for-the-Creative-SDK-Image-Editor-UI-Color-UI-Market-Browser-and-Labs-Components)
+
 # Image Editor UI Component
 
 The Creative SDK Image component enables developers to add photo editing to their iOS applications. The image editor includes over 20 advanced imaging tools, covering everything from effects and crop to red-eye and blemish. All the tools are GPU-accelerated, so all image modifications happen in real time or close to it. Integrating the image editor into an application typically takes less than 15 minutes of development time.

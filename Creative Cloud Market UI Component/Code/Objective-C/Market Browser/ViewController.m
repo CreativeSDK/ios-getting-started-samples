@@ -25,6 +25,8 @@
 
 #import "ViewController.h"
 
+#error The Creative SDK Market Browser is no longer supported. Adobe will release a new version of the SDK in November 2017, and this component will not be included in the new version. We suggest removing this component from your application as soon as possible to avoid any interruption in service. You can find more information on this deprecation here: https://creativesdk.zendesk.com/hc/en-us/articles/115004788463-End-of-Support-for-the-Creative-SDK-Image-Editor-UI-Color-UI-Market-Browser-and-Labs-Components
+
 #warning Please update the client ID and secret values to match the ones provided by creativesdk.com
 static NSString * const kCreativeSDKClientId = @"Change me";
 static NSString * const kCreativeSDKClientSecret = @"Change me";

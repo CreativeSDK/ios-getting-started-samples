@@ -1,3 +1,5 @@
+#*Note*: The Creative SDK Image Editor UI, Color UI, Market Browser and Labs components are no longer supported. Adobe will release a new version of the SDK in November 2017, and these components will not be included in the new version. We suggest removing these component from your application as soon as possible to avoid any interruption in service. You can find more information on this deprecation here: [https://creativesdk.zendesk.com/hc/en-us/articles/115004788463-End-of-Support-for-the-Creative-SDK-Image-Editor-UI-Color-UI-Market-Browser-and-Labs-Components](https://creativesdk.zendesk.com/hc/en-us/articles/115004788463-End-of-Support-for-the-Creative-SDK-Image-Editor-UI-Color-UI-Market-Browser-and-Labs-Components)
+
 # Framework Dependencies
 
 In the Creative SDK for iOS, we've broken the Foundation framework into Micro frameworks so that developers can include only the pieces that they need, thereby reducing the size of their binary. The AdobeCreativeSDKFoundation framework has been divided into the following frameworks:
