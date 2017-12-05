@@ -1,10 +1,12 @@
-# Creative SDK v3.0.2218
+# Changelog
+
+## Creative SDK v3.0.2218
 (Dynamic Frameworks)
 November 27, 2017
 
 To download the Creative SDK for iOS, visit the [Adobe I/O Downloads Console](https://console.adobe.io/downloads).
 
-## What's New
+### What's New
 
 - Supports iPhone X.
 - Creative SDK frameworks are now built and archived using Xcode 9.0.
@@ -16,7 +18,7 @@ To download the Creative SDK for iOS, visit the [Adobe I/O Downloads Console](ht
     - Labs
 - Creative SDK static frameworks have been removed.
 
-### Foundation
+#### Foundation
 
 - Asset Model
     - Fixed the length overwriting bug in the refresh: method. Now correct value is reported for the fileSize property of AdobeAssetFile on performing a refresh method call.
@@ -37,12 +39,12 @@ To download the Creative SDK for iOS, visit the [Adobe I/O Downloads Console](ht
     - Removed public API setAuthenticationParametersWithClientID:clientSecret:enableSignUp:.
     - Fixed a rare crash when IMS has a critical system outage.
 
-### Typekit
+#### Typekit
 
 Prevent a set of special characters from being input in Sample Text field on Asian Font tab.
 Various bug fixes.
 
-### Behance
+#### Behance
 
 - Added: Created AdobePublishToolGallery to represent an Adobe Creative Tools gallery.
 - Added: Created AdobePublishToolGalleryContent and AdobePublishCuratedGalleryContent to represent the content of an Adobe Creative Tools gallery and curated gallery.
@@ -59,43 +61,43 @@ Various bug fixes.
 - Added: Comments now include linked usernames when users are @-mentioned in a comment.
 - Fixed: Project embed modules appearing zoomed rather than conforming to their display size.
 
-## Known Issues
+### Known Issues
 
-###Foundation
+####Foundation
 
 - Adobe Universal Search is unsupported.
 - Sending a large file to desktop may fail.
 - The caching mechanism provided by the CSDK doesn't work on iOS 10.x Simulators if no Capabilities are enabled.
 - The only way to work around this problem is to have an entitlement.plist file. The existence of this file forces Xcode and the Simulator to behave correctly. Note that if an existing Keychain Sharing capability is enabled, this issue won't appear.
 
-### iOS Support
+#### iOS Support
 
 - Creative SDK supports iOS 11 and iOS 10.
 - This Creative SDK release was validated on iOS 11.0.3 and iOS 10.3.3.
 
 ***
 
-# Creative SDK v0.15.2181.1
+## Creative SDK v0.15.2181.1
 (Dynamic Frameworks)
 December 6th, 2016
 
-## General
+### General
 
 - Bitcode is now fully supported in the Dynamic iOS framework.
 
-## Typekit
+### Typekit
 
 - Added Japanese fonts back in the Font Browser for use with API Key.
 
 
-# Creative SDK v0.15.2181
+## Creative SDK v0.15.2181
 (Dynamic Frameworks)
 November 2, 2016
 
 **IMPORTANT:**
 If you are updating to v0.15 and above, you will need to register a new API Key, Secret and redirectURL from the new [Adobe I/O Console](https://console.adobe.io/integrations).
 
-## General
+### General
 
 - The Static framework in v0.15.2181 is the last static frameworks release.  We will only release the dynamic frameworks in the next release. You can learn more about Dynamic Frameworks [here](https://creativesdk.zendesk.com/hc/en-us/articles/212156866).
 - Authentication now requires a new unique redirect URL.  Instead of the previous ClientID/Secret authentication, the new authentication requires new API Key, Secret, the unique redirectURL and the scopes needed for the integration.  New API Key, secret and redirectURL can be generated and then add the scopes using the new [Adobe I/O Console](https://console.adobe.io/integrations).  More integration related information can be found on the Getting Started Guide and in the API reference for `AdobeUXAuthManager`.
@@ -116,7 +118,7 @@ If you are updating to v0.15 and above, you will need to register a new API Key,
         - `e.g. When “-com.apple.CoreData.ConcurrencyDebug 1” is added to the app run argument.`
 
 
-## Asset Browser
+### Asset Browser
 
 - New asset types Materials, Lights and Animations have been added to Asset Library in Creative Cloud.
 - AdobeDesignLibraryModelType is the new type for 3D element.  It is replacing the deprecated AdobeDesignLibrary3DElementType.
@@ -125,7 +127,7 @@ If you are updating to v0.15 and above, you will need to register a new API Key,
 - Added a new API in AdobeUXAuthManager to disable event generation sendUsageData:completion:.
 - Fixed a bug with AdobeAssetFolder (and all subclasses) nextPage where the value returned in the success block for the totalItemsInFolder was incorrectly reporting the total number  of items in the folder, but instead was reporting the count of items in the returned array. If you were relying on totalItemsInFolder for the number of items in the returned array, change to use items.Count instead.
 
-## Behance
+### Behance
 
 - Dependency Changed. AdobeCreativeSDKBehance is now dependent on AdobeCreativeSDKColor.
 - The Accent Color of all AdobeCreativeSDKBehance UI components using the accentColor property of the AdobePublish shared Instance can now be customized.
@@ -143,11 +145,11 @@ If you are updating to v0.15 and above, you will need to register a new API Key,
 - AdobePublishCuratedGallery has been split to AdobePublishPartnerGallery and AdobePublishCuratedGallery which are both subclasses of AdobePublishGallery. Added public interfaces for these classes and added APIs as well.
 - WIP is no longer supported.  All WIP related APIs have now been removed.
 
-## Image Editor
+### Image Editor
 
 - Improved runtime stability.
 
-## Typekit
+### Typekit
 
 - Added support for Typekit platform service. No API is changed, however, the back end is changed to point to the new TK platform service which doesn't require user authentication to browse fonts and provides access to more new fonts. As bundled fonts in an app must comply with the new Typekit platform formats, clients that provide bundled fonts in their apps need to update their bundled fonts. Please see projects on the sample project on [Github](https://github.com/CreativeSDK/ios-getting-started-samples) for more details.
 - Added symbols for Typekit platform and User Consent scopes. User Consent scopes are needed for use with API Key.  The 5 scopes needed for apps that use the new Typekit platform service are as follow:
@@ -162,19 +164,19 @@ If you are updating to v0.15 and above, you will need to register a new API Key,
     - An entire character set of the selected font may not be applied immediately after the font is synced. Please re-select the font to re-apply.
 
 
-# Creative SDK v0.14.2160
+## Creative SDK v0.14.2160
 (Dynamic Frameworks)
 September 1, 2016
 
-## General
+### General
 
 - Static frameworks have been deprecated in favor of new dynamic frameworks. You can learn more about Dynamic Frameworks [here](https://creativesdk.zendesk.com/hc/en-us/articles/212156866).
 
 
-# Creative SDK v0.14.2160
+## Creative SDK v0.14.2160
 August 2, 2016
 
-## General
+### General
 
 - Landscape support added for all UI components.
 - Apps calling `AdobeUXAuthManager setAuthenticationParametersWithClientID:withClientSecret:` have their login period extended from two weeks to six months.
@@ -182,7 +184,7 @@ August 2, 2016
 - Adds Terms Of Use (TOU) and email verification support.
 - Adds [AdobeUXAuthManager openContinuableAuthenticationURLForError:]w to the public API. This method takes the error code made available to the application on the detectedContinuableAuthenticationEvent delegate call.
 
-## Asset Browser
+### Asset Browser
 
 - AdobeUXAssetBrowserConfiguration has a new property tintColor,  which allows the calling app to customize the tint color of the primary and user-actionable controls of the SDK. This property can be used to bring the appearance of the SDK UI component closer to an app's chosen tint color.
 - Adds UI support for bookmarks (Live Library Links), read-only design libraries.
@@ -192,7 +194,7 @@ August 2, 2016
 - Deprecated AdobeAssetLibraryItem and all its derived classes.
 - Deprecated AdobePSDPreview, AdobePSDPreviewLayerNode and AdobePSDPreviewLayerComp. The AdobePSDPreview now represents the PSD manifest with applied comp layer if any. New APIs will be added for PSD extraction in the near future.
 
-## Behance
+### Behance
 
 - User data returned by PPS will now fall back to IMS data for fields which are blank for: firstName, lastName, displayName, country.
 - Project Viewer: Memory usage for loading animated GIFs has been improved.
@@ -200,16 +202,16 @@ August 2, 2016
 - The AdobePublishShareMenu component has been removed.
 - Project Viewer: comments and commenting will be hidden if the project owner has disallowed comments on their project on Behance.net
 
-## Color Tool
+### Color Tool
 
 - Color component now has a base indicator on the theme swatch and the wheel marker in Picker view.  No change in Single color mode.
 - Color component library selection now shows bookmarks. Saving to bookmarks is disabled.
 
-## Image Editor
+### Image Editor
 
 - Adobe ID sign for users to access and sync more free Effects, Stickers, Frames and Overlays.
 
-## Typekit
+### Typekit
 
 - Initial release!
 - Features:
@@ -221,10 +223,10 @@ August 2, 2016
 
 ***
 
-# Creative SDK v0.13.2139
+## Creative SDK v0.13.2139
 March 3, 2016
 
-## General
+### General
 
 - armv7s frameworks are not included anymore.  Building for armv7s devices (iPhone 5/5c and iPad (4th generation)) now requires targeting armv7 and using the armv7 frameworks in Xcode 6 or later.
 - AdobeCreativeSDKCore.framework Upgraded to WKWebView.  Apps need to link to WebKit.framework, in your project's target Build Phases, Link Binary with Libraries.
@@ -233,12 +235,12 @@ March 3, 2016
 Known Issues:
 - Creative Cloud Market assets are not downloaded from Market Browser on iOS 8.1 and 8.2. Copy an asset to Creative Cloud Libraries or Creative Cloud Files in Market Browser, then download the asset from Asset Browser.
 
-## App Library
+### App Library
 
 - App Library GET/OPEN button renamed to "LAUNCH" on iOS 9. We launch the app if it's already installed else we show the Store Kit UI.
 - Deprecated AdobeUXAppLibrary in favor of the new UIViewController-based API: AdobeUXAppLibraryBrowserViewController. Please see AdobeUXAppLibraryBrowserViewController.h in AdobeCreativeSDKAppLibrary.framework for more details.
 
-## Asset UX
+### Asset UX
 
 - Added support for 3D Elements in libraries. All existing APIs that handle library assets are now aware of 3D Elements can work with such assets.
 - Added support for video assets in libraries. This includes all the related APIs for downloading a rendition or the linked video file from the Stock servers. Note that currently the only supported video asset in a library on the server is videos added through the Stock web interface.
@@ -251,7 +253,7 @@ Known Issues:
 - Deprecated and modified AdobeUXAuthManager setAuthenticationParametersWithClientID:clientSecret:enableSignUp:. Both this andsetAuthenticationParametersWithClientID:withClientSecret: always allow user sign-up. The enableSignUpargument is ignored.
 - The AdobeAsset APIs (AdobeAsset, AdobeAssetFile, AdobeAssetFolder, AdobeAssetPackage) have been moved (with deprecations) to use the newer API signatures.
 
-## Behance
+### Behance
 
 - The Assets Library Framework has been removed as a dependency of the AdobeCreativeSDKBehance component.
 - Audio and Video files will no longer appear as selectable assets in the image picker.
@@ -261,18 +263,18 @@ Known Issues:
 - WIP Publishing/WIP Viewing has been deprecated and will be removed in a future version of the SDK. Please migrate to Projects if appropriate for your app.
 - AdobePublishShareMenu has been deprecated and will be removed in a future version of the SDK.
 
-## Color Tool
+### Color Tool
 
 - AdobeCreativeSDKColorComponent.framework is renamed to AdobeCreativeSDKColor.framework.
 - AdobeColorPickerControllerDelegate has a new optional API colorPickerControllerDidCancel, this is called from AdobeColorViewController when the Cancel button is hit.
 - Always enable save to library button.
 
-## Image
+### Image
 
 - Users can now log in with their Adobe ID to sync their content. This is optional and only available to approved partners. Interested partners can [learn more](https://creativesdk.zendesk.com/hc/en-us/articles/207914166) about content sync!
 - Added nullability annotations for improved Swift integration
 
-## Market UX
+### Market UX
 
 - Users can browse market assets without sign in into creative cloud account.
 - Users will be prompted to login when they try to download assets/add-to-library.
@@ -284,7 +286,7 @@ Known Issues:
 Adobe Labs SDK v0.3
 January 25, 2016
 
-## General
+### General
 
 - Introduces the AdobeLabsMagicMusicRetargeting component.
 - Re-enables BITCODE.
@@ -293,13 +295,13 @@ January 25, 2016
 
 ***
 
-# Creative SDK v0.12.2127.02
+## Creative SDK v0.12.2127.02
 December 09, 2015
 
 **Important:** If you are updating from SDK version v0.12.2127.01 or older, you will need to register a new Client ID and Secret on the [Adobe I/O Console](https://console.adobe.io/integrations).
 
 
-## Image Editor UI Component
+### Image Editor UI Component
 
 - Fixes minor issue with imaging compositing.
 
@@ -309,7 +311,7 @@ December 09, 2015
 Adobe Labs SDK v0.2
 November 24, 2015
 
-## General
+### General
 
 - New: AdobeLabsMagicVectorizer - converts a raster UIImage into UIBezierPath.
 - New: MagicDepthMapper - creates a depth map from a UIImage.
@@ -320,20 +322,20 @@ November 24, 2015
 
 ***
 
-# Creative SDK v0.12.2127.01
+## Creative SDK v0.12.2127.01
 November 12, 2015
 
-## Image Editor UI Component
+### Image Editor UI Component
 
 - Miscellaneous bug fixes.
 
 
 ***
 
-# Creative SDK v0.12.2127
+## Creative SDK v0.12.2127
 October 29, 2015
 
-## General
+### General
 
 - Added iOS 9 and Bitcode support.
 - Deprecated support for iOS versions prior to iOS8.1.
@@ -342,7 +344,7 @@ Known Issues:
 - In the App Library, the app description is not localized.
 - Creative Cloud Market assets are not downloaded from Market Browser on iOS 8.1 and 8.2. Copy an asset to Creative Cloud Libraries or Creative Cloud Files in Market Browser, then download the asset from Asset Browser.
 
-## Behance
+### Behance
 
 - All components now fully support iPad Slide Over and Split View.
 - A new asset chooser has been introduced in the Project Publishing component that takes advantage of Photos.framework.
@@ -351,7 +353,7 @@ Known Issues:
 - SDWebImage dependency has been updated which includes a number of bug fixes for image loading.
 - Comment Panel: AdobePublishCommentPanel has been removed.
 
-## Color Tool UI Component
+### Color Tool UI Component
 
 - Color chip view to show selected color (iPad).
 - The color history view has been moved into a separate picker, and because of that, it can be enabled and set as the initial picker value like the wheel, RGB, or CMYK views.
@@ -362,7 +364,7 @@ Known Issues:
     ·'(void)setShowTitleHeader:(BOOL)showHeader;' - Sets whether to show the title header on both iPad and iPhone. This is useful if the clients want to insert their own tile/navigation bar. YES by default.
 
 
-## Image
+### Image
 
 - Added HTTPS support to all network requests.
 - Revamped and refined the look and feel of the editor.
@@ -372,10 +374,10 @@ Known Issues:
 
 ***
 
-# Creative SDK v0.11.2118.02
+## Creative SDK v0.11.2118.02
 October 19, 2015
 
-## Adobe Labs
+### Adobe Labs
 
 - New Features:
     - AdobeLabsMagicAudioSpeechMatcher
@@ -389,10 +391,10 @@ October 19, 2015
 ***
 
 
-# Creative SDK v0.11.2118.01
+## Creative SDK v0.11.2118.01
 September 15, 2015
 
-## General
+### General
 
 - Fixes an issue related to iTunes Connect validation.
 
@@ -400,10 +402,10 @@ September 15, 2015
 ***
 
 
-# Creative SDK v0.11.2118
+## Creative SDK v0.11.2118
 August 6, 2015
 
-## General
+### General
 
 - The monolithic Foundation SDK has been broken up into six smaller SDKs. Existing developers should read the [Framework Breakup Migration Guide](https://creativesdk.zendesk.com/hc/en-us/articles/205019329) for more details. Below is a list of the new Frameworks:
     - AdobeCreativeSDKCore
@@ -414,7 +416,7 @@ August 6, 2015
     - AdobeCreativeSDKMarketUX
 
 
-## AssetBrowser UI Component
+### AssetBrowser UI Component
 
 - Better empty/no file screen for Mobile Creations.
 - Improved handling of library item selections in the Asset Browser:
@@ -424,14 +426,14 @@ August 6, 2015
     - Removed deprecated color properties/methods.
 
 
-## App Library UI Component
+### App Library UI Component
 
 - The App Library has been redesigned with new sort options and catgegory/subcategory filters.
     - The categories expand to show subcategories when there are a significant number of apps under the category.
     - Existing category filter & sort option APIs are deprecated.
 
 
-## Behance Component
+### Behance Component
 
 - Improved the stability of the Edit Profile component when it hide the status bar while opening the camera capture screen.
 - The Edit Profile component's profileEditDidStart delegate method has been removed.
@@ -441,7 +443,7 @@ August 6, 2015
 - Fixed rotation issues in the camera capture view used in publishing and edit profile components.
 - AdobePublishProject has a new containsFullBleedImages method to determine whether a project takes advantage of Behance's full bleed image feature.
 
-## Color Tool UI Component
+### Color Tool UI Component
 
 - Fixed the inconsistency in the initialization variables on AdobeColorViewController. Now, initialColorPickerView and initialColorPickerType are used only to setup the initial state and aren't changed by the component. We now return the current user set state using two new variables, currentColorPickerView and currentColorPickerType. To retrieve the state of the component on dismissal, use currentColorPickerView and initialColorPickerType.
 - Miscellaneous bug fixes.
@@ -449,10 +451,10 @@ August 6, 2015
 
 ***
 
-# Creative SDK v0.10.2096
+## Creative SDK v0.10.2096
 June 4, 2015
 
-## AdobeCreativeSDKFoundation
+### AdobeCreativeSDKFoundation
 
 - Adds a new copyFile methods to AdobeStorageSession+Files.
 - File extension to mime type mapping changes:
@@ -468,7 +470,7 @@ Known Issues:
 - To cancel downloading master data or proxy data of Lightroom Photo assets, use cancelDownloadRequest method instead of cancelDownloadMasterDataToFileRequest method.
 - The downloadToPath: method of AdobeAssetFile, AdobeMarketAsset and AdobePhotoAsset classes increments memory usage per download on iOS 8. We are working with Apple to resolve this issue.
 
-## AdobeCreativeSDKBehance
+### AdobeCreativeSDKBehance
 
 - Adds dismissProjectViewerAnimated:completion: and dismissWorkInProgressViewerAnimated:completion: to programmatically dismiss viewer components in AdobePublish.h.
 - Improvements to Project and WIP Viewer UI in the "View Info" popup.
@@ -486,12 +488,12 @@ Known Issues:
     - Fixes an issue with UI sometimes failing to adapt correctly to orientation changes.
 
 
-## AdobeCreativeSDKDevice
+### AdobeCreativeSDKDevice
 
 - The deprecated AdobeShareMenu has been removed from AdobeDevice.
 - The pen tip menu no longer displays the share menu as a built-in node, and a 4th custom node has been added instead. For continued use of the share menu as a pen tip node, you must override customNode4ViewController and manage the AdobePublishShareMenu object directly. See the sample app for an example of this.
 
-## AdobeCreativeSDKColor
+### AdobeCreativeSDKColor
 
 - Issues in the landscape of Color Component have been fixed.
 - Changes for a color theme from Harmony view can be saved.
@@ -500,7 +502,7 @@ Known Issues:
 Known Issues:
 - Changes in a color theme are not saved without making a copy after the initial change.
 
-## AdobeCreativeSDKLabs
+### AdobeCreativeSDKLabs
 
 - Our first Adobe Labs release! The Magic Selection View, allows you to identify and pull selected portions of the image out of the foreground - with just two fingers.
 - Disclaimer: This Adobe Labs component is a beta product, and is provided with very limited support.
@@ -508,7 +510,7 @@ Known Issues:
 
 ***
 
-# Creative SDK v0.9.2082.01
+## Creative SDK v0.9.2082.01
 May 6, 2015
 
 AdobeCreativeSDKFoundation
@@ -518,7 +520,7 @@ AdobeCreativeSDKFoundation
 
 ***
 
-# Creative SDK v0.9.2082
+## Creative SDK v0.9.2082
 March 26, 2015
 
 AdobeCreativeSDKFoundation
@@ -551,7 +553,7 @@ AdobeCreativeSDKFoundation
 - Added new methods: cancelSendToDesktopRequest and changeSendToDesktopRequestPriority to cancel or change the priority of a request.
 - The AdobeSendToDesktopApplication send methods now return a request token that can be used to cancel or change the priority of the request.
 
-## AdobeCreativeSDKDevice
+### AdobeCreativeSDKDevice
 
 - The AdobeShareMenu class has been deprecated. Use the AdobePublishShareMenu class from the AdobePublishSDK instead.
     - Note: The AdobeShareMenu class implementation will be removed in the next release.
@@ -559,7 +561,7 @@ AdobeCreativeSDKFoundation
 - The Kuler pen tip menu item has been replaced with the new Adobe Color Component. AdobeDeviceKulerViewController has been replaced with AdobeColorViewControllerin the AdobeDevice object. You must link with the new color framework.
 - To receive color selections from the new color component, you must add an object implementing the protocol AdobeColorPickerControllerDelegate as the delegate for [AdobeDevice sharedInstance].colorViewController. Refer to AdobeColorViewController.h in AdobeCreativeSDKColor.framework for more information.
 
-## AdobeCreativeSDKBehance
+### AdobeCreativeSDKBehance
 
 - Fixed an issue that prevented projectPublishDidComplete: and wipPublishDidComplete:revisionId: delegate return values from being respected.
 - The last screen of Project and Work in Progress publishing will call endEditing: immediately upon publishing to prevent short-lived text selection artifacts.
@@ -572,16 +574,16 @@ AdobeCreativeSDKFoundation
 - Fixed a race condition when publishing is cancelled near the end of an upload.
 - Fixed an issue with API calls failing to remove projects from a collection.
 
-## AdobeCreativeSDKImage
+### AdobeCreativeSDKImage
 
 - Fixed crash on launch related to in app purchases.
 
-## AdobeCreativeSDKColor
+### AdobeCreativeSDKColor
 
 - Development Status: Deprecated
 - This framework has been deprecated and has been replaced by the AdobeCreativeSDKColorComponent framework.
 
-## AdobeCreativeSDKColorComponent
+### AdobeCreativeSDKColorComponent
 
 - Development Status: Stable
 - The AdobeCreativeSDKColor framework has been completely replaced by the AdobeCreativeSDKColorComponent framework which exposes a brand new standalone UI component for developers. See the ColorComponentSampleApp sample app for integration details.
@@ -594,7 +596,7 @@ Known Issues:
 
 ***
 
-# Creative SDK v0.8.2074
+## Creative SDK v0.8.2074
 February 5, 2015
 
 AdobeCreativeSDKFoundation
@@ -711,7 +713,7 @@ Known Issues:
 
 
 ***
-# Creative SDK v0.7.2072
+## Creative SDK v0.7.2072
 December 15, 2014
 
 AdobeCreativeSDKFoundation
@@ -815,7 +817,7 @@ Known Issues:
 
 ***
 
-# Creative SDK v0.6.2067
+## Creative SDK v0.6.2067
 November 21, 2014
 
 AdobeCreativeSDKFoundation
@@ -844,7 +846,7 @@ Known Issues:
 
 ***
 
-# Creative SDK v0.5.2062
+## Creative SDK v0.5.2062
 October 16, 2014
 
 AdobeCreativeSDKFoundation
@@ -878,7 +880,7 @@ Known Issues:
 
 ***
 
-# Creative SDK v0.4.2059
+## Creative SDK v0.4.2059
 October 5, 2014
 
 AdobeCreativeSDKFoundation
@@ -975,7 +977,7 @@ AdobeCreativeSDKColor
 
 ***
 
-# Creative SDK v0.3.2043
+## Creative SDK v0.3.2043
 September 20, 2014
 
 AdobeCreativeSDKFoundation
@@ -1038,7 +1040,7 @@ AdobeCreativeSDKColor
 
 ***
 
-# Creative SDK v0.2.2006
+## Creative SDK v0.2.2006
 August 27, 2014
 
 AdobeCreativeSDKFoundation
@@ -1125,7 +1127,7 @@ AdobeCreativeSDKColor
 
 ***
 
-# Creative SDK v0.1.1143
+## Creative SDK v0.1.1143
 July 28, 2014
 
 AdobeCreativeSDKFoundation
@@ -1212,7 +1214,7 @@ AdobeCreativeSDKColor
 
 ***
 
-# Creative SDK v0.1.782
+## Creative SDK v0.1.782
 June 18, 2014
 
 AdobeCreativeSDKFoundation
