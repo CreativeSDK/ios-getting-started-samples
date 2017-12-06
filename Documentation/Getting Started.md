@@ -68,7 +68,7 @@ After the new value is added, the Other Linker Flags area of the screen looks li
 
     + In Build Phases, add a run script phase (if not present) and add the below line to run the strip-frameworks script.
       bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AdobeCreativeSDKCore.framework/strip-frameworks.sh"
-      <br /><br /><img style="border: 1px solid #ccc;" src="strip-frameworks.png" /><br /><br />
+      <br /><br /><img style="border: 1px solid #ccc;" src="https://github.com/iotester/ios-getting-started-samples/blob/master/Documentation/images/strip-frameworks.png" /><br /><br />
 
 4. Add other required linked frameworks and libraries:
 
