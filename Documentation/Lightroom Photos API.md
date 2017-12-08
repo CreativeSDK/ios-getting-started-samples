@@ -114,6 +114,6 @@ See the Class Reference below for a list of Classes for uploading Lightroom Phot
 <a name="reference"></a>
 ## Class Reference
 
-+ [AdobePhotoAsset](/Classes/AdobePhotoAsset.html)
-+ [AdobePhotoCatalog](/Classes/AdobePhotoCatalog.html)
-+ [AdobePhotoCollection](/Classes/AdobePhotoCollection.html)
++ AdobePhotoAsset
++ AdobePhotoCatalog
++ AdobePhotoCollection

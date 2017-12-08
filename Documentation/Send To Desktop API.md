@@ -53,4 +53,4 @@ You can read more about these options in the `AdobeSendToDesktopApplication` cla
 <a name="reference"></a>
 ## Class Reference
 
-+ [AdobeSendToDesktopApplication](/Classes/AdobeSendToDesktopApplication.html)
++ AdobeSendToDesktopApplication

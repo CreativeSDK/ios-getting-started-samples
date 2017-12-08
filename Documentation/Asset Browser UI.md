@@ -13,7 +13,7 @@ To integrate the Creative Cloud with your own file picker (instead of using the 
 
 ## Contents
 
-- [Prerequisites](#prerequisites)
+- Prerequisites
 - [Integrating the Asset Browser](#asset_browser)
 - [PSD Extraction](#psd_extraction)
 - [Class Reference](#reference)
@@ -206,11 +206,11 @@ In addition to simple file browsing, the Asset Browser provides a powerful tool 
 In the previous section, “Integrating the Asset Browser”, we demonstrated how to work with files. We used the `AdobeUXAssetBrowser` class to provide a UI that let the user select a particular file. Here, we use similar code, slightly modified. The `AdobeUXAssetBrowserConfiguration` class acts as a wrapper to provide powerful and complex filtering and configuration options for the Asset Browser:
 
     // Exclude all other data sources. Only allow the "Files" datasource
-    AdobeAssetDataSourceFilter *dataSourceFilter = [[AdobeAssetDataSourceFilter alloc] initWithDataSources:@[AdobeAssetDataSourceFiles]
+    AdobeAssetDataSourceFilter *dataSourceFilter = [[AdobeAssetDataSourceFilter alloc] initWithDataSources:@AdobeAssetDataSourceFiles
     filterType:AdobeAssetDataSourceFilterInclusive];
 
     // Exclude all other file types, other than PSD files.
-    AdobeAssetMIMETypeFilter *mimeTypeFilter = [[AdobeAssetMIMETypeFilter alloc] initWithMIMETypes:@[kAdobeMimeTypePhotoshop]
+    AdobeAssetMIMETypeFilter *mimeTypeFilter = [[AdobeAssetMIMETypeFilter alloc] initWithMIMETypes:@kAdobeMimeTypePhotoshop
     filterType:AdobeAssetMIMETypeFilterTypeInclusion];
 
 Once we have an instance of this class, we can perform different operations on it to change how the Asset Browser behaves. The first thing we'll do is specify a PSD mime filter:
@@ -314,13 +314,13 @@ You can do almost anything with the layers. Since the Creative SDK handles user 
 <a name="reference"></a>
 ## Class Reference
 
-+ [AdobeAsset](/Classes/AdobeAsset.html)
-+ [AdobeAssetFile](/Classes/AdobeAssetFile.html)
-+ [AdobeAssetMIMETypeFilter](/Classes/AdobeAssetMIMETypeFilter.html)
-+ [AdobeAssetPSDFile](/Classes/AdobeAssetPSDFile.html)
-+ [AdobePSDLayerNode](/Classes/AdobePSDLayerNode.html)
-+ [AdobeSelectionAsset](/Classes/AdobeSelectionAsset.html)
-+ [AdobeSelectionAssetPSDFile](/Classes/AdobeSelectionAssetPSDFile.html)
-+ [AdobeSelectionPSDLayer](/Classes/AdobeSelectionPSDLayer.html)
-+ [AdobeUXAssetBrowser](/Classes/AdobeUXAssetBrowser.html)
-+ [AdobeUXAssetBrowserConfiguration](/Classes/AdobeUXAssetBrowserConfiguration.html)
++ AdobeAsset
++ AdobeAssetFile
++ AdobeAssetMIMETypeFilter
++ AdobeAssetPSDFile
++ AdobePSDLayerNode
++ AdobeSelectionAsset
++ AdobeSelectionAssetPSDFile
++ AdobeSelectionPSDLayer
++ AdobeUXAssetBrowser
++ AdobeUXAssetBrowserConfiguration
