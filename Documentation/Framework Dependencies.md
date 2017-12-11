@@ -117,51 +117,6 @@ Below is a table that contains all of the Framework and header dependencies for 
          </td>
       </tr>
       <tr>
-         <td>Creative Cloud Market UI Component</td>
-         <td colspan="1">
-            <a href="#core">AdobeCreativeSDKCore.framework</a>
-            <br /><a href="#commonux">AdobeCreativeSDKCommonUX.framework</a>
-            <br /><a href="#assetmodel">AdobeCreativeSDKAssetModel.framework</a>
-            <br /><a href="#assetux">AdobeCreativeSDKAssetUX.framework</a>
-            <br /><a href="#marketux">AdobeCreativeSDKMarketUX.framework</a>
-         </td>
-         <td>
-            AdobeCreativeSDKCore/AdobeCreativeSDKCore.h
-            <br />AdobeCreativeSDKCommonUX/AdobeCreativeSDKCommonUX.h
-            <br />AdobeCreativeSDKAssetModel/AdobeCreativeSDKAssetModel.h
-            <br />AdobeCreativeSDKAssetUX/AdobeCreativeSDKAssetUX.h
-            <br />AdobeCreativeSDKMarketUX/AdobeCreativeSDKMarketUX.h
-         </td>
-      </tr>
-      <tr>
-         <td>Image Editor UI Component</td>
-         <td colspan="1">
-            <a href="#core">AdobeCreativeSDKCore.framework</a>
-            <br /><a href="#imageeditor">AdobeCreativeSDKImage.framework</a>
-         </td>
-         <td>
-            AdobeCreativeSDKCore/AdobeCreativeSDKCore.h
-            <br />AdobeCreativeSDKImage/AdobeCreativeSDKImage.h
-         </td>
-      </tr>
-      <tr>
-         <td>Color Tool</td>
-         <td colspan="1">
-            <a href="#core">AdobeCreativeSDKCore.framework</a>
-            <br /><a href="#commonux">AdobeCreativeSDKCommonUX.framework</a>
-            <br /><a href="#assetmodel">AdobeCreativeSDKAssetModel.framework</a>
-            <br /><a href="#assetux">AdobeCreativeSDKAssetUX.framework</a>
-            <br /><a href="#color">AdobeCreativeSDKColor.framework</a>
-         </td>
-         <td>
-            AdobeCreativeSDKCore/AdobeCreativeSDKCore.h
-            <br />AdobeCreativeSDKCommonUX/AdobeCreativeSDKCommonUX.h
-            <br />AdobeCreativeSDKAssetModel/AdobeCreativeSDKAssetModel.h
-            <br />AdobeCreativeSDKAssetUX/AdobeCreativeSDKAssetUX.h
-            <br />AdobeCreativeSDKColor/AdobeCreativeSDKColor.h
-         </td>
-      </tr>
-      <tr>
          <td>Share Menu UI Component</td>
          <td colspan="1">
             <a href="#core">AdobeCreativeSDKCore.framework</a>
@@ -190,19 +145,6 @@ Below is a table that contains all of the Framework and header dependencies for 
          </td>
       </tr>
       <tr>
-         <td>Application Library UI Component</td>
-         <td colspan="1">
-            <a href="#core">AdobeCreativeSDKCore.framework</a>
-            <br /><a href="#commonux">AdobeCreativeSDKCommonUX.framework</a>
-            <br /><a href="#applibraryux">AdobeCreativeSDKAppLibraryUX.framework</a>
-         </td>
-         <td>
-            AdobeCreativeSDKCore/AdobeCreativeSDKCore.h
-            <br />AdobeCreativeSDKCommonUX/AdobeCreativeSDKCommonUX.h
-            <br />AdobeCreativeSDKAppLibraryUX/AdobeCreativeSDKAppLibraryUX.h
-         </td>
-      </tr>
-      <tr>
          <td>Behance UI Component</td>
          <td colspan="1">
             <a href="#core">AdobeCreativeSDKCore.framework</a>
@@ -219,18 +161,6 @@ Below is a table that contains all of the Framework and header dependencies for 
             <br />AdobeCreativeSDKAssetUX/AdobeCreativeSDKAssetUX.h
             <br />AdobeCreativeSDKBehance/AdobePublish.h
             <br />AdobeCreativeSDKColor/AdobeCreativeSDKColor.h
-         </td>
-      </tr>
-      <tr>
-         <td>Magic Selection View UI</td>
-         <td colspan="1">
-            <a href="#core">AdobeCreativeSDKCore.framework</a>
-
-            <br /><a href="#labs">AdobeCreativeSDKLabs.framework</a>
-         </td>
-         <td>
-            AdobeCreativeSDKCore/AdobeCreativeSDKCore.h
-            <br />AdobeCreativeSDKLabs/AdobeCreativeSDKLabs.h
          </td>
       </tr>
    </tbody>
