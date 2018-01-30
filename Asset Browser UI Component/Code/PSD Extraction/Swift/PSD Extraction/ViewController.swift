@@ -48,7 +48,7 @@ class ViewController: UIViewController
                                                                                    additionalScopeList: [
                                                                                     AdobeAuthManagerUserProfileScope,
                                                                                     AdobeAuthManagerEmailScope,
-                                                                                    AdobeAuthManagerUserProfileScope])
+                                                                                    AdobeAuthManagerAddressScope])
         
         // Also set the redirect URL, which is required by the CSDK authentication mechanism.
         AdobeUXAuthManager.sharedManager().redirectURL = NSURL(string: kCreativeSDKRedirectURLString)
