@@ -1,0 +1,117 @@
+{  
+   "name":"ios-getting-started-samples-manifest",
+   "version":"1.0.0",
+   "description":"Creative SDK for iOS",
+   "author":"Emily Walpole",
+   "view_type":"mdbook",
+   "meta_keywords":"adobe i/o,creative sdk, ios",
+   "meta_description":"iOS SDK - Build Creative Cloud connected apps for iPhone and iPad with the Creative SDK for iOS.",
+   "publish_date":"12/04/2018",
+   "show_edit_github_banner":false,
+   "base_path":"https://raw.githubusercontent.com/CreativeSDK/ios-getting-started-samples/master/Documentation",
+   "pages":[  
+      {  
+         "importedFileName":"adobe-creative-sdk-for-ios",
+         "pages":[  
+            {  
+               "importedFileName":"getting-started",
+               "pages":[  
+
+               ],
+               "path":"Getting%20Started.md",
+               "title":"Getting Started"
+            },
+            {  
+               "importedFileName":"app-submission-guidelines",
+               "pages":[  
+
+               ],
+               "path":"App%20Submission%20Guidelines.md",
+               "title":"App Submission Guidelines"
+            },
+            {  
+               "importedFileName":"asset-browser-ui",
+               "pages":[  
+
+               ],
+               "path":"Asset%20Browser%20UI.md",
+               "title":"Asset Browser UI"
+            },
+            {  
+               "importedFileName":"branding-guidelines",
+               "pages":[  
+
+               ],
+               "path":"Branding%20Guidelines.md",
+               "title":"Branding Guidelines"
+            },
+            {  
+               "importedFileName":"class-references",
+               "pages":[  
+
+               ],
+               "path":"Class%20References.md",
+               "title":"Class References"
+            },
+            {  
+               "importedFileName":"creative-cloud-files-api",
+               "pages":[  
+
+               ],
+               "path":"Creative%20Cloud%20Files%20API.md",
+               "title":"Creative Cloud Files API"
+            },
+            {  
+               "importedFileName":"creative-cloud-libraries-api",
+               "pages":[  
+
+               ],
+               "path":"Creative%20Cloud%20Libraries%20API.md",
+               "title":"Creative Cloud Libraries API"
+            },
+            {  
+               "importedFileName":"framework-dependencies",
+               "pages":[  
+
+               ],
+               "path":"Framework%20Dependencies.md",
+               "title":"Framework Dependencies"
+            },
+            {  
+               "importedFileName":"lightroom-photos-api",
+               "pages":[  
+
+               ],
+               "path":"Lightroom%20Photos%20API.md",
+               "title":"Lightroom Photos API"
+            },
+            {  
+               "importedFileName":"send-to-desktop-api",
+               "pages":[  
+
+               ],
+               "path":"Send%20To%20Desktop%20API.md",
+               "title":"Send to Desktop API"
+            },
+            {  
+               "importedFileName":"typekit-ui",
+               "pages":[  
+
+               ],
+               "path":"Typekit%20UI.md",
+               "title":"Typekit (Fonts) UI"
+            },
+            {  
+               "importedFileName":"changelog",
+               "pages":[  
+
+               ],
+               "path":"changelog.md",
+               "title":"Changelog"
+            }
+         ],
+         "path":"Adobe%20Creative%20SDK%20for%20iOS.md",
+         "title":"Documentation Home: Creative SDK for iOS"
+      }
+   ]
+}
