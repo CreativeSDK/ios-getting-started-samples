@@ -23,8 +23,8 @@ This guide discusses how to set up the iOS Creative SDK, then steps through a si
 
 The following software is required:
 
-+ [Xcode](https://developer.apple.com/xcode/) 7 or higher — See  [Configuring Xcode](#configure_xcode).
-+ iOS 9 or higher
++ [Xcode](https://developer.apple.com/xcode/) 10 or higher — See  [Configuring Xcode](#configure_xcode).
++ iOS 11 or higher
 
 <a name="register_application"></a>
 ## Registering Your Application
